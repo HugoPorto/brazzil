@@ -1,0 +1,29 @@
+/* .content-wrapper {
+    background-color: white;
+  } */
+
+#font-nav-main{
+    color: white;
+}
+
+  #color-nav{
+      background-color: white;
+  }
+
+  #modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9000;
+}
+
+#modal .wrap{
+    width: 60%;
+    min-height: 70%;
+    margin-left: 20%;
+    margin-top: 5%;
+    background: #fff;
+}

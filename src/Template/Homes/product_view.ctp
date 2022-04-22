@@ -1,0 +1,15 @@
+<?php $this->layout = false; ?>
+
+<?php echo $this->element('store_head'); ?>
+
+<body id="body" class="">
+
+<?php echo $this->element('store_header'); ?>
+
+<div class="main-wrapper home_transparent-wrapper @@active  product-single">
+
+<?php echo $this->element('store_product_view'); ?>
+
+<?php echo $this->element('store_contact'); ?>
+
+<?php echo $this->element('store_footer'); ?>

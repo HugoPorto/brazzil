@@ -1,0 +1,5361 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2022-02-16 21:12+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/AboutsController.php:39;61
+#: Controller/UsersController.php:360
+msgid "The about has been saved."
+msgstr ""
+
+#: Controller/AboutsController.php:47;65
+#: Controller/UsersController.php:364
+msgid "The about could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AboutsController.php:76
+msgid "The about has been deleted."
+msgstr ""
+
+#: Controller/AboutsController.php:78
+msgid "The about could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AccompanimentsController.php:110;161
+msgid "The accompaniment has been saved."
+msgstr ""
+
+#: Controller/AccompanimentsController.php:114;165
+msgid "The accompaniment could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AccompanimentsController.php:203
+msgid "The accompaniment has been deleted."
+msgstr ""
+
+#: Controller/AccompanimentsController.php:205
+msgid "The accompaniment could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AmcVendasEmpresasController.php:76;101
+msgid "The amc vendas empresa has been saved."
+msgstr ""
+
+#: Controller/AmcVendasEmpresasController.php:80;105
+msgid "The amc vendas empresa could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AmcVendasEmpresasController.php:123
+msgid "The amc vendas empresa has been deleted."
+msgstr ""
+
+#: Controller/AmcVendasEmpresasController.php:125
+msgid "The amc vendas empresa could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AmcVendasEnderecosController.php:55;79
+msgid "The amc vendas endereco has been saved."
+msgstr ""
+
+#: Controller/AmcVendasEnderecosController.php:59;83
+msgid "The amc vendas endereco could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AmcVendasEnderecosController.php:100
+msgid "The amc vendas endereco has been deleted."
+msgstr ""
+
+#: Controller/AmcVendasEnderecosController.php:102
+msgid "The amc vendas endereco could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AmcclientesController.php:118;136
+msgid "The amccliente has been saved."
+msgstr ""
+
+#: Controller/AmcclientesController.php:122;140
+msgid "The amccliente could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AmcclientesController.php:151
+msgid "The amccliente has been deleted."
+msgstr ""
+
+#: Controller/AmcclientesController.php:153
+msgid "The amccliente could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AmcvendasController.php:96;121
+msgid "The amcvenda has been saved."
+msgstr ""
+
+#: Controller/AmcvendasController.php:100;125
+msgid "The amcvenda could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AmcvendasController.php:143
+msgid "The amcvenda has been deleted."
+msgstr ""
+
+#: Controller/AmcvendasController.php:145
+msgid "The amcvenda could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AnalizedProjectsController.php:100;146
+msgid "The analized project has been saved."
+msgstr ""
+
+#: Controller/AnalizedProjectsNotesController.php:80;138
+msgid "The analized projects note has been saved."
+msgstr ""
+
+#: Controller/AnalizedProjectsNotesController.php:182
+msgid "The analized projects note has been deleted."
+msgstr ""
+
+#: Controller/AnalizedProjectsNotesController.php:186
+msgid "The analized projects note could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AnimesController.php:55;79
+msgid "The anime has been saved."
+msgstr ""
+
+#: Controller/AnimesController.php:59;83
+msgid "The anime could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AnimesController.php:100
+msgid "The anime has been deleted."
+msgstr ""
+
+#: Controller/AnimesController.php:102
+msgid "The anime could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AnimevideosController copy.php:58;84;120
+#: Controller/AnimevideosController.php:58;84;120
+#: Controller/AnvideosController copy 2.php:54
+#: Controller/AnvideosController copy.php:120
+#: Controller/AnvideosController.php:57
+msgid "The animevideo has been saved."
+msgstr ""
+
+#: Controller/AnimevideosController copy.php:62;88;124
+#: Controller/AnimevideosController.php:62;88;124
+#: Controller/AnvideosController copy 2.php:58
+#: Controller/AnvideosController copy.php:124
+#: Controller/AnvideosController.php:61
+msgid "The animevideo could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AnimevideosController copy.php:107
+#: Controller/AnimevideosController.php:107
+msgid "The animevideo has been deleted."
+msgstr ""
+
+#: Controller/AnimevideosController copy.php:109
+#: Controller/AnimevideosController.php:109
+msgid "The animevideo could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/AnvideosController copy 2.php:88
+#: Controller/AnvideosController copy.php:58;84
+#: Controller/AnvideosController.php:91
+msgid "The anvideo has been saved."
+msgstr ""
+
+#: Controller/AnvideosController copy 2.php:92
+#: Controller/AnvideosController copy.php:62;88
+#: Controller/AnvideosController.php:95
+msgid "The anvideo could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AnvideosController copy 2.php:111
+#: Controller/AnvideosController copy.php:107
+#: Controller/AnvideosController.php:127
+msgid "The anvideo has been deleted."
+msgstr ""
+
+#: Controller/AnvideosController copy 2.php:113
+#: Controller/AnvideosController copy.php:109
+#: Controller/AnvideosController.php:129
+msgid "The anvideo could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BanneraboutsController.php:29;46
+msgid "The bannerabout has been saved."
+msgstr ""
+
+#: Controller/BanneraboutsController.php:33;50
+msgid "The bannerabout could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BanneraboutsController.php:60
+msgid "The bannerabout has been deleted."
+msgstr ""
+
+#: Controller/BanneraboutsController.php:62
+msgid "The bannerabout could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BannersController.php:58;83
+msgid "The banner has been saved."
+msgstr ""
+
+#: Controller/BannersController.php:62;87
+msgid "The banner could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BannersController.php:105
+msgid "The banner has been deleted."
+msgstr ""
+
+#: Controller/BannersController.php:107
+msgid "The banner could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BarsNightclubsController.php:58;84
+msgid "The bars nightclub has been saved."
+msgstr ""
+
+#: Controller/BarsNightclubsController.php:62;88
+msgid "The bars nightclub could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BarsNightclubsController.php:107
+msgid "The bars nightclub has been deleted."
+msgstr ""
+
+#: Controller/BarsNightclubsController.php:109
+msgid "The bars nightclub could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BetasController.php:55;79
+msgid "The beta has been saved."
+msgstr ""
+
+#: Controller/BetasController.php:59;83
+msgid "The beta could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BetasController.php:100
+msgid "The beta has been deleted."
+msgstr ""
+
+#: Controller/BetasController.php:102
+msgid "The beta could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BoardsAlmostNewsController.php:58;85
+msgid "The boards almost news has been saved."
+msgstr ""
+
+#: Controller/BoardsAlmostNewsController.php:62;89
+msgid "The boards almost news could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BoardsAlmostNewsController.php:109
+msgid "The boards almost news has been deleted."
+msgstr ""
+
+#: Controller/BoardsAlmostNewsController.php:111
+msgid "The boards almost news could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BoardsClientsController.php:82;118
+msgid "The boards client has been saved."
+msgstr ""
+
+#: Controller/BoardsClientsController.php:86;122
+msgid "The boards client could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BoardsClientsController.php:156
+msgid "The boards client has been deleted."
+msgstr ""
+
+#: Controller/BoardsClientsController.php:160
+msgid "The boards client could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BoardsCnhsController.php:123;164
+msgid "The boards cnh has been saved."
+msgstr ""
+
+#: Controller/BoardsCnhsController.php:128;169
+msgid "The boards cnh could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BoardsCnhsController.php:197
+msgid "The boards cnh has been deleted."
+msgstr ""
+
+#: Controller/BoardsCnhsController.php:201
+msgid "The boards cnh could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BoardsCpfsController.php:63;94
+msgid "The boards cpf has been saved."
+msgstr ""
+
+#: Controller/BoardsCpfsController.php:67;98
+msgid "The boards cpf could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BoardsCpfsController.php:148
+msgid "The boards cpf has been deleted."
+msgstr ""
+
+#: Controller/BoardsCpfsController.php:150
+msgid "The boards cpf could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BoardsFinancingsController.php:77;129
+msgid "The boards financing has been saved."
+msgstr ""
+
+#: Controller/BoardsFinancingsController.php:81;133
+msgid "The boards financing could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BoardsFinancingsController.php:175
+msgid "The boards financing has been deleted."
+msgstr ""
+
+#: Controller/BoardsFinancingsController.php:177
+msgid "The boards financing could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BoardsInformationsController.php:87;129
+msgid "The boards information has been saved."
+msgstr ""
+
+#: Controller/BoardsInformationsController.php:92;134
+msgid "The boards information could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BoardsInformationsController.php:162
+msgid "The boards information has been deleted."
+msgstr ""
+
+#: Controller/BoardsInformationsController.php:166
+msgid "The boards information could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BoardsRegionsController.php:57;81
+msgid "The boards region has been saved."
+msgstr ""
+
+#: Controller/BoardsRegionsController.php:61;85
+msgid "The boards region could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BoardsRegionsController.php:102
+msgid "The boards region has been deleted."
+msgstr ""
+
+#: Controller/BoardsRegionsController.php:104
+msgid "The boards region could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BoardsSettingsController.php:89;114;145
+msgid "The boards setting has been saved."
+msgstr ""
+
+#: Controller/BoardsSettingsController.php:93;118;149
+msgid "The boards setting could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BoardsSettingsController.php:172
+msgid "The boards setting has been deleted."
+msgstr ""
+
+#: Controller/BoardsSettingsController.php:174
+msgid "The boards setting could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/BusSubwayTrainController.php:58;84
+msgid "The bus subway train has been saved."
+msgstr ""
+
+#: Controller/BusSubwayTrainController.php:62;88
+msgid "The bus subway train could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/BusSubwayTrainController.php:107
+msgid "The bus subway train has been deleted."
+msgstr ""
+
+#: Controller/BusSubwayTrainController.php:109
+msgid "The bus subway train could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CategoriaProdutosController.php:55;79
+msgid "The categoria produto has been saved."
+msgstr ""
+
+#: Controller/CategoriaProdutosController.php:59;83
+msgid "The categoria produto could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CategoriaProdutosController.php:100
+msgid "The categoria produto has been deleted."
+msgstr ""
+
+#: Controller/CategoriaProdutosController.php:102
+msgid "The categoria produto could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CategoryBannersController.php:55;79
+msgid "The category banner has been saved."
+msgstr ""
+
+#: Controller/CategoryBannersController.php:59;83
+msgid "The category banner could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CategoryBannersController.php:100
+msgid "The category banner has been deleted."
+msgstr ""
+
+#: Controller/CategoryBannersController.php:102
+msgid "The category banner could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CategoryPostsController.php:46;72
+msgid "The category post has been saved."
+msgstr ""
+
+#: Controller/CategoryPostsController.php:49;75
+msgid "The category post could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CategoryPostsController.php:93
+msgid "The category post has been deleted."
+msgstr ""
+
+#: Controller/CategoryPostsController.php:97
+msgid "The category post could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CategorySidebarsController.php:46;70
+msgid "The category sidebar has been saved."
+msgstr ""
+
+#: Controller/CategorySidebarsController.php:50;74
+msgid "The category sidebar could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CategorySidebarsController.php:91
+msgid "The category sidebar has been deleted."
+msgstr ""
+
+#: Controller/CategorySidebarsController.php:93
+msgid "The category sidebar could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CategoryVideosController.php:53;79
+msgid "The category video has been saved."
+msgstr ""
+
+#: Controller/CategoryVideosController.php:57;83
+msgid "The category video could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CategoryVideosController.php:101
+msgid "The category video has been deleted."
+msgstr ""
+
+#: Controller/CategoryVideosController.php:103
+msgid "The category video could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CentroresultadosController.php:55;79
+msgid "The centroresultado has been saved."
+msgstr ""
+
+#: Controller/CentroresultadosController.php:59;83
+msgid "The centroresultado could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CentroresultadosController.php:100
+msgid "The centroresultado has been deleted."
+msgstr ""
+
+#: Controller/CentroresultadosController.php:102
+msgid "The centroresultado could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CestsController.php:55;79
+msgid "The cest has been saved."
+msgstr ""
+
+#: Controller/CestsController.php:59;83
+msgid "The cest could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CestsController.php:100
+msgid "The cest has been deleted."
+msgstr ""
+
+#: Controller/CestsController.php:102
+msgid "The cest could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CfopsController.php:55;79
+msgid "The cfop has been saved."
+msgstr ""
+
+#: Controller/CfopsController.php:59;83
+msgid "The cfop could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CfopsController.php:100
+msgid "The cfop has been deleted."
+msgstr ""
+
+#: Controller/CfopsController.php:102
+msgid "The cfop could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ChangelogsController.php:91;115
+msgid "The changelog has been saved."
+msgstr ""
+
+#: Controller/ChangelogsController.php:95;119
+msgid "The changelog could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ChangelogsController.php:136
+msgid "The changelog has been deleted."
+msgstr ""
+
+#: Controller/ChangelogsController.php:138
+msgid "The changelog could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CidadesController.php:55;79
+msgid "The cidade has been saved."
+msgstr ""
+
+#: Controller/CidadesController.php:59;83
+msgid "The cidade could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CidadesController.php:100
+msgid "The cidade has been deleted."
+msgstr ""
+
+#: Controller/CidadesController.php:102
+msgid "The cidade could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ClientsController.php:55;79
+msgid "The client has been saved."
+msgstr ""
+
+#: Controller/ClientsController.php:59;83
+msgid "The client could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ClientsController.php:100
+msgid "The client has been deleted."
+msgstr ""
+
+#: Controller/ClientsController.php:102
+msgid "The client could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CoinsController.php:55;79
+msgid "The coin has been saved."
+msgstr ""
+
+#: Controller/CoinsController.php:59;83
+msgid "The coin could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CoinsController.php:100
+msgid "The coin has been deleted."
+msgstr ""
+
+#: Controller/CoinsController.php:102
+msgid "The coin could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ComicsController.php:58;83
+msgid "The comic has been saved."
+msgstr ""
+
+#: Controller/ComicsController.php:62;87
+msgid "The comic could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ComicsController.php:105
+msgid "The comic has been deleted."
+msgstr ""
+
+#: Controller/ComicsController.php:107
+msgid "The comic could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ContactsController.php:52
+msgid "The contact has been saved."
+msgstr ""
+
+#: Controller/ContactsController.php:56
+msgid "The contact could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CoursesController.php:71;99
+msgid "The course has been saved."
+msgstr ""
+
+#: Controller/CoursesController.php:75;103
+msgid "The course could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CoursesController.php:114
+msgid "The course has been deleted."
+msgstr ""
+
+#: Controller/CoursesController.php:116
+msgid "The course could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CryptoCoinsController.php:58;82
+msgid "The crypto coin has been saved."
+msgstr ""
+
+#: Controller/CryptoCoinsController.php:62;86
+msgid "The crypto coin could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CryptoCoinsController.php:103
+msgid "The crypto coin has been deleted."
+msgstr ""
+
+#: Controller/CryptoCoinsController.php:105
+msgid "The crypto coin could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/CstsController.php:55;79
+msgid "The cst has been saved."
+msgstr ""
+
+#: Controller/CstsController.php:59;83
+msgid "The cst could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/CstsController.php:100
+msgid "The cst has been deleted."
+msgstr ""
+
+#: Controller/CstsController.php:102
+msgid "The cst could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/DefisController.php:132;179
+msgid "The defi has been saved."
+msgstr ""
+
+#: Controller/DefisController.php:136;183
+msgid "The defi could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/DefisController.php:211
+msgid "The defi has been deleted."
+msgstr ""
+
+#: Controller/DefisController.php:213
+msgid "The defi could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/DemandsController.php:58;84
+msgid "The demand has been saved."
+msgstr ""
+
+#: Controller/DemandsController.php:62;88
+msgid "The demand could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/DemandsController.php:107
+msgid "The demand has been deleted."
+msgstr ""
+
+#: Controller/DemandsController.php:109
+msgid "The demand could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/DownloadsController.php:93;121
+msgid "The download has been saved."
+msgstr ""
+
+#: Controller/DownloadsController.php:97;125
+msgid "The download could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/DownloadsController.php:146
+msgid "The download has been deleted."
+msgstr ""
+
+#: Controller/DownloadsController.php:148
+msgid "The download could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/EducationExpensesController.php:58;84
+msgid "The education expense has been saved."
+msgstr ""
+
+#: Controller/EducationExpensesController.php:62;88
+msgid "The education expense could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/EducationExpensesController.php:107
+msgid "The education expense has been deleted."
+msgstr ""
+
+#: Controller/EducationExpensesController.php:109
+msgid "The education expense could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/EmployeesfromclientsController.php:58;83
+msgid "The employeesfromclient has been saved."
+msgstr ""
+
+#: Controller/EmployeesfromclientsController.php:62;87
+msgid "The employeesfromclient could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/EmployeesfromclientsController.php:105
+msgid "The employeesfromclient has been deleted."
+msgstr ""
+
+#: Controller/EmployeesfromclientsController.php:107
+msgid "The employeesfromclient could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/EmpresasController.php:58;84
+msgid "The empresa has been saved."
+msgstr ""
+
+#: Controller/EmpresasController.php:62;88
+msgid "The empresa could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/EmpresasController.php:107
+msgid "The empresa has been deleted."
+msgstr ""
+
+#: Controller/EmpresasController.php:109
+msgid "The empresa could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/EstadosController.php:55;79
+msgid "The estado has been saved."
+msgstr ""
+
+#: Controller/EstadosController.php:59;83
+msgid "The estado could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/EstadosController.php:100
+msgid "The estado has been deleted."
+msgstr ""
+
+#: Controller/EstadosController.php:102
+msgid "The estado could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ExpensesWithDependentsController.php:58;84
+msgid "The expenses with dependent has been saved."
+msgstr ""
+
+#: Controller/ExpensesWithDependentsController.php:62;88
+msgid "The expenses with dependent could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ExpensesWithDependentsController.php:107
+msgid "The expenses with dependent has been deleted."
+msgstr ""
+
+#: Controller/ExpensesWithDependentsController.php:109
+msgid "The expenses with dependent could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ExpensesWithPetsController.php:58;84
+msgid "The expenses with pet has been saved."
+msgstr ""
+
+#: Controller/ExpensesWithPetsController.php:62;88
+msgid "The expenses with pet could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ExpensesWithPetsController.php:107
+msgid "The expenses with pet has been deleted."
+msgstr ""
+
+#: Controller/ExpensesWithPetsController.php:109
+msgid "The expenses with pet could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/FabricantesController.php:55;79
+msgid "The fabricante has been saved."
+msgstr ""
+
+#: Controller/FabricantesController.php:59;83
+msgid "The fabricante could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/FabricantesController.php:100
+msgid "The fabricante has been deleted."
+msgstr ""
+
+#: Controller/FabricantesController.php:102
+msgid "The fabricante could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/FilmsController.php:57;82
+msgid "The film has been saved."
+msgstr ""
+
+#: Controller/FilmsController.php:61;86
+msgid "The film could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/FilmsController.php:104
+msgid "The film has been deleted."
+msgstr ""
+
+#: Controller/FilmsController.php:106
+msgid "The film could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/FootersController.php:40;65
+msgid "The footer has been saved."
+msgstr ""
+
+#: Controller/FootersController.php:44;69
+msgid "The footer could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/FootersController.php:87
+msgid "The footer has been deleted."
+msgstr ""
+
+#: Controller/FootersController.php:89
+msgid "The footer could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/FornecedoresController.php:58;86
+msgid "The fornecedore has been saved."
+msgstr ""
+
+#: Controller/FornecedoresController.php:62;90
+msgid "The fornecedore could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/FornecedoresController.php:111
+msgid "The fornecedore has been deleted."
+msgstr ""
+
+#: Controller/FornecedoresController.php:113
+msgid "The fornecedore could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GaleriasController.php:30;57
+msgid "The galeria has been saved."
+msgstr ""
+
+#: Controller/GaleriasController.php:44;61
+msgid "The galeria could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GaleriasController.php:74
+msgid "The galeria has been deleted."
+msgstr ""
+
+#: Controller/GaleriasController.php:90
+msgid "The galeria could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GalerysController.php:36;65
+msgid "The galery has been saved."
+msgstr ""
+
+#: Controller/GalerysController.php:51;69
+msgid "The galery could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GalerysController.php:84
+msgid "The galery has been deleted."
+msgstr ""
+
+#: Controller/GalerysController.php:101
+msgid "The galery could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GenresController.php:55;79
+msgid "The genre has been saved."
+msgstr ""
+
+#: Controller/GenresController.php:59;83
+msgid "The genre could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GenresController.php:100
+msgid "The genre has been deleted."
+msgstr ""
+
+#: Controller/GenresController.php:102
+msgid "The genre could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GenreseriesController.php:55;79
+msgid "The genreseries has been saved."
+msgstr ""
+
+#: Controller/GenreseriesController.php:59;83
+msgid "The genreseries could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GenreseriesController.php:100
+msgid "The genreseries has been deleted."
+msgstr ""
+
+#: Controller/GenreseriesController.php:102
+msgid "The genreseries could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/GrupotributacoesController.php:58;84
+msgid "The grupotributaco has been saved."
+msgstr ""
+
+#: Controller/GrupotributacoesController.php:62;88
+msgid "The grupotributaco could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GrupotributacoesController.php:107
+msgid "The grupotributaco has been deleted."
+msgstr ""
+
+#: Controller/GrupotributacoesController.php:109
+msgid "The grupotributaco could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/HealthExpensesController.php:58;84
+msgid "The health expense has been saved."
+msgstr ""
+
+#: Controller/HealthExpensesController.php:62;88
+msgid "The health expense could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/HealthExpensesController.php:107
+msgid "The health expense has been deleted."
+msgstr ""
+
+#: Controller/HealthExpensesController.php:109
+msgid "The health expense could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/HomesController.php:131;157
+msgid "The home has been saved."
+msgstr ""
+
+#: Controller/HomesController.php:136;161
+msgid "The home could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/HomesController.php:178
+msgid "The home has been deleted."
+msgstr ""
+
+#: Controller/HomesController.php:180
+msgid "The home could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/HousingExpensesController.php:58;84
+msgid "The housing expense has been saved."
+msgstr ""
+
+#: Controller/HousingExpensesController.php:62;88
+msgid "The housing expense could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/HousingExpensesController.php:107
+msgid "The housing expense has been deleted."
+msgstr ""
+
+#: Controller/HousingExpensesController.php:109
+msgid "The housing expense could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/IcmsController.php:55;79
+msgid "The icm has been saved."
+msgstr ""
+
+#: Controller/IcmsController.php:59;83
+msgid "The icm could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/IcmsController.php:100
+msgid "The icm has been deleted."
+msgstr ""
+
+#: Controller/IcmsController.php:102
+msgid "The icm could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ImageProfilesController.php:59
+msgid "The image profile has been saved."
+msgstr ""
+
+#: Controller/ImageProfilesController.php:63
+msgid "The image profile could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ImageProfilesController.php:82
+msgid "The image profile has been deleted."
+msgstr ""
+
+#: Controller/ImageProfilesController.php:84
+msgid "The image profile could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ImagesController.1.php:60
+#: Controller/ImagesController.php:61
+msgid "The image has been saved."
+msgstr ""
+
+#: Controller/ImagesController.1.php:64
+#: Controller/ImagesController.php:65
+#: Controller/Component/UploadAndSaveImagesVideosUsersComponent.php:79;107
+#: Controller/Component/UploadComponent.php:45
+#: Controller/Component/UploadImageProfileComponent.php:44
+#: Controller/Component/UploadVoucherComponent.php:78;106
+msgid "The image could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ImagesController.1.php:75
+#: Controller/ImagesController.php:83
+msgid "The image has been deleted."
+msgstr ""
+
+#: Controller/ImagesController.1.php:77
+#: Controller/ImagesController.php:85
+msgid "The image could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/IndexSidebarController.php:58;85
+#: Controller/IndexSidebarsController.php:49;76
+msgid "The index sidebar has been saved."
+msgstr ""
+
+#: Controller/IndexSidebarController.php:62;89
+#: Controller/IndexSidebarsController.php:53;80
+msgid "The index sidebar could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/IndexSidebarController.php:109
+#: Controller/IndexSidebarsController.php:100
+msgid "The index sidebar has been deleted."
+msgstr ""
+
+#: Controller/IndexSidebarController.php:111
+#: Controller/IndexSidebarsController.php:102
+msgid "The index sidebar could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/InvestmentsController.php:58;84
+msgid "The investment has been saved."
+msgstr ""
+
+#: Controller/InvestmentsController.php:62;88
+msgid "The investment could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/InvestmentsController.php:107
+msgid "The investment has been deleted."
+msgstr ""
+
+#: Controller/InvestmentsController.php:109
+msgid "The investment could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/InvitationController.php:55;79
+msgid "The invitation has been saved."
+msgstr ""
+
+#: Controller/InvitationController.php:59;83
+msgid "The invitation could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/InvitationController.php:100
+msgid "The invitation has been deleted."
+msgstr ""
+
+#: Controller/InvitationController.php:102
+msgid "The invitation could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/LinkcoinsController.php:58;83
+msgid "The linkcoin has been saved."
+msgstr ""
+
+#: Controller/LinkcoinsController.php:62;87
+msgid "The linkcoin could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/LinkcoinsController.php:105
+msgid "The linkcoin has been deleted."
+msgstr ""
+
+#: Controller/LinkcoinsController.php:107
+msgid "The linkcoin could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/LinksShortenersController.php:32;53
+msgid "The links shortener has been saved."
+msgstr ""
+
+#: Controller/LinksShortenersController.php:35;56
+msgid "The links shortener could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/LinksShortenersController.php:75
+msgid "The links shortener has been deleted."
+msgstr ""
+
+#: Controller/LinksShortenersController.php:79
+msgid "The links shortener could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/LogosController.php:29;46
+msgid "The logo has been saved."
+msgstr ""
+
+#: Controller/LogosController.php:33;50
+msgid "The logo could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/LogosController.php:60
+msgid "The logo has been deleted."
+msgstr ""
+
+#: Controller/LogosController.php:62
+msgid "The logo could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MagazinesController.php:55;79
+msgid "The magazine has been saved."
+msgstr ""
+
+#: Controller/MagazinesController.php:59;83
+msgid "The magazine could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MagazinesController.php:100
+msgid "The magazine has been deleted."
+msgstr ""
+
+#: Controller/MagazinesController.php:102
+msgid "The magazine could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MainAboutsController.php:29;46
+msgid "The main about has been saved."
+msgstr ""
+
+#: Controller/MainAboutsController.php:33;50
+msgid "The main about could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MainAboutsController.php:60
+msgid "The main about has been deleted."
+msgstr ""
+
+#: Controller/MainAboutsController.php:62
+msgid "The main about could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MainDownloadsController.php:55;79
+msgid "The main download has been saved."
+msgstr ""
+
+#: Controller/MainDownloadsController.php:59;83
+msgid "The main download could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MainDownloadsController.php:100
+msgid "The main download has been deleted."
+msgstr ""
+
+#: Controller/MainDownloadsController.php:102
+msgid "The main download could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MaintenancesController.php:58;83
+msgid "The maintenance has been saved."
+msgstr ""
+
+#: Controller/MaintenancesController.php:62;87
+msgid "The maintenance could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MaintenancesController.php:105
+msgid "The maintenance has been deleted."
+msgstr ""
+
+#: Controller/MaintenancesController.php:107
+msgid "The maintenance could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MenuCoursesController.php:33;53
+msgid "The menu course has been saved."
+msgstr ""
+
+#: Controller/MenuCoursesController.php:36;56
+msgid "The menu course could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MenuCoursesController.php:67
+msgid "The menu course has been deleted."
+msgstr ""
+
+#: Controller/MenuCoursesController.php:71
+msgid "The menu course could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MenusController.php:58;83
+msgid "The menu has been saved."
+msgstr ""
+
+#: Controller/MenusController.php:62;87
+msgid "The menu could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MenusController.php:105
+msgid "The menu has been deleted."
+msgstr ""
+
+#: Controller/MenusController.php:107
+msgid "The menu could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MessagesController.php:55;79
+msgid "The message has been saved."
+msgstr ""
+
+#: Controller/MessagesController.php:59;83
+msgid "The message could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MessagesController.php:100
+msgid "The message has been deleted."
+msgstr ""
+
+#: Controller/MessagesController.php:102
+msgid "The message could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MethodTopaymentsController.php:55;79
+msgid "The method topayment has been saved."
+msgstr ""
+
+#: Controller/MethodTopaymentsController.php:59;83
+msgid "The method topayment could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MethodTopaymentsController.php:100
+msgid "The method topayment has been deleted."
+msgstr ""
+
+#: Controller/MethodTopaymentsController.php:102
+msgid "The method topayment could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MyCoinsController.php:80;118
+msgid "The my coin has been saved."
+msgstr ""
+
+#: Controller/MyCoinsController.php:84;122
+msgid "The my coin could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MyCoinsController.php:148
+msgid "The my coin has been deleted."
+msgstr ""
+
+#: Controller/MyCoinsController.php:150
+msgid "The my coin could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MyEnvironmentsController.php:46;70
+msgid "The my environment has been saved."
+msgstr ""
+
+#: Controller/MyEnvironmentsController.php:50;74
+msgid "The my environment could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MyEnvironmentsController.php:91
+msgid "The my environment has been deleted."
+msgstr ""
+
+#: Controller/MyEnvironmentsController.php:93
+msgid "The my environment could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MyReferencesController.php:95;140
+msgid "The my reference has been saved."
+msgstr ""
+
+#: Controller/MyReferencesController.php:99;144
+msgid "The my reference could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MyReferencesController.php:177
+msgid "The my reference has been deleted."
+msgstr ""
+
+#: Controller/MyReferencesController.php:179
+msgid "The my reference could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/MytestesController.php:64;88
+msgid "The mytestis has been saved."
+msgstr ""
+
+#: Controller/MytestesController.php:68;92
+msgid "The mytestis could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/MytestesController.php:109
+msgid "The mytestis has been deleted."
+msgstr ""
+
+#: Controller/MytestesController.php:111
+msgid "The mytestis could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/NftsController.php:152;213
+msgid "The nft has been saved."
+msgstr ""
+
+#: Controller/NftsController.php:156;217
+msgid "The nft could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/NftsController.php:253
+msgid "The nft has been deleted."
+msgstr ""
+
+#: Controller/NftsController.php:255
+msgid "The nft could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/OpportunitysController.php:86;129
+msgid "The opportunity has been saved."
+msgstr ""
+
+#: Controller/OpportunitysController.php:91;133
+msgid "The opportunity could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/OpportunitysController.php:161
+msgid "The opportunity has been deleted."
+msgstr ""
+
+#: Controller/OpportunitysController.php:163
+msgid "The opportunity could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PartnersController.php:55;79
+msgid "The partner has been saved."
+msgstr ""
+
+#: Controller/PartnersController.php:59;83
+msgid "The partner could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PartnersController.php:100
+msgid "The partner has been deleted."
+msgstr ""
+
+#: Controller/PartnersController.php:102
+msgid "The partner could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PatternPaymentsController.php:77
+msgid "The pattern payment has been saved."
+msgstr ""
+
+#: Controller/PatternPaymentsController.php:81
+msgid "The pattern payment could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PatternPaymentsController.php:101
+msgid "The pattern payment has been deleted."
+msgstr ""
+
+#: Controller/PatternPaymentsController.php:103
+msgid "The pattern payment could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PaymentMethodsController.php:56;91
+msgid "The payment method has been saved."
+msgstr ""
+
+#: Controller/PaymentMethodsController.php:60;95
+msgid "The payment method could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PaymentMethodsController.php:115
+msgid "The payment method has been deleted."
+msgstr ""
+
+#: Controller/PaymentMethodsController.php:117
+msgid "The payment method could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PersonalExpensesController.php:58;84
+msgid "The personal expense has been saved."
+msgstr ""
+
+#: Controller/PersonalExpensesController.php:62;88
+msgid "The personal expense could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PersonalExpensesController.php:107
+msgid "The personal expense has been deleted."
+msgstr ""
+
+#: Controller/PersonalExpensesController.php:109
+msgid "The personal expense could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PlanocontasController.php:58;83
+msgid "The planoconta has been saved."
+msgstr ""
+
+#: Controller/PlanocontasController.php:62;87
+msgid "The planoconta could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PlanocontasController.php:105
+msgid "The planoconta has been deleted."
+msgstr ""
+
+#: Controller/PlanocontasController.php:107
+msgid "The planoconta could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PlaylistPricesController.php:86;119
+msgid "The playlist price has been saved."
+msgstr ""
+
+#: Controller/PlaylistPricesController.php:90;123
+msgid "The playlist price could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PlaylistPricesController.php:137
+msgid "The playlist price has been deleted."
+msgstr ""
+
+#: Controller/PlaylistPricesController.php:139
+msgid "The playlist price could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PlaylistReportsController.php:40;64
+msgid "The playlist report has been saved."
+msgstr ""
+
+#: Controller/PlaylistReportsController.php:46;68
+msgid "The playlist report could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PlaylistReportsController.php:80
+msgid "The playlist report has been deleted."
+msgstr ""
+
+#: Controller/PlaylistReportsController.php:82
+msgid "The playlist report could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PlaylistUsersController.php:150;189
+msgid "The playlist user has been saved."
+msgstr ""
+
+#: Controller/PlaylistUsersController.php:154;193
+msgid "The playlist user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PlaylistUsersController.php:204
+msgid "The playlist user has been deleted."
+msgstr ""
+
+#: Controller/PlaylistUsersController.php:206
+msgid "The playlist user could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PostsController.php:80;171
+msgid "The post has been saved."
+msgstr ""
+
+#: Controller/PostsController.php:84;175
+msgid "The post could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PostsController.php:204
+msgid "The post has been deleted."
+msgstr ""
+
+#: Controller/PostsController.php:206
+msgid "The post could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ProductsController.php:58;83
+msgid "The product has been saved."
+msgstr ""
+
+#: Controller/ProductsController.php:62;87
+msgid "The product could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ProductsController.php:105
+msgid "The product has been deleted."
+msgstr ""
+
+#: Controller/ProductsController.php:107
+msgid "The product could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ProdutosController.php:58;93
+msgid "The produto has been saved."
+msgstr ""
+
+#: Controller/ProdutosController.php:62;97
+msgid "The produto could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ProdutosController.php:125
+msgid "The produto has been deleted."
+msgstr ""
+
+#: Controller/ProdutosController.php:127
+msgid "The produto could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PublicitysController.php:29;46
+msgid "The publicity has been saved."
+msgstr ""
+
+#: Controller/PublicitysController.php:33;50
+msgid "The publicity could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PublicitysController.php:60
+msgid "The publicity has been deleted."
+msgstr ""
+
+#: Controller/PublicitysController.php:62
+msgid "The publicity could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PurchasedPlaylistsController.php:35;53
+msgid "The purchased playlist has been saved."
+msgstr ""
+
+#: Controller/PurchasedPlaylistsController.php:39;57
+msgid "The purchased playlist could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PurchasedPlaylistsController.php:68
+msgid "The purchased playlist has been deleted."
+msgstr ""
+
+#: Controller/PurchasedPlaylistsController.php:70
+msgid "The purchased playlist could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ReceiptsController.php:53;72
+msgid "The receipt has been saved."
+msgstr ""
+
+#: Controller/ReceiptsController.php:57;76
+msgid "The receipt could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ReceiptsController.php:93
+msgid "The receipt has been deleted."
+msgstr ""
+
+#: Controller/ReceiptsController.php:95
+msgid "The receipt could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/RecipesController.php:58;84
+msgid "The recipe has been saved."
+msgstr ""
+
+#: Controller/RecipesController.php:62;88
+msgid "The recipe could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/RecipesController.php:107
+msgid "The recipe has been deleted."
+msgstr ""
+
+#: Controller/RecipesController.php:109
+msgid "The recipe could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ReferencesController.php:55;79
+msgid "The reference has been saved."
+msgstr ""
+
+#: Controller/ReferencesController.php:59;83
+msgid "The reference could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ReferencesController.php:100
+msgid "The reference has been deleted."
+msgstr ""
+
+#: Controller/ReferencesController.php:102
+msgid "The reference could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ResourcesController.php:55;79
+msgid "The resource has been saved."
+msgstr ""
+
+#: Controller/ResourcesController.php:59;83
+msgid "The resource could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ResourcesController.php:100
+msgid "The resource has been deleted."
+msgstr ""
+
+#: Controller/ResourcesController.php:102
+msgid "The resource could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/RolesController.php:45;69
+msgid "The role has been saved."
+msgstr ""
+
+#: Controller/RolesController.php:49;73
+msgid "The role could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/RolesController.php:90
+msgid "The role has been deleted."
+msgstr ""
+
+#: Controller/RolesController.php:92
+msgid "The role could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SchedulesController.php:99;128
+msgid "The schedule has been saved."
+msgstr ""
+
+#: Controller/SchedulesController.php:103;132
+msgid "The schedule could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SchedulesController.php:143
+msgid "The schedule has been deleted."
+msgstr ""
+
+#: Controller/SchedulesController.php:145
+msgid "The schedule could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SeansController copy.php:31;49
+#: Controller/SeansController.php:30;52
+msgid "The sean has been saved."
+msgstr ""
+
+#: Controller/SeansController copy.php:35;53
+#: Controller/SeansController.php:34;56
+msgid "The sean could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SeansController copy.php:64
+#: Controller/SeansController.php:67
+msgid "The sean has been deleted."
+msgstr ""
+
+#: Controller/SeansController copy.php:66
+#: Controller/SeansController.php:69
+msgid "The sean could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SeanseriesController.php:32;57
+msgid "The seanseries has been saved."
+msgstr ""
+
+#: Controller/SeanseriesController.php:36;61
+msgid "The seanseries could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SeanseriesController.php:72
+msgid "The seanseries has been deleted."
+msgstr ""
+
+#: Controller/SeanseriesController.php:74
+msgid "The seanseries could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SeasonsController.php:58;83
+msgid "The season has been saved."
+msgstr ""
+
+#: Controller/SeasonsController.php:62;87
+msgid "The season could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SeasonsController.php:105
+msgid "The season has been deleted."
+msgstr ""
+
+#: Controller/SeasonsController.php:107
+msgid "The season could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SeriesController.php:58;83
+msgid "The series has been saved."
+msgstr ""
+
+#: Controller/SeriesController.php:62;87
+msgid "The series could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SeriesController.php:105
+msgid "The series has been deleted."
+msgstr ""
+
+#: Controller/SeriesController.php:107
+msgid "The series could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ServicesController.php:55;79
+msgid "The service has been saved."
+msgstr ""
+
+#: Controller/ServicesController.php:59;83
+msgid "The service could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ServicesController.php:100
+msgid "The service has been deleted."
+msgstr ""
+
+#: Controller/ServicesController.php:102
+msgid "The service could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ShortenersController.php:29;49
+msgid "The shortener has been saved."
+msgstr ""
+
+#: Controller/ShortenersController.php:33;52
+msgid "The shortener could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ShortenersController.php:63
+msgid "The shortener has been deleted."
+msgstr ""
+
+#: Controller/ShortenersController.php:67
+msgid "The shortener could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SkillsController.php:55;79
+msgid "The skill has been saved."
+msgstr ""
+
+#: Controller/SkillsController.php:59;83
+msgid "The skill could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SkillsController.php:100
+msgid "The skill has been deleted."
+msgstr ""
+
+#: Controller/SkillsController.php:102
+msgid "The skill could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SolicitationsController.php:55;79
+msgid "The solicitation has been saved."
+msgstr ""
+
+#: Controller/SolicitationsController.php:59;83
+msgid "The solicitation could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SolicitationsController.php:100
+msgid "The solicitation has been deleted."
+msgstr ""
+
+#: Controller/SolicitationsController.php:102
+msgid "The solicitation could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SubcategoriaProdutosController.php:55;79
+msgid "The subcategoria produto has been saved."
+msgstr ""
+
+#: Controller/SubcategoriaProdutosController.php:59;83
+msgid "The subcategoria produto could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SubcategoriaProdutosController.php:100
+msgid "The subcategoria produto has been deleted."
+msgstr ""
+
+#: Controller/SubcategoriaProdutosController.php:102
+msgid "The subcategoria produto could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SubcategoryPostsController.php:58;83
+msgid "The subcategory post has been saved."
+msgstr ""
+
+#: Controller/SubcategoryPostsController.php:62;87
+msgid "The subcategory post could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SubcategoryPostsController.php:105
+msgid "The subcategory post has been deleted."
+msgstr ""
+
+#: Controller/SubcategoryPostsController.php:107
+msgid "The subcategory post could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/SubtitlesController.php:29;48
+msgid "The subtitle has been saved."
+msgstr ""
+
+#: Controller/SubtitlesController.php:32;51
+msgid "The subtitle could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/SubtitlesController.php:62
+msgid "The subtitle has been deleted."
+msgstr ""
+
+#: Controller/SubtitlesController.php:66
+msgid "The subtitle could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TablesadminsController.php:46;70
+msgid "The tablesadmin has been saved."
+msgstr ""
+
+#: Controller/TablesadminsController.php:50;74
+msgid "The tablesadmin could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TablesadminsController.php:91
+msgid "The tablesadmin has been deleted."
+msgstr ""
+
+#: Controller/TablesadminsController.php:93
+msgid "The tablesadmin could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TablesamcController.php:55;79
+msgid "The tablesamc has been saved."
+msgstr ""
+
+#: Controller/TablesamcController.php:59;83
+msgid "The tablesamc could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TablesamcController.php:100
+msgid "The tablesamc has been deleted."
+msgstr ""
+
+#: Controller/TablesamcController.php:102
+msgid "The tablesamc could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TablescolibrisController.php:55;79
+msgid "The tablescolibri has been saved."
+msgstr ""
+
+#: Controller/TablescolibrisController.php:59;83
+msgid "The tablescolibri could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TablescolibrisController.php:100
+msgid "The tablescolibri has been deleted."
+msgstr ""
+
+#: Controller/TablescolibrisController.php:102
+msgid "The tablescolibri could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TablesmypreciousController.php:59;83
+msgid "The tablesmyprecious has been saved."
+msgstr ""
+
+#: Controller/TablesmypreciousController.php:63;87
+msgid "The tablesmyprecious could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TablesmypreciousController.php:110
+msgid "The tablesmyprecious has been deleted."
+msgstr ""
+
+#: Controller/TablesmypreciousController.php:112
+msgid "The tablesmyprecious could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/TablesrootsController.php:44;64
+msgid "The tablesroot has been saved."
+msgstr ""
+
+#: Controller/TablesrootsController.php:47;67
+msgid "The tablesroot could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/TablesrootsController.php:81
+msgid "The tablesroot has been deleted."
+msgstr ""
+
+#: Controller/TablesrootsController.php:83
+msgid "The tablesroot could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UserHasUserController.php:55;79
+msgid "The user has user has been saved."
+msgstr ""
+
+#: Controller/UserHasUserController.php:59;83
+msgid "The user has user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UserHasUserController.php:100
+msgid "The user has user has been deleted."
+msgstr ""
+
+#: Controller/UserHasUserController.php:102
+msgid "The user has user could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:64;92;197;299;498
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/UsersController.php:67;95;200;304;501
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:115;390
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UsersController.php:119;395
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:148
+msgid "Nome de usuário ou password inválido..."
+msgstr ""
+
+#: Controller/UsersController.php:437
+msgid "You need to select an image."
+msgstr ""
+
+#: Controller/Component/UploadAndSaveImagesVideosUsersComponent.php:83;111
+#: Controller/Component/UploadComponent.php:50
+#: Controller/Component/UploadImageProfileComponent.php:49
+#: Controller/Component/UploadVoucherComponent.php:82;110
+msgid "The images has been saved."
+msgstr ""
+
+#: Template/Abouts/add.ctp:9
+#: Template/Abouts/edit.ctp:9
+#: Template/Abouts/index.ctp:9;27
+#: Template/Abouts/view.ctp:9
+#: Template/Accompaniments/index.ctp:9;29
+#: Template/Accompaniments/view copy.ctp:9
+#: Template/AnalizedProjects/add copy.ctp:9
+#: Template/Betas/add.ctp:9
+#: Template/Betas/edit.ctp:9
+#: Template/Betas/index.ctp:9;23
+#: Template/Betas/view.ctp:9
+#: Template/BoardsAlmostNews/add.ctp:9
+#: Template/BoardsAlmostNews/edit.ctp:9
+#: Template/BoardsAlmostNews/index.ctp:9;40
+#: Template/BoardsAlmostNews/view.ctp:9
+#: Template/BoardsCpfs/add.ctp:9
+#: Template/BoardsCpfs/edit.ctp:9
+#: Template/BoardsCpfs/index.ctp:9;22
+#: Template/BoardsCpfs/view.ctp:9
+#: Template/BoardsFinancings/edit copy.ctp:9
+#: Template/BoardsFinancings/view copy.ctp:9
+#: Template/BoardsRegions/add.ctp:9
+#: Template/BoardsRegions/edit.ctp:9
+#: Template/BoardsRegions/view.ctp:9
+#: Template/BoardsSettings/add.ctp:9
+#: Template/BoardsSettings/edit.ctp:9
+#: Template/BoardsSettings/index.ctp:9;28
+#: Template/BoardsSettings/view.ctp:9
+#: Template/CategorySidebars/add.ctp:9
+#: Template/CategorySidebars/edit.ctp:9
+#: Template/CategorySidebars/index.ctp:9;22
+#: Template/CategorySidebars/view.ctp:9
+#: Template/Changelogs/add.ctp:9
+#: Template/Changelogs/edit.ctp:9
+#: Template/Changelogs/index.ctp:9;22
+#: Template/Changelogs/view.ctp:9
+#: Template/Coins/add.ctp:9
+#: Template/Coins/edit.ctp:9
+#: Template/Coins/index.ctp:9;24
+#: Template/Coins/view.ctp:9
+#: Template/Contacts/add.ctp:9
+#: Template/Contacts/edit.ctp:9
+#: Template/Contacts/index.ctp:9;25
+#: Template/Contacts/view.ctp:9
+#: Template/CryptoCoins/add.ctp:9
+#: Template/CryptoCoins/edit.ctp:9
+#: Template/CryptoCoins/index.ctp:9;28
+#: Template/ExpensesWithDependents/add.ctp:9
+#: Template/ExpensesWithDependents/edit.ctp:9
+#: Template/ExpensesWithDependents/index.ctp:9;37
+#: Template/ExpensesWithDependents/view.ctp:9
+#: Template/ExpensesWithPets/add.ctp:9
+#: Template/ExpensesWithPets/edit.ctp:9
+#: Template/ExpensesWithPets/index.ctp:9;33
+#: Template/ExpensesWithPets/view.ctp:9
+#: Template/Footers/add.ctp:9
+#: Template/Footers/edit.ctp:9
+#: Template/Footers/index.ctp:9;21
+#: Template/Footers/view.ctp:9
+#: Template/Galerys/add.ctp:9
+#: Template/Galerys/edit.ctp:9
+#: Template/Galerys/index.ctp:9;24
+#: Template/Galerys/view.ctp:9;48
+#: Template/Homes/add.ctp:9
+#: Template/Homes/edit.ctp:9
+#: Template/Homes/index.ctp:4;26
+#: Template/Homes/view.ctp:3
+#: Template/ImageProfiles/add.ctp:3
+#: Template/ImageProfiles/edit.ctp:9
+#: Template/ImageProfiles/index.ctp:9;27
+#: Template/ImageProfiles/view.ctp:9
+#: Template/IndexSidebars/add.ctp:9
+#: Template/IndexSidebars/edit.ctp:9
+#: Template/IndexSidebars/index.ctp:3;27
+#: Template/IndexSidebars/view.ctp:9
+#: Template/Investments/add.ctp:9
+#: Template/Investments/edit.ctp:9
+#: Template/Investments/index.ctp:9;34
+#: Template/Investments/view.ctp:9;24
+#: Template/Invitation/add.ctp:9
+#: Template/Invitation/edit.ctp:9
+#: Template/Invitation/index.ctp:9;25
+#: Template/Invitation/view.ctp:9
+#: Template/Linkcoins/add.ctp:9
+#: Template/Linkcoins/edit.ctp:9
+#: Template/Linkcoins/index.ctp:9;26
+#: Template/Linkcoins/view.ctp:9
+#: Template/Menus/add.ctp:9
+#: Template/Menus/edit.ctp:9
+#: Template/Menus/index.ctp:9;27
+#: Template/Menus/view.ctp:9
+#: Template/Messages/add.ctp:9
+#: Template/Messages/edit.ctp:9
+#: Template/Messages/index.ctp:9;23
+#: Template/Messages/view.ctp:9
+#: Template/Mounths/add.ctp:9
+#: Template/Mounths/edit.ctp:9
+#: Template/Mounths/index.ctp:9;22
+#: Template/Mounths/view.ctp:9
+#: Template/MyEnvironments/add.ctp:9
+#: Template/MyEnvironments/edit.ctp:9
+#: Template/MyEnvironments/index.ctp:9;22
+#: Template/MyEnvironments/view.ctp:9
+#: Template/MypreciousTitles/add.ctp:9
+#: Template/MypreciousTitles/edit.ctp:9
+#: Template/MypreciousTitles/index.ctp:9;23
+#: Template/MypreciousTitles/view.ctp:9
+#: Template/Mytestes/add.ctp:9
+#: Template/Mytestes/edit.ctp:9
+#: Template/Mytestes/index.ctp:9;21
+#: Template/Mytestes/view.ctp:9
+#: Template/PageCategorys/add.ctp:9
+#: Template/PageCategorys/edit.ctp:9
+#: Template/PageCategorys/index.ctp:9;22
+#: Template/PageCategorys/view.ctp:9
+#: Template/PatternPayments/edit.ctp:9
+#: Template/PatternPayments/index.ctp:9;29
+#: Template/PatternPayments/view.ctp:9
+#: Template/PaymentMethods/index.ctp:9;29
+#: Template/PaymentMethods/view_by_user.ctp:30;51
+#: Template/PersonalExpenses/add.ctp:9
+#: Template/PersonalExpenses/edit.ctp:9
+#: Template/PersonalExpenses/index.ctp:9;31
+#: Template/PersonalExpenses/view.ctp:9
+#: Template/Receipts/add.ctp:9
+#: Template/Receipts/edit.ctp:9
+#: Template/Receipts/index.ctp:3;23
+#: Template/Receipts/view.ctp:9
+#: Template/Recipes/add.ctp:9
+#: Template/Recipes/edit.ctp:9
+#: Template/Recipes/index.ctp:9;36
+#: Template/Recipes/view.ctp:9
+#: Template/References/add.ctp:9
+#: Template/References/edit.ctp:9
+#: Template/References/index.ctp:9;23
+#: Template/References/view.ctp:9
+#: Template/Roles/add.ctp:9
+#: Template/Roles/edit.ctp:9
+#: Template/Roles/index.ctp:3;15;39
+#: Template/Roles/view.ctp:9
+#: Template/Tablesadmins/add.ctp:9
+#: Template/Tablesadmins/edit.ctp:9
+#: Template/Tablesadmins/index.ctp:9;23
+#: Template/Tablesadmins/view.ctp:9
+#: Template/Tablesmyprecious/add.ctp:9
+#: Template/Tablesmyprecious/edit.ctp:9
+#: Template/Tablesmyprecious/index.ctp:9;25
+#: Template/Tablesmyprecious/view.ctp:9
+#: Template/Tablesroots/add.ctp:3
+#: Template/Tablesroots/edit.ctp:9
+#: Template/Tablesroots/index.ctp:3;18;45
+#: Template/Tablesroots/view.ctp:9
+#: Template/Titles/add.ctp:9
+#: Template/Titles/edit.ctp:9
+#: Template/Titles/index.ctp:9;22
+#: Template/Titles/view.ctp:9
+#: Template/UserHasUser/add.ctp:9
+#: Template/UserHasUser/edit.ctp:9
+#: Template/UserHasUser/index.ctp:9;23
+#: Template/UserHasUser/view.ctp:9
+#: Template/Users/add.ctp:9
+#: Template/Users/edit.ctp:9
+#: Template/Users/index.ctp:3;22;56
+#: Template/Users/view.ctp:9
+#: Template/Works/add.ctp:9
+#: Template/Works/edit.ctp:9
+#: Template/Works/index.ctp:9;26
+#: Template/Works/view.ctp:9
+msgid "Actions"
+msgstr ""
+
+#: Template/Abouts/add.ctp:10
+#: Template/Abouts/edit.ctp:16
+#: Template/Abouts/view.ctp:12
+msgid "List Abouts"
+msgstr ""
+
+#: Template/Abouts/add.ctp:11
+#: Template/Abouts/edit.ctp:17
+#: Template/Abouts/index.ctp:11
+#: Template/Abouts/view.ctp:14
+#: Template/Accompaniments/index.ctp:11
+#: Template/Accompaniments/view copy.ctp:14
+#: Template/AnalizedProjects/add copy.ctp:11
+#: Template/BoardsAlmostNews/add.ctp:15
+#: Template/BoardsAlmostNews/edit.ctp:21
+#: Template/BoardsAlmostNews/index.ctp:15
+#: Template/BoardsAlmostNews/view.ctp:18
+#: Template/BoardsFinancings/edit copy.ctp:19
+#: Template/BoardsFinancings/view copy.ctp:16
+#: Template/BoardsSettings/add.ctp:11
+#: Template/BoardsSettings/edit.ctp:17
+#: Template/BoardsSettings/index.ctp:11
+#: Template/BoardsSettings/view.ctp:14
+#: Template/ExpensesWithDependents/add.ctp:13
+#: Template/ExpensesWithDependents/edit.ctp:19
+#: Template/ExpensesWithDependents/index.ctp:13
+#: Template/ExpensesWithDependents/view.ctp:16
+#: Template/ExpensesWithPets/add.ctp:13
+#: Template/ExpensesWithPets/edit.ctp:19
+#: Template/ExpensesWithPets/index.ctp:13
+#: Template/ExpensesWithPets/view.ctp:16
+#: Template/ImageProfiles/add.ctp:7
+#: Template/ImageProfiles/edit.ctp:19
+#: Template/ImageProfiles/index.ctp:13
+#: Template/ImageProfiles/view.ctp:16
+#: Template/IndexSidebars/add.ctp:15
+#: Template/IndexSidebars/edit.ctp:21
+#: Template/IndexSidebars/index.ctp:9
+#: Template/IndexSidebars/view.ctp:18
+#: Template/Investments/add.ctp:13
+#: Template/Investments/edit.ctp:19
+#: Template/Investments/index.ctp:13
+#: Template/Investments/view.ctp:16
+#: Template/PatternPayments/edit.ctp:19
+#: Template/PatternPayments/index.ctp:13
+#: Template/PatternPayments/view.ctp:16
+#: Template/PaymentMethods/index.ctp:11
+#: Template/PersonalExpenses/add.ctp:13
+#: Template/PersonalExpenses/edit.ctp:19
+#: Template/PersonalExpenses/index.ctp:13
+#: Template/PersonalExpenses/view.ctp:16
+#: Template/Recipes/add.ctp:13
+#: Template/Recipes/edit.ctp:19
+#: Template/Recipes/index.ctp:13
+#: Template/Recipes/view.ctp:16
+#: Template/Users/add.ctp:10
+#: Template/Users/edit.ctp:16
+#: Template/Users/view.ctp:12
+msgid "List Users"
+msgstr ""
+
+#: Template/Abouts/add.ctp:12
+#: Template/Abouts/edit.ctp:18
+#: Template/Abouts/index.ctp:12
+#: Template/Abouts/view.ctp:15
+#: Template/Accompaniments/index.ctp:12
+#: Template/Accompaniments/view copy.ctp:15
+#: Template/AnalizedProjects/add copy.ctp:12
+#: Template/BoardsAlmostNews/add.ctp:16
+#: Template/BoardsAlmostNews/edit.ctp:22
+#: Template/BoardsAlmostNews/index.ctp:16
+#: Template/BoardsAlmostNews/view.ctp:19
+#: Template/BoardsFinancings/edit copy.ctp:20
+#: Template/BoardsFinancings/view copy.ctp:17
+#: Template/BoardsSettings/add.ctp:12
+#: Template/BoardsSettings/edit.ctp:18
+#: Template/BoardsSettings/index.ctp:12
+#: Template/BoardsSettings/view.ctp:15
+#: Template/ExpensesWithDependents/add.ctp:14
+#: Template/ExpensesWithDependents/edit.ctp:20
+#: Template/ExpensesWithDependents/index.ctp:14
+#: Template/ExpensesWithDependents/view.ctp:17
+#: Template/ExpensesWithPets/add.ctp:14
+#: Template/ExpensesWithPets/edit.ctp:20
+#: Template/ExpensesWithPets/index.ctp:14
+#: Template/ExpensesWithPets/view.ctp:17
+#: Template/ImageProfiles/add.ctp:8
+#: Template/ImageProfiles/edit.ctp:20
+#: Template/ImageProfiles/index.ctp:14
+#: Template/ImageProfiles/view.ctp:17
+#: Template/IndexSidebars/add.ctp:16
+#: Template/IndexSidebars/edit.ctp:22
+#: Template/IndexSidebars/index.ctp:10
+#: Template/IndexSidebars/view.ctp:19
+#: Template/Investments/add.ctp:14
+#: Template/Investments/edit.ctp:20
+#: Template/Investments/index.ctp:14
+#: Template/Investments/view.ctp:17
+#: Template/PatternPayments/edit.ctp:20
+#: Template/PatternPayments/index.ctp:14
+#: Template/PatternPayments/view.ctp:17
+#: Template/PaymentMethods/index.ctp:12
+#: Template/PersonalExpenses/add.ctp:14
+#: Template/PersonalExpenses/edit.ctp:20
+#: Template/PersonalExpenses/index.ctp:14
+#: Template/PersonalExpenses/view.ctp:17
+#: Template/Recipes/add.ctp:14
+#: Template/Recipes/edit.ctp:20
+#: Template/Recipes/index.ctp:14
+#: Template/Recipes/view.ctp:17
+#: Template/Users/index.ctp:4
+#: Template/Users/view.ctp:13
+msgid "New User"
+msgstr ""
+
+#: Template/Abouts/add.ctp:18
+msgid "Add About"
+msgstr ""
+
+#: Template/Abouts/add.ctp:26
+#: Template/Abouts/edit.ctp:32
+#: Template/AnalizedProjects/add copy.ctp:27
+#: Template/Betas/add.ctp:22
+#: Template/Betas/edit.ctp:28
+#: Template/BoardsAlmostNews/add.ctp:39
+#: Template/BoardsAlmostNews/edit.ctp:45
+#: Template/BoardsCpfs/add.ctp:21
+#: Template/BoardsCpfs/edit.ctp:27
+#: Template/BoardsFinancings/edit copy.ctp:41
+#: Template/BoardsRegions/add.ctp:21
+#: Template/BoardsRegions/edit.ctp:27
+#: Template/BoardsSettings/add.ctp:27
+#: Template/BoardsSettings/edit.ctp:33
+#: Template/CategorySidebars/add.ctp:21
+#: Template/CategorySidebars/edit.ctp:27
+#: Template/Changelogs/add.ctp:22
+#: Template/Changelogs/edit.ctp:28
+#: Template/Coins/add.ctp:23
+#: Template/Coins/edit.ctp:29
+#: Template/Contacts/add.ctp:24
+#: Template/Contacts/edit.ctp:30
+#: Template/CryptoCoins/add.ctp:27
+#: Template/CryptoCoins/edit.ctp:33
+#: Template/ExpensesWithDependents/add.ctp:36
+#: Template/ExpensesWithDependents/edit.ctp:42
+#: Template/ExpensesWithPets/add.ctp:32
+#: Template/ExpensesWithPets/edit.ctp:38
+#: Template/Footers/add.ctp:21
+#: Template/Footers/edit.ctp:27
+#: Template/Galerys/add.ctp:23
+#: Template/Galerys/edit.ctp:29
+#: Template/Homes/add.ctp:32
+#: Template/Homes/edit.ctp:38
+#: Template/ImageProfiles/add.ctp:21
+#: Template/ImageProfiles/edit.ctp:33
+#: Template/IndexSidebars/add.ctp:32
+#: Template/IndexSidebars/edit.ctp:38
+#: Template/Investments/add.ctp:33
+#: Template/Investments/edit.ctp:39
+#: Template/Invitation/add.ctp:24
+#: Template/Invitation/edit.ctp:30
+#: Template/Linkcoins/add.ctp:25
+#: Template/Linkcoins/edit.ctp:31
+#: Template/Menus/add.ctp:26
+#: Template/Menus/edit.ctp:32
+#: Template/Messages/add.ctp:23
+#: Template/Messages/edit.ctp:29
+#: Template/Mounths/add.ctp:21
+#: Template/Mounths/edit.ctp:27
+#: Template/MyEnvironments/add.ctp:21
+#: Template/MyEnvironments/edit.ctp:27
+#: Template/MypreciousTitles/add.ctp:22
+#: Template/MypreciousTitles/edit.ctp:28
+#: Template/Mytestes/add.ctp:22
+#: Template/Mytestes/edit.ctp:28
+#: Template/PageCategorys/add.ctp:21
+#: Template/PageCategorys/edit.ctp:27
+#: Template/PatternPayments/add.ctp:18
+#: Template/PatternPayments/edit.ctp:35
+#: Template/PaymentMethods/add.ctp:22
+#: Template/PaymentMethods/edit.ctp:17
+#: Template/PersonalExpenses/add.ctp:30
+#: Template/PersonalExpenses/edit.ctp:36
+#: Template/Receipts/add.ctp:29
+#: Template/Receipts/edit.ctp:35
+#: Template/Recipes/add.ctp:35
+#: Template/Recipes/edit.ctp:41
+#: Template/References/add.ctp:22
+#: Template/References/edit.ctp:28
+#: Template/Roles/add.ctp:21
+#: Template/Roles/edit.ctp:27
+#: Template/Tablesadmins/add.ctp:23
+#: Template/Tablesadmins/edit.ctp:29
+#: Template/Tablesmyprecious/add.ctp:23
+#: Template/Tablesmyprecious/edit.ctp:30
+#: Template/Tablesroots/add.ctp:17
+#: Template/Tablesroots/edit.ctp:29
+#: Template/Titles/add.ctp:21
+#: Template/Titles/edit.ctp:27
+#: Template/UserHasUser/add.ctp:22
+#: Template/UserHasUser/edit.ctp:28
+#: Template/Users/add.ctp:30
+#: Template/Users/edit.ctp:36
+#: Template/Users/update_password.ctp:17
+#: Template/Works/add.ctp:25
+#: Template/Works/edit.ctp:31
+msgid "Submit"
+msgstr ""
+
+#: Template/Abouts/edit.ctp:11
+#: Template/Abouts/index.ctp:43
+#: Template/Accompaniments/index.ctp:47
+#: Template/Betas/edit.ctp:11
+#: Template/Betas/index.ctp:37
+#: Template/BoardsAlmostNews/edit.ctp:11
+#: Template/BoardsAlmostNews/index.ctp:65
+#: Template/BoardsCnhs/view.ctp:1
+#: Template/BoardsCpfs/edit.ctp:11
+#: Template/BoardsCpfs/index.ctp:35
+#: Template/BoardsFinancings/edit copy.ctp:11
+#: Template/BoardsFinancings/view.ctp:4
+#: Template/BoardsInformations/view.ctp:4
+#: Template/BoardsRegions/edit.ctp:11
+#: Template/BoardsSettings/edit.ctp:11
+#: Template/BoardsSettings/index.ctp:45
+#: Template/CategorySidebars/edit.ctp:11
+#: Template/CategorySidebars/index.ctp:35
+#: Template/Changelogs/edit.ctp:11
+#: Template/Changelogs/index.ctp:35
+#: Template/Coins/edit.ctp:11
+#: Template/Coins/index.ctp:39
+#: Template/Contacts/edit.ctp:11
+#: Template/Contacts/index.ctp:41
+#: Template/CryptoCoins/edit.ctp:11
+#: Template/CryptoCoins/index.ctp:47
+#: Template/ExpensesWithDependents/edit.ctp:11
+#: Template/ExpensesWithDependents/index.ctp:61
+#: Template/ExpensesWithPets/edit.ctp:11
+#: Template/ExpensesWithPets/index.ctp:53
+#: Template/Footers/edit.ctp:11
+#: Template/Footers/index.ctp:33
+#: Template/Galerys/edit.ctp:11
+#: Template/Galerys/index.ctp:37
+#: Template/Galerys/view.ctp:60
+#: Template/Homes/edit.ctp:11
+#: Template/Homes/index.ctp:42
+#: Template/ImageProfiles/edit.ctp:11
+#: Template/ImageProfiles/index.ctp:41
+#: Template/IndexSidebars/edit.ctp:11
+#: Template/IndexSidebars/index.ctp:45
+#: Template/Investments/edit.ctp:11
+#: Template/Investments/index.ctp:55
+#: Template/Invitation/edit.ctp:11
+#: Template/Invitation/index.ctp:41
+#: Template/Linkcoins/edit.ctp:11
+#: Template/Linkcoins/index.ctp:41
+#: Template/Menus/edit.ctp:11
+#: Template/Menus/index.ctp:43
+#: Template/Messages/edit.ctp:11
+#: Template/Messages/index.ctp:37
+#: Template/Mounths/edit.ctp:11
+#: Template/Mounths/index.ctp:35
+#: Template/MyEnvironments/edit.ctp:11
+#: Template/MyEnvironments/index.ctp:35
+#: Template/MypreciousTitles/edit.ctp:11
+#: Template/MypreciousTitles/index.ctp:37
+#: Template/Mytestes/edit.ctp:11
+#: Template/Mytestes/index.ctp:33
+#: Template/PageCategorys/edit.ctp:11
+#: Template/PageCategorys/index.ctp:35
+#: Template/PatternPayments/edit.ctp:11
+#: Template/PatternPayments/index.ctp:45
+#: Template/PaymentMethods/index.ctp:45
+#: Template/PersonalExpenses/edit.ctp:11
+#: Template/PersonalExpenses/index.ctp:49
+#: Template/Receipts/edit.ctp:11
+#: Template/Receipts/index.ctp:43
+#: Template/Recipes/edit.ctp:11
+#: Template/Recipes/index.ctp:59
+#: Template/References/edit.ctp:11
+#: Template/References/index.ctp:37
+#: Template/Roles/edit.ctp:11
+#: Template/Roles/index.ctp:28
+#: Template/Tablesadmins/edit.ctp:11
+#: Template/Tablesadmins/index.ctp:38
+#: Template/Tablesmyprecious/edit.ctp:11
+#: Template/Tablesmyprecious/index.ctp:41
+#: Template/Tablesmyprecious/view.ctp:11
+#: Template/Tablesroots/edit.ctp:11
+#: Template/Tablesroots/index.ctp:32
+#: Template/Titles/edit.ctp:11
+#: Template/Titles/index.ctp:35
+#: Template/UserHasUser/edit.ctp:11
+#: Template/UserHasUser/index.ctp:37
+#: Template/Users/edit.ctp:11
+#: Template/Users/index.ctp:40
+#: Template/Works/edit.ctp:11
+#: Template/Works/index.ctp:43
+msgid "Delete"
+msgstr ""
+
+#: Template/Abouts/edit.ctp:13
+#: Template/Abouts/index.ctp:43
+#: Template/Abouts/view.ctp:11
+#: Template/Accompaniments/front.ctp:40
+#: Template/Accompaniments/index.ctp:47
+#: Template/Accompaniments/view copy.ctp:11
+#: Template/Accompaniments/view.ctp:1
+#: Template/AnalizedProjects/index.ctp:48;105
+#: Template/AnalizedProjects/view.ctp:1
+#: Template/AnalizedProjectsNotes/index.ctp:38
+#: Template/Betas/edit.ctp:13
+#: Template/Betas/index.ctp:37
+#: Template/Betas/view.ctp:11
+#: Template/BoardsAlmostNews/edit.ctp:13
+#: Template/BoardsAlmostNews/index.ctp:65
+#: Template/BoardsAlmostNews/view.ctp:11
+#: Template/BoardsCnhs/view.ctp:1
+#: Template/BoardsCpfs/edit.ctp:13
+#: Template/BoardsCpfs/index.ctp:35
+#: Template/BoardsCpfs/view.ctp:11
+#: Template/BoardsFinancings/edit copy.ctp:13
+#: Template/BoardsFinancings/view copy.ctp:11
+#: Template/BoardsFinancings/view.ctp:4
+#: Template/BoardsInformations/view.ctp:4
+#: Template/BoardsRegions/edit.ctp:13
+#: Template/BoardsRegions/view.ctp:11
+#: Template/BoardsSettings/edit.ctp:13
+#: Template/BoardsSettings/index.ctp:45
+#: Template/BoardsSettings/view.ctp:11
+#: Template/CategorySidebars/edit.ctp:13
+#: Template/CategorySidebars/index.ctp:35
+#: Template/CategorySidebars/view.ctp:11
+#: Template/Changelogs/edit.ctp:13
+#: Template/Changelogs/index.ctp:35
+#: Template/Changelogs/view.ctp:11
+#: Template/Coins/edit.ctp:13
+#: Template/Coins/index.ctp:39
+#: Template/Coins/view.ctp:11
+#: Template/Contacts/edit.ctp:13
+#: Template/Contacts/index.ctp:41
+#: Template/Contacts/view.ctp:11
+#: Template/CryptoCoins/edit.ctp:13
+#: Template/CryptoCoins/index.ctp:47
+#: Template/Defis/index.ctp:57
+#: Template/Defis/view.ctp:1
+#: Template/ExpensesWithDependents/edit.ctp:13
+#: Template/ExpensesWithDependents/index.ctp:61
+#: Template/ExpensesWithDependents/view.ctp:11
+#: Template/ExpensesWithPets/edit.ctp:13
+#: Template/ExpensesWithPets/index.ctp:53
+#: Template/ExpensesWithPets/view.ctp:11
+#: Template/Footers/edit.ctp:13
+#: Template/Footers/index.ctp:33
+#: Template/Footers/view.ctp:11
+#: Template/Galerys/edit.ctp:13
+#: Template/Galerys/index.ctp:37
+#: Template/Galerys/view.ctp:11;60
+#: Template/Homes/edit.ctp:13
+#: Template/Homes/index.ctp:42
+#: Template/Homes/view.ctp:5
+#: Template/ImageProfiles/edit.ctp:13
+#: Template/ImageProfiles/index.ctp:41
+#: Template/ImageProfiles/view.ctp:11
+#: Template/IndexSidebars/edit.ctp:13
+#: Template/IndexSidebars/index.ctp:45
+#: Template/IndexSidebars/view.ctp:11
+#: Template/Investments/edit.ctp:13
+#: Template/Investments/index.ctp:55
+#: Template/Investments/view.ctp:11
+#: Template/Invitation/edit.ctp:13
+#: Template/Invitation/index.ctp:41
+#: Template/Invitation/view.ctp:11
+#: Template/Linkcoins/edit.ctp:13
+#: Template/Linkcoins/index.ctp:41
+#: Template/Linkcoins/view.ctp:11
+#: Template/Menus/edit.ctp:13
+#: Template/Menus/index.ctp:43
+#: Template/Menus/view.ctp:11
+#: Template/Messages/edit.ctp:13
+#: Template/Messages/index.ctp:37
+#: Template/Messages/view.ctp:11
+#: Template/Mounths/edit.ctp:13
+#: Template/Mounths/index.ctp:35
+#: Template/Mounths/view.ctp:11
+#: Template/MyCoins/index.ctp:48
+#: Template/MyCoins/view.ctp:2
+#: Template/MyEnvironments/edit.ctp:13
+#: Template/MyEnvironments/index.ctp:35
+#: Template/MyEnvironments/view.ctp:11
+#: Template/MyReferences/index.ctp:39
+#: Template/MyReferences/view.ctp:1
+#: Template/MypreciousTitles/edit.ctp:13
+#: Template/MypreciousTitles/index.ctp:37
+#: Template/MypreciousTitles/view.ctp:11
+#: Template/Mytestes/edit.ctp:13
+#: Template/Mytestes/index.ctp:33
+#: Template/Mytestes/view.ctp:11
+#: Template/Nfts/index.ctp:34
+#: Template/Nfts/view.ctp:1
+#: Template/Opportunitys/index.ctp:34
+#: Template/Opportunitys/view.ctp:1
+#: Template/PageCategorys/edit.ctp:13
+#: Template/PageCategorys/index.ctp:35
+#: Template/PageCategorys/view.ctp:11
+#: Template/PatternPayments/edit.ctp:13
+#: Template/PatternPayments/index.ctp:45
+#: Template/PatternPayments/view.ctp:11
+#: Template/PaymentMethods/index.ctp:45
+#: Template/PersonalExpenses/edit.ctp:13
+#: Template/PersonalExpenses/index.ctp:49
+#: Template/PersonalExpenses/view.ctp:11
+#: Template/Receipts/edit.ctp:13
+#: Template/Receipts/index.ctp:43
+#: Template/Receipts/view.ctp:11
+#: Template/Recipes/edit.ctp:13
+#: Template/Recipes/index.ctp:59
+#: Template/Recipes/view.ctp:11
+#: Template/References/edit.ctp:13
+#: Template/References/index.ctp:37
+#: Template/References/view.ctp:11
+#: Template/Roles/edit.ctp:13
+#: Template/Roles/index.ctp:28
+#: Template/Roles/view.ctp:11
+#: Template/Tablesadmins/edit.ctp:13
+#: Template/Tablesadmins/index.ctp:38
+#: Template/Tablesadmins/view.ctp:11
+#: Template/Tablesmyprecious/edit.ctp:13
+#: Template/Tablesmyprecious/index.ctp:41
+#: Template/Tablesmyprecious/view.ctp:11
+#: Template/Tablesroots/edit.ctp:13
+#: Template/Tablesroots/index.ctp:32
+#: Template/Tablesroots/view.ctp:11
+#: Template/Titles/edit.ctp:13
+#: Template/Titles/index.ctp:35
+#: Template/Titles/view.ctp:11
+#: Template/UserHasUser/edit.ctp:13
+#: Template/UserHasUser/index.ctp:37
+#: Template/UserHasUser/view.ctp:11
+#: Template/Users/edit.ctp:13
+#: Template/Users/index.ctp:40
+#: Template/Users/view.ctp:11
+#: Template/Works/edit.ctp:13
+#: Template/Works/index.ctp:43
+#: Template/Works/view.ctp:11
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Abouts/edit.ctp:24
+#: Template/Abouts/view.ctp:10
+msgid "Edit About"
+msgstr ""
+
+#: Template/Abouts/index.ctp:10
+#: Template/Abouts/view.ctp:13
+msgid "New About"
+msgstr ""
+
+#: Template/Abouts/index.ctp:16
+msgid "Abouts"
+msgstr ""
+
+#: Template/Abouts/index.ctp:41
+#: Template/Accompaniments/index.ctp:45
+#: Template/Betas/index.ctp:35
+#: Template/BoardsAlmostNews/index.ctp:63
+#: Template/BoardsCpfs/index.ctp:33
+#: Template/BoardsSettings/index.ctp:43
+#: Template/CategorySidebars/index.ctp:33
+#: Template/Changelogs/index.ctp:33
+#: Template/Coins/index.ctp:37
+#: Template/Contacts/index.ctp:39
+#: Template/CryptoCoins/index.ctp:45
+#: Template/ExpensesWithDependents/index.ctp:59
+#: Template/ExpensesWithPets/index.ctp:51
+#: Template/Footers/index.ctp:31
+#: Template/Galerys/index.ctp:35
+#: Template/Galerys/view.ctp:58
+#: Template/Homes/index.ctp:40
+#: Template/ImageProfiles/index.ctp:39
+#: Template/IndexSidebars/index.ctp:43
+#: Template/Investments/index.ctp:53
+#: Template/Invitation/index.ctp:39
+#: Template/Linkcoins/index.ctp:39
+#: Template/Menus/index.ctp:41
+#: Template/Messages/index.ctp:35
+#: Template/Mounths/index.ctp:33
+#: Template/MyEnvironments/index.ctp:33
+#: Template/MypreciousTitles/index.ctp:35
+#: Template/Mytestes/index.ctp:31
+#: Template/PageCategorys/index.ctp:33
+#: Template/PatternPayments/index.ctp:43
+#: Template/PaymentMethods/index.ctp:43
+#: Template/PaymentMethods/view_by_user.ctp:40
+#: Template/PersonalExpenses/index.ctp:47
+#: Template/Receipts/index.ctp:41
+#: Template/Recipes/index.ctp:57
+#: Template/References/index.ctp:35
+#: Template/Roles/index.ctp:26
+#: Template/Tablesadmins/index.ctp:36
+#: Template/Tablesmyprecious/index.ctp:39
+#: Template/Titles/index.ctp:33
+#: Template/UserHasUser/index.ctp:35
+#: Template/Users/index.ctp:38
+#: Template/Works/index.ctp:41
+msgid "View"
+msgstr ""
+
+#: Template/Abouts/index.ctp:42
+#: Template/Accompaniments/edit.ctp:88
+#: Template/Accompaniments/index.ctp:46
+#: Template/AnalizedProjects/edit.ctp:64
+#: Template/Betas/index.ctp:36
+#: Template/BoardsAlmostNews/index.ctp:64
+#: Template/BoardsClients/edit.ctp:43
+#: Template/BoardsCnhs/edit.ctp:25
+#: Template/BoardsCpfs/index.ctp:34
+#: Template/BoardsInformations/edit.ctp:130
+#: Template/BoardsSettings/index.ctp:44
+#: Template/BoardsSettings/site_edit.ctp:25
+#: Template/CategorySidebars/index.ctp:34
+#: Template/Changelogs/index.ctp:34
+#: Template/Coins/index.ctp:38
+#: Template/Contacts/index.ctp:40
+#: Template/CryptoCoins/index.ctp:46
+#: Template/Defis/edit.ctp:59
+#: Template/ExpensesWithDependents/index.ctp:60
+#: Template/ExpensesWithPets/index.ctp:52
+#: Template/Footers/index.ctp:32
+#: Template/Galerys/index.ctp:36
+#: Template/Galerys/view.ctp:59
+#: Template/Homes/index.ctp:41
+#: Template/ImageProfiles/index.ctp:40
+#: Template/IndexSidebars/index.ctp:44
+#: Template/Investments/index.ctp:54
+#: Template/Invitation/index.ctp:40
+#: Template/Linkcoins/index.ctp:40
+#: Template/Menus/index.ctp:42
+#: Template/Messages/index.ctp:36
+#: Template/Mounths/index.ctp:34
+#: Template/MyCoins/edit.ctp:41
+#: Template/MyEnvironments/index.ctp:34
+#: Template/MyReferences/edit.ctp:34
+#: Template/MypreciousTitles/index.ctp:36
+#: Template/Mytestes/index.ctp:32
+#: Template/Nfts/edit.ctp:57
+#: Template/Opportunitys/edit.ctp:41
+#: Template/PageCategorys/index.ctp:34
+#: Template/PatternPayments/index.ctp:44
+#: Template/PaymentMethods/index.ctp:44
+#: Template/PaymentMethods/view_by_user.ctp:41
+#: Template/PersonalExpenses/index.ctp:48
+#: Template/Receipts/index.ctp:42
+#: Template/Recipes/index.ctp:58
+#: Template/References/index.ctp:36
+#: Template/Roles/index.ctp:27
+#: Template/Tablesadmins/index.ctp:37
+#: Template/Tablesmyprecious/index.ctp:40
+#: Template/Tablesmyprecious/view.ctp:10
+#: Template/Tablesroots/index.ctp:31
+#: Template/Titles/index.ctp:34
+#: Template/UserHasUser/index.ctp:36
+#: Template/Users/editcommon.ctp:57;137
+#: Template/Users/index.ctp:39
+#: Template/Works/index.ctp:42
+msgid "Edit"
+msgstr ""
+
+#: Template/Abouts/index.ctp:51
+#: Template/Accompaniments/index.ctp:55
+#: Template/Betas/index.ctp:45
+#: Template/BoardsAlmostNews/index.ctp:73
+#: Template/BoardsCpfs/index.ctp:43
+#: Template/BoardsSettings/index.ctp:53
+#: Template/CategorySidebars/index.ctp:43
+#: Template/Changelogs/index.ctp:43
+#: Template/Coins/index.ctp:47
+#: Template/Contacts/index.ctp:49
+#: Template/CryptoCoins/index.ctp:55
+#: Template/ExpensesWithDependents/index.ctp:69
+#: Template/ExpensesWithPets/index.ctp:61
+#: Template/Footers/index.ctp:41
+#: Template/Galerys/index.ctp:45
+#: Template/Homes/index.ctp:50
+#: Template/ImageProfiles/index.ctp:49
+#: Template/IndexSidebars/index.ctp:53
+#: Template/Investments/index.ctp:63
+#: Template/Invitation/index.ctp:49
+#: Template/Linkcoins/index.ctp:49
+#: Template/Menus/index.ctp:51
+#: Template/Messages/index.ctp:45
+#: Template/Mounths/index.ctp:43
+#: Template/MyEnvironments/index.ctp:43
+#: Template/MypreciousTitles/index.ctp:45
+#: Template/Mytestes/index.ctp:41
+#: Template/PageCategorys/index.ctp:43
+#: Template/PatternPayments/index.ctp:53
+#: Template/PaymentMethods/index.ctp:53
+#: Template/PersonalExpenses/index.ctp:57
+#: Template/Receipts/index.ctp:51
+#: Template/Recipes/index.ctp:67
+#: Template/References/index.ctp:45
+#: Template/Tablesadmins/index.ctp:46
+#: Template/Tablesmyprecious/index.ctp:49
+#: Template/Titles/index.ctp:43
+#: Template/UserHasUser/index.ctp:45
+#: Template/Works/index.ctp:51
+msgid "first"
+msgstr ""
+
+#: Template/Abouts/index.ctp:52
+#: Template/Accompaniments/index.ctp:56
+#: Template/Betas/index.ctp:46
+#: Template/BoardsAlmostNews/index.ctp:74
+#: Template/BoardsCpfs/index.ctp:44
+#: Template/BoardsSettings/index.ctp:54
+#: Template/CategorySidebars/index.ctp:44
+#: Template/Changelogs/index.ctp:44
+#: Template/Coins/index.ctp:48
+#: Template/Contacts/index.ctp:50
+#: Template/CryptoCoins/index.ctp:56
+#: Template/ExpensesWithDependents/index.ctp:70
+#: Template/ExpensesWithPets/index.ctp:62
+#: Template/Footers/index.ctp:42
+#: Template/Galerys/index.ctp:46
+#: Template/Homes/index.ctp:51
+#: Template/ImageProfiles/index.ctp:50
+#: Template/IndexSidebars/index.ctp:54
+#: Template/Investments/index.ctp:64
+#: Template/Invitation/index.ctp:50
+#: Template/Linkcoins/index.ctp:50
+#: Template/Menus/index.ctp:52
+#: Template/Messages/index.ctp:46
+#: Template/Mounths/index.ctp:44
+#: Template/MyEnvironments/index.ctp:44
+#: Template/MypreciousTitles/index.ctp:46
+#: Template/Mytestes/index.ctp:42
+#: Template/PageCategorys/index.ctp:44
+#: Template/PatternPayments/index.ctp:54
+#: Template/PaymentMethods/index.ctp:54
+#: Template/PersonalExpenses/index.ctp:58
+#: Template/Receipts/index.ctp:52
+#: Template/Recipes/index.ctp:68
+#: Template/References/index.ctp:46
+#: Template/Tablesadmins/index.ctp:47
+#: Template/Tablesmyprecious/index.ctp:50
+#: Template/Titles/index.ctp:44
+#: Template/UserHasUser/index.ctp:46
+#: Template/Works/index.ctp:52
+msgid "previous"
+msgstr ""
+
+#: Template/Abouts/index.ctp:54
+#: Template/Accompaniments/index.ctp:58
+#: Template/Betas/index.ctp:48
+#: Template/BoardsAlmostNews/index.ctp:76
+#: Template/BoardsCpfs/index.ctp:46
+#: Template/BoardsSettings/index.ctp:56
+#: Template/CategorySidebars/index.ctp:46
+#: Template/Changelogs/index.ctp:46
+#: Template/Coins/index.ctp:50
+#: Template/Contacts/index.ctp:52
+#: Template/CryptoCoins/index.ctp:58
+#: Template/ExpensesWithDependents/index.ctp:72
+#: Template/ExpensesWithPets/index.ctp:64
+#: Template/Footers/index.ctp:44
+#: Template/Galerys/index.ctp:48
+#: Template/Homes/index.ctp:53
+#: Template/ImageProfiles/index.ctp:52
+#: Template/IndexSidebars/index.ctp:56
+#: Template/Investments/index.ctp:66
+#: Template/Invitation/index.ctp:52
+#: Template/Linkcoins/index.ctp:52
+#: Template/Menus/index.ctp:54
+#: Template/Messages/index.ctp:48
+#: Template/Mounths/index.ctp:46
+#: Template/MyEnvironments/index.ctp:46
+#: Template/MypreciousTitles/index.ctp:48
+#: Template/Mytestes/index.ctp:44
+#: Template/PageCategorys/index.ctp:46
+#: Template/PatternPayments/index.ctp:56
+#: Template/PaymentMethods/index.ctp:56
+#: Template/PersonalExpenses/index.ctp:60
+#: Template/Receipts/index.ctp:54
+#: Template/Recipes/index.ctp:70
+#: Template/References/index.ctp:48
+#: Template/Tablesadmins/index.ctp:49
+#: Template/Tablesmyprecious/index.ctp:52
+#: Template/Titles/index.ctp:46
+#: Template/UserHasUser/index.ctp:48
+#: Template/Works/index.ctp:54
+msgid "next"
+msgstr ""
+
+#: Template/Abouts/index.ctp:55
+#: Template/Accompaniments/index.ctp:59
+#: Template/Betas/index.ctp:49
+#: Template/BoardsAlmostNews/index.ctp:77
+#: Template/BoardsCpfs/index.ctp:47
+#: Template/BoardsSettings/index.ctp:57
+#: Template/CategorySidebars/index.ctp:47
+#: Template/Changelogs/index.ctp:47
+#: Template/Coins/index.ctp:51
+#: Template/Contacts/index.ctp:53
+#: Template/CryptoCoins/index.ctp:59
+#: Template/ExpensesWithDependents/index.ctp:73
+#: Template/ExpensesWithPets/index.ctp:65
+#: Template/Footers/index.ctp:45
+#: Template/Galerys/index.ctp:49
+#: Template/Homes/index.ctp:54
+#: Template/ImageProfiles/index.ctp:53
+#: Template/IndexSidebars/index.ctp:57
+#: Template/Investments/index.ctp:67
+#: Template/Invitation/index.ctp:53
+#: Template/Linkcoins/index.ctp:53
+#: Template/Menus/index.ctp:55
+#: Template/Messages/index.ctp:49
+#: Template/Mounths/index.ctp:47
+#: Template/MyEnvironments/index.ctp:47
+#: Template/MypreciousTitles/index.ctp:49
+#: Template/Mytestes/index.ctp:45
+#: Template/PageCategorys/index.ctp:47
+#: Template/PatternPayments/index.ctp:57
+#: Template/PaymentMethods/index.ctp:57
+#: Template/PersonalExpenses/index.ctp:61
+#: Template/Receipts/index.ctp:55
+#: Template/Recipes/index.ctp:71
+#: Template/References/index.ctp:49
+#: Template/Tablesadmins/index.ctp:50
+#: Template/Tablesmyprecious/index.ctp:53
+#: Template/Titles/index.ctp:47
+#: Template/UserHasUser/index.ctp:49
+#: Template/Works/index.ctp:55
+msgid "last"
+msgstr ""
+
+#: Template/Abouts/index.ctp:57
+#: Template/Accompaniments/index.ctp:61
+#: Template/Betas/index.ctp:51
+#: Template/BoardsAlmostNews/index.ctp:79
+#: Template/BoardsCpfs/index.ctp:49
+#: Template/BoardsSettings/index.ctp:59
+#: Template/CategorySidebars/index.ctp:49
+#: Template/Changelogs/index.ctp:49
+#: Template/Coins/index.ctp:53
+#: Template/Contacts/index.ctp:55
+#: Template/CryptoCoins/index.ctp:61
+#: Template/ExpensesWithDependents/index.ctp:75
+#: Template/ExpensesWithPets/index.ctp:67
+#: Template/Footers/index.ctp:47
+#: Template/Galerys/index.ctp:51
+#: Template/Homes/index.ctp:56
+#: Template/ImageProfiles/index.ctp:55
+#: Template/IndexSidebars/index.ctp:59
+#: Template/Investments/index.ctp:69
+#: Template/Invitation/index.ctp:55
+#: Template/Linkcoins/index.ctp:55
+#: Template/Menus/index.ctp:57
+#: Template/Messages/index.ctp:51
+#: Template/Mounths/index.ctp:49
+#: Template/MyEnvironments/index.ctp:49
+#: Template/MypreciousTitles/index.ctp:51
+#: Template/Mytestes/index.ctp:47
+#: Template/PageCategorys/index.ctp:49
+#: Template/PatternPayments/index.ctp:59
+#: Template/PaymentMethods/index.ctp:59
+#: Template/PersonalExpenses/index.ctp:63
+#: Template/Receipts/index.ctp:57
+#: Template/Recipes/index.ctp:73
+#: Template/References/index.ctp:51
+#: Template/Tablesadmins/index.ctp:52
+#: Template/Tablesmyprecious/index.ctp:55
+#: Template/Titles/index.ctp:49
+#: Template/UserHasUser/index.ctp:51
+#: Template/Works/index.ctp:57
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr ""
+
+#: Template/Abouts/view.ctp:11
+msgid "Delete About"
+msgstr ""
+
+#: Template/Abouts/view.ctp:22
+msgid "Education"
+msgstr ""
+
+#: Template/Abouts/view.ctp:26
+msgid "Location"
+msgstr ""
+
+#: Template/Abouts/view.ctp:30
+#: Template/PatternPayments/view.ctp:53
+msgid "Note"
+msgstr ""
+
+#: Template/Abouts/view.ctp:34
+#: Template/Accompaniments/view copy.ctp:42
+#: Template/BoardsAlmostNews/view.ctp:62
+#: Template/BoardsFinancings/view copy.ctp:48
+#: Template/BoardsFinancings/view.ctp:39
+#: Template/BoardsSettings/view.ctp:34
+#: Template/ExpensesWithDependents/view.ctp:68
+#: Template/ExpensesWithPets/view.ctp:52
+#: Template/ImageProfiles/view.ctp:39
+#: Template/IndexSidebars/view.ctp:46
+#: Template/Investments/view.ctp:56
+#: Template/PatternPayments/view.ctp:28
+#: Template/PersonalExpenses/view.ctp:44
+#: Template/Recipes/view.ctp:64
+msgid "User"
+msgstr ""
+
+#: Template/Abouts/view.ctp:38
+#: Template/Accompaniments/view copy.ctp:46
+#: Template/Betas/view.ctp:24
+#: Template/BoardsAlmostNews/view.ctp:66
+#: Template/BoardsCpfs/view.ctp:24
+#: Template/BoardsFinancings/view copy.ctp:52
+#: Template/BoardsRegions/view.ctp:24
+#: Template/BoardsSettings/view.ctp:38
+#: Template/CategorySidebars/view.ctp:24
+#: Template/Changelogs/view.ctp:24
+#: Template/Coins/view.ctp:32
+#: Template/Contacts/view.ctp:36
+#: Template/ExpensesWithDependents/view.ctp:72
+#: Template/ExpensesWithPets/view.ctp:56
+#: Template/Footers/view.ctp:20
+#: Template/Galerys/view.ctp:26;43
+#: Template/Homes/view.ctp:13
+#: Template/ImageProfiles/view.ctp:43
+#: Template/IndexSidebars/view.ctp:50
+#: Template/Investments/view.ctp:60
+#: Template/Invitation/view.ctp:32
+#: Template/Linkcoins/view.ctp:30
+#: Template/Menus/view.ctp:34
+#: Template/Messages/view.ctp:28
+#: Template/Mounths/view.ctp:24
+#: Template/MyEnvironments/view.ctp:24
+#: Template/MypreciousTitles/view.ctp:28
+#: Template/Mytestes/view.ctp:20
+#: Template/PageCategorys/view.ctp:24
+#: Template/PatternPayments/view.ctp:36
+#: Template/PersonalExpenses/view.ctp:48
+#: Template/Receipts/view.ctp:48
+#: Template/Recipes/view.ctp:68
+#: Template/References/view.ctp:28
+#: Template/Roles/view.ctp:24
+#: Template/Tablesadmins/view.ctp:32
+#: Template/Tablesmyprecious/view.ctp:32
+#: Template/Tablesroots/view.ctp:32
+#: Template/Titles/view.ctp:24
+#: Template/UserHasUser/view.ctp:20
+#: Template/Users/view.ctp:50
+#: Template/Works/view.ctp:40
+msgid "Id"
+msgstr ""
+
+#: Template/Abouts/view.ctp:42
+#: Template/Accompaniments/view copy.ctp:50
+#: Template/Accompaniments/view.ctp:31
+#: Template/Betas/view.ctp:28
+#: Template/BoardsAlmostNews/view.ctp:82
+#: Template/BoardsCnhs/view.ctp:13
+#: Template/BoardsCpfs/view.ctp:28
+#: Template/BoardsFinancings/view copy.ctp:72
+#: Template/BoardsRegions/view.ctp:28
+#: Template/BoardsSettings/view.ctp:42
+#: Template/CategorySidebars/view.ctp:28
+#: Template/Changelogs/view.ctp:28
+#: Template/Coins/view.ctp:36
+#: Template/Contacts/view.ctp:40
+#: Template/ExpensesWithDependents/view.ctp:76
+#: Template/ExpensesWithPets/view.ctp:60
+#: Template/Footers/view.ctp:24
+#: Template/Galerys/view.ctp:30;46
+#: Template/ImageProfiles/view.ctp:47
+#: Template/IndexSidebars/view.ctp:54
+#: Template/Investments/view.ctp:64
+#: Template/Invitation/view.ctp:40
+#: Template/Linkcoins/view.ctp:38
+#: Template/Menus/view.ctp:38
+#: Template/Messages/view.ctp:32
+#: Template/Mounths/view.ctp:28
+#: Template/MyCoins/view.ctp:19
+#: Template/MyEnvironments/view.ctp:28
+#: Template/MyReferences/view.ctp:14
+#: Template/MypreciousTitles/view.ctp:32
+#: Template/Opportunitys/view.ctp:18
+#: Template/PageCategorys/view.ctp:28
+#: Template/PatternPayments/view.ctp:44
+#: Template/PersonalExpenses/view.ctp:52
+#: Template/Receipts/view.ctp:56
+#: Template/Recipes/view.ctp:72
+#: Template/References/view.ctp:32
+#: Template/Roles/view.ctp:28
+#: Template/Tablesadmins/view.ctp:36
+#: Template/Tablesmyprecious/view.ctp:40
+#: Template/Tablesroots/view.ctp:36
+#: Template/Titles/view.ctp:28
+#: Template/UserHasUser/view.ctp:32
+#: Template/Users/view.ctp:54
+#: Template/Works/view.ctp:44
+msgid "Created"
+msgstr ""
+
+#: Template/Abouts/view.ctp:46
+#: Template/Accompaniments/view copy.ctp:54
+#: Template/Accompaniments/view.ctp:35
+#: Template/Betas/view.ctp:32
+#: Template/BoardsAlmostNews/view.ctp:86
+#: Template/BoardsCpfs/view.ctp:32
+#: Template/BoardsFinancings/view copy.ctp:76
+#: Template/BoardsRegions/view.ctp:32
+#: Template/BoardsSettings/view.ctp:46
+#: Template/CategorySidebars/view.ctp:32
+#: Template/Changelogs/view.ctp:32
+#: Template/Coins/view.ctp:40
+#: Template/Contacts/view.ctp:44
+#: Template/ExpensesWithDependents/view.ctp:80
+#: Template/ExpensesWithPets/view.ctp:64
+#: Template/Footers/view.ctp:28
+#: Template/Galerys/view.ctp:34;47
+#: Template/ImageProfiles/view.ctp:51
+#: Template/IndexSidebars/view.ctp:58
+#: Template/Investments/view.ctp:68
+#: Template/Invitation/view.ctp:44
+#: Template/Linkcoins/view.ctp:42
+#: Template/Menus/view.ctp:42
+#: Template/Messages/view.ctp:36
+#: Template/Mounths/view.ctp:32
+#: Template/MyCoins/view.ctp:23
+#: Template/MyEnvironments/view.ctp:32
+#: Template/MyReferences/view.ctp:18
+#: Template/MypreciousTitles/view.ctp:36
+#: Template/Opportunitys/view.ctp:22
+#: Template/PageCategorys/view.ctp:32
+#: Template/PatternPayments/view.ctp:48
+#: Template/PersonalExpenses/view.ctp:56
+#: Template/Receipts/view.ctp:60
+#: Template/Recipes/view.ctp:76
+#: Template/References/view.ctp:36
+#: Template/Roles/view.ctp:32
+#: Template/Tablesadmins/view.ctp:40
+#: Template/Tablesmyprecious/view.ctp:44
+#: Template/Tablesroots/view.ctp:40
+#: Template/Titles/view.ctp:32
+#: Template/UserHasUser/view.ctp:36
+#: Template/Users/view.ctp:58
+#: Template/Works/view.ctp:48
+msgid "Modified"
+msgstr ""
+
+#: Template/Accompaniments/front.ctp:9
+#: Template/BoardsClients/index.ctp:5
+#: Template/BoardsCnhs/index.ctp:5
+#: Template/BoardsFinancings/doce.ctp:5
+#: Template/BoardsFinancings/index copy.ctp:5
+#: Template/BoardsFinancings/index.ctp:5
+#: Template/BoardsFinancings/salgado.ctp:5
+#: Template/BoardsInformations/index.ctp:5
+#: Template/BoardsRegions/index.ctp:5
+#: Template/Defis/index.ctp:9
+#: Template/MyCoins/index.ctp:9
+#: Template/MyReferences/index.ctp:9
+#: Template/Nfts/index.ctp:9
+#: Template/Opportunitys/index.ctp:9
+#: Template/Users/editcommon.ctp:141
+msgid "Add"
+msgstr ""
+
+#: Template/Accompaniments/index.ctp:10
+#: Template/Accompaniments/view copy.ctp:13
+msgid "New Accompaniment"
+msgstr ""
+
+#: Template/Accompaniments/index.ctp:16
+msgid "Accompaniments"
+msgstr ""
+
+#: Template/Accompaniments/view copy.ctp:10
+msgid "Edit Accompaniment"
+msgstr ""
+
+#: Template/Accompaniments/view copy.ctp:11
+msgid "Delete Accompaniment"
+msgstr ""
+
+#: Template/Accompaniments/view copy.ctp:12
+msgid "List Accompaniments"
+msgstr ""
+
+#: Template/Accompaniments/view copy.ctp:22
+#: Template/Accompaniments/view.ctp:7
+#: Template/AnalizedProjects/view.ctp:6
+msgid "Project"
+msgstr ""
+
+#: Template/Accompaniments/view copy.ctp:26
+#: Template/Accompaniments/view.ctp:11
+msgid "Daily Contribution"
+msgstr ""
+
+#: Template/Accompaniments/view copy.ctp:30
+#: Template/Accompaniments/view.ctp:15
+msgid "Amount"
+msgstr ""
+
+#: Template/Accompaniments/view copy.ctp:34
+#: Template/Accompaniments/view.ctp:19
+msgid "Coin Main"
+msgstr ""
+
+#: Template/Accompaniments/view copy.ctp:38
+#: Template/Accompaniments/view.ctp:27
+msgid "Coin Second"
+msgstr ""
+
+#: Template/Accompaniments/view.ctp:1
+#: Template/AnalizedProjects/view.ctp:1
+#: Template/Defis/view.ctp:1
+#: Template/Nfts/view.ctp:1
+msgid "Delete Item"
+msgstr ""
+
+#: Template/Accompaniments/view.ctp:23
+#: Template/Coins/view.ctp:28
+#: Template/CryptoCoins/view.ctp:8
+#: Template/IndexSidebars/view.ctp:34
+#: Template/MyReferences/view.ctp:10
+#: Template/References/view.ctp:24
+msgid "Url"
+msgstr ""
+
+#: Template/AnalizedProjects/add copy.ctp:10
+msgid "List Analized Projects"
+msgstr ""
+
+#: Template/AnalizedProjects/add copy.ctp:18
+msgid "Add Analized Project"
+msgstr ""
+
+#: Template/AnalizedProjects/index.ctp:9
+msgid "Add Project"
+msgstr ""
+
+#: Template/AnalizedProjects/index.ctp:76
+#: Template/AnalizedProjectsNotes/index.ctp:9
+msgid "Add Note"
+msgstr ""
+
+#: Template/AnalizedProjects/view.ctp:10
+#: Template/Betas/view.ctp:20
+#: Template/Nfts/view.ctp:10
+msgid "Description"
+msgstr ""
+
+#: Template/AnalizedProjects/view.ctp:14
+msgid "Long Time"
+msgstr ""
+
+#: Template/AnalizedProjects/view.ctp:15;19
+#: Template/Betas/view.ctp:37
+#: Template/BoardsSettings/view.ctp:51
+#: Template/Menus/view.ctp:47
+msgid "Yes"
+msgstr ""
+
+#: Template/AnalizedProjects/view.ctp:15;19
+#: Template/Betas/view.ctp:37
+#: Template/BoardsSettings/view.ctp:51
+#: Template/Menus/view.ctp:47
+msgid "No"
+msgstr ""
+
+#: Template/AnalizedProjects/view.ctp:18
+msgid "Short Time"
+msgstr ""
+
+#: Template/AnalizedProjectsNotes/edit.ctp:34
+msgid "Edit Note"
+msgstr ""
+
+#: Template/Betas/add.ctp:10
+#: Template/Betas/edit.ctp:16
+#: Template/Betas/view.ctp:12
+msgid "List Betas"
+msgstr ""
+
+#: Template/Betas/add.ctp:16
+msgid "Add Beta"
+msgstr ""
+
+#: Template/Betas/edit.ctp:22
+#: Template/Betas/view.ctp:10
+msgid "Edit Beta"
+msgstr ""
+
+#: Template/Betas/index.ctp:10
+#: Template/Betas/view.ctp:13
+msgid "New Beta"
+msgstr ""
+
+#: Template/Betas/index.ctp:14
+msgid "Betas"
+msgstr ""
+
+#: Template/Betas/view.ctp:11
+msgid "Delete Beta"
+msgstr ""
+
+#: Template/Betas/view.ctp:36
+msgid "Beta"
+msgstr ""
+
+#: Template/BoardsAlmostNews/add.ctp:10
+#: Template/BoardsAlmostNews/edit.ctp:16
+#: Template/BoardsAlmostNews/view.ctp:12
+msgid "List Boards Almost News"
+msgstr ""
+
+#: Template/BoardsAlmostNews/add.ctp:11
+#: Template/BoardsAlmostNews/edit.ctp:17
+#: Template/BoardsAlmostNews/index.ctp:11
+#: Template/BoardsAlmostNews/view.ctp:14
+#: Template/BoardsFinancings/edit copy.ctp:17
+#: Template/BoardsFinancings/view copy.ctp:14
+msgid "List Boards Clients"
+msgstr ""
+
+#: Template/BoardsAlmostNews/add.ctp:12
+#: Template/BoardsAlmostNews/edit.ctp:18
+#: Template/BoardsAlmostNews/index.ctp:12
+#: Template/BoardsAlmostNews/view.ctp:15
+#: Template/BoardsFinancings/edit copy.ctp:18
+#: Template/BoardsFinancings/view copy.ctp:15
+msgid "New Boards Client"
+msgstr ""
+
+#: Template/BoardsAlmostNews/add.ctp:13
+#: Template/BoardsAlmostNews/edit.ctp:19
+#: Template/BoardsAlmostNews/index.ctp:13
+#: Template/BoardsAlmostNews/view.ctp:16
+#: Template/BoardsRegions/add.ctp:10
+#: Template/BoardsRegions/edit.ctp:16
+#: Template/BoardsRegions/view.ctp:12
+msgid "List Boards Regions"
+msgstr ""
+
+#: Template/BoardsAlmostNews/add.ctp:14
+#: Template/BoardsAlmostNews/edit.ctp:20
+#: Template/BoardsAlmostNews/index.ctp:14
+#: Template/BoardsAlmostNews/view.ctp:17
+#: Template/BoardsRegions/view.ctp:13
+msgid "New Boards Region"
+msgstr ""
+
+#: Template/BoardsAlmostNews/add.ctp:22
+msgid "Add Boards Almost News"
+msgstr ""
+
+#: Template/BoardsAlmostNews/edit.ctp:28
+#: Template/BoardsAlmostNews/view.ctp:10
+msgid "Edit Boards Almost News"
+msgstr ""
+
+#: Template/BoardsAlmostNews/index.ctp:10
+#: Template/BoardsAlmostNews/view.ctp:13
+msgid "New Boards Almost News"
+msgstr ""
+
+#: Template/BoardsAlmostNews/index.ctp:20
+msgid "Boards Almost News"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:11
+msgid "Delete Boards Almost News"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:26
+#: Template/BoardsClients/view.ctp:22
+#: Template/BoardsCpfs/view.ctp:20
+msgid "Cpf"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:30
+#: Template/BoardsFinancings/view copy.ctp:24
+msgid "Boards Client"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:34
+msgid "Dispach"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:38
+#: Template/BoardsFinancings/view copy.ctp:28
+#: Template/BoardsFinancings/view.ctp:19
+#: Template/BoardsInformations/view.ctp:24
+msgid "Chassi"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:42
+#: Template/BoardsFinancings/view copy.ctp:32
+#: Template/BoardsFinancings/view.ctp:23
+msgid "Ticket"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:46
+#: Template/BoardsFinancings/view copy.ctp:36
+#: Template/BoardsFinancings/view.ctp:27
+#: Template/BoardsInformations/view.ctp:32
+msgid "Renavan"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:50
+#: Template/BoardsFinancings/view copy.ctp:40
+#: Template/BoardsFinancings/view.ctp:31
+msgid "Board"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:54
+#: Template/BoardsFinancings/view copy.ctp:44
+#: Template/BoardsFinancings/view.ctp:35
+#: Template/BoardsInformations/view.ctp:48
+#: Template/Invitation/view.ctp:36
+msgid "Status"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:58
+#: Template/BoardsFinancings/view.ctp:43
+msgid "Boards Region"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:70
+#: Template/BoardsFinancings/view copy.ctp:56
+#: Template/BoardsFinancings/view.ctp:47
+msgid "Revenues"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:74
+msgid "Date Of First Guide"
+msgstr ""
+
+#: Template/BoardsAlmostNews/view.ctp:78
+msgid "Data Request"
+msgstr ""
+
+#: Template/BoardsClients/add.ctp:75
+#: Template/BoardsCnhs/add.ctp:32
+#: Template/BoardsFinancings/add copy.ctp:189
+#: Template/BoardsFinancings/add.ctp:222
+#: Template/BoardsFinancings/edit.ctp:195
+#: Template/BoardsInformations/add.ctp:201
+msgid "Save"
+msgstr ""
+
+#: Template/BoardsClients/view.ctp:6
+#: Template/BoardsCnhs/view.ctp:9
+#: Template/BoardsFinancings/view.ctp:7
+#: Template/Defis/view.ctp:18
+msgid "Code"
+msgstr ""
+
+#: Template/BoardsClients/view.ctp:10
+#: Template/Contacts/view.ctp:20
+#: Template/Messages/view.ctp:20
+#: Template/Users/view.ctp:22
+msgid "Name"
+msgstr ""
+
+#: Template/BoardsClients/view.ctp:14
+#: Template/Users/view.ctp:26
+msgid "Lastname"
+msgstr ""
+
+#: Template/BoardsClients/view.ctp:18
+#: Template/BoardsCnhs/view.ctp:5
+msgid "Cnh"
+msgstr ""
+
+#: Template/BoardsCnhs/index.ctp:12;30
+msgid "Código"
+msgstr ""
+
+#: Template/BoardsCnhs/index.ctp:13;31
+msgid "CNH"
+msgstr ""
+
+#: Template/BoardsCnhs/index.ctp:14;32
+msgid "Editar"
+msgstr ""
+
+#: Template/BoardsCnhs/index.ctp:15;33
+msgid "Ver"
+msgstr ""
+
+#: Template/BoardsCpfs/add.ctp:10
+#: Template/BoardsCpfs/edit.ctp:16
+#: Template/BoardsCpfs/view.ctp:12
+msgid "List Boards Cpfs"
+msgstr ""
+
+#: Template/BoardsCpfs/add.ctp:16
+msgid "Add Boards Cpf"
+msgstr ""
+
+#: Template/BoardsCpfs/edit.ctp:22
+#: Template/BoardsCpfs/view.ctp:10
+msgid "Edit Boards Cpf"
+msgstr ""
+
+#: Template/BoardsCpfs/index.ctp:10
+#: Template/BoardsCpfs/view.ctp:13
+msgid "New Boards Cpf"
+msgstr ""
+
+#: Template/BoardsCpfs/index.ctp:14
+msgid "Boards Cpfs"
+msgstr ""
+
+#: Template/BoardsCpfs/view.ctp:11
+msgid "Delete Boards Cpf"
+msgstr ""
+
+#: Template/BoardsFinancings/add.ctp:11
+msgid "Novo Cliente"
+msgstr ""
+
+#: Template/BoardsFinancings/edit copy.ctp:16
+#: Template/BoardsFinancings/view copy.ctp:12
+msgid "List Boards Financings"
+msgstr ""
+
+#: Template/BoardsFinancings/edit copy.ctp:26
+#: Template/BoardsFinancings/view copy.ctp:10
+msgid "Edit Boards Financing"
+msgstr ""
+
+#: Template/BoardsFinancings/view copy.ctp:11
+msgid "Delete Boards Financing"
+msgstr ""
+
+#: Template/BoardsFinancings/view copy.ctp:13
+msgid "New Boards Financing"
+msgstr ""
+
+#: Template/BoardsFinancings/view copy.ctp:60
+#: Template/BoardsFinancings/view.ctp:51
+msgid "Dispatch"
+msgstr ""
+
+#: Template/BoardsFinancings/view copy.ctp:64
+#: Template/BoardsFinancings/view.ctp:55
+msgid "Date First Guide"
+msgstr ""
+
+#: Template/BoardsFinancings/view copy.ctp:68
+#: Template/BoardsFinancings/view.ctp:59
+msgid "Request Date"
+msgstr ""
+
+#: Template/BoardsFinancings/view.ctp:11
+msgid "CPF Client"
+msgstr ""
+
+#: Template/BoardsFinancings/view.ctp:15
+msgid "Client"
+msgstr ""
+
+#: Template/BoardsInformations/view.ctp:8
+msgid "CPF"
+msgstr ""
+
+#: Template/BoardsInformations/view.ctp:12
+msgid "Cliente"
+msgstr ""
+
+#: Template/BoardsInformations/view.ctp:16
+msgid "Faturamento"
+msgstr ""
+
+#: Template/BoardsInformations/view.ctp:20
+msgid "Despachante"
+msgstr ""
+
+#: Template/BoardsInformations/view.ctp:28
+msgid "Nº boleto"
+msgstr ""
+
+#: Template/BoardsInformations/view.ctp:36
+msgid "Financiamento"
+msgstr ""
+
+#: Template/BoardsInformations/view.ctp:40
+msgid "Data"
+msgstr ""
+
+#: Template/BoardsInformations/view.ctp:44
+msgid "Placa"
+msgstr ""
+
+#: Template/BoardsRegions/add.ctp:16
+msgid "Add Boards Region"
+msgstr ""
+
+#: Template/BoardsRegions/edit.ctp:22
+#: Template/BoardsRegions/view.ctp:10
+msgid "Edit Boards Region"
+msgstr ""
+
+#: Template/BoardsRegions/view.ctp:11
+msgid "Delete Boards Region"
+msgstr ""
+
+#: Template/BoardsRegions/view.ctp:20
+msgid "Region"
+msgstr ""
+
+#: Template/BoardsSettings/add.ctp:10
+#: Template/BoardsSettings/edit.ctp:16
+#: Template/BoardsSettings/view.ctp:12
+msgid "List Boards Settings"
+msgstr ""
+
+#: Template/BoardsSettings/add.ctp:18
+msgid "Add Boards Setting"
+msgstr ""
+
+#: Template/BoardsSettings/edit.ctp:24
+#: Template/BoardsSettings/view.ctp:10
+msgid "Edit Boards Setting"
+msgstr ""
+
+#: Template/BoardsSettings/index.ctp:10
+#: Template/BoardsSettings/view.ctp:13
+msgid "New Boards Setting"
+msgstr ""
+
+#: Template/BoardsSettings/index.ctp:16
+msgid "Boards Settings"
+msgstr ""
+
+#: Template/BoardsSettings/view.ctp:11
+msgid "Delete Boards Setting"
+msgstr ""
+
+#: Template/BoardsSettings/view.ctp:22
+msgid "Config Code"
+msgstr ""
+
+#: Template/BoardsSettings/view.ctp:26
+msgid "Config"
+msgstr ""
+
+#: Template/BoardsSettings/view.ctp:30
+#: Template/Receipts/view.ctp:20
+msgid "Value"
+msgstr ""
+
+#: Template/BoardsSettings/view.ctp:50
+msgid "Value Two"
+msgstr ""
+
+#: Template/CategorySidebars/add.ctp:10
+#: Template/CategorySidebars/edit.ctp:16
+#: Template/CategorySidebars/view.ctp:12
+#: Template/IndexSidebars/add.ctp:13
+#: Template/IndexSidebars/edit.ctp:19
+#: Template/IndexSidebars/index.ctp:7
+#: Template/IndexSidebars/view.ctp:16
+msgid "List Category Sidebars"
+msgstr ""
+
+#: Template/CategorySidebars/add.ctp:16
+msgid "Add Category Sidebar"
+msgstr ""
+
+#: Template/CategorySidebars/edit.ctp:22
+#: Template/CategorySidebars/view.ctp:10
+msgid "Edit Category Sidebar"
+msgstr ""
+
+#: Template/CategorySidebars/index.ctp:10
+#: Template/CategorySidebars/view.ctp:13
+#: Template/IndexSidebars/add.ctp:14
+#: Template/IndexSidebars/edit.ctp:20
+#: Template/IndexSidebars/index.ctp:8
+#: Template/IndexSidebars/view.ctp:17
+msgid "New Category Sidebar"
+msgstr ""
+
+#: Template/CategorySidebars/index.ctp:14
+msgid "Category Sidebars"
+msgstr ""
+
+#: Template/CategorySidebars/view.ctp:11
+msgid "Delete Category Sidebar"
+msgstr ""
+
+#: Template/CategorySidebars/view.ctp:20
+#: Template/PageCategorys/view.ctp:20
+msgid "Category"
+msgstr ""
+
+#: Template/Changelogs/add.ctp:10
+#: Template/Changelogs/edit.ctp:16
+#: Template/Changelogs/view.ctp:12
+msgid "List Changelogs"
+msgstr ""
+
+#: Template/Changelogs/add.ctp:16
+msgid "Add Changelog"
+msgstr ""
+
+#: Template/Changelogs/edit.ctp:22
+#: Template/Changelogs/view.ctp:10
+msgid "Edit Changelog"
+msgstr ""
+
+#: Template/Changelogs/index.ctp:10
+#: Template/Changelogs/view.ctp:13
+msgid "New Changelog"
+msgstr ""
+
+#: Template/Changelogs/index.ctp:14
+#: Template/Element/index_nav.ctp:42
+msgid "Changelogs"
+msgstr "Log de Mudanças"
+
+#: Template/Changelogs/view.ctp:11
+msgid "Delete Changelog"
+msgstr ""
+
+#: Template/Changelogs/view.ctp:20
+#: Template/IndexSidebars/view.ctp:30
+msgid "Icon"
+msgstr ""
+
+#: Template/Changelogs/view.ctp:37
+msgid "Changelog"
+msgstr ""
+
+#: Template/Coins/add.ctp:10
+#: Template/Coins/edit.ctp:16
+#: Template/Coins/view.ctp:12
+#: Template/Linkcoins/add.ctp:11
+#: Template/Linkcoins/edit.ctp:17
+#: Template/Linkcoins/index.ctp:11
+#: Template/Linkcoins/view.ctp:14
+msgid "List Coins"
+msgstr ""
+
+#: Template/Coins/add.ctp:16
+msgid "Add Coin"
+msgstr ""
+
+#: Template/Coins/edit.ctp:22
+#: Template/Coins/view.ctp:10
+msgid "Edit Coin"
+msgstr ""
+
+#: Template/Coins/index.ctp:10
+#: Template/Coins/view.ctp:13
+#: Template/Linkcoins/add.ctp:12
+#: Template/Linkcoins/edit.ctp:18
+#: Template/Linkcoins/index.ctp:12
+#: Template/Linkcoins/view.ctp:15
+msgid "New Coin"
+msgstr ""
+
+#: Template/Coins/index.ctp:14
+msgid "Coins"
+msgstr ""
+
+#: Template/Coins/view.ctp:11
+msgid "Delete Coin"
+msgstr ""
+
+#: Template/Coins/view.ctp:20
+#: Template/CryptoCoins/view.ctp:4
+#: Template/Linkcoins/view.ctp:22
+msgid "Coin"
+msgstr ""
+
+#: Template/Coins/view.ctp:24
+msgid "IconName"
+msgstr ""
+
+#: Template/Contacts/add.ctp:10
+#: Template/Contacts/edit.ctp:16
+#: Template/Contacts/view.ctp:12
+msgid "List Contacts"
+msgstr ""
+
+#: Template/Contacts/add.ctp:16
+msgid "Add Contact"
+msgstr ""
+
+#: Template/Contacts/edit.ctp:22
+#: Template/Contacts/view.ctp:10
+msgid "Edit Contact"
+msgstr ""
+
+#: Template/Contacts/index.ctp:10
+#: Template/Contacts/view.ctp:13
+msgid "New Contact"
+msgstr ""
+
+#: Template/Contacts/index.ctp:14
+msgid "Contacts"
+msgstr ""
+
+#: Template/Contacts/view.ctp:11
+msgid "Delete Contact"
+msgstr ""
+
+#: Template/Contacts/view.ctp:24
+#: Template/Messages/view.ctp:24
+#: Template/Users/view.ctp:34
+msgid "Email"
+msgstr ""
+
+#: Template/Contacts/view.ctp:28
+msgid "Subject"
+msgstr ""
+
+#: Template/Contacts/view.ctp:32
+#: Template/Messages/view.ctp:41
+msgid "Message"
+msgstr ""
+
+#: Template/CryptoCoins/add.ctp:10
+#: Template/CryptoCoins/edit.ctp:16
+msgid "List Crypto Coins"
+msgstr ""
+
+#: Template/CryptoCoins/add.ctp:16
+msgid "Add Crypto Coin"
+msgstr ""
+
+#: Template/CryptoCoins/edit.ctp:22
+msgid "Edit Crypto Coin"
+msgstr ""
+
+#: Template/CryptoCoins/index.ctp:10
+msgid "New Crypto Coin"
+msgstr ""
+
+#: Template/CryptoCoins/index.ctp:14
+msgid "Crypto Coins"
+msgstr ""
+
+#: Template/CryptoCoins/view.ctp:12
+msgid "Max Supply"
+msgstr ""
+
+#: Template/CryptoCoins/view.ctp:16
+msgid "Total Supply"
+msgstr ""
+
+#: Template/CryptoCoins/view.ctp:20
+#: Template/Defis/view.ctp:22
+#: Template/Opportunitys/view.ctp:14
+msgid "Coinmarketcap"
+msgstr ""
+
+#: Template/Defis/view.ctp:6
+msgid "Defi"
+msgstr ""
+
+#: Template/Defis/view.ctp:10
+msgid "Whitepaper"
+msgstr ""
+
+#: Template/Defis/view.ctp:14
+#: Template/Opportunitys/view.ctp:10
+msgid "Site"
+msgstr ""
+
+#: Template/Element/adminlte_header_navbar.ctp:18
+#: Template/Element/adminlte_header_navbar_videos.ctp:37
+#: Template/Element/adminlte_header_navbar_videos_copy.ctp:27;75
+msgid "Admin Menu"
+msgstr ""
+
+#: Template/Element/adminlte_header_navbar.ctp:26
+#: Template/Element/adminlte_header_navbar_videos.ctp:50
+#: Template/Element/adminlte_header_navbar_videos_copy.ctp:40;88
+#: Template/Element/index_nav.ctp:49
+#: Template/Layout/bootstrap4.ctp:55
+#: Template/Layout/default.ctp:40
+#: Template/Users/amc.ctp:50
+#: Template/Users/colibri.ctp:50
+#: Template/Users/mainmenu.ctp:53
+#: Template/Users/mainmenutubex.ctp:50
+msgid "Logout"
+msgstr ""
+
+#: Template/Element/index_nav.ctp:49
+msgid "Logout"
+msgstr "Sair"
+
+#: Template/Element/adminlte_header_navbar_videos.ctp:11;21
+msgid "Append Google Schedules"
+msgstr ""
+
+#: Template/Element/adminlte_header_navbar_videos.ctp:14;24
+msgid "Your Playlists"
+msgstr ""
+
+#: Template/Element/adminlte_header_navbar_videos.ctp:17;27
+msgid "Your Videos"
+msgstr ""
+
+#: Template/Element/adminlte_header_navbar_videos.ctp:42
+#: Template/Element/adminlte_header_navbar_videos_copy.ctp:32;80
+msgid "Profile"
+msgstr ""
+
+#: Template/Element/adminlte_header_navbar_videos.ctp:59
+#: Template/Element/adminlte_header_navbar_videos_copy.ctp:49;111
+#: Template/Users/register.ctp:57
+#: Template/Users/register2.ctp:54
+msgid "Register"
+msgstr ""
+
+#: Template/Element/adminlte_header_navbar_videos.ctp:65
+#: Template/Element/adminlte_header_navbar_videos_copy.ctp:55;117
+#: Template/Users/loginTest.ctp:4
+msgid "Login"
+msgstr ""
+
+#: Template/Element/index_sidebar.ctp:39;99
+msgid "Home Settings"
+msgstr "Pagina de Configurações"
+
+#: Template/Element/index_home_boards.ctp:6
+msgid "Queries"
+msgstr "Consultas"
+
+#: Template/Element/index_home_preowned.ctp:6
+msgid "Pre Owned"
+msgstr "Seminovos"
+
+#: Template/Element/index_home_cnhs.ctp:11
+msgid "More info"
+msgstr "Maiores informações"
+
+#: Template/Element/index_home_preowned.ctp:11
+msgid "More info"
+msgstr "Mais informações"
+
+#: Template/Element/index_home_boards.ctp:11
+msgid "More info"
+msgstr "Maiores informações"
+
+#: Template/Element/index_home_financings.ctp:6
+msgid "Financings"
+msgstr "Financiamentos"
+
+#: Template/Element/index_home_financings.ctp:11
+msgid "More info"
+msgstr "Maiores informações"
+
+#: Template/Element/index_home_doce.ctp:6
+msgid "Sweet"
+msgstr "Doce"
+
+#: Template/Element/index_home_doce.ctp:14
+msgid "More info"
+msgstr "Maiores informações"
+
+#: Template/Element/index_home_salgado.ctp:6
+msgid "Salty"
+msgstr "Salgado"
+
+#: Template/Element/index_home_salgado.ctp:14
+msgid "More info"
+msgstr "Maiores informações"
+
+#: Template/Element/index_user_panel.ctp:60
+msgid "Register/Login"
+msgstr ""
+
+#: Template/ExpensesWithDependents/add.ctp:10
+#: Template/ExpensesWithDependents/edit.ctp:16
+#: Template/ExpensesWithDependents/view.ctp:12
+msgid "List Expenses With Dependents"
+msgstr ""
+
+#: Template/ExpensesWithDependents/add.ctp:11
+#: Template/ExpensesWithDependents/edit.ctp:17
+#: Template/ExpensesWithDependents/index.ctp:11
+#: Template/ExpensesWithDependents/view.ctp:14
+#: Template/ExpensesWithPets/add.ctp:11
+#: Template/ExpensesWithPets/edit.ctp:17
+#: Template/ExpensesWithPets/index.ctp:11
+#: Template/ExpensesWithPets/view.ctp:14
+#: Template/Investments/add.ctp:11
+#: Template/Investments/edit.ctp:17
+#: Template/Investments/index.ctp:11
+#: Template/Investments/view.ctp:14
+#: Template/Mounths/add.ctp:10
+#: Template/Mounths/edit.ctp:16
+#: Template/Mounths/view.ctp:12
+#: Template/PersonalExpenses/add.ctp:11
+#: Template/PersonalExpenses/edit.ctp:17
+#: Template/PersonalExpenses/index.ctp:11
+#: Template/PersonalExpenses/view.ctp:14
+#: Template/Recipes/add.ctp:11
+#: Template/Recipes/edit.ctp:17
+#: Template/Recipes/index.ctp:11
+#: Template/Recipes/view.ctp:14
+msgid "List Mounths"
+msgstr ""
+
+#: Template/ExpensesWithDependents/add.ctp:12
+#: Template/ExpensesWithDependents/edit.ctp:18
+#: Template/ExpensesWithDependents/index.ctp:12
+#: Template/ExpensesWithDependents/view.ctp:15
+#: Template/ExpensesWithPets/add.ctp:12
+#: Template/ExpensesWithPets/edit.ctp:18
+#: Template/ExpensesWithPets/index.ctp:12
+#: Template/ExpensesWithPets/view.ctp:15
+#: Template/Investments/add.ctp:12
+#: Template/Investments/edit.ctp:18
+#: Template/Investments/index.ctp:12
+#: Template/Investments/view.ctp:15
+#: Template/Mounths/index.ctp:10
+#: Template/Mounths/view.ctp:13
+#: Template/PersonalExpenses/add.ctp:12
+#: Template/PersonalExpenses/edit.ctp:18
+#: Template/PersonalExpenses/index.ctp:12
+#: Template/PersonalExpenses/view.ctp:15
+#: Template/Recipes/add.ctp:12
+#: Template/Recipes/edit.ctp:18
+#: Template/Recipes/index.ctp:12
+#: Template/Recipes/view.ctp:15
+msgid "New Mounth"
+msgstr ""
+
+#: Template/ExpensesWithDependents/add.ctp:20
+msgid "Add Expenses With Dependent"
+msgstr ""
+
+#: Template/ExpensesWithDependents/edit.ctp:26
+#: Template/ExpensesWithDependents/view.ctp:10
+msgid "Edit Expenses With Dependent"
+msgstr ""
+
+#: Template/ExpensesWithDependents/index.ctp:10
+#: Template/ExpensesWithDependents/view.ctp:13
+msgid "New Expenses With Dependent"
+msgstr ""
+
+#: Template/ExpensesWithDependents/index.ctp:18
+msgid "Expenses With Dependents"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:11
+msgid "Delete Expenses With Dependent"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:24
+msgid "School Faculty"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:28
+msgid "Extra Courses"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:32
+msgid "School Supplies"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:36
+msgid "Sports Uniforms"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:40
+msgid "Allowance"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:44
+msgid "Tour Vacation"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:48
+msgid "Clothing"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:52
+msgid "Health Medicines"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:56
+msgid "Transport"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:60
+#: Template/ExpensesWithPets/view.ctp:44
+#: Template/Investments/view.ctp:48
+#: Template/PersonalExpenses/view.ctp:36
+#: Template/Recipes/view.ctp:56
+msgid "Others"
+msgstr ""
+
+#: Template/ExpensesWithDependents/view.ctp:64
+#: Template/ExpensesWithPets/view.ctp:48
+#: Template/Investments/view.ctp:52
+#: Template/Mounths/view.ctp:20
+#: Template/PersonalExpenses/view.ctp:40
+#: Template/Recipes/view.ctp:60
+msgid "Mounth"
+msgstr ""
+
+#: Template/ExpensesWithPets/add.ctp:10
+#: Template/ExpensesWithPets/edit.ctp:16
+#: Template/ExpensesWithPets/view.ctp:12
+msgid "List Expenses With Pets"
+msgstr ""
+
+#: Template/ExpensesWithPets/add.ctp:20
+msgid "Add Expenses With Pet"
+msgstr ""
+
+#: Template/ExpensesWithPets/edit.ctp:26
+#: Template/ExpensesWithPets/view.ctp:10
+msgid "Edit Expenses With Pet"
+msgstr ""
+
+#: Template/ExpensesWithPets/index.ctp:10
+#: Template/ExpensesWithPets/view.ctp:13
+msgid "New Expenses With Pet"
+msgstr ""
+
+#: Template/ExpensesWithPets/index.ctp:18
+msgid "Expenses With Pets"
+msgstr ""
+
+#: Template/ExpensesWithPets/view.ctp:11
+msgid "Delete Expenses With Pet"
+msgstr ""
+
+#: Template/ExpensesWithPets/view.ctp:24
+msgid "Pet Shop"
+msgstr ""
+
+#: Template/ExpensesWithPets/view.ctp:28
+msgid "Portion"
+msgstr ""
+
+#: Template/ExpensesWithPets/view.ctp:32
+msgid "Veterinary"
+msgstr ""
+
+#: Template/ExpensesWithPets/view.ctp:36
+msgid "Medicines"
+msgstr ""
+
+#: Template/ExpensesWithPets/view.ctp:40
+msgid "Vaccines"
+msgstr ""
+
+#: Template/Footers/add.ctp:10
+#: Template/Footers/edit.ctp:16
+#: Template/Footers/view.ctp:12
+msgid "List Footers"
+msgstr ""
+
+#: Template/Footers/add.ctp:16
+msgid "Add Footer"
+msgstr ""
+
+#: Template/Footers/edit.ctp:22
+#: Template/Footers/view.ctp:10
+msgid "Edit Footer"
+msgstr ""
+
+#: Template/Footers/index.ctp:10
+#: Template/Footers/view.ctp:13
+msgid "New Footer"
+msgstr ""
+
+#: Template/Footers/index.ctp:14
+msgid "Footers"
+msgstr ""
+
+#: Template/Footers/view.ctp:11
+msgid "Delete Footer"
+msgstr ""
+
+#: Template/Footers/view.ctp:33
+msgid "Footer"
+msgstr ""
+
+#: Template/Galerys/add.ctp:10
+#: Template/Galerys/edit.ctp:16
+#: Template/Galerys/view.ctp:12
+#: Template/ImageProfiles/add.ctp:5
+#: Template/ImageProfiles/edit.ctp:17
+#: Template/ImageProfiles/index.ctp:11
+#: Template/ImageProfiles/view.ctp:14
+msgid "List Galerys"
+msgstr ""
+
+#: Template/Galerys/add.ctp:11
+#: Template/Galerys/edit.ctp:17
+#: Template/Galerys/index.ctp:11
+#: Template/Galerys/view.ctp:14
+msgid "List Images"
+msgstr ""
+
+#: Template/Galerys/add.ctp:12
+#: Template/Galerys/edit.ctp:18
+#: Template/Galerys/index.ctp:12
+#: Template/Galerys/view.ctp:15
+msgid "New Image"
+msgstr ""
+
+#: Template/Galerys/add.ctp:18
+msgid "Add Galery"
+msgstr ""
+
+#: Template/Galerys/edit.ctp:24
+#: Template/Galerys/view.ctp:10
+msgid "Edit Galery"
+msgstr ""
+
+#: Template/Galerys/index.ctp:10
+#: Template/Galerys/view.ctp:13
+#: Template/ImageProfiles/add.ctp:6
+#: Template/ImageProfiles/edit.ctp:18
+#: Template/ImageProfiles/index.ctp:12
+#: Template/ImageProfiles/view.ctp:15
+msgid "New Galery"
+msgstr ""
+
+#: Template/Galerys/index.ctp:16
+msgid "Galerys"
+msgstr ""
+
+#: Template/Galerys/view.ctp:11
+msgid "Delete Galery"
+msgstr ""
+
+#: Template/Galerys/view.ctp:22
+#: Template/Homes/view.ctp:17
+#: Template/MypreciousTitles/view.ctp:20
+#: Template/Tablesadmins/view.ctp:20
+#: Template/Tablesmyprecious/view.ctp:20
+#: Template/Tablesroots/view.ctp:20
+#: Template/Titles/view.ctp:20
+#: Template/Works/view.ctp:24
+msgid "Title"
+msgstr ""
+
+#: Template/Galerys/view.ctp:39
+msgid "Related Images"
+msgstr ""
+
+#: Template/Galerys/view.ctp:44
+#: Template/ImageProfiles/view.ctp:24
+msgid "Image"
+msgstr ""
+
+#: Template/Galerys/view.ctp:45
+msgid "Galerys Id"
+msgstr ""
+
+#: Template/Homes/add.ctp:10
+#: Template/Homes/edit.ctp:16
+#: Template/Homes/view.ctp:6
+#: Template/Menus/add.ctp:11
+#: Template/Menus/edit.ctp:17
+#: Template/Menus/index.ctp:11
+#: Template/Menus/view.ctp:14
+msgid "List Homes"
+msgstr ""
+
+#: Template/Homes/add.ctp:16
+msgid "Add Home"
+msgstr ""
+
+#: Template/Homes/edit.ctp:22
+#: Template/Homes/view.ctp:4
+msgid "Edit Home"
+msgstr ""
+
+#: Template/Homes/index.ctp:5
+#: Template/Homes/view.ctp:7
+#: Template/Menus/add.ctp:12
+#: Template/Menus/edit.ctp:18
+#: Template/Menus/index.ctp:12
+#: Template/Menus/view.ctp:15
+msgid "New Home"
+msgstr ""
+
+#: Template/Homes/index.ctp:15
+msgid "Main Home"
+msgstr ""
+
+#: Template/Homes/view.ctp:5
+msgid "Delete Home"
+msgstr ""
+
+#: Template/Homes/view.ctp:21
+msgid "Logo"
+msgstr ""
+
+#: Template/Homes/view.ctp:26
+msgid "About Title"
+msgstr ""
+
+#: Template/Homes/view.ctp:30
+msgid "Team Title"
+msgstr ""
+
+#: Template/Homes/view.ctp:34
+msgid "Contact Title"
+msgstr ""
+
+#: Template/Homes/view.ctp:38
+msgid "Price Title"
+msgstr ""
+
+#: Template/Homes/view.ctp:43
+msgid "About"
+msgstr ""
+
+#: Template/Homes/view.ctp:47
+msgid "Mission"
+msgstr ""
+
+#: Template/Homes/view.ctp:51
+msgid "About Subtitle"
+msgstr ""
+
+#: Template/Homes/view.ctp:55
+msgid "Team Subtitle"
+msgstr ""
+
+#: Template/Homes/view.ctp:59
+msgid "Contact Subtitle"
+msgstr ""
+
+#: Template/Homes/view.ctp:63
+msgid "Price Subtitle"
+msgstr ""
+
+#: Template/ImageProfiles/add.ctp:4
+#: Template/ImageProfiles/edit.ctp:16
+#: Template/ImageProfiles/view.ctp:12
+msgid "List Image Profiles"
+msgstr ""
+
+#: Template/ImageProfiles/add.ctp:14
+msgid "Add Image Profile"
+msgstr ""
+
+#: Template/ImageProfiles/edit.ctp:26
+#: Template/ImageProfiles/view.ctp:10
+msgid "Edit Image Profile"
+msgstr ""
+
+#: Template/ImageProfiles/index.ctp:10
+#: Template/ImageProfiles/view.ctp:13
+msgid "New Image Profile"
+msgstr ""
+
+#: Template/ImageProfiles/index.ctp:18
+msgid "Image Profiles"
+msgstr ""
+
+#: Template/ImageProfiles/view.ctp:11
+msgid "Delete Image Profile"
+msgstr ""
+
+#: Template/ImageProfiles/view.ctp:35
+msgid "Galery"
+msgstr ""
+
+#: Template/IndexSidebars/add.ctp:10
+#: Template/IndexSidebars/edit.ctp:16
+#: Template/IndexSidebars/view.ctp:12
+msgid "List Index Sidebars"
+msgstr ""
+
+#: Template/IndexSidebars/add.ctp:11
+#: Template/IndexSidebars/edit.ctp:17
+#: Template/IndexSidebars/index.ctp:5
+#: Template/IndexSidebars/view.ctp:14
+#: Template/Roles/add.ctp:10
+#: Template/Roles/edit.ctp:16
+#: Template/Roles/view.ctp:12
+#: Template/Users/add.ctp:11
+#: Template/Users/edit.ctp:17
+#: Template/Users/index.ctp:5
+#: Template/Users/view.ctp:14
+msgid "List Roles"
+msgstr ""
+
+#: Template/IndexSidebars/add.ctp:12
+#: Template/IndexSidebars/edit.ctp:18
+#: Template/IndexSidebars/index.ctp:6
+#: Template/IndexSidebars/view.ctp:15
+#: Template/Roles/index.ctp:4
+#: Template/Roles/view.ctp:13
+#: Template/Users/add.ctp:12
+#: Template/Users/edit.ctp:18
+#: Template/Users/index.ctp:6
+#: Template/Users/view.ctp:15
+msgid "New Role"
+msgstr ""
+
+#: Template/IndexSidebars/add.ctp:22
+msgid "Add Index Sidebar"
+msgstr ""
+
+#: Template/IndexSidebars/edit.ctp:28
+#: Template/IndexSidebars/view.ctp:10
+msgid "Edit Index Sidebar"
+msgstr ""
+
+#: Template/IndexSidebars/index.ctp:4
+#: Template/IndexSidebars/view.ctp:13
+msgid "New Index Sidebar"
+msgstr ""
+
+#: Template/IndexSidebars/index.ctp:14
+msgid "Index Sidebars"
+msgstr ""
+
+#: Template/IndexSidebars/view.ctp:11
+msgid "Delete Index Sidebar"
+msgstr ""
+
+#: Template/IndexSidebars/view.ctp:26
+msgid "Sidebar"
+msgstr ""
+
+#: Template/IndexSidebars/view.ctp:38
+#: Template/Roles/view.ctp:20
+#: Template/Users/view.ctp:46
+msgid "Role"
+msgstr ""
+
+#: Template/IndexSidebars/view.ctp:42
+msgid "Category Sidebar"
+msgstr ""
+
+#: Template/Investments/add.ctp:10
+#: Template/Investments/edit.ctp:16
+#: Template/Investments/view.ctp:12
+msgid "List Investments"
+msgstr ""
+
+#: Template/Investments/add.ctp:20
+msgid "Add Investment"
+msgstr ""
+
+#: Template/Investments/edit.ctp:26
+#: Template/Investments/view.ctp:10
+msgid "Edit Investment"
+msgstr ""
+
+#: Template/Investments/index.ctp:10
+#: Template/Investments/view.ctp:13
+msgid "New Investment"
+msgstr ""
+
+#: Template/Investments/index.ctp:18
+msgid "Investments"
+msgstr ""
+
+#: Template/Investments/view.ctp:11
+msgid "Delete Investment"
+msgstr ""
+
+#: Template/Investments/view.ctp:28
+msgid "Private Pension"
+msgstr ""
+
+#: Template/Investments/view.ctp:32
+msgid "Cdbs Lcis Lcas"
+msgstr ""
+
+#: Template/Investments/view.ctp:36
+msgid "Investment Funds"
+msgstr ""
+
+#: Template/Investments/view.ctp:40
+msgid "Direct Treasure"
+msgstr ""
+
+#: Template/Investments/view.ctp:44
+msgid "Loans"
+msgstr ""
+
+#: Template/Invitation/add.ctp:10
+#: Template/Invitation/edit.ctp:16
+#: Template/Invitation/view.ctp:12
+msgid "List Invitation"
+msgstr ""
+
+#: Template/Invitation/add.ctp:16
+msgid "Add Invitation"
+msgstr ""
+
+#: Template/Invitation/edit.ctp:22
+#: Template/Invitation/view.ctp:10
+msgid "Edit Invitation"
+msgstr ""
+
+#: Template/Invitation/index.ctp:10
+#: Template/Invitation/view.ctp:13
+msgid "New Invitation"
+msgstr ""
+
+#: Template/Invitation/index.ctp:14
+#: Template/Invitation/view.ctp:28
+msgid "Invitation"
+msgstr ""
+
+#: Template/Invitation/view.ctp:11
+msgid "Delete Invitation"
+msgstr ""
+
+#: Template/Invitation/view.ctp:20
+msgid "Email Host"
+msgstr ""
+
+#: Template/Invitation/view.ctp:24
+msgid "Email Guest"
+msgstr ""
+
+#: Template/Layout/bootstrap4.ctp:62
+msgid "Registro de Itens(Tabelas Novas)"
+msgstr ""
+
+#: Template/Layout/default.ctp:31
+msgid "Admin"
+msgstr ""
+
+#: Template/Layout/error.ctp:35
+msgid "Error"
+msgstr ""
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr ""
+
+#: Template/Linkcoins/add.ctp:10
+#: Template/Linkcoins/edit.ctp:16
+#: Template/Linkcoins/view.ctp:12
+msgid "List Linkcoins"
+msgstr ""
+
+#: Template/Linkcoins/add.ctp:18
+msgid "Add Linkcoin"
+msgstr ""
+
+#: Template/Linkcoins/edit.ctp:24
+#: Template/Linkcoins/view.ctp:10
+msgid "Edit Linkcoin"
+msgstr ""
+
+#: Template/Linkcoins/index.ctp:10
+#: Template/Linkcoins/view.ctp:13
+msgid "New Linkcoin"
+msgstr ""
+
+#: Template/Linkcoins/index.ctp:16
+msgid "Linkcoins"
+msgstr ""
+
+#: Template/Linkcoins/view.ctp:11
+msgid "Delete Linkcoin"
+msgstr ""
+
+#: Template/Linkcoins/view.ctp:26
+#: Template/Menus/view.ctp:26
+#: Template/Tablesadmins/view.ctp:28
+#: Template/Tablesmyprecious/view.ctp:28
+#: Template/Tablesroots/view.ctp:28
+#: Template/Works/view.ctp:36
+msgid "Link"
+msgstr ""
+
+#: Template/Linkcoins/view.ctp:34
+msgid "Main"
+msgstr ""
+
+#: Template/Menus/add.ctp:10
+#: Template/Menus/edit.ctp:16
+#: Template/Menus/view.ctp:12
+msgid "List Menus"
+msgstr ""
+
+#: Template/Menus/add.ctp:18
+msgid "Add Menu"
+msgstr ""
+
+#: Template/Menus/edit.ctp:24
+#: Template/Menus/view.ctp:10
+msgid "Edit Menu"
+msgstr ""
+
+#: Template/Menus/index.ctp:10
+#: Template/Menus/view.ctp:13
+msgid "New Menu"
+msgstr ""
+
+#: Template/Menus/index.ctp:16
+msgid "Menus"
+msgstr ""
+
+#: Template/Menus/view.ctp:11
+msgid "Delete Menu"
+msgstr ""
+
+#: Template/Menus/view.ctp:22
+msgid "Menu"
+msgstr ""
+
+#: Template/Menus/view.ctp:30
+msgid "Home"
+msgstr ""
+
+#: Template/Menus/view.ctp:46
+msgid "Active"
+msgstr ""
+
+#: Template/Messages/add.ctp:10
+#: Template/Messages/edit.ctp:16
+#: Template/Messages/view.ctp:12
+msgid "List Messages"
+msgstr ""
+
+#: Template/Messages/add.ctp:16
+msgid "Add Message"
+msgstr ""
+
+#: Template/Messages/edit.ctp:22
+#: Template/Messages/view.ctp:10
+msgid "Edit Message"
+msgstr ""
+
+#: Template/Messages/index.ctp:10
+#: Template/Messages/view.ctp:13
+msgid "New Message"
+msgstr ""
+
+#: Template/Messages/index.ctp:14
+msgid "Messages"
+msgstr ""
+
+#: Template/Messages/view.ctp:11
+msgid "Delete Message"
+msgstr ""
+
+#: Template/Mounths/add.ctp:16
+msgid "Add Mounth"
+msgstr ""
+
+#: Template/Mounths/edit.ctp:22
+#: Template/Mounths/view.ctp:10
+msgid "Edit Mounth"
+msgstr ""
+
+#: Template/Mounths/index.ctp:14
+msgid "Mounths"
+msgstr ""
+
+#: Template/Mounths/view.ctp:11
+msgid "Delete Mounth"
+msgstr ""
+
+#: Template/MyCoins/view.ctp:2
+msgid "Delete My Coin"
+msgstr ""
+
+#: Template/MyCoins/view.ctp:7
+msgid "Crypto Coin"
+msgstr ""
+
+#: Template/MyCoins/view.ctp:11
+msgid "Amount Of Currency"
+msgstr ""
+
+#: Template/MyCoins/view.ctp:15
+msgid "Amount Of Currency In Money"
+msgstr ""
+
+#: Template/MyEnvironments/add.ctp:10
+#: Template/MyEnvironments/edit.ctp:16
+#: Template/MyEnvironments/view.ctp:12
+msgid "List My Environments"
+msgstr ""
+
+#: Template/MyEnvironments/add.ctp:16
+msgid "Add My Environment"
+msgstr ""
+
+#: Template/MyEnvironments/edit.ctp:22
+#: Template/MyEnvironments/view.ctp:10
+msgid "Edit My Environment"
+msgstr ""
+
+#: Template/MyEnvironments/index.ctp:10
+#: Template/MyEnvironments/view.ctp:13
+msgid "New My Environment"
+msgstr ""
+
+#: Template/MyEnvironments/index.ctp:14
+msgid "My Environments"
+msgstr ""
+
+#: Template/MyEnvironments/view.ctp:11
+msgid "Delete My Environment"
+msgstr ""
+
+#: Template/MyEnvironments/view.ctp:20
+msgid "Environment"
+msgstr ""
+
+#: Template/MyReferences/view.ctp:1
+msgid "Delete My Reference"
+msgstr ""
+
+#: Template/MyReferences/view.ctp:6
+#: Template/References/view.ctp:20
+#: Template/Works/view.ctp:20
+msgid "Reference"
+msgstr ""
+
+#: Template/MypreciousTitles/add.ctp:10
+#: Template/MypreciousTitles/edit.ctp:16
+#: Template/MypreciousTitles/view.ctp:12
+msgid "List Myprecious Titles"
+msgstr ""
+
+#: Template/MypreciousTitles/add.ctp:16
+msgid "Add Myprecious Title"
+msgstr ""
+
+#: Template/MypreciousTitles/edit.ctp:22
+#: Template/MypreciousTitles/view.ctp:10
+msgid "Edit Myprecious Title"
+msgstr ""
+
+#: Template/MypreciousTitles/index.ctp:10
+#: Template/MypreciousTitles/view.ctp:13
+msgid "New Myprecious Title"
+msgstr ""
+
+#: Template/MypreciousTitles/index.ctp:14
+msgid "Myprecious Titles"
+msgstr ""
+
+#: Template/MypreciousTitles/view.ctp:11
+msgid "Delete Myprecious Title"
+msgstr ""
+
+#: Template/MypreciousTitles/view.ctp:24
+msgid "Page"
+msgstr ""
+
+#: Template/Mytestes/add.ctp:10
+#: Template/Mytestes/edit.ctp:16
+#: Template/Mytestes/view.ctp:12
+msgid "List Mytestes"
+msgstr ""
+
+#: Template/Mytestes/add.ctp:16
+msgid "Add Mytestis"
+msgstr ""
+
+#: Template/Mytestes/edit.ctp:22
+#: Template/Mytestes/view.ctp:10
+msgid "Edit Mytestis"
+msgstr ""
+
+#: Template/Mytestes/index.ctp:10
+#: Template/Mytestes/view.ctp:13
+msgid "New Mytestis"
+msgstr ""
+
+#: Template/Mytestes/index.ctp:14
+msgid "Mytestes"
+msgstr ""
+
+#: Template/Mytestes/view.ctp:11
+msgid "Delete Mytestis"
+msgstr ""
+
+#: Template/Mytestes/view.ctp:24
+msgid "Register Moment"
+msgstr ""
+
+#: Template/Mytestes/view.ctp:28
+msgid "Register Moment Hour"
+msgstr ""
+
+#: Template/Nfts/view.ctp:6
+msgid "NFT"
+msgstr ""
+
+#: Template/Nfts/view.ctp:14
+msgid "DEFI"
+msgstr ""
+
+#: Template/Nfts/view.ctp:18
+msgid "value"
+msgstr ""
+
+#: Template/Opportunitys/view.ctp:1
+msgid "Delete Opportunity"
+msgstr ""
+
+#: Template/Opportunitys/view.ctp:6
+msgid "Opportunity"
+msgstr ""
+
+#: Template/PageCategorys/add.ctp:10
+#: Template/PageCategorys/edit.ctp:16
+#: Template/PageCategorys/view.ctp:12
+msgid "List Page Categorys"
+msgstr ""
+
+#: Template/PageCategorys/add.ctp:16
+msgid "Add Page Category"
+msgstr ""
+
+#: Template/PageCategorys/edit.ctp:22
+#: Template/PageCategorys/view.ctp:10
+msgid "Edit Page Category"
+msgstr ""
+
+#: Template/PageCategorys/index.ctp:10
+#: Template/PageCategorys/view.ctp:13
+msgid "New Page Category"
+msgstr ""
+
+#: Template/PageCategorys/index.ctp:14
+msgid "Page Categorys"
+msgstr ""
+
+#: Template/PageCategorys/view.ctp:11
+msgid "Delete Page Category"
+msgstr ""
+
+#: Template/PatternPayments/add.ctp:7
+msgid "Attach your voucher"
+msgstr ""
+
+#: Template/PatternPayments/edit.ctp:16
+#: Template/PatternPayments/view.ctp:12
+msgid "List Pattern Payments"
+msgstr ""
+
+#: Template/PatternPayments/edit.ctp:17
+#: Template/PatternPayments/index.ctp:11
+#: Template/PatternPayments/view.ctp:14
+msgid "List Playlist Users"
+msgstr ""
+
+#: Template/PatternPayments/edit.ctp:18
+#: Template/PatternPayments/index.ctp:12
+#: Template/PatternPayments/view.ctp:15
+msgid "New Playlist User"
+msgstr ""
+
+#: Template/PatternPayments/edit.ctp:26
+#: Template/PatternPayments/view.ctp:10
+msgid "Edit Pattern Payment"
+msgstr ""
+
+#: Template/PatternPayments/index.ctp:10
+#: Template/PatternPayments/view.ctp:13
+msgid "New Pattern Payment"
+msgstr ""
+
+#: Template/PatternPayments/index.ctp:18
+msgid "Pattern Payments"
+msgstr ""
+
+#: Template/PatternPayments/view.ctp:11
+msgid "Delete Pattern Payment"
+msgstr ""
+
+#: Template/PatternPayments/view.ctp:24
+msgid "Playlist User"
+msgstr ""
+
+#: Template/PatternPayments/view.ctp:32
+#: Template/Works/view.ctp:28
+msgid "Photo"
+msgstr ""
+
+#: Template/PatternPayments/view.ctp:40
+msgid "Ownersid"
+msgstr ""
+
+#: Template/PaymentMethods/add.ctp:7
+#: Template/PaymentMethods/view_by_user.ctp:9;16
+msgid "Add Payment Method"
+msgstr ""
+
+#: Template/PaymentMethods/edit.ctp:7
+msgid "Edit Payment Method"
+msgstr ""
+
+#: Template/PaymentMethods/index.ctp:10
+msgid "New Payment Method"
+msgstr ""
+
+#: Template/PaymentMethods/index.ctp:13
+msgid "List Method Topayments"
+msgstr ""
+
+#: Template/PaymentMethods/index.ctp:14
+msgid "New Method Topayment"
+msgstr ""
+
+#: Template/PaymentMethods/index.ctp:18
+msgid "Payment Methods"
+msgstr ""
+
+#: Template/PaymentMethods/view.ctp:4
+msgid "Method:"
+msgstr ""
+
+#: Template/PaymentMethods/view.ctp:8
+msgid "Email:"
+msgstr ""
+
+#: Template/PaymentMethods/view.ctp:12
+msgid "Method Ref:"
+msgstr ""
+
+#: Template/PersonalExpenses/add.ctp:10
+#: Template/PersonalExpenses/edit.ctp:16
+#: Template/PersonalExpenses/view.ctp:12
+msgid "List Personal Expenses"
+msgstr ""
+
+#: Template/PersonalExpenses/add.ctp:20
+msgid "Add Personal Expense"
+msgstr ""
+
+#: Template/PersonalExpenses/edit.ctp:26
+#: Template/PersonalExpenses/view.ctp:10
+msgid "Edit Personal Expense"
+msgstr ""
+
+#: Template/PersonalExpenses/index.ctp:10
+#: Template/PersonalExpenses/view.ctp:13
+msgid "New Personal Expense"
+msgstr ""
+
+#: Template/PersonalExpenses/index.ctp:18
+msgid "Personal Expenses"
+msgstr ""
+
+#: Template/PersonalExpenses/view.ctp:11
+msgid "Delete Personal Expense"
+msgstr ""
+
+#: Template/PersonalExpenses/view.ctp:24
+msgid "Personal Hygiene And Cosmetics"
+msgstr ""
+
+#: Template/PersonalExpenses/view.ctp:28
+msgid "Hairdresser"
+msgstr ""
+
+#: Template/PersonalExpenses/view.ctp:32
+msgid "Donations"
+msgstr ""
+
+#: Template/Receipts/add.ctp:10
+#: Template/Receipts/edit.ctp:16
+#: Template/Receipts/view.ctp:12
+msgid "List Receipts"
+msgstr ""
+
+#: Template/Receipts/add.ctp:16
+msgid "Add Receipt"
+msgstr ""
+
+#: Template/Receipts/edit.ctp:22
+#: Template/Receipts/view.ctp:10
+msgid "Edit Receipt"
+msgstr ""
+
+#: Template/Receipts/index.ctp:4
+#: Template/Tablesroots/index.ctp:4
+msgid "New Register"
+msgstr ""
+
+#: Template/Receipts/index.ctp:8
+msgid "Receipts"
+msgstr ""
+
+#: Template/Receipts/view.ctp:11
+msgid "Delete Receipt"
+msgstr ""
+
+#: Template/Receipts/view.ctp:13
+msgid "New Receipt"
+msgstr ""
+
+#: Template/Receipts/view.ctp:24
+msgid "Name Payer"
+msgstr ""
+
+#: Template/Receipts/view.ctp:28
+msgid "Cpf Cnpj Payer"
+msgstr ""
+
+#: Template/Receipts/view.ctp:32
+msgid "City"
+msgstr ""
+
+#: Template/Receipts/view.ctp:36
+msgid "Issuer Name"
+msgstr ""
+
+#: Template/Receipts/view.ctp:40
+msgid "Phone"
+msgstr ""
+
+#: Template/Receipts/view.ctp:44
+msgid "Cpf Cnpj Issuer"
+msgstr ""
+
+#: Template/Receipts/view.ctp:52
+msgid "Date"
+msgstr ""
+
+#: Template/Receipts/view.ctp:65
+msgid "Regarding"
+msgstr ""
+
+#: Template/Recipes/add.ctp:10
+#: Template/Recipes/edit.ctp:16
+#: Template/Recipes/view.ctp:12
+msgid "List Recipes"
+msgstr ""
+
+#: Template/Recipes/add.ctp:20
+msgid "Add Recipe"
+msgstr ""
+
+#: Template/Recipes/edit.ctp:26
+#: Template/Recipes/view.ctp:10
+msgid "Edit Recipe"
+msgstr ""
+
+#: Template/Recipes/index.ctp:10
+#: Template/Recipes/view.ctp:13
+msgid "New Recipe"
+msgstr ""
+
+#: Template/Recipes/index.ctp:18
+msgid "Recipes"
+msgstr ""
+
+#: Template/Recipes/view.ctp:11
+msgid "Delete Recipe"
+msgstr ""
+
+#: Template/Recipes/view.ctp:24
+msgid "Salarys"
+msgstr ""
+
+#: Template/Recipes/view.ctp:28
+msgid "Rentals"
+msgstr ""
+
+#: Template/Recipes/view.ctp:32
+msgid "Prolabores"
+msgstr ""
+
+#: Template/Recipes/view.ctp:36
+msgid "Other Fixed Revenues"
+msgstr ""
+
+#: Template/Recipes/view.ctp:40
+msgid "Dividends"
+msgstr ""
+
+#: Template/Recipes/view.ctp:44
+msgid "Commissions"
+msgstr ""
+
+#: Template/Recipes/view.ctp:48
+msgid "Thirteen Salarys"
+msgstr ""
+
+#: Template/Recipes/view.ctp:52
+msgid "Bonus"
+msgstr ""
+
+#: Template/References/add.ctp:10
+#: Template/References/edit.ctp:16
+#: Template/References/view.ctp:12
+msgid "List References"
+msgstr ""
+
+#: Template/References/add.ctp:16
+msgid "Add Reference"
+msgstr ""
+
+#: Template/References/edit.ctp:22
+#: Template/References/view.ctp:10
+msgid "Edit Reference"
+msgstr ""
+
+#: Template/References/index.ctp:10
+#: Template/References/view.ctp:13
+msgid "New Reference"
+msgstr ""
+
+#: Template/References/index.ctp:14
+msgid "References"
+msgstr ""
+
+#: Template/References/view.ctp:11
+msgid "Delete Reference"
+msgstr ""
+
+#: Template/Roles/add.ctp:16
+msgid "Add Role"
+msgstr ""
+
+#: Template/Roles/edit.ctp:22
+#: Template/Roles/view.ctp:10
+msgid "Edit Role"
+msgstr ""
+
+#: Template/Roles/view.ctp:11
+msgid "Delete Role"
+msgstr ""
+
+#: Template/Tablesadmins/add.ctp:10
+#: Template/Tablesadmins/edit.ctp:16
+#: Template/Tablesadmins/view.ctp:12
+msgid "List Tablesadmins"
+msgstr ""
+
+#: Template/Tablesadmins/add.ctp:16
+msgid "Add Tablesadmin"
+msgstr ""
+
+#: Template/Tablesadmins/edit.ctp:22
+#: Template/Tablesadmins/view.ctp:10
+msgid "Edit Tablesadmin"
+msgstr ""
+
+#: Template/Tablesadmins/index.ctp:10
+#: Template/Tablesadmins/view.ctp:13
+msgid "New Tablesadmin"
+msgstr ""
+
+#: Template/Tablesadmins/view.ctp:11
+msgid "Delete Tablesadmin"
+msgstr ""
+
+#: Template/Tablesadmins/view.ctp:24
+#: Template/Tablesmyprecious/view.ctp:24
+#: Template/Tablesroots/view.ctp:24
+msgid "Text"
+msgstr ""
+
+#: Template/Tablesmyprecious/add.ctp:10
+msgid "List Tablesmyprecious"
+msgstr ""
+
+#: Template/Tablesmyprecious/add.ctp:16
+msgid "Add Tablesmyprecious"
+msgstr ""
+
+#: Template/Tablesmyprecious/edit.ctp:16
+#: Template/Tablesmyprecious/view.ctp:12
+msgid "List"
+msgstr ""
+
+#: Template/Tablesmyprecious/edit.ctp:22
+msgid "Edit Tablesmyprecious"
+msgstr ""
+
+#: Template/Tablesmyprecious/index.ctp:10
+#: Template/Tablesmyprecious/view.ctp:13
+msgid "New"
+msgstr ""
+
+#: Template/Tablesmyprecious/index.ctp:14
+msgid "Tables Register"
+msgstr ""
+
+#: Template/Tablesmyprecious/view.ctp:36
+msgid "Page Category"
+msgstr ""
+
+#: Template/Tablesroots/add.ctp:4
+#: Template/Tablesroots/edit.ctp:16
+#: Template/Tablesroots/view.ctp:12
+msgid "List Tablesroots"
+msgstr ""
+
+#: Template/Tablesroots/add.ctp:10
+msgid "Add Tablesroot"
+msgstr ""
+
+#: Template/Tablesroots/edit.ctp:22
+#: Template/Tablesroots/view.ctp:10
+msgid "Edit Tablesroot"
+msgstr ""
+
+#: Template/Tablesroots/index.ctp:8
+msgid "Root Tables - Main Menu"
+msgstr ""
+
+#: Template/Tablesroots/view.ctp:11
+msgid "Delete Tablesroot"
+msgstr ""
+
+#: Template/Tablesroots/view.ctp:13
+msgid "New Tablesroot"
+msgstr ""
+
+#: Template/Titles/add.ctp:10
+#: Template/Titles/edit.ctp:16
+#: Template/Titles/view.ctp:12
+msgid "List Titles"
+msgstr ""
+
+#: Template/Titles/add.ctp:16
+msgid "Add Title"
+msgstr ""
+
+#: Template/Titles/edit.ctp:22
+#: Template/Titles/view.ctp:10
+msgid "Edit Title"
+msgstr ""
+
+#: Template/Titles/index.ctp:10
+#: Template/Titles/view.ctp:13
+msgid "New Title"
+msgstr ""
+
+#: Template/Titles/index.ctp:14
+msgid "Titles"
+msgstr ""
+
+#: Template/Titles/view.ctp:11
+msgid "Delete Title"
+msgstr ""
+
+#: Template/UserHasUser/add.ctp:10
+#: Template/UserHasUser/edit.ctp:16
+#: Template/UserHasUser/view.ctp:12
+msgid "List User Has User"
+msgstr ""
+
+#: Template/UserHasUser/add.ctp:16
+msgid "Add User Has User"
+msgstr ""
+
+#: Template/UserHasUser/edit.ctp:22
+#: Template/UserHasUser/view.ctp:10
+msgid "Edit User Has User"
+msgstr ""
+
+#: Template/UserHasUser/index.ctp:10
+#: Template/UserHasUser/view.ctp:13
+msgid "New User Has User"
+msgstr ""
+
+#: Template/UserHasUser/index.ctp:14
+msgid "User Has User"
+msgstr ""
+
+#: Template/UserHasUser/view.ctp:11
+msgid "Delete User Has User"
+msgstr ""
+
+#: Template/UserHasUser/view.ctp:24
+msgid "User Host"
+msgstr ""
+
+#: Template/UserHasUser/view.ctp:28
+msgid "User Guest"
+msgstr ""
+
+#: Template/Users/add.ctp:18
+msgid "Add User"
+msgstr ""
+
+#: Template/Users/edit.ctp:24
+#: Template/Users/profile.ctp:13
+#: Template/Users/view.ctp:10
+msgid "Edit User"
+msgstr ""
+
+#: Template/Users/loginTest.ctp:10
+msgid "Logar"
+msgstr ""
+
+#: Template/Users/mainmenu.ctp:61
+msgid "Register Tables Root"
+msgstr ""
+
+#: Template/Users/mainmenu.ctp:69
+msgid "Register Tables Admin"
+msgstr ""
+
+#: Template/Users/mainmenu.ctp:77
+msgid "Register Tables Colibri"
+msgstr ""
+
+#: Template/Users/mainmenu.ctp:85
+msgid "Register Tables Tubex"
+msgstr ""
+
+#: Template/Users/mainmenu.ctp:93
+msgid "Register Tables My Precious"
+msgstr ""
+
+#: Template/Users/profile copy.ctp:4
+msgid "Edit Profile"
+msgstr ""
+
+#: Template/Users/profile copy.ctp:6
+msgid "Update Photo"
+msgstr ""
+
+#: Template/Users/profile copy.ctp:7
+#: Template/Users/update_password.ctp:8
+msgid "Edit Password"
+msgstr ""
+
+#: Template/Users/profile copy.ctp:8
+msgid "Payout Settings"
+msgstr ""
+
+#: Template/Users/view.ctp:11
+msgid "Delete User"
+msgstr ""
+
+#: Template/Users/view.ctp:30
+msgid "Username"
+msgstr ""
+
+#: Template/Users/view.ctp:38
+msgid "Cellphone"
+msgstr ""
+
+#: Template/Users/view.ctp:42
+msgid "Password"
+msgstr ""
+
+#: Template/Works/add.ctp:10
+#: Template/Works/edit.ctp:16
+#: Template/Works/view.ctp:12
+msgid "List Works"
+msgstr ""
+
+#: Template/Works/add.ctp:16
+msgid "Add Work"
+msgstr ""
+
+#: Template/Works/edit.ctp:22
+#: Template/Works/view.ctp:10
+msgid "Edit Work"
+msgstr ""
+
+#: Template/Works/index.ctp:10
+#: Template/Works/view.ctp:13
+msgid "New Work"
+msgstr ""
+
+#: Template/Works/index.ctp:14
+msgid "Works"
+msgstr ""
+
+#: Template/Works/view.ctp:11
+msgid "Delete Work"
+msgstr ""
+
+#: Template/Works/view.ctp:32
+msgid "Subtitle"
+msgstr ""
+

@@ -1,0 +1,19 @@
+.field_value {
+    min-width: 150px !important;
+    max-width: 150px !important;
+}
+
+.field_cpf_cnpj {
+    min-width: 200px !important;
+    max-width: 200px !important;
+}
+
+.field_city {
+    min-width: 200px !important;
+    max-width: 200px !important;
+}
+
+.field_phone {
+    min-width: 200px !important;
+    max-width: 200px !important;
+}

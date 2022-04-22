@@ -1,0 +1,115 @@
+/*=== Text purple color ===*/
+a:hover,
+.sectionTitle span, .element-sidenav .nav-item > a.nav-link:hover, .element-sidenav .nav-item.active > a.nav-link,
+.btn-primary-outlined, .list-group-item a:hover .badge, .list-group-item-primary a, .card .card-title:hover,
+.countrySelect .sbOptions a:hover, ul.nav .nav-item.active .nav-link, .main-nav .nav-item a.nav-link:hover,
+.navbar-sticky.main-nav .nav-item.active a.nav-link, .navbar-sticky.main-nav .nav-item.show > a,
+.navbar-sticky.main-nav .nav-item a.nav-link:hover,
+.main-nav .nav-item.active a.nav-link, .main-nav .nav-item.show > a, .navbar-sticky.bg-white .nav-item a.nav-link.active,
+.boxed ul.nav .nav-item.active .nav-link, .boxed .main-nav .nav-item a.nav-link:hover,
+.boxed .main-nav .nav-item.active a.nav-link, .boxed .main-nav .nav-item.show > a, #filters .active a,
+.bg-white .main-nav .nav-item a.nav-link:hover, .header-transparent .main-nav .nav-item a.nav-link:hover, .bg-white .main-nav .nav-item.active a.nav-link, .header-transparent .main-nav .nav-item.active a.nav-link,
+.bg-white .main-nav .nav-item.show > a, .header-transparent .main-nav .nav-item.show > a, .pricing_image-card .circle span.price, .pricing .circle .price,
+.icon_tabs .nav-item a.nav-link:hover .fa, .icon_tabs .nav-item a.nav-link.active .fa, .nav-unbordered.nav-tabs .nav-item .nav-link.active,
+.main-nav .nav-item a.nav-link:hover, .boxed .main-nav .nav-item.active a.nav-link, .main-nav .nav-item.active a.nav-link, .main-nav .nav-item.show > a,
+.main-nav .nav-item.dropdown > a.nav-link:hover, .main-nav .nav-item.dropdown > a.nav-link:focus, .dropdown-menu a:hover, .error-content span i.fa.fa-frown-o,
+.card.blog-card .card-body h3:hover, .about_phylosophy .about_phylosophy-desc ul.list-group li.list-group-item .fa, .order-single .cart_product-title h5:hover,
+.team-wrapper .team-card a.overlay_icon:hover .fa, .card.blog-card .card-body span a.author, .about-fullwidth .vid-link i, i.overlay-icon,
+.single_item .single_item-details p a, .cart h3.bg-sand span, .order-single .price span, .nav-tabs.bar-tabs .nav-link.active h5,
+.about-fullwidth.about-beauty .styled_list li i,
+.confirm-details .tags span, p.tag a:hover, .comment_title .btn, .reply_title .btn, .dropdown-menu a.active {
+  color: #a262de;
+}
+
+.text-primary, a.text-primary:focus, a.text-primary:hover, .main-nav .nav-item a.nav-link.active {
+  color: #a262de !important;
+}
+
+/*=== Background pink color ===*/
+.bg-primary, .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary.active, .btn-primary:active,
+.btn-primary-outlined:hover, .btn-primary-outlined:focus, .btn-primary-outlined.active, .btn-primary-outlined:active, .main-nav .navbar-toggler .burger-menu,
+.socialLink a:focus, .socialLink a:hover, .socialLink a.active, .socialLink a:active, .dropdown.show > .btn-primary.dropdown-toggle,
+.dropdown.show > .btn-primary.dropdown-toggle.focus, .dropdown.show > .btn-primary.dropdown-toggle:focus,
+.dropdown.show > .btn-primary.dropdown-toggle.active, .dropdown.show > .btn-primary.dropdown-toggle:active,
+.dropdown.show > .btn-primary.dropdown-toggle.active, .dropdown.show > .btn-primary.dropdown-toggle:hover,
+.badge-primary, .list-group-item.active, .carousel-indicators li.active, ::-moz-selection,
+.carousel-control span.icon-prev:hover, .carousel-control span.icon-prev:focus, .carousel-control span.icon-next:hover, .carousel-control span.icon-next:focus,
+.arrow-shade button.slick-arrow:hover, .arrow-shade button.slick-arrow:focus, .checkbox-custom:checked + .checkbox-custom-label:before,
+.radio-custom:checked + .radio-custom-label:before, .nav-cart .btn-cart,
+.testimonial-carousel .carousel-indicators li.active, .slick-dots li.slick-active button, .progress-bar-primary, .main-slider .common-inner a.btn-primary, ul.nav-tabs.no-bg .nav-item .nav-link.active,
+ul.nav-tabs.nav-pills .nav-item .nav-link.active, .card.blog-card .card-body .circle,
+.page-item.active a.page-link, .page-item:hover a.page-link,
+.page-item.active a.page-link, .page-item:hover a.page-link, .pricing.delux .card-header, .pricing_image-card .btn:hover, .pricing .btn:hover,
+.deal_single .media-body span.btn, .cta .cta_content-box, .price-range .progress .progress-bar, .price-range .progress .bulet,
+.price-range .price-slider-inner .ui-widget-content .ui-slider-range, .comment_title .btn:hover, .reply_title .btn:hover {
+  background-color: #a262de !important;
+}
+.bg-primary, .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary.active, .btn-primary:active,
+.btn-primary-outlined:hover, .btn-primary-outlined:focus, .btn-primary-outlined.active, .btn-primary-outlined:active, .main-nav .navbar-toggler .burger-menu,
+.socialLink a:focus, .socialLink a:hover, .socialLink a.active, .socialLink a:active, .dropdown.show > .btn-primary.dropdown-toggle,
+.dropdown.show > .btn-primary.dropdown-toggle.focus, .dropdown.show > .btn-primary.dropdown-toggle:focus,
+.dropdown.show > .btn-primary.dropdown-toggle.active, .dropdown.show > .btn-primary.dropdown-toggle:active,
+.dropdown.show > .btn-primary.dropdown-toggle.active, .dropdown.show > .btn-primary.dropdown-toggle:hover,
+.badge-primary, .list-group-item.active, .carousel-indicators li.active, ::selection,
+.carousel-control span.icon-prev:hover, .carousel-control span.icon-prev:focus, .carousel-control span.icon-next:hover, .carousel-control span.icon-next:focus,
+.arrow-shade button.slick-arrow:hover, .arrow-shade button.slick-arrow:focus, .checkbox-custom:checked + .checkbox-custom-label:before,
+.radio-custom:checked + .radio-custom-label:before, .nav-cart .btn-cart,
+.testimonial-carousel .carousel-indicators li.active, .slick-dots li.slick-active button, .progress-bar-primary, .main-slider .common-inner a.btn-primary, ul.nav-tabs.no-bg .nav-item .nav-link.active,
+ul.nav-tabs.nav-pills .nav-item .nav-link.active, .card.blog-card .card-body .circle,
+.page-item.active a.page-link, .page-item:hover a.page-link,
+.page-item.active a.page-link, .page-item:hover a.page-link, .pricing.delux .card-header, .pricing_image-card .btn:hover, .pricing .btn:hover,
+.deal_single .media-body span.btn, .cta .cta_content-box, .price-range .progress .progress-bar, .price-range .progress .bulet,
+.price-range .price-slider-inner .ui-widget-content .ui-slider-range, .comment_title .btn:hover, .reply_title .btn:hover {
+  background-color: #a262de !important;
+}
+
+.progress-bar, .daterangepicker td.active, .daterangepicker td.active:hover, .progress.bordered .progress-bar, .noUi-connect {
+  background-color: #a262de;
+}
+
+.hover-overlay {
+  background-color: rgba(162, 98, 222, 0.8);
+}
+
+.newslatter-area:before {
+  background-color: rgba(162, 98, 222, 0.88);
+}
+
+/*=== Border pink color ===*/
+.btn-primary, .socialLink a:focus, .socialLink a:hover, .socialLink a.active, .socialLink a:active, .dropdown.show > .btn-primary.dropdown-toggle,
+.btn-primary:hover, .btn-primary:focus, .btn-primary.active, .btn-primary:active,
+.dropdown.show > .btn-primary.dropdown-toggle.focus, .dropdown.show > .btn-primary.dropdown-toggle:focus, .dropdown.show > .btn-primary.dropdown-toggle.active,
+.dropdown.show > .btn-primary.dropdown-toggle:active, .dropdown.show > .btn-primary.dropdown-toggle.active, .dropdown.show > .btn-primary.dropdown-toggle:hover,
+.list-group-item.active, .carousel-indicators li.active, .nav-tabs.bar-tabs .nav-link.active:before,
+.carousel-control span.icon-prev:hover, .carousel-control span.icon-prev:focus, .carousel-control span.icon-next:hover, .carousel-control span.icon-next:focus,
+.testimonial-carousel .carousel-indicators li.active, .arrow-shade button.slick-arrow:hover, .arrow-shade button.slick-arrow:focus,
+input.form-control.focus, input.form-control:focus, input.form-control.active, input.form-control:active,
+textarea.form-control.focus, textarea.form-control:focus, textarea.form-control.active, textarea.form-control:active,
+select.form-control.focus, select.form-control:focus, select.form-control.active, select.form-control:active,
+.checkbox-custom:checked + .checkbox-custom-label:before, .radio-custom:checked + .radio-custom-label:before,
+ul.nav-tabs.no-bg .nav-item .nav-link.active, ul.nav-tabs.nav-pills .nav-item .nav-link.active, .main-nav .nav-item a.nav-link:before,
+.bg-white .main-nav .nav-item a.nav-link:before, .header-transparent .main-nav .nav-item a.nav-link:before,
+.page-item.active a.page-link, .page-item:hover a.page-link, .icon_tabs .nav-item a.nav-link:before, .btn-primary-outlined, .pricing .btn:hover,
+.nav-unbordered.nav-tabs .nav-item .nav-link.active:before, .seperator:before, .seperator:after, .price-range .progress .bulet, .pricing_image-card .btn:hover,
+.price-range .price-slider-inner .ui-widget-content .ui-slider-handle, .comment_title .btn:hover, .reply_title .btn:hover,
+.newsletter input.focus, .newsletter input:focus, .newsletter input.active, .newsletter input:active, .newsletter input:hover, p.devider.devider_primary {
+  border-color: #a262de !important;
+}
+
+.noUi-horizontal .noUi-handle {
+  border-color: #a262de;
+}
+
+.blockquote {
+  border-left: 3px solid #a262de;
+}
+
+.blockquote.text-right {
+  border-right: 3px solid #a262de;
+  border-left: 1px solid #e5e5e5;
+}
+
+/*=== Seperator pink color ===*/
+.seperator svg.seperator-icon, .main-nav .navbar-brand .logo-fill-1, .main-nav .navbar-brand .logo-fill-2, .footer-logo .logo-fill-1, .footer-logo .logo-fill-2, .error-content .logo-fill-1, .error-content .logo-fill-2 {
+  fill: #a262de;
+}
