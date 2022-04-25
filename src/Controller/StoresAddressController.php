@@ -29,6 +29,22 @@ class StoresAddressController extends AppController
         $this->set('storesAddres', $storesAddres);
     }
 
+    public function getAddress($id = null)
+    {
+        $this->autoRender = false;
+
+        $this->hasPermission('storeAdmin');
+
+        $storesAddres = $this->StoresAddress->find('all', [
+            'contain' => ['StoresDemands', 'Users'],
+            'conditions' => [
+                'StoresAddress.stores_demands_id =' => $id
+            ]
+        ])->first();
+
+        echo json_encode($storesAddres);
+    }
+
     public function add()
     {
         $this->hasPermission('storeAdmin');

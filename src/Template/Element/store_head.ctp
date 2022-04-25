@@ -38,6 +38,6 @@
 
     <link href="<?php echo $this->request->webroot . 'Store/assets/css/default.css';?>" rel="stylesheet" id="option_color">
 
-    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'himu/images/ico/newlogo_yhh_icon.png';?>">
+    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'img/favicon-32x32.png';?>">
 
 </head>

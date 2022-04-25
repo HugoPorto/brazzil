@@ -50,6 +50,12 @@
                             </div>
                         </div>
 
+                        <input
+                            type="hidden"
+                            class="form-control"
+                            name="_csrfToken"
+                            value="<?= $this->request->getParam('_csrfToken'); ?>"/>
+
                         <div class='form-row row'>
                             <div class='col-xs-12 form-group card required'>
                                 <label class='control-label'>Número do cartão</label> <input

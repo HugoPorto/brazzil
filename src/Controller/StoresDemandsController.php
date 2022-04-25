@@ -8,12 +8,15 @@ class StoresDemandsController extends AppController
 {
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
-        $storesDemands = $this->paginate($this->StoresDemands);
+        $this->hasPermission('storeAdmin');
 
-        $this->set(compact('storesDemands'));
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
+        $storesDemands = $this->StoresDemands->find('all', ['contain' => 'Users']);
+
+        $this->set(compact('storesDemands', 'loginMenu'));
     }
 
 
@@ -48,6 +51,7 @@ class StoresDemandsController extends AppController
         $storesDemand = $this->StoresDemands->get($id, [
             'contain' => []
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $storesDemand = $this->StoresDemands->patchEntity($storesDemand, $this->request->getData());
             if ($this->StoresDemands->save($storesDemand)) {
@@ -59,5 +63,30 @@ class StoresDemandsController extends AppController
         }
         $users = $this->StoresDemands->Users->find('list', ['limit' => 200]);
         $this->set(compact('storesDemand', 'users'));
+    }
+
+    public function updateStatusDemand($id)
+    {
+        $this->autoRender = false;
+
+        $this->hasPermission('storeAdmin');
+
+        $storesDemand = $this->StoresDemands->get($id, [
+            'contain' => []
+        ]);
+
+        $data = [
+            'status' => true
+        ];
+
+        $storesDemand = $this->StoresDemands->patchEntity($storesDemand, $data);
+
+        if ($this->StoresDemands->save($storesDemand)) {
+            echo 'success';
+            exit();
+        } else {
+            echo 'Erro ao atualizar status.';
+            exit();
+        }
     }
 }

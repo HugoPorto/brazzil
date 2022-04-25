@@ -1,112 +1,110 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
 
-/**
- * StoresCategories Controller
- *
- * @property \App\Model\Table\StoresCategoriesTable $StoresCategories
- *
- * @method \App\Model\Entity\StoresCategory[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
 class StoresCategoriesController extends AppController
 {
-
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|void
-     */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesCategories = $this->paginate($this->StoresCategories);
 
-        $this->set(compact('storesCategories'));
+        $this->set(compact('storesCategories', 'loginMenu'));
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Stores Category id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function view($id = null)
     {
-        $storesCategory = $this->StoresCategories->get($id, [
-            'contain' => ['Users']
-        ]);
+        $this->hasPermission('storeAdmin');
 
-        $this->set('storesCategory', $storesCategory);
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
+        $storesCategory = $this->StoresCategories->get($id);
+
+        $this->set(compact('storesCategory', 'loginMenu'));
     }
 
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
     public function add()
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesCategory = $this->StoresCategories->newEntity();
+
         if ($this->request->is('post')) {
             $storesCategory = $this->StoresCategories->patchEntity($storesCategory, $this->request->getData());
-            if ($this->StoresCategories->save($storesCategory)) {
-                $this->Flash->success(__('The stores category has been saved.'));
 
+            if ($this->StoresCategories->save($storesCategory)) {
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The stores category could not be saved. Please, try again.'));
+
+            $this->Flash->error(__('A categoria não pode ser ssalva. Por favor, tente novamente.'));
         }
-        $users = $this->StoresCategories->Users->find('list', ['limit' => 200]);
-        $this->set(compact('storesCategory', 'users'));
+
+        $this->set(compact('storesCategory', 'loginMenu'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Stores Category id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
     public function edit($id = null)
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesCategory = $this->StoresCategories->get($id, [
             'contain' => []
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $storesCategory = $this->StoresCategories->patchEntity($storesCategory, $this->request->getData());
-            if ($this->StoresCategories->save($storesCategory)) {
-                $this->Flash->success(__('The stores category has been saved.'));
 
+            if ($this->StoresCategories->save($storesCategory)) {
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The stores category could not be saved. Please, try again.'));
+
+            $this->Flash->error(__('A categoria não pode ser editada. Por favor, tente novamente.'));
         }
-        $users = $this->StoresCategories->Users->find('list', ['limit' => 200]);
-        $this->set(compact('storesCategory', 'users'));
+
+        $this->set(compact('storesCategory', 'loginMenu'));
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Stores Category id.
-     * @return \Cake\Http\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
-        $storesCategory = $this->StoresCategories->get($id);
-        if ($this->StoresCategories->delete($storesCategory)) {
-            $this->Flash->success(__('The stores category has been deleted.'));
-        } else {
-            $this->Flash->error(__('The stores category could not be deleted. Please, try again.'));
-        }
+        $this->hasPermission('storeAdmin');
 
-        return $this->redirect(['action' => 'index']);
+        $this->loadModel('StoresProducts');
+
+        $products = $this->StoresProducts->find(
+            'all',
+            [
+                'conditions' => [
+                    'StoresProducts.stores_categories_id =' => $id
+                ]
+            ]
+        );
+
+        if (!empty($products->toArray())) {
+            echo 'A categoria não pode ser apagada porq que existem produtos que a utilizam.';
+            exit();
+        } else {
+            $storesCategory = $this->StoresCategories->get($id);
+
+            if ($this->StoresCategories->delete($storesCategory)) {
+                echo 'success';
+                exit();
+            }
+        }
     }
 }

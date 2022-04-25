@@ -4,23 +4,25 @@
             <div class="row justify-content-center justify-content-lg-between">
                 <div class="col-md-4">
                     <div class="">
-
-                        <?= $storesAbouts->about?>
-
+                        <h3>QUEM SOMOS</h3>
+                        <p style="font-size: 14px; text-align: justify">
+                            <?= h($storesAbouts->about)?>
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-3">
                     <div class="">
-
-                        <?= $storesHours->hour?>
-
+                        <h3>HORÁRIOS</h3>
+                        <p style="font-size: 14px; text-align: justify">
+                            <?= h($storesHours->hour)?>
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="">
                         <h3>CONTATO</h3>
-                        <p style="text-align: justify; font-size: 12px">
-                            <?= $storesContacts->contact?>
+                        <p style="font-size: 14px; text-align: justify">
+                            <?= h($storesContacts->contact)?>
                         </p>
                     </div>
                 </div>

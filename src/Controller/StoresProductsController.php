@@ -19,7 +19,7 @@ class StoresProductsController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
-        $this->viewBuilder()->setLayout('focux');
+        $this->viewBuilder()->setLayout('brazzil');
 
         $loginMenu = $this->loginMenuLoad();
 
@@ -334,5 +334,23 @@ class StoresProductsController extends AppController
 
             return $this->redirect(['action' => 'index']);
         }
+    }
+
+    public function relationshipProducts($idCategory = null)
+    {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
+        $storesProducts = $this->StoresProducts->find('all', [
+            'conditions' =>
+                [
+                    'StoresProducts.stores_categories_id =' => $idCategory
+                ]
+        ]);
+
+        $this->set(compact('storesProducts', 'loginMenu'));
     }
 }

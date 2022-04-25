@@ -32,7 +32,7 @@ class AppController extends Controller
                 ]
             ],
             'logoutRedirect' => [
-                'controller' => 'users', 'action' => 'signup'
+                'controller' => 'users', 'action' => 'login'
             ]
 
             ]
@@ -129,11 +129,6 @@ class AppController extends Controller
         }
 
         return $loginMenu;
-    }
-
-    protected function redirectSignup()
-    {
-        return $this->redirect(['controller' => 'users', 'action' => 'signup']);
     }
 
     protected function redirectReferer()
@@ -244,7 +239,7 @@ class AppController extends Controller
     protected function hasPermission($permission)
     {
         if (!($this->Auth->user() !== null) && !($this->Roles->get($this->Auth->user()['roles_id'])->role == $permission)) {
-            $this->redirectSignup();
+            return $this->redirect(['controller' => 'users', 'action' => 'login']);
         }
     }
 

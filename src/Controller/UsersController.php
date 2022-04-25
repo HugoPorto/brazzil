@@ -115,31 +115,25 @@ class UsersController extends AppController
 
     public function login()
     {
-        if (!$this->Auth->user()) {
-            if ($this->request->is('post')) {
+        if (!$this->Auth->user() && $this->request->is('post')) {
                 $user = $this->Auth->identify();
 
-                if ($user) {
-                    $this->Auth->setUser($user);
+            if ($user) {
+                $this->Auth->setUser($user);
 
-                    $role = $this->Users->Roles->get($user['roles_id']);
+                $role = $this->Users->Roles->get($user['roles_id']);
 
-                    if ($role->role === 'store') {
-                        return $this->redirect(['controller' => 'homes', 'action' => 'store']);
-                    }
-
-                    return $this->redirect(['controller' => 'users', 'action' => 'mainmenu']);
-                } else {
-                    return $this->redirect(['controller' => 'users', 'action' => 'signup']);
+                if ($role->role === 'store') {
+                    return $this->redirect(['controller' => 'homes', 'action' => 'store']);
                 }
 
-                $this->Flash->error(__('Nome de usuário ou password inválido...'));
+                return $this->redirect(['controller' => 'users', 'action' => 'mainmenu']);
+            } else {
+                return $this->redirect(['controller' => 'users', 'action' => 'login']);
             }
-        } else {
-            return $this->redirect(['controller' => 'pages', 'action' => 'index']);
-        }
 
-        return $this->redirect(['controller' => 'users', 'action' => 'signup']);
+                $this->Flash->error(__('Nome de usuário ou password inválido...'));
+        }
     }
 
     public function mainmenu()
@@ -178,7 +172,7 @@ class UsersController extends AppController
                     $role = $this->Users->Roles->get($this->request->data['roles_id']);
 
                     if ($role->role === 'store') {
-                        return $this->redirect(['controller' => 'users', 'action' => 'signup']);
+                        return $this->redirect(['controller' => 'users', 'action' => 'login']);
                     }
 
                     return $this->redirect(['action' => 'index']);
@@ -194,7 +188,7 @@ class UsersController extends AppController
     public function profile($userName = null)
     {
         if ($this->Auth->user() !== null && $this->Roles->get($this->Auth->user()['roles_id'])->role == 'storeAdmin') {
-                $this->viewBuilder()->setLayout('focux');
+                $this->viewBuilder()->setLayout('brazzil');
 
                 $this->loadModel('Abouts');
 
@@ -230,7 +224,7 @@ class UsersController extends AppController
     {
         if ($this->Auth->user() !== null) {
             if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'storeAdmin') {
-                $this->viewBuilder()->setLayout('focux');
+                $this->viewBuilder()->setLayout('brazzil');
 
                 $this->loadModel('Betas');
 
@@ -291,7 +285,7 @@ class UsersController extends AppController
     {
         if ($this->Auth->user() !== null) {
             if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'common') {
-                $this->viewBuilder()->setLayout('focux');
+                $this->viewBuilder()->setLayout('brazzil');
 
                 $this->loadModel('Betas');
 
@@ -350,7 +344,7 @@ class UsersController extends AppController
     public function updatePhoto()
     {
         if ($this->Auth->user() !== null && $this->Roles->get($this->Auth->user()['roles_id'])->role == 'storeAdmin') {
-                $this->viewBuilder()->setLayout('focux');
+                $this->viewBuilder()->setLayout('brazzil');
 
                 $this->loadModel('ImageProfiles');
 
@@ -432,9 +426,5 @@ class UsersController extends AppController
         } else {
             return $this->redirect(['controller' => 'pages', 'action' => 'index']);
         }
-    }
-
-    public function signup()
-    {
     }
 }

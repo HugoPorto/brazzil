@@ -66,7 +66,7 @@
                     <?php else : ?>
                         <li class="nav-item ">
 
-                            <?php echo $this->Html->link(__('Entrar'), ['controller' => 'users', 'action' => 'signup'], ['class' => 'nav-link']);?>
+                            <?php echo $this->Html->link(__('Entrar'), ['controller' => 'users', 'action' => 'login'], ['class' => 'nav-link']);?>
 
                         </li>
 

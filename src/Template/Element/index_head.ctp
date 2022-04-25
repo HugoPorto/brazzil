@@ -40,13 +40,16 @@
 
     <link rel="stylesheet" href="<?php echo $this->request->webroot . 'AdminLTE-3.1.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css';?>">
 
-    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'himu/images/ico/newlogo_yhh_icon.png';?>">
+    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'img/favicon-32x32.png';?>">
+
+    <link rel="stylesheet" href="<?php echo $this->request->webroot . 'AdminLTE-3.1.0/plugins/toastr/toastr.min.css';?>">
+
+    <link rel="stylesheet" href="<?php echo $this->request->webroot . 'AdminLTE-3.1.0/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css';?>">
 
     <?= $this->Html->css(
         [
                 '/css/index_style.css'
         ]
-    );
-                                    ?>
+    );?>
 
 </head>

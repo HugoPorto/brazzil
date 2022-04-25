@@ -53,6 +53,12 @@
                     required>
             </div>
 
+            <input
+                type="hidden"
+                class="form-control"
+                name="_csrfToken"
+                value="<?= $this->request->getParam('_csrfToken'); ?>"/>
+
             <?php if ($prazoEntrega) : ?>
                 <div class="col-md-10" style="margin-top: 10px">
                     <p>Prazo Entrega: <?= $prazoEntrega ?> dia(s)</p>

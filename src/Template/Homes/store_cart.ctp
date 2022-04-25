@@ -101,6 +101,12 @@
                                     value="<?= $cep ? $cep : '' ?>"
                                     placeholder="CEP"
                                     required>
+
+                                <input
+                                    type="hidden"
+                                    class="form-control"
+                                    name="_csrfToken"
+                                    value="<?= $this->request->getParam('_csrfToken'); ?>"/>
                             </div>
                         </div>
 

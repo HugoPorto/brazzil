@@ -27,6 +27,12 @@
 
                         <input type="hidden" name="users_id" value="<?= $idUser ?>"/>
 
+                        <input
+                            type="hidden"
+                            class="form-control"
+                            name="_csrfToken"
+                            value="<?= $this->request->getParam('_csrfToken'); ?>"/>
+
                         <button class="btn btn-primary btn-default" type="submit">
                             <i class="fa fa-shopping-basket"></i> Adicionar ao carrinho
                         </button>

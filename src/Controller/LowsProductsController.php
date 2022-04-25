@@ -9,7 +9,7 @@ class LowsProductsController extends AppController
     public function index()
     {
         if ($this->Auth->user() !== null && $this->Roles->get($this->Auth->user()['roles_id'])->role == 'storeAdmin') {
-            $this->viewBuilder()->setLayout('focux');
+            $this->viewBuilder()->setLayout('brazzil');
 
             $loginMenu = $this->loginMenuLoad();
 

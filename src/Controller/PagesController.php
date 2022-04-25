@@ -10,7 +10,7 @@ class PagesController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
-        $this->viewBuilder()->setLayout('focux');
+        $this->viewBuilder()->setLayout('brazzil');
 
         $this->clearSession();
 

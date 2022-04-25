@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     3.3.0
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App;
 
 use Cake\Core\Configure;
@@ -19,6 +21,8 @@ use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use Cake\Http\Middleware\SecurityHeadersMiddleware;
+use Cake\Http\Middleware\CsrfProtectionMiddleware;
 
 /**
  * Application setup class.
@@ -36,6 +40,17 @@ class Application extends BaseApplication
      */
     public function middleware($middlewareQueue)
     {
+        $securityHeaders = new SecurityHeadersMiddleware();
+        $securityHeaders
+            ->setCrossDomainPolicy()
+            ->setReferrerPolicy()
+            ->setXFrameOptions()
+            ->setXssProtection()
+            ->noOpen()
+            ->noSniff();
+
+        $csrf = new CsrfProtectionMiddleware();
+
         $middlewareQueue
             // Catch any exceptions in the lower layers,
             // and make an error page/response
@@ -45,7 +60,11 @@ class Application extends BaseApplication
             ->add(AssetMiddleware::class)
 
             // Add routing middleware.
-            ->add(new RoutingMiddleware($this));
+            ->add(new RoutingMiddleware($this))
+
+            ->add($securityHeaders)
+
+            ->add($csrf);
 
         return $middlewareQueue;
     }

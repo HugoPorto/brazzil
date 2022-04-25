@@ -4,9 +4,8 @@
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        OHNIK
+        Brazzil Commerce CMS
     </title>
-    <?= $this->element('favicon'); ?>
     <?= $this->element('datatables_package');?>
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('cake.css') ?>
@@ -15,7 +14,7 @@
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 
-    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'himu/images/ico/newlogo_yhh_icon.png';?>">
+    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'img/favicon-32x32.png';?>">
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation" style="background-color: black">

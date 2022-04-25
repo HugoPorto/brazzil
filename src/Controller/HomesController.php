@@ -26,6 +26,9 @@ class HomesController extends AppController
     {
         $this->loadModel('StoresProducts');
         $this->loadModel('StoresSliders');
+
+        // $token = $this->request->getParam('_csrfToken');
+
         $storesSliders = $this->StoresSliders->find('all');
 
         $this->paginate = [

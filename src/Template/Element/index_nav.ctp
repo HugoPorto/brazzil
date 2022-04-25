@@ -15,7 +15,7 @@
     </li>
 
     <li class="nav-item d-none d-sm-inline-block">
-        <a :href="structure_page.main_link" class="nav-link">{{structure_page.home}}</a>
+        <a href="<?= $this->request->base ?>/pages" class="nav-link">Home</a>
     </li>
 
     <li class="nav-item d-none d-sm-inline-block">

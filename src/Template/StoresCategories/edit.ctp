@@ -1,27 +1,33 @@
-<nav class="large-2 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Ações') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Deletar'),
-                ['action' => 'delete', $storesCategory->id],
-                ['confirm' => __('Você tem certeza que deseja apagar esse item?', $storesCategory->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('Categorias'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="storesCategories form large-10 medium-8 columns content">
-    <?= $this->Form->create($storesCategory) ?>
-    <fieldset>
-        <legend><?= __('Editar Categoria') ?></legend>
+<div class="col-md-6" style="padding: 0px">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Editar Nova Categoria</h3>
+        </div>
 
-        <label for="category">Categoria</label>
-        <?php
-            echo $this->Form->control('category', [
-                'label' => false
-            ]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Editar')) ?>
-    <?= $this->Form->end() ?>
+        <?= $this->Form->create($storesCategory) ?>
+
+        <div class="card-body">
+            <p><?= $this->Flash->render() ?></p>
+
+            <div class="form-group">
+
+            <label for="category">Categoria</label>
+
+            <?php
+                echo $this->Form->control('category', [
+                    'label' => false,
+                    'class' => 'form-control'
+                ]);
+                ?>
+
+            </div>
+
+
+        <?= $this->Form->button(__('Editar'), ['class' => 'btn btn-info']) ?>
+
+        <?= $this->Form->end() ?>
+
+        </div>
+    </div>
 </div>
+
