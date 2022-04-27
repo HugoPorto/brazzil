@@ -42,11 +42,15 @@ class StoresProductsController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesProduct = $this->StoresProducts->get($id, [
             'contain' => ['Users', 'StoresCategories']
         ]);
 
-        $this->set('storesProduct', $storesProduct);
+        $this->set(compact('storesProduct', 'loginMenu'));
     }
 
     private function getQrCode($data)
@@ -91,6 +95,10 @@ class StoresProductsController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesProduct = $this->StoresProducts->newEntity();
 
         if ($this->request->is('post')) {
@@ -129,11 +137,9 @@ class StoresProductsController extends AppController
             $this->Flash->error(__('The stores product could not be saved. Please, try again.'));
         }
 
-        $users = $this->StoresProducts->Users->find('list', ['limit' => 200]);
-
         $storesCategories = $this->StoresProducts->StoresCategories->find('list', ['limit' => 200]);
 
-        $this->set(compact('storesProduct', 'users', 'storesCategories'));
+        $this->set(compact('storesProduct', 'storesCategories', 'loginMenu'));
     }
 
     private function processPhoto($request)
@@ -150,6 +156,10 @@ class StoresProductsController extends AppController
     public function edit($id = null)
     {
         $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
 
         $storesProduct = $this->StoresProducts->get($id, [
             'contain' => []
@@ -170,16 +180,19 @@ class StoresProductsController extends AppController
             $this->Flash->error(__('The stores product could not be saved. Please, try again.'));
         }
 
-        $users = $this->StoresProducts->Users->find('list');
-
         $storesCategories = $this->StoresProducts->StoresCategories->find('list');
 
-        $this->set(compact('storesProduct', 'users', 'storesCategories'));
+        $this->set(compact('storesProduct', 'storesCategories', 'loginMenu'));
     }
 
     public function editQrcode($id = null)
     {
         $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesProduct = $this->StoresProducts->get($id, [
             'contain' => []
         ]);
@@ -218,7 +231,7 @@ class StoresProductsController extends AppController
 
         $storesCategories = $this->StoresProducts->StoresCategories->find('list');
 
-        $this->set(compact('storesProduct', 'users', 'storesCategories'));
+        $this->set(compact('storesProduct', 'users', 'storesCategories', 'loginMenu'));
 
         $storesProduct->qrcode = '';
     }
@@ -226,6 +239,10 @@ class StoresProductsController extends AppController
     public function editBarcode($id = null)
     {
         $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
 
         $storesProduct = $this->StoresProducts->get($id, [
             'contain' => []
@@ -269,7 +286,7 @@ class StoresProductsController extends AppController
 
         $storesProduct->barcode = '';
 
-        $this->set(compact('storesProduct', 'users', 'storesCategories'));
+        $this->set(compact('storesProduct', 'users', 'storesCategories', 'loginMenu'));
     }
 
     public function delete($id = null)
@@ -292,6 +309,10 @@ class StoresProductsController extends AppController
     public function editPhoto($id = null)
     {
         $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
 
         $storesProduct = $this->StoresProducts->get($id, [
             'contain' => []
@@ -317,7 +338,7 @@ class StoresProductsController extends AppController
 
         $storesProduct->photo = '';
 
-        $this->set(compact('storesProduct'));
+        $this->set(compact('storesProduct', 'loginMenu'));
     }
 
     public function inactiveProduct($id = null)

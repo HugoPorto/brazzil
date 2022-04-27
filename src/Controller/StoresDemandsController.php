@@ -22,11 +22,17 @@ class StoresDemandsController extends AppController
 
     public function view($id = null)
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesDemand = $this->StoresDemands->get($id, [
             'contain' => ['Users']
         ]);
 
-        $this->set('storesDemand', $storesDemand);
+        $this->set(compact('storesDemand', 'loginMenu'));
     }
 
 
@@ -46,24 +52,24 @@ class StoresDemandsController extends AppController
         $this->set(compact('storesDemand', 'users'));
     }
 
-    public function edit($id = null)
-    {
-        $storesDemand = $this->StoresDemands->get($id, [
-            'contain' => []
-        ]);
+    // public function edit($id = null)
+    // {
+    //     $storesDemand = $this->StoresDemands->get($id, [
+    //         'contain' => []
+    //     ]);
 
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $storesDemand = $this->StoresDemands->patchEntity($storesDemand, $this->request->getData());
-            if ($this->StoresDemands->save($storesDemand)) {
-                $this->Flash->success(__('The stores demand has been saved.'));
+    //     if ($this->request->is(['patch', 'post', 'put'])) {
+    //         $storesDemand = $this->StoresDemands->patchEntity($storesDemand, $this->request->getData());
+    //         if ($this->StoresDemands->save($storesDemand)) {
+    //             $this->Flash->success(__('The stores demand has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The stores demand could not be saved. Please, try again.'));
-        }
-        $users = $this->StoresDemands->Users->find('list', ['limit' => 200]);
-        $this->set(compact('storesDemand', 'users'));
-    }
+    //             return $this->redirect(['action' => 'index']);
+    //         }
+    //         $this->Flash->error(__('The stores demand could not be saved. Please, try again.'));
+    //     }
+    //     $users = $this->StoresDemands->Users->find('list', ['limit' => 200]);
+    //     $this->set(compact('storesDemand', 'users'));
+    // }
 
     public function updateStatusDemand($id)
     {

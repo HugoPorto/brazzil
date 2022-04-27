@@ -39,9 +39,12 @@
                             </div>
                             <div class="btn-group">
 
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" onclick="showAddress(<?= $storesDemand->id; ?>)">
-                                Visualizar Endereço de Entrega
-                            </button>
+                                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="showAddress(<?= $storesDemand->id; ?>)">
+                                    Ver Endereço de Entrega
+                                </button>
+                            </div>
+                            <div class="btn-group">
+                                <?= $this->Html->link(__('Ver Itens do Pedido'), ['controller' => 'StoresItemsDemands', 'action' => 'getItemByDemandId', $storesDemand->id], ['class' => 'btn btn-info']) ?>
                             </div>
                         </div>
                     </td>

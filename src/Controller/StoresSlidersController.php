@@ -17,12 +17,13 @@ class StoresSlidersController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
-        $storesSliders = $this->paginate($this->StoresSliders);
+        $this->viewBuilder()->setLayout('brazzil');
 
-        $this->set(compact('storesSliders'));
+        $loginMenu = $this->loginMenuLoad();
+
+        $storesSliders = $this->StoresSliders->find('all');
+
+        $this->set(compact('storesSliders', 'loginMenu'));
     }
 
     public function view($id = null)
@@ -66,6 +67,10 @@ class StoresSlidersController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesSlider = $this->StoresSliders->get($id, [
             'contain' => []
         ]);
@@ -108,7 +113,7 @@ class StoresSlidersController extends AppController
             $this->Flash->error(__('O Banner não pode ser salvo. Por favor, tente novamente.'));
         }
 
-        $this->set(compact('storesSlider'));
+        $this->set(compact('storesSlider', 'loginMenu'));
     }
 
     public function delete($id = null)

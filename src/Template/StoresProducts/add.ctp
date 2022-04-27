@@ -1,141 +1,239 @@
-<nav class="large-2 medium-4 columns" id="actions-sidebar">
+<div class="col-md-12" style="padding: 0px">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Adicionar Novo Produto</h3>
+        </div>
 
-    <ul class="side-nav">
+        <div class="card-body">
+            <?= $this->Form->create($storesProduct, ['type' => 'file']) ?>
 
-        <li class="heading"><?= __('Ações') ?></li>
+                <div class="row" style="padding: 0px">
 
-        <li><?= $this->Html->link(__('Produtos'), ['action' => 'index']) ?></li>
+                    <div class="col-md-6">
 
-        <li><?= $this->Html->link(__('Categorias'), ['controller' => 'StoresCategories', 'action' => 'index']) ?></li>
+                        <div class="form-group">
 
-        <li><?= $this->Html->link(__('Nova Categoria'), ['controller' => 'StoresCategories', 'action' => 'add']) ?></li>
+                            <label for="product">Código de Barras</label>
 
-    </ul>
+                            <?php
 
-</nav>
+                                echo $this->Form->control('barcode', [
+                                    'label' => false,
+                                    'type' => 'text',
+                                    'class' => 'form-control'
+                                ]);
+                                ?>
 
-<div class="storesProducts form large-10 medium-8 columns content">
+                        </div>
 
-    <?= $this->Form->create($storesProduct, ['type' => 'file']) ?>
+                        <div class="form-group">
 
-    <fieldset>
+                            <label for="product">QrCode</label>
 
-        <legend><?= __('Adicionar Novo Produto') ?></legend>
+                            <?php
 
-        <label for="product">Código de Barras</label>
+                                echo $this->Form->control('qrcode', [
+                                    'label' => false,
+                                    'type' => 'text',
+                                    'class' => 'form-control'
+                                ]);
+                                ?>
 
-        <?php
+                        </div>
 
-            echo $this->Form->control('barcode', [
-                'label' => false,
-                'type' => 'text'
-            ]);
-            ?>
+                        <div class="form-group">
 
-        <label for="product">QrCode</label>
+                            <label for="product">Produto*</label>
 
-        <?php
+                            <?php
 
-            echo $this->Form->control('qrcode', [
-                'label' => false,
-                'type' => 'text'
-            ]);
-            ?>
+                                echo $this->Form->control('product', [
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                ]);
+                                ?>
 
-        <label for="product">Produto*</label>
+                        </div>
 
-        <?php
+                        <div class="form-group">
 
-            echo $this->Form->control('product', [
-                'label' => false
-            ]);
-            ?>
+                            <label for="description">Descrição*</label>
 
-        <label for="description">Descrição*</label>
+                            <?php
+                                echo $this->Form->control('description', [
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                ]);
+                                ?>
 
-        <?php
-            echo $this->Form->control('description', [
-                'label' => false
-            ]);
-            ?>
+                        </div>
 
-        <label for="description">Preço*</label>
+                        <div class="form-group">
 
-        <?php
-            echo $this->Form->control('price', [
-                'label' => false
-            ]);
-            ?>
+                            <label for="description">Preço*</label>
 
-        <input
-            type="hidden"
-            class="form-control"
-            name="users_id"
-            value="<?= $idUser ?>"/>
+                            <?php
+                                echo $this->Form->control('price', [
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                ]);
+                                ?>
 
-        <label for="description">Categorias*</label>
+                            <input
+                                type="hidden"
+                                class="form-control"
+                                name="users_id"
+                                value="<?= $idUser ?>"/>
 
-        <?php
-            echo $this->Form->control('stores_categories_id', ['options' => $storesCategories, 'label' => false]);
-        ?>
+                        </div>
 
-        <label for="description">Foto*</label>
+                        <div class="form-group">
 
-        <?php
-            echo $this->Form->control('photo[]', ['label' => false, 'type' => 'file', 'multiple' => false]);
-        ?>
+                            <label for="description">Categorias*</label>
 
-        <label for="description">Quantidade*</label>
+                            <?php
+                                echo $this->Form->control(
+                                    'stores_categories_id',
+                                    [
+                                    'options' => $storesCategories,
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                    ]
+                                );
+                                ?>
 
-        <?php
-            echo $this->Form->control(
-                'quantity',
-                [
-                'label' => false
-                ]
-            );
-            ?>
+                        </div>
 
-        <label for="description">Online</label>
+                        <div class="form-group">
 
-        <?php
-            echo $this->Form->control(
-                'online',
-                [
-                'label' => false
-                ]
-            );
-            ?>
+                            <label for="description">Foto*</label>
 
-        <label>Peso*</label>
-        <?php echo $this->Form->control('weight', ['label' => false]); ?>
+                            <?php
+                                echo $this->Form->control(
+                                    'photo[]',
+                                    [
+                                    'label' => false,
+                                    'type' => 'file',
+                                    'multiple' => false
+                                    ]
+                                );
+                                ?>
 
-        <label> Formato*</label>
-        <pre style="background-color: #d7d7d7">
+                        </div>
 
-            Como Preencher o Formato:
+                        <div class="form-group">
 
-            Formato da encomenda (incluindo embalagem).
+                            <label for="description">Quantidade*</label>
 
-            Valores possíveis: 1, 3
-            1 – Formato caixa/pacote
-            3 – Envelope
-        </pre>
-        <?php echo $this->Form->control('package_format', ['label' => false]); ?>
+                            <?php
+                                echo $this->Form->control(
+                                    'quantity',
+                                    [
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                    ]
+                                );
+                                ?>
 
-        <label> Comprimento*</label>
-        <?php echo $this->Form->control('package_lengths', ['label' => false]); ?>
+                        </div>
 
-        <label> Altura*</label>
-        <?php echo $this->Form->control('package_height', ['label' => false]); ?>
+                        <div class="form-group">
 
-        <label> Largura*</label>
-        <?php echo $this->Form->control('package_width', ['label' => false]); ?>
+                            <label for="description">Online</label>
 
-    </fieldset>
+                            <?php
+                                echo $this->Form->control(
+                                    'online',
+                                    [
+                                    'label' => false,
+                                    ]
+                                );
+                                ?>
 
-    <?= $this->Form->button(__('Adicionar')) ?>
+                        </div>
 
-    <?= $this->Form->end() ?>
+                        <div class="form-group">
 
+                            <label>Peso*</label>
+                            <?php echo $this->Form->control(
+                                'weight',
+                                [
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                ]
+                            ); ?>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+<div class="form-group">
+
+    <label> Formato*</label>
+    <pre style="background-color: #d7d7d7">
+        Como Preencher o Formato:
+
+        Formato da encomenda (incluindo embalagem).
+
+        Valores possíveis: 1, 3
+        1 – Formato caixa/pacote
+        3 – Envelope
+    </pre>
+    <?php echo $this->Form->control(
+        'package_format',
+        [
+            'label' => false,
+            'class' => 'form-control'
+        ]
+    ); ?>
+</div>
+
+                        <div class="form-group">
+
+                            <label> Comprimento*</label>
+                            <?php echo $this->Form->control(
+                                'package_lengths',
+                                [
+                                'label' => false,
+                                'class' => 'form-control'
+                                ]
+                            ); ?>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label> Altura*</label>
+                            <?php echo $this->Form->control(
+                                'package_height',
+                                [
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                ]
+                            ); ?>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label> Largura*</label>
+                            <?php echo $this->Form->control(
+                                'package_width',
+                                [
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                ]
+                            ); ?>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <?= $this->Form->button(__('Adicionar'), ['class' => 'btn btn-info']) ?>
+
+            <?= $this->Form->end() ?>
+        </div>
+    </div>
 </div>

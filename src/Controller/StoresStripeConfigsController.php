@@ -14,6 +14,10 @@ class StoresStripeConfigsController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         if (!$_SESSION['superpass']) {
             $this->Flash->success(__('Faça o login com super usuário para ver sua chave secreta.'));
             $this->showStripeKeys = false;
@@ -21,12 +25,13 @@ class StoresStripeConfigsController extends AppController
             $this->showStripeKeys = true;
         }
 
-        $storesStripeConfigs = $this->paginate($this->StoresStripeConfigs);
+        $storesStripeConfigs = $this->StoresStripeConfigs->find('all');
 
         $this->set(
             [
                 'storesStripeConfigs' => $storesStripeConfigs,
-                'showStripeKeys' => $this->showStripeKeys
+                'showStripeKeys' => $this->showStripeKeys,
+                'loginMenu' => $loginMenu
             ]
         );
     }
@@ -64,6 +69,10 @@ class StoresStripeConfigsController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         if (!$_SESSION['superpass']) {
             $this->Flash->error(__('Faça login como super usuário para poder proceguir com a edição.'));
             return $this->redirect(['action' => 'login']);
@@ -82,7 +91,7 @@ class StoresStripeConfigsController extends AppController
             $this->Flash->error(__('A configuração não pode ser salva. Por favor tente novamente.'));
         }
         $users = $this->StoresStripeConfigs->Users->find('list', ['limit' => 200]);
-        $this->set(compact('storesStripeConfig', 'users'));
+        $this->set(compact('storesStripeConfig', 'users', 'loginMenu'));
     }
 
     public function delete($id = null)
@@ -103,6 +112,10 @@ class StoresStripeConfigsController extends AppController
     public function login()
     {
         $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
 
         $this->loadModel('StoresSuperpass');
 
@@ -132,5 +145,7 @@ class StoresStripeConfigsController extends AppController
 
             return $this->redirect(['action' => 'index']);
         }
+
+        $this->set(compact('loginMenu'));
     }
 }

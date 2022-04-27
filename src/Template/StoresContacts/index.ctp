@@ -1,34 +1,37 @@
-<div class="storesContacts index large-12 medium-8 columns content">
-    <h3><?= __('Contatos') ?></h3>
-    <table cellpadding="0" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('Código') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Contatos') ?></th>
-                <th scope="col" class="actions"><?= __('Ações') ?></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($storesContacts as $storesContact): ?>
-            <tr>
-                <td><?= $this->Number->format($storesContact->id) ?></td>
-                <td><?= h($storesContact->contact) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('Ver'), ['action' => 'view', $storesContact->id]) ?>
-                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $storesContact->id]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('primeiro')) ?>
-            <?= $this->Paginator->prev('< ' . __('anterior')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('próximo') . ' >') ?>
-            <?= $this->Paginator->last(__('último') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Página {{page}} de {{pages}}, mostrando {{current}} registro(s) de {{count}} total')]) ?></p>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-bordered" style="font-size: 13px">
+            <thead class="table-dark">
+                <tr>
+                    <th>Código</th>
+                    <th>Contato</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody style="font-weight: bold">
+                <?php foreach ($storesContacts as $storesContact) : ?>
+                <tr>
+                    <td><?= $this->Number->format($storesContact->id) ?></td>
+                    <td><?= h($storesContact->contact) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link(
+                            __('Editar'),
+                            ['action' => 'edit', $storesContact->id],
+                            ['class' => 'btn btn-warning']
+                        ) ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Código</th>
+                    <th>Contato</th>
+                    <th>Ações</th>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
+
+

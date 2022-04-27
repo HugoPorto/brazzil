@@ -1,32 +1,21 @@
-<nav class="large-2 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Deletar'),
-                ['action' => 'delete', $storesProduct->id],
-                ['confirm' => __('Você quer apagar esse item?', $storesProduct->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('Produtos'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Categorias'), ['controller' => 'StoresCategories', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nova Categoria'), ['controller' => 'StoresCategories', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
 <div class="storesProducts form large-10 medium-8 columns content">
-<?= $this->Form->create($storesProduct) ?>
-    <fieldset>
-        <legend><?= __('Editar Produto') ?></legend>
+    <div class="col-md-6">
+        <?= $this->Form->create($storesProduct) ?>
+            <fieldset style="margin-bottom: 10px;">
+                <legend><?= __('Editar QrCode') ?></legend>
 
-        <label for="product">QrCode</label>
-        <?php
+                <label for="product">QrCode</label>
+                <?php
 
-            echo $this->Form->control('qrcode', [
-                'label' => false,
-                'type' => 'text'
-            ]);
-        ?>
+                    echo $this->Form->control('qrcode', [
+                        'label' => false,
+                        'type' => 'text',
+                        'class' => 'form-control'
+                    ]);
+                    ?>
 
-    </fieldset>
-    <?= $this->Form->button(__('Editar')) ?>
-    <?= $this->Form->end() ?>
+            </fieldset>
+        <?= $this->Form->button(__('Editar'), ['class' => 'btn btn-info']) ?>
+        <?= $this->Form->end() ?>
+    </div>
 </div>

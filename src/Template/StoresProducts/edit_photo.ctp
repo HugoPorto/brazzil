@@ -1,14 +1,6 @@
-<nav class="large-2 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Ações') ?></li>
-        <li><?= $this->Html->link(__('Produtos'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Categorias'), ['controller' => 'StoresCategories', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nova Categoria'), ['controller' => 'StoresCategories', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
 <div class="storesProducts form large-10 medium-8 columns content">
 <?= $this->Form->create($storesProduct, ['type' => 'file']) ?>
-    <fieldset>
+    <fieldset style="margin-bottom: 10px;">
         <legend><?= __('Editar Produto') ?></legend>
 
         <label for="description">Foto*</label>
@@ -18,6 +10,6 @@
         ?>
 
     </fieldset>
-    <?= $this->Form->button(__('Editar')) ?>
+    <?= $this->Form->button(__('Editar'), ['class' => 'btn btn-info']) ?>
     <?= $this->Form->end() ?>
 </div>

@@ -10,12 +10,15 @@ class StoresAddressController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
-        $this->paginate = [
-            'contain' => ['StoresDemands', 'Users']
-        ];
-        $storesAddress = $this->paginate($this->StoresAddress);
+        $this->viewBuilder()->setLayout('brazzil');
 
-        $this->set(compact('storesAddress'));
+        $loginMenu = $this->loginMenuLoad();
+
+        $storesAddress = $this->StoresAddress->find('all', [
+            'contain' => ['StoresDemands', 'Users']
+        ]);
+
+        $this->set(compact('storesAddress', 'loginMenu'));
     }
 
     public function view($id = null)
