@@ -11,12 +11,16 @@ class StoresSuperpassController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $this->paginate = [
             'contain' => ['Users']
         ];
         $storesSuperpass = $this->paginate($this->StoresSuperpass);
 
-        $this->set(compact('storesSuperpass'));
+        $this->set(compact('storesSuperpass', 'loginMenu'));
     }
 
     // public function view($id = null)

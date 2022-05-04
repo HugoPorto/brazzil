@@ -15,7 +15,6 @@
                     <th>usuário que realizou a baixa</th>
                     <th>criado em</th>
                     <th>modificado em</th>
-                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,9 +26,6 @@
                     <td><?= $lowsProduct->user->name ?></td>
                     <td><?= h($lowsProduct->created) ?></td>
                     <td><?= h($lowsProduct->modified) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('Ver'), ['action' => 'view', $lowsProduct->id]) ?>
-                    </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -41,7 +37,6 @@
                     <th>usuário que realizou a baixa</th>
                     <th>criado em</th>
                     <th>modificado em</th>
-                    <th>Ações</th>
                 </tr>
             </tfoot>
         </table>

@@ -1,43 +1,48 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Baixas'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Produtos'), ['controller' => 'StoresProducts', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Novo Produto'), ['controller' => 'StoresProducts', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="lowsProducts form large-9 medium-8 columns content">
-    <?= $this->Form->create($lowsProduct) ?>
-    <fieldset>
-        <legend><?= __('Nova Baixa') ?></legend>
+<div class="col-md-6" style="padding: 0px">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Nova Baixa</h3>
+        </div>
 
-        <label>Produto*</label>
-        <?php
-            echo $this->Form->control(
-                'stores_products_id',
-                [
-                'options' => $storesProducts,
-                'label' => false
-                ]
-            );
-            ?>
+        <div class="card-body">
+            <?= $this->Form->create($lowsProduct) ?>
 
-        <label for="quantity">Quantidade*</label>
-        <?php
-            echo $this->Form->control(
-                'quantity',
-                [
-                'label' => false
-                ]
-            );
-            ?>
+                <div class="form-group">
+                    <label>Produto*</label>
+                    <?php
+                        echo $this->Form->control(
+                            'stores_products_id',
+                            [
+                                    'options' => $storesProducts,
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                ]
+                        );
+                        ?>
+                </div>
 
-        <input
-            type="hidden"
-            class="form-control"
-            name="users_id"
-            value="<?= $idUser ?>"/>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+                <div class="form-group">
+                    <label for="quantity">Quantidade*</label>
+                    <?php
+                        echo $this->Form->control(
+                            'quantity',
+                            [
+                                    'label' => false,
+                                    'class' => 'form-control'
+                                ]
+                        );
+                        ?>
+                </div>
+
+                <input
+                    type="hidden"
+                    class="form-control"
+                    name="users_id"
+                    value="<?= $idUser ?>"/>
+
+            <?= $this->Form->button(__('Dar Baixa'), ['class' => 'btn btn-info']) ?>
+            <?= $this->Form->end() ?>
+
+        </div>
+    </div>
 </div>

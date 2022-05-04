@@ -8,112 +8,114 @@ class LowsProductsController extends AppController
 {
     public function index()
     {
-        if ($this->Auth->user() !== null && $this->Roles->get($this->Auth->user()['roles_id'])->role == 'storeAdmin') {
-            $this->viewBuilder()->setLayout('brazzil');
+        $this->hasPermission('storeAdmin');
 
-            $loginMenu = $this->loginMenuLoad();
+        $this->viewBuilder()->setLayout('brazzil');
 
-            $lowsProducts = $this->LowsProducts->find('all', ['contain' => ['StoresProducts', 'Users']]);
+        $loginMenu = $this->loginMenuLoad();
 
-            $this->set(compact('lowsProducts', 'loginMenu'));
-        } else {
-            $this->redirectSignup();
-        }
+        $lowsProducts = $this->LowsProducts->find('all', ['contain' => ['StoresProducts', 'Users']]);
+
+        $this->set(compact('lowsProducts', 'loginMenu'));
     }
 
     public function view($id = null)
     {
-        if ($this->Auth->user() !== null && $this->Roles->get($this->Auth->user()['roles_id'])->role == 'storeAdmin') {
-            $lowsProduct = $this->LowsProducts->get($id, [
-                'contain' => ['StoresProducts', 'Users']
-            ]);
+        $this->hasPermission('storeAdmin');
 
-            $this->set('lowsProduct', $lowsProduct);
-        } else {
-            $this->redirectSignup();
-        }
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
+        $lowsProduct = $this->LowsProducts->get($id, [
+            'contain' => ['StoresProducts', 'Users']
+        ]);
+
+        $this->set(compact('lowsProduct', 'loginMenu'));
     }
 
     public function add()
     {
-        if ($this->Auth->user() !== null && $this->Roles->get($this->Auth->user()['roles_id'])->role == 'storeAdmin') {
-            $lowsProduct = $this->LowsProducts->newEntity();
+        $this->hasPermission('storeAdmin');
 
-            if ($this->request->is('post')) {
-                $lowsProduct = $this->LowsProducts->patchEntity($lowsProduct, $this->request->getData());
+        $this->viewBuilder()->setLayout('brazzil');
 
-                $this->loadModel('StoresProducts');
+        $loginMenu = $this->loginMenuLoad();
 
-                $storesProduct = $this->StoresProducts->get($this->request->getData()['stores_products_id'], [
-                    'contain' => []
-                ]);
+        $lowsProduct = $this->LowsProducts->newEntity();
 
-                if ($this->request->getData()['quantity'] <= 0) {
-                    $this->Flash->error(__('Você não pode passar zero como valor da baixa.'));
+        if ($this->request->is('post')) {
+            $lowsProduct = $this->LowsProducts->patchEntity($lowsProduct, $this->request->getData());
 
-                    return $this->redirect($this->referer());
-                }
+            $this->loadModel('StoresProducts');
 
-                if ($storesProduct->quantity > 0) {
-                    if ($storesProduct->quantity >= $this->request->getData()['quantity']) {
-                        $storeProductSet = [
-                            'product' => $storesProduct->product,
-                            'description' => $storesProduct->description,
-                            'price' => $storesProduct->price,
-                            'stores_categories_id' => $storesProduct->stores_categories_id,
-                            'photo' => $storesProduct->photo,
-                            'quantity' => $storesProduct->quantity - $this->request->getData()['quantity'],
-                            'active' => $storesProduct->quantity - $this->request->getData()['quantity'] === 0 ? 0 : $storesProduct->active,
-                            'online' => $storesProduct->online
-                        ];
+            $storesProduct = $this->StoresProducts->get($this->request->getData()['stores_products_id'], [
+                'contain' => []
+            ]);
 
-                        $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $storeProductSet);
+            if ($this->request->getData()['quantity'] <= 0) {
+                $this->Flash->error(__('Você não pode passar zero como valor da baixa.'));
 
-                        $this->StoresProducts->save($storesProduct);
-                    } else {
-                        $this->Flash->error(__('Seu estoque desse produto é inferior a quantidade que você digitou para dar baixa.'));
+                return $this->redirect($this->referer());
+            }
 
-                        return $this->redirect($this->referer());
-                    }
-                } else {
+            if ($storesProduct->quantity > 0) {
+                if ($storesProduct->quantity >= $this->request->getData()['quantity']) {
                     $storeProductSet = [
                         'product' => $storesProduct->product,
                         'description' => $storesProduct->description,
                         'price' => $storesProduct->price,
                         'stores_categories_id' => $storesProduct->stores_categories_id,
                         'photo' => $storesProduct->photo,
-                        'quantity' => 0,
-                        'active' => $storesProduct->active,
+                        'quantity' => $storesProduct->quantity - $this->request->getData()['quantity'],
+                        'active' => $storesProduct->quantity - $this->request->getData()['quantity'] === 0 ? 0 : $storesProduct->active,
                         'online' => $storesProduct->online
                     ];
 
                     $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $storeProductSet);
 
                     $this->StoresProducts->save($storesProduct);
-
-                    $this->Flash->error(__('Seu estoque de produtos está zerado.'));
+                } else {
+                    $this->Flash->error(__('Seu estoque desse produto é inferior a quantidade que você digitou para dar baixa.'));
 
                     return $this->redirect($this->referer());
                 }
+            } else {
+                $storeProductSet = [
+                    'product' => $storesProduct->product,
+                    'description' => $storesProduct->description,
+                    'price' => $storesProduct->price,
+                    'stores_categories_id' => $storesProduct->stores_categories_id,
+                    'photo' => $storesProduct->photo,
+                    'quantity' => 0,
+                    'active' => $storesProduct->active,
+                    'online' => $storesProduct->online
+                ];
 
+                $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $storeProductSet);
 
+                $this->StoresProducts->save($storesProduct);
 
-                if ($this->LowsProducts->save($lowsProduct)) {
-                    $this->Flash->success(__('The lows product has been saved.'));
+                $this->Flash->error(__('Seu estoque de produtos está zerado.'));
 
-                    return $this->redirect(['action' => 'index']);
-                }
-
-                $this->Flash->error(__('The lows product could not be saved. Please, try again.'));
+                return $this->redirect($this->referer());
             }
 
-            $storesProducts = $this->LowsProducts->StoresProducts->find('list');
 
-            $users = $this->LowsProducts->Users->find('list');
 
-            $this->set(compact('lowsProduct', 'storesProducts', 'users'));
-        } else {
-            $this->redirectSignup();
+            if ($this->LowsProducts->save($lowsProduct)) {
+                $this->Flash->success(__('The lows product has been saved.'));
+
+                return $this->redirect(['action' => 'index']);
+            }
+
+            $this->Flash->error(__('The lows product could not be saved. Please, try again.'));
         }
+
+        $storesProducts = $this->LowsProducts->StoresProducts->find('list');
+
+        $users = $this->LowsProducts->Users->find('list');
+
+        $this->set(compact('lowsProduct', 'storesProducts', 'users', 'loginMenu'));
     }
 }

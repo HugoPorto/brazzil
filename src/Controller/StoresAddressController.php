@@ -25,11 +25,15 @@ class StoresAddressController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $loginMenu = $this->loginMenuLoad();
+
         $storesAddres = $this->StoresAddress->get($id, [
             'contain' => ['StoresDemands', 'Users']
         ]);
 
-        $this->set('storesAddres', $storesAddres);
+        $this->set(compact('storesAddres', 'loginMenu'));
     }
 
     public function getAddress($id = null)
