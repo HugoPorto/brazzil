@@ -19,6 +19,10 @@
     </li>
 
     <li class="nav-item d-none d-sm-inline-block">
+        <a href="<?= $this->request->base ?>/" target="_blank" class="btn btn-danger">Visualizar Site</a>
+    </li>
+
+    <li class="nav-item d-none d-sm-inline-block">
 
         <?php if ($username) :?>
             <?php if ($role === 'common' || $role === 'storeAdmin') :?>

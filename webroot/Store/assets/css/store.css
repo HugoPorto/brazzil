@@ -4,6 +4,27 @@
     color: #eb6265 !important;
 }
 
+.admin-menu {
+    list-style-type: none;
+    margin-top: 8px;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.barra {
+    background-color: #d33c44;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 999;
+}
+
+.admin-menu a{
+    color: white !important;
+}
+
 /* Background Colors */
 .bg-white {
     background-color: #fff;
@@ -335,7 +356,11 @@ a:focus {
 }
 
 .bg-sand {
-    background-color: #f5f5f5;
+    background-color: white;
+}
+
+.bg-footer {
+    background-color: white;
 }
 
 .bg-primary {

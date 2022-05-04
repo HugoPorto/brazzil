@@ -40,4 +40,8 @@
 
     <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'img/favicon-32x32.png';?>">
 
+    <style type="text/css">
+
+</style>
+
 </head>

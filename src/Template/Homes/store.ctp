@@ -4,6 +4,8 @@
 
 <body id="body" class="">
 
+<?php echo $this->element('store_bottombar'); ?>
+
 <?php echo $this->element('store_header'); ?>
 
 <div class="main-wrapper home_transparent-wrapper @@active  product-right">

@@ -1,7 +1,8 @@
 <header id="pageTop" class="header">
     <nav class="navbar navbar-expand-md main-nav">
         <div class=" container">
-            <button class="navbar-toggler  navbar-toggler-right"
+            <button
+                class="navbar-toggler  navbar-toggler-right"
                 type="button"
                 data-toggle="collapse"
                 data-target="#navbarSupportedContent"
@@ -13,7 +14,8 @@
 
             </button>
 
-            <a class="navbar-brand" href="index.html"><img src="<?php echo $this->request->webroot . 'img/galerys/13/' . $storesLogo;?>" alt="logo"></a>
+            <a class="navbar-brand" href="<?php echo $this->request->base; ?>">
+                <img src="<?= $this->request->webroot . 'img/galerys/13/' . $storesLogo; ?>" alt="Logomarca"></a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
@@ -33,11 +35,19 @@
                     </li>
 
                     <li class="nav-item">
+
                         <a href="" class="btn-search btn-src nav-link"><i class="fa fa-search"></i></a>
-                        <form  class="search_form" action="<?php echo $this->request->base; ?>/homes/search" method="get">
-                            <input type="text" required="" name="search" placeholder="Buscar..">
+
+                        <form
+                            class="search_form"
+                            action="<?php echo $this->request->base; ?>/homes/search"
+                            method="get">
+
+                            <input type="text" required="true" name="search" placeholder="Buscar..">
+
                             <button class="btn btn-primary btn-small" type="submit">Buscar</button>
                         </form>
+
                     </li>
 
                     <?php if ($username) :?>
@@ -51,9 +61,11 @@
                                     href="javascript:void(0)"><?=$username;?>
                                 </a>
                                 <ul class="dropdown-menu dd_first">
-                                    <li>
-                                        <?php echo $this->Html->link(__('Meus Pedidos'), ['controller' => 'homes', 'action' => 'demands'], ['class' => '']);?>
-                                    </li>
+                                    <?php if ($role === 'store') :?>
+                                        <li>
+                                            <?php echo $this->Html->link(__('Meus Pedidos'), ['controller' => 'homes', 'action' => 'demands'], ['class' => '']);?>
+                                        </li>
+                                    <?php endif;?>
                                     <li>
                                         <?php echo $this->Html->link(__('Sair'), ['controller' => 'users', 'action' => 'logout'], ['class' => '']);?>
                                     </li>

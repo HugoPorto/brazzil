@@ -27,8 +27,6 @@ class HomesController extends AppController
         $this->loadModel('StoresProducts');
         $this->loadModel('StoresSliders');
 
-        // $token = $this->request->getParam('_csrfToken');
-
         $storesSliders = $this->StoresSliders->find('all');
 
         $this->paginate = [
@@ -128,43 +126,36 @@ class HomesController extends AppController
 
     public function demands()
     {
-        if ($this->Auth->user() !== null) {
-            if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'store') {
-                $this->loadModel('StoresCategories');
-                $this->loadModel('StoresDemands');
+        $this->hasPermission('store');
+        $this->loadModel('StoresCategories');
+        $this->loadModel('StoresDemands');
 
-                $storesCategories = $this->StoresCategories->find(
-                    'all',
-                    [
-                        'limit' => 20
-                    ]
-                );
+        $storesCategories = $this->StoresCategories->find(
+            'all',
+            [
+                'limit' => 20
+            ]
+        );
 
-                $this->paginate = [
-                        'limit' => 6,
-                        'order' => [
-                            'StoresDemands.id' => 'DESC'
-                        ],
-                        'conditions' => [
-                            'StoresDemands.users_id =' => $this->Auth->user()['id'],
-                        ]
-                ];
+        $this->paginate = [
+                'limit' => 6,
+                'order' => [
+                    'StoresDemands.id' => 'DESC'
+                ],
+                'conditions' => [
+                    'StoresDemands.users_id =' => $this->Auth->user()['id'],
+                ]
+        ];
 
 
-                $storesDemands = $this->paginate($this->StoresDemands);
+        $storesDemands = $this->paginate($this->StoresDemands);
 
-                $this->set(compact(
-                    [
-                    'storesCategories',
-                    'storesDemands'
-                    ]
-                ));
-            } else {
-                $this->redirectSignup();
-            }
-        } else {
-            $this->redirectSignup();
-        }
+        $this->set(compact(
+            [
+            'storesCategories',
+            'storesDemands'
+            ]
+        ));
     }
 
     public function productView($id = null)
@@ -190,150 +181,128 @@ class HomesController extends AppController
 
     public function storeCart($shippingValue = null, $cep = null, $prazoEntrega = null)
     {
-        if ($this->Auth->user() !== null) {
-            if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'store') {
-                $session = $this->request->getSession();
+        $this->hasPermission('store');
 
-                $session->delete('address_demand');
+        $session = $this->request->getSession();
 
-                $this->loadModel('StoresCarts');
+        $session->delete('address_demand');
 
-                $storesCarts = $this->StoresCarts->find(
-                    'all',
-                    [
-                        'contain' => ['StoresProducts'],
-                        'conditions' => [
-                            'StoresCarts.users_id =' => $this->Auth->user()['id']
-                        ]
-                    ]
-                );
+        $this->loadModel('StoresCarts');
 
-                if (empty($storesCarts->toArray())) {
-                    return $this->redirect(['action' => 'store']);
-                }
+        $storesCarts = $this->StoresCarts->find(
+            'all',
+            [
+                'contain' => ['StoresProducts'],
+                'conditions' => [
+                    'StoresCarts.users_id =' => $this->Auth->user()['id']
+                ]
+            ]
+        );
 
-                $total = 0;
+        if (empty($storesCarts->toArray())) {
+            return $this->redirect(['action' => 'store']);
+        }
 
-                foreach ($storesCarts as $storesCart) {
-                    $total =  $total + (str_replace(",", ".", $storesCart->stores_product->price) * (float) $storesCart->quantity);
-                }
+        $total = 0;
 
-                $shippingValue = str_replace(",", ".", $shippingValue);
+        foreach ($storesCarts as $storesCart) {
+            $total =  $total + (str_replace(",", ".", $storesCart->stores_product->price) * (float) $storesCart->quantity);
+        }
 
-                if ($shippingValue) {
-                    $total = (float) $total + (float) $shippingValue;
-                }
+        $shippingValue = str_replace(",", ".", $shippingValue);
 
-                if ($cep) {
-                    $this->set(compact(
-                        [
-                            'storesCarts',
-                            'total',
-                            'cep',
-                            'prazoEntrega'
-                        ]
-                    ));
-                } else {
-                    $this->set(compact(
-                        [
-                            'storesCarts',
-                            'total',
-                            'cep',
-                            'prazoEntrega',
-                        ]
-                    ));
-                }
-            } else {
-                $this->redirectSignup();
-            }
+        if ($shippingValue) {
+            $total = (float) $total + (float) $shippingValue;
+        }
+
+        if ($cep) {
+            $this->set(compact(
+                [
+                    'storesCarts',
+                    'total',
+                    'cep',
+                    'prazoEntrega'
+                ]
+            ));
         } else {
-            $this->redirectSignup();
+            $this->set(compact(
+                [
+                    'storesCarts',
+                    'total',
+                    'cep',
+                    'prazoEntrega',
+                ]
+            ));
         }
     }
 
     public function storeRemoveItemCart($id = null)
     {
-        if ($this->Auth->user() !== null) {
-            if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'store') {
-                $this->loadModel('StoresCarts');
+        $this->hasPermission('store');
 
-                $this->request->allowMethod(['post', 'delete']);
+        $this->loadModel('StoresCarts');
 
-                $storesCart = $this->StoresCarts->get($id);
+        $this->request->allowMethod(['post', 'delete']);
 
-                $this->StoresCarts->delete($storesCart);
+        $storesCart = $this->StoresCarts->get($id);
 
-                $session = $this->request->getSession();
+        $this->StoresCarts->delete($storesCart);
 
-                $session->delete('Flash');
+        $session = $this->request->getSession();
 
-                return $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
-            } else {
-                $this->redirectSignup();
-            }
-        } else {
-            $this->redirectSignup();
-        }
+        $session->delete('Flash');
+
+        return $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
     }
 
     public function storeCheckout()
     {
-        if ($this->Auth->user() !== null) {
-            if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'store') {
-                $this->loadModel('StoresCarts');
+        $this->hasPermission('store');
 
-                $storesCarts = $this->StoresCarts->find(
-                    'all',
-                    [
-                        'contain' => ['StoresProducts'],
-                        'conditions' => [
-                            'StoresCarts.users_id =' => $this->Auth->user()['id']
-                        ]
-                    ]
-                );
+        $this->loadModel('StoresCarts');
 
-                if (empty($storesCarts->toArray())) {
-                    return $this->redirect(['action' => 'store']);
-                }
+        $storesCarts = $this->StoresCarts->find(
+            'all',
+            [
+                'contain' => ['StoresProducts'],
+                'conditions' => [
+                    'StoresCarts.users_id =' => $this->Auth->user()['id']
+                ]
+            ]
+        );
 
-                $total = 0;
-
-
-                foreach ($storesCarts as $storesCart) {
-                    $total = $total + ($storesCart->stores_product->price * $storesCart->quantity);
-                }
-
-
-                $this->set(compact('storesCarts', 'total'));
-            } else {
-                $this->redirectSignup();
-            }
-        } else {
-            $this->redirectSignup();
+        if (empty($storesCarts->toArray())) {
+            return $this->redirect(['action' => 'store']);
         }
+
+        $total = 0;
+
+
+        foreach ($storesCarts as $storesCart) {
+            $total = $total + ($storesCart->stores_product->price * $storesCart->quantity);
+        }
+
+
+        $this->set(compact('storesCarts', 'total'));
     }
 
     public function storeConfirm($demandId = null)
     {
-        if ($this->Auth->user() !== null && $this->Roles->get($this->Auth->user()['roles_id'])->role == 'store') {
-            $this->set('demandId', $demandId);
-        } else {
-            $this->redirectSignup();
-        }
+        $this->hasPermission('store');
+
+        $this->set('demandId', $demandId);
     }
 
     public function calculateShipping()
     {
-        if ($this->Auth->user() !== null && $this->Roles->get($this->Auth->user()['roles_id'])->role == 'store') {
-            $cep = $this->request->getData()['cep'];
-            $calculateShipping = $this->calculateShippingMain($cep);
+        $this->hasPermission('store');
 
-            if ($calculateShipping === 'Error') {
-                $this->Flash->error(__('Erro ao calcular frete.'));
-                $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
-            }
-        } else {
-            $this->redirectSignup();
+        $cep = $this->request->getData()['cep'];
+        $calculateShipping = $this->calculateShippingMain($cep);
+
+        if ($calculateShipping === 'Error') {
+            $this->Flash->error(__('Erro ao calcular frete.'));
+            $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
         }
     }
 
