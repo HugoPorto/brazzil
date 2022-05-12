@@ -252,7 +252,7 @@ return [
             'host' => 'localhost',
             'username' => 'root',
             'password' => '12345',
-            'database' => 'focuxme_ohnik',
+            'database' => 'brazzil_commerce',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
