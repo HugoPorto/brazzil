@@ -193,12 +193,12 @@ return [
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
         ],
 
-        'ohnik' => [
+        'brazzil' => [
             'className' => 'Smtp',
             'host' => 'ssl://br924.hostgator.com.br',
             'port' => 465,
             'timeout' => 30,
-            'username' => 'redessociais@ohnik.com.br',
+            'username' => 'testeenvio@brazzilcommerce.com',
             'password' => 'aaoki8uYUjhj',
             'client' => null,
             'tls' => null,
@@ -231,8 +231,8 @@ return [
             //'headerCharset' => 'utf-8',
         ],
         'contact' => [
-            'transport' => 'ohnik',
-            'from' => ['redessociais@ohnik.com.br' => 'ohnik.com.br']
+            'transport' => 'brazzil',
+            'from' => ['testeenvio@brazzilcommerce.com' => 'brazzilcommerce.com']
         ]
     ],
 
