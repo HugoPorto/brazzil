@@ -118,8 +118,6 @@
 
     <?php endif; ?>
 
-
-
     function swalDefaultSuccess(idDemand) {
         var Toast = Swal.mixin({
             customClass: {
@@ -138,6 +136,57 @@
             reverseButtons: true
         });
     }
+
+    function updateWhatsappNumber() {
+        Swal.fire({
+        title: 'Atualizar Número do Whatsapp',
+        input: 'text',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+        showLoaderOnConfirm: true,
+        preConfirm: (number) => {
+            return fetch(`<?= $this->request->base ?>/homes/editWhatsapp/${number}`)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(response.statusText)
+                }
+                return response.json()
+            })
+            .catch(error => {
+                Swal.showValidationMessage(
+                `Requisição falhou: ${error}`
+                )
+            })
+        },
+        allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            title: result.value.msg,
+            })
+        }
+        })
+    }
+
+    function mouseOverWhatsapp(){
+        document.getElementById("whatsapp").style.cursor = "pointer";
+        // document.getElementById("mouseAlt").innerHTML = "Retire o mouse";
+    }
+
+    function mouseWhatsappClick(){
+        this.updateWhatsappNumber();
+    }
+
+    // function carConteudo(){
+    //     document.getElementById("conteudo").innerHTML = "Integer ac pulvinar risus, vel lobortis sapien. Maecenas ut iaculis velit. Fusce diam augue, sodales et purus sed, pharetra rutrum erat.";
+    // }
+
+    // function mouseOut(){
+    //     document.getElementById("mouseAlt").innerHTML = "Passe o mouse";
+    // }
 
 </script>
 

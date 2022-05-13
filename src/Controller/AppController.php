@@ -101,6 +101,10 @@ class AppController extends Controller
 
         $storesLogo = $this->StoresLogos->find('all')->first();
 
+        $this->loadModel('Homes');
+
+        $home = $this->Homes->find('all')->first();
+
         $this->set(
             [
             'username' => $this->Auth->user('username'),
@@ -116,6 +120,7 @@ class AppController extends Controller
             'storesContacts' => $storesContacts,
             'stripeKey' => $stripeSecret->stripe_key,
             'storesLogo' => $storesLogo->logo,
+            'whatsapp_number' => $home->whatsapp_number
             ]
         );
     }

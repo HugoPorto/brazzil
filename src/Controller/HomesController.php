@@ -20,6 +20,7 @@ class HomesController extends AppController
         $this->Auth->allow(['addMessage']);
         $this->Auth->allow(['search']);
         $this->Auth->allow(['productView']);
+        $this->Auth->allow(['editWhatsapp']);
     }
 
     public function site()
@@ -366,6 +367,29 @@ class HomesController extends AppController
                 $sended = true;
 
                 return $this->redirect(['controller' => 'homes', 'action' => 'storeContact', $sended]);
+            }
+        }
+    }
+
+    public function editWhatsapp($number = null)
+    {
+        $this->hasPermission('store');
+
+        $home = $this->Homes->find('all')->first();
+
+        $data = $home;
+
+        $data['whatsapp_number'] = $number;
+
+        if ($this->request->is(['get'])) {
+            $home = $this->Homes->patchEntity($home, $data->toArray());
+
+            if ($this->Homes->save($home)) {
+                return $this->response->withStatus(200)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'Salvo com sucesso!']));
+            } else {
+                return $this->response->withStatus(405)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'Erro!']));
             }
         }
     }

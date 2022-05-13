@@ -1,5 +1,39 @@
 <?php // echo $this->element('store_charts'); ?>
 
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-1">
+        <div class="info-box mb-3 bg-success" onmouseover="mouseOverWhatsapp()" onclick="mouseWhatsappClick()" id="whatsapp">
+            <span class="info-box-icon"><i class="fab fa-whatsapp"></i></span>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-1">
+        <a href="">
+            <div class="info-box mb-3 bg-primary">
+                <span class="info-box-icon"><i class="fab fa-facebook-square"></i></span>
+            </div>
+        </a>
+    </div>
+
+    <div class="clearfix hidden-md-up"></div>
+
+    <div class="col-12 col-sm-6 col-md-1">
+        <a href="">
+            <div class="info-box mb-3" style="background-color: #912EB9; color: white;">
+                <span class="info-box-icon"><i class="fab fa-instagram"></i></span>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-1">
+        <a href="">
+            <div class="info-box mb-3 bg-info">
+                <span class="info-box-icon"><i class="fab fa-twitter"></i></span>
+            </div>
+        </a>
+    </div>
+</div>
+
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Usuários</h3>
