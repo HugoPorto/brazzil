@@ -245,11 +245,24 @@ class AppController extends Controller
 
     protected function hasPermission($permission)
     {
-        if (!($this->Auth->user() !== null) && !($this->Roles->get($this->Auth->user()['roles_id'])->role === $permission)) {
+        if (
+            !($this->Auth->user() !== null)
+            && !($this->Roles->get($this->Auth->user()['roles_id'])->role === $permission)
+        ) {
             return $this->redirect(['controller' => 'users', 'action' => 'login']);
         }
 
-        if ($this->request->controller === 'Homes' && $this->request->action === 'demands' && $permission === 'storeAdmin') {
+        if (
+            $this->request->controller === 'Homes'
+            && $this->request->action === 'demands' && $permission === 'storeAdmin'
+        ) {
+            return $this->redirect(['controller' => 'Homes', 'action' => 'site']);
+        }
+
+        if (
+            $this->request->controller === 'Pages'
+            && $this->Roles->get($this->Auth->user()['roles_id'])->role === 'store'
+        ) {
             return $this->redirect(['controller' => 'Homes', 'action' => 'site']);
         }
     }

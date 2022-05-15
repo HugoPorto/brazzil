@@ -19,23 +19,6 @@ class StoresAboutsController extends AppController
         $this->set(compact('storesAbouts', 'loginMenu'));
     }
 
-    // public function view($id = null)
-    // {
-    //     if ($this->Auth->user() !== null) {
-    //         if ($this->Roles->get($this->Auth->user()['roles_id'])->role === 'storeAdmin') {
-    //             $storesAbout = $this->StoresAbouts->get($id, [
-    //                 'contain' => ['Users']
-    //             ]);
-
-    //             $this->set('storesAbout', $storesAbout);
-    //         } else {
-    //             $this->redirectSignup();
-    //         }
-    //     } else {
-    //         $this->redirectSignup();
-    //     }
-    // }
-
     public function edit($id = null)
     {
         $this->hasPermission('storeAdmin');

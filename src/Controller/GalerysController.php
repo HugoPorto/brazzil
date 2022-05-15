@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -6,7 +7,6 @@ use Cake\Filesystem\Folder;
 
 class GalerysController extends AppController
 {
-
     public function index()
     {
         $galerys = $this->paginate($this->Galerys);
@@ -28,21 +28,18 @@ class GalerysController extends AppController
     {
         $galery = $this->Galerys->newEntity();
         if ($this->request->is('post')) {
-
             $galery = $this->Galerys->patchEntity($galery, $this->request->getData());
 
             if ($this->Galerys->save($galery)) {
-
                 $this->Flash->success(__('The galery has been saved.'));
 
                 $reg = $this->Galerys->findByTitle($galery->title)->toArray();
 
-                $path = WWW_ROOT.DS.'img'.DS.'galerys'.DS.$reg[0]['id'];
+                $path = WWW_ROOT . DS . 'img' . DS . 'galerys' . DS . $reg[0]['id'];
 
                 $dir = new Folder();
 
-                if($dir->create($path, true, 0755))
-                {
+                if ($dir->create($path, true, 0755)) {
                     $this->Flash->success('A galeria foi criada com sucesso...');
                 }
 
@@ -77,27 +74,20 @@ class GalerysController extends AppController
 
         $galery = $this->Galerys->get($id);
 
-        $path = WWW_ROOT.DS.'img'.DS.'galerys'.DS.$galery->id;
+        $path = WWW_ROOT . DS . 'img' . DS . 'galerys' . DS . $galery->id;
 
-        if ($this->Galerys->delete($galery))
-        {
+        if ($this->Galerys->delete($galery)) {
             $this->Flash->success(__('The galery has been deleted.'));
 
-            if(is_dir($path))
-            {
+            if (is_dir($path)) {
                 $dir = new Folder($path);
-                if($dir->delete())
-                {
+                if ($dir->delete()) {
                     $this->Flash->success('Pasta' . $galery->title . 'excluída com sucesso!');
-                }
-                else
-                {
+                } else {
                     $this->Flash->error('Não foi possível excluir a pasta' . $galery->title . '!');
                 }
             }
-        }
-        else
-        {
+        } else {
             $this->Flash->error(__('The galery could not be deleted. Please, try again.'));
         }
 
