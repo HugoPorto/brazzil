@@ -120,7 +120,9 @@ class AppController extends Controller
             'storesContacts' => $storesContacts,
             'stripeKey' => $stripeSecret->stripe_key,
             'storesLogo' => $storesLogo->logo,
-            'whatsapp_number' => $home->whatsapp_number
+            'whatsapp_number' => $home->whatsapp_number,
+            'facebook_link' => $home->facebook_link,
+            'instagram_link' => $home->instagram_link,
             ]
         );
     }

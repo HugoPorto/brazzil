@@ -135,6 +135,14 @@
             showConfirmButton: false,
             reverseButtons: true
         });
+    }    
+
+    function mouseOverWhatsapp(){
+        document.getElementById("whatsapp").style.cursor = "pointer";
+    }
+    
+    function mouseWhatsappClick(){
+        this.updateWhatsappNumber();
     }
 
     function updateWhatsappNumber() {
@@ -170,23 +178,96 @@
         }
         })
     }
-
-    function mouseOverWhatsapp(){
-        document.getElementById("whatsapp").style.cursor = "pointer";
-        // document.getElementById("mouseAlt").innerHTML = "Retire o mouse";
+    
+    function mouseOverFacebook(){
+        document.getElementById("facebook").style.cursor = "pointer";
     }
 
-    function mouseWhatsappClick(){
-        this.updateWhatsappNumber();
+    function mouseFacebookClick(){
+        this.updateFacebookLink();
     }
 
-    // function carConteudo(){
-    //     document.getElementById("conteudo").innerHTML = "Integer ac pulvinar risus, vel lobortis sapien. Maecenas ut iaculis velit. Fusce diam augue, sodales et purus sed, pharetra rutrum erat.";
-    // }
+    function updateFacebookLink() {
+        Swal.fire({
+        title: 'Atualizar Link do Facebook',
+        input: 'text',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+        showLoaderOnConfirm: true,
+        preConfirm: (link) => {
 
-    // function mouseOut(){
-    //     document.getElementById("mouseAlt").innerHTML = "Passe o mouse";
-    // }
+            const link64 = window.btoa(link);
+
+            return fetch(`<?= $this->request->base ?>/homes/editFacebook/${link64}`)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(response.statusText)
+                }
+                return response.json()
+            })
+            .catch(error => {
+                Swal.showValidationMessage(
+                `Requisição falhou: ${error}`
+                )
+            })
+        },
+        allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            title: result.value.msg,
+            })
+        }
+        })
+    }
+
+    function mouseOverInstagram(){
+        document.getElementById("instagram").style.cursor = "pointer";
+    }
+
+    function mouseInstagramClick(){
+        this.updateInstagramLink();
+    }
+
+    function updateInstagramLink() {
+        Swal.fire({
+        title: 'Atualizar Link do Instagram',
+        input: 'text',
+        inputAttributes: {
+            autocapitalize: 'off'
+        },
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+        showLoaderOnConfirm: true,
+        preConfirm: (link) => {
+
+            const link64 = window.btoa(link);
+
+            return fetch(`<?= $this->request->base ?>/homes/editInstagram/${link64}`)
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(response.statusText)
+                }
+                return response.json()
+            })
+            .catch(error => {
+                Swal.showValidationMessage(
+                `Requisição falhou: ${error}`
+                )
+            })
+        },
+        allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            title: result.value.msg,
+            })
+        }
+        })
+    }
 
 </script>
 

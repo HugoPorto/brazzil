@@ -25,5 +25,6 @@ class Home extends Entity
     protected $_accessible = [
         'whatsapp_number' => true,
         'facebook_link' => true,
+        'instagram_link' => true,
     ];
 }

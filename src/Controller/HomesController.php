@@ -20,7 +20,7 @@ class HomesController extends AppController
         $this->Auth->allow(['addMessage']);
         $this->Auth->allow(['search']);
         $this->Auth->allow(['productView']);
-        $this->Auth->allow(['editWhatsapp']);
+        $this->Auth->allow(['editFacebook']);
     }
 
     public function site()
@@ -380,6 +380,52 @@ class HomesController extends AppController
         $data = $home;
 
         $data['whatsapp_number'] = $number;
+
+        if ($this->request->is(['get'])) {
+            $home = $this->Homes->patchEntity($home, $data->toArray());
+
+            if ($this->Homes->save($home)) {
+                return $this->response->withStatus(200)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'Salvo com sucesso!']));
+            } else {
+                return $this->response->withStatus(405)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'Erro!']));
+            }
+        }
+    }
+
+    public function editFacebook($link = null)
+    {
+        $this->hasPermission('store');
+
+        $home = $this->Homes->find('all')->first();
+
+        $data = $home;
+
+        $data['facebook_link'] = base64_decode($link);
+
+        if ($this->request->is(['get'])) {
+            $home = $this->Homes->patchEntity($home, $data->toArray());
+
+            if ($this->Homes->save($home)) {
+                return $this->response->withStatus(200)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'Salvo com sucesso!']));
+            } else {
+                return $this->response->withStatus(405)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'Erro!']));
+            }
+        }
+    }
+
+    public function editInstagram($link = null)
+    {
+        $this->hasPermission('store');
+
+        $home = $this->Homes->find('all')->first();
+
+        $data = $home;
+
+        $data['instagram_link'] = base64_decode($link);
 
         if ($this->request->is(['get'])) {
             $home = $this->Homes->patchEntity($home, $data->toArray());

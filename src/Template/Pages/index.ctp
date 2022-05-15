@@ -8,30 +8,33 @@
     </div>
 
     <div class="col-12 col-sm-6 col-md-1">
-        <a href="">
-            <div class="info-box mb-3 bg-primary">
-                <span class="info-box-icon"><i class="fab fa-facebook-square"></i></span>
-            </div>
-        </a>
+        <div class="info-box mb-3 bg-primary" 
+            onmouseover="mouseOverFacebook()" 
+            onclick="mouseFacebookClick()" 
+            id="facebook">
+            <span class="info-box-icon"><i class="fab fa-facebook-square"></i></span>
+        </div>
     </div>
 
     <div class="clearfix hidden-md-up"></div>
 
     <div class="col-12 col-sm-6 col-md-1">
-        <a href="">
-            <div class="info-box mb-3" style="background-color: #912EB9; color: white;">
-                <span class="info-box-icon"><i class="fab fa-instagram"></i></span>
-            </div>
-        </a>
+        <div class="info-box mb-3" 
+            style="background-color: #912EB9; color: white;" 
+            onmouseover="mouseOverInstagram()" 
+            onclick="mouseInstagramClick()" 
+            id="instagram">
+            <span class="info-box-icon"><i class="fab fa-instagram"></i></span>
+        </div>
     </div>
 
-    <div class="col-12 col-sm-6 col-md-1">
+    <!-- <div class="col-12 col-sm-6 col-md-1">
         <a href="">
             <div class="info-box mb-3 bg-info">
                 <span class="info-box-icon"><i class="fab fa-twitter"></i></span>
             </div>
         </a>
-    </div>
+    </div> -->
 </div>
 
 <div class="card">

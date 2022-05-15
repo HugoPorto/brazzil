@@ -57,6 +57,11 @@ class HomesTable extends Table
             ->maxLength('facebook_link', 255)
             ->allowEmpty('facebook_link');
 
+        $validator
+            ->scalar('instagram_link')
+            ->maxLength('instagram_link', 255)
+            ->allowEmpty('instagram_link');
+
         return $validator;
     }
 }
