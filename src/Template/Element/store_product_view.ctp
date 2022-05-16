@@ -14,7 +14,9 @@
 
                     <span class="text-primary">R$<?= $storesProduct->price ?></span>
 
-                    <p>
+                    <h4 style="margin-top: 15px">Descrição</h4>
+
+                    <p style="padding-top: 10px;">
                         <?= $storesProduct->description ?>
                     </p>
 
