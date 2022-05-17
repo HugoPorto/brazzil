@@ -1,10 +1,10 @@
-.position-image{
+.position-image {
     margin-left: 16px;
     margin-top: 1px;
 }
 
 
-select{
+select {
     margin-right: 10px !important;
     padding: 8px !important;
     background-color: transparent !important;
@@ -12,6 +12,13 @@ select{
     border: 1px solid #d7d7d7;
 }
 
-.register_moment{
+.register_moment {
     margin-right: 20px;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
 }

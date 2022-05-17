@@ -20,6 +20,9 @@ class StoresColorsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['StoresProducts']
+        ];
         $storesColors = $this->paginate($this->StoresColors);
 
         $this->set(compact('storesColors'));
@@ -35,7 +38,7 @@ class StoresColorsController extends AppController
     public function view($id = null)
     {
         $storesColor = $this->StoresColors->get($id, [
-            'contain' => []
+            'contain' => ['StoresProducts']
         ]);
 
         $this->set('storesColor', $storesColor);
@@ -58,7 +61,8 @@ class StoresColorsController extends AppController
             }
             $this->Flash->error(__('The stores color could not be saved. Please, try again.'));
         }
-        $this->set(compact('storesColor'));
+        $storesProducts = $this->StoresColors->StoresProducts->find('list', ['limit' => 200]);
+        $this->set(compact('storesColor', 'storesProducts'));
     }
 
     /**
@@ -82,7 +86,8 @@ class StoresColorsController extends AppController
             }
             $this->Flash->error(__('The stores color could not be saved. Please, try again.'));
         }
-        $this->set(compact('storesColor'));
+        $storesProducts = $this->StoresColors->StoresProducts->find('list', ['limit' => 200]);
+        $this->set(compact('storesColor', 'storesProducts'));
     }
 
     /**

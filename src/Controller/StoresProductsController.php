@@ -24,7 +24,7 @@ class StoresProductsController extends AppController
         $storesProducts = $this->StoresProducts->find(
             'all',
             [
-                'contain' => 'StoresCategories'
+                'contain' => ['StoresCategories', 'StoresColors']
             ]
         );
 
@@ -103,7 +103,7 @@ class StoresProductsController extends AppController
         $storesProduct = $this->StoresProducts->newEntity();
 
         if ($this->request->is('post')) {
-            $colorId = $this->saveColor();
+            $idColor = $this->saveColor();
 
             $photo = $this->processMainPhoto($this->request->getData());
 
@@ -113,7 +113,7 @@ class StoresProductsController extends AppController
 
             $data['photo'] = $photo;
 
-            $data['stores_colors_id'] = $colorId;
+            $data['stores_colors_id'] = $idColor;
 
             $data['random_code'] = uniqid('product_', true);
 
@@ -137,6 +137,8 @@ class StoresProductsController extends AppController
 
             if ($this->StoresProducts->save($storesProduct)) {
                 $this->saveImagesExtras($this->request->getData(), $storesProduct);
+
+                $this->saveColor($storesProduct->id, $idColor, $data['random_code']);
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -382,13 +384,28 @@ class StoresProductsController extends AppController
         $this->set(compact('storesProducts', 'loginMenu'));
     }
 
-    private function saveColor()
+    private function saveColor($idProduct = null, $idColor = null, $product_flag_code = null)
     {
         $this->loadModel('StoresColors');
 
-        $storesColor = $this->StoresColors->newEntity();
+        if ($idColor) {
+            $storesColor = $this->StoresColors->get($idColor, [
+                'contain' => []
+            ]);
+        } else {
+            $storesColor = $this->StoresColors->newEntity();
+        }
+
         $data = [];
         $data['color'] = $this->request->getData('color');
+
+        if ($product_flag_code) {
+            $data['product_flag_code'] = $product_flag_code;
+        }
+
+        if ($idProduct) {
+            $data['stores_products_id'] = $idProduct;
+        }
 
         $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
 

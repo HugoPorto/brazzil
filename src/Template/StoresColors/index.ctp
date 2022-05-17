@@ -8,6 +8,8 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Stores Color'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Stores Products'), ['controller' => 'StoresProducts', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Stores Product'), ['controller' => 'StoresProducts', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="storesColors index large-9 medium-8 columns content">
@@ -19,6 +21,7 @@
                 <th scope="col"><?= $this->Paginator->sort('color') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('stores_products_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,6 +32,7 @@
                 <td><?= h($storesColor->color) ?></td>
                 <td><?= h($storesColor->created) ?></td>
                 <td><?= h($storesColor->modified) ?></td>
+                <td><?= $storesColor->has('stores_product') ? $this->Html->link($storesColor->stores_product->product, ['controller' => 'StoresProducts', 'action' => 'view', $storesColor->stores_product->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $storesColor->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $storesColor->id]) ?>

@@ -11,6 +11,8 @@
         <li><?= $this->Form->postLink(__('Delete Stores Color'), ['action' => 'delete', $storesColor->id], ['confirm' => __('Are you sure you want to delete # {0}?', $storesColor->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Stores Colors'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Stores Color'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Stores Products'), ['controller' => 'StoresProducts', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Stores Product'), ['controller' => 'StoresProducts', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="storesColors view large-9 medium-8 columns content">
@@ -19,6 +21,10 @@
         <tr>
             <th scope="row"><?= __('Color') ?></th>
             <td><?= h($storesColor->color) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Stores Product') ?></th>
+            <td><?= $storesColor->has('stores_product') ? $this->Html->link($storesColor->stores_product->product, ['controller' => 'StoresProducts', 'action' => 'view', $storesColor->stores_product->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

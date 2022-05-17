@@ -10,6 +10,8 @@ use Cake\Validation\Validator;
 /**
  * StoresColors Model
  *
+ * @property \App\Model\Table\StoresProductsTable|\Cake\ORM\Association\BelongsTo $StoresProducts
+ *
  * @method \App\Model\Entity\StoresColor get($primaryKey, $options = [])
  * @method \App\Model\Entity\StoresColor newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\StoresColor[] newEntities(array $data, array $options = [])
@@ -37,6 +39,10 @@ class StoresColorsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('StoresProducts', [
+            'foreignKey' => 'stores_products_id'
+        ]);
     }
 
     /**
@@ -56,6 +62,25 @@ class StoresColorsTable extends Table
             ->maxLength('color', 255)
             ->allowEmpty('color');
 
+        $validator
+            ->scalar('product_flag_code')
+            ->maxLength('product_flag_code', 255)
+            ->allowEmpty('product_flag_code');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['stores_products_id'], 'StoresProducts'));
+
+        return $rules;
     }
 }

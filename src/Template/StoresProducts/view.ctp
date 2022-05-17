@@ -15,6 +15,12 @@
                 <td><?= h($storesProduct->product) ?></td>
             </tr>
             <tr>
+                <th scope="row"><?= __('Cor') ?></th>
+                <td>
+                    <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>"></span>
+                </td>
+            </tr>
+            <tr>
                 <th scope="row"><?= __('Descrição') ?></th>
                 <td><?= h($storesProduct->description) ?></td>
             </tr>

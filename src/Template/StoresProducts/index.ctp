@@ -12,6 +12,7 @@
                     <th>Código</th>
                     <th>Número Código de Barras</th>
                     <th>Código de Barras</th>
+                    <th>Cor</th>
                     <th>Produto</th>
                     <th>Descrição</th>
                     <th>Preço</th>
@@ -38,6 +39,9 @@
                         <td><?= $storesProduct->id ?></td>
                         <td><?= $storesProduct->has('barcode_code') ? $storesProduct->barcode_code : '' ?></td>
                         <td><?= $storesProduct->has('barcode') ? $storesProduct->barcode : '' ?></td>
+                        <td>
+                            <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>"></span>
+                        </td>
 
                         <td><?= h($storesProduct->product) ?></td>
                         <td><?= h($storesProduct->description) ?></td>
@@ -90,6 +94,7 @@
                     <th>Código</th>
                     <th>Número Código de Barras</th>
                     <th>Código de Barras</th>
+                    <th>Cor</th>
                     <th>Produto</th>
                     <th>Descrição</th>
                     <th>Preço</th>

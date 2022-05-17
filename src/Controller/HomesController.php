@@ -19,8 +19,6 @@ class HomesController extends AppController
         $this->Auth->allow(['storeContact']);
         $this->Auth->allow(['addMessage']);
         $this->Auth->allow(['search']);
-        $this->Auth->allow(['productView']);
-        $this->Auth->allow(['editFacebook']);
     }
 
     public function site()
@@ -162,6 +160,7 @@ class HomesController extends AppController
     public function productView($id = null)
     {
         $this->loadModel('StoresProducts');
+        $this->loadModel('StoresColors');
 
         $storesProduct = $this->StoresProducts->get(
             $id,
