@@ -21,8 +21,6 @@ class StoresProductsController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $loginMenu = $this->loginMenuLoad();
-
         $storesProducts = $this->StoresProducts->find(
             'all',
             [
@@ -32,8 +30,7 @@ class StoresProductsController extends AppController
 
         $this->set(compact(
             [
-                'storesProducts',
-                'loginMenu'
+                'storesProducts'
             ]
         ));
     }
@@ -44,13 +41,19 @@ class StoresProductsController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $loginMenu = $this->loginMenuLoad();
+        $this->loadModel('StoresImagesProducts');
 
-        $storesProduct = $this->StoresProducts->get($id, [
-            'contain' => ['Users', 'StoresCategories']
+        $imagesExtrasProduct = $this->StoresImagesProducts->find('all', [
+            'conditions' => [
+                'StoresImagesProducts.stores_products_id =' => $id
+            ]
         ]);
 
-        $this->set(compact('storesProduct', 'loginMenu'));
+        $storesProduct = $this->StoresProducts->get($id, [
+            'contain' => ['Users', 'StoresCategories', 'StoresColors']
+        ]);
+
+        $this->set(compact('storesProduct', 'imagesExtrasProduct'));
     }
 
     private function getQrCode($data)
@@ -97,18 +100,22 @@ class StoresProductsController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $loginMenu = $this->loginMenuLoad();
-
         $storesProduct = $this->StoresProducts->newEntity();
 
         if ($this->request->is('post')) {
-            $photo = $this->processPhoto($this->request->data);
+            $colorId = $this->saveColor();
+
+            $photo = $this->processMainPhoto($this->request->getData());
 
             $qrCode = $this->getQrCode($this->request->getData());
 
             $data = $this->request->getData();
 
             $data['photo'] = $photo;
+
+            $data['stores_colors_id'] = $colorId;
+
+            $data['random_code'] = uniqid('product_', true);
 
             if (!empty($data['qrcode'])) {
                 $data['qrcode'] = '<img style="width: 200px" src="data:' . $qrCode->getContentType() . ';base64,' . $qrCode->generate() . '" />';
@@ -129,7 +136,7 @@ class StoresProductsController extends AppController
             $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
 
             if ($this->StoresProducts->save($storesProduct)) {
-                $this->Flash->success(__('The stores product has been saved.'));
+                $this->saveImagesExtras($this->request->getData(), $storesProduct);
 
                 return $this->redirect(['action' => 'index']);
             }
@@ -137,12 +144,12 @@ class StoresProductsController extends AppController
             $this->Flash->error(__('The stores product could not be saved. Please, try again.'));
         }
 
-        $storesCategories = $this->StoresProducts->StoresCategories->find('list', ['limit' => 200]);
+        $storesCategories = $this->StoresProducts->StoresCategories->find('list', ['limit' => 1000]);
 
-        $this->set(compact('storesProduct', 'storesCategories', 'loginMenu'));
+        $this->set(compact('storesProduct', 'storesCategories'));
     }
 
-    private function processPhoto($request)
+    private function processMainPhoto($request)
     {
         $this->hasPermission('storeAdmin');
 
@@ -319,7 +326,7 @@ class StoresProductsController extends AppController
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $photo = $this->processPhoto($this->request->data);
+            $photo = $this->processMainPhoto($this->request->data);
 
             $data = $this->request->getData();
 
@@ -373,5 +380,40 @@ class StoresProductsController extends AppController
         ]);
 
         $this->set(compact('storesProducts', 'loginMenu'));
+    }
+
+    private function saveColor()
+    {
+        $this->loadModel('StoresColors');
+
+        $storesColor = $this->StoresColors->newEntity();
+        $data = [];
+        $data['color'] = $this->request->getData('color');
+
+        $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
+
+        $this->StoresColors->save($storesColor);
+
+        return $storesColor->id;
+    }
+
+    private function saveImagesExtras($request, $storesProduct)
+    {
+        $this->loadModel('StoresImagesProducts');
+
+        for ($i = 1; $i <= 4; $i++) {
+            $count = $i + 1;
+            $photo = $this->Base64->convert($request['photo' . $count]);
+
+            $storesImagesProduct = $this->StoresImagesProducts->newEntity();
+
+            $data = [];
+            $data['photo'] = $photo;
+            $data['stores_products_id'] = $storesProduct->id;
+
+            $storesImagesProduct = $this->StoresImagesProducts->patchEntity($storesImagesProduct, $data);
+
+            $this->StoresImagesProducts->save($storesImagesProduct);
+        }
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -11,6 +12,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\StoresCategoriesTable|\Cake\ORM\Association\BelongsTo $StoresCategories
+ * @property \App\Model\Table\StoresColorsTable|\Cake\ORM\Association\BelongsTo $StoresColors
  *
  * @method \App\Model\Entity\StoresProduct get($primaryKey, $options = [])
  * @method \App\Model\Entity\StoresProduct newEntity($data = null, array $options = [])
@@ -24,7 +26,6 @@ use Cake\Validation\Validator;
  */
 class StoresProductsTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -47,6 +48,10 @@ class StoresProductsTable extends Table
         ]);
         $this->belongsTo('StoresCategories', [
             'foreignKey' => 'stores_categories_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('StoresColors', [
+            'foreignKey' => 'stores_colors_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -147,6 +152,12 @@ class StoresProductsTable extends Table
             ->requirePresence('package_width', 'create')
             ->notEmpty('package_width');
 
+        $validator
+            ->scalar('random_code')
+            ->maxLength('random_code', 255)
+            ->requirePresence('random_code', 'create')
+            ->notEmpty('random_code');
+
         return $validator;
     }
 
@@ -161,6 +172,7 @@ class StoresProductsTable extends Table
     {
         $rules->add($rules->existsIn(['users_id'], 'Users'));
         $rules->add($rules->existsIn(['stores_categories_id'], 'StoresCategories'));
+        $rules->add($rules->existsIn(['stores_colors_id'], 'StoresColors'));
 
         return $rules;
     }

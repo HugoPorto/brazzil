@@ -113,8 +113,93 @@
                                     'photo[]',
                                     [
                                     'label' => false,
+                                    'required' => true,
                                     'type' => 'file',
                                     'multiple' => false
+                                    ]
+                                );
+                                ?>
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for="description">Foto 2*</label>
+
+                            <?php
+                                echo $this->Form->control(
+                                    'photo2[]',
+                                    [
+                                    'label' => false,
+                                    'required' => true,
+                                    'type' => 'file',
+                                    'multiple' => false
+                                    ]
+                                );
+                                ?>
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for="description">Foto 3*</label>
+
+                            <?php
+                                echo $this->Form->control(
+                                    'photo3[]',
+                                    [
+                                    'label' => false,
+                                    'required' => true,
+                                    'type' => 'file',
+                                    'multiple' => false
+                                    ]
+                                );
+                                ?>
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for="description">Foto 4*</label>
+
+                            <?php
+                                echo $this->Form->control(
+                                    'photo4[]',
+                                    [
+                                    'label' => false,
+                                    'required' => true,
+                                    'type' => 'file',
+                                    'multiple' => false
+                                    ]
+                                );
+                                ?>
+
+                        </div>
+                        <div class="form-group">
+
+                            <label for="description">Foto 5*</label>
+
+                            <?php
+                                echo $this->Form->control(
+                                    'photo5[]',
+                                    [
+                                    'label' => false,
+                                    'required' => true,
+                                    'type' => 'file',
+                                    'multiple' => false
+                                    ]
+                                );
+                                ?>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="description">Cor*</label>
+
+                            <?php
+                                echo $this->Form->control(
+                                    'color',
+                                    [
+                                    'label' => false,
+                                    'type' => 'color'
                                     ]
                                 );
                                 ?>

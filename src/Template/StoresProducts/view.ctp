@@ -27,8 +27,15 @@
                 <td><?= $storesProduct->has('stores_category') ? $this->Html->link($storesProduct->stores_category->category, ['controller' => 'StoresCategories', 'action' => 'view', $storesProduct->stores_category->id]) : '' ?></td>
             </tr>
             <tr>
-                <th scope="row"><?= __('Foto') ?></th>
-                <td><img style="width: 255px; height: 255px" <?= $storesProduct->photo; ?> /></td>
+                <th scope="row"><?= __('Fotos Do Produto') ?></th>
+                <td>
+                    <img style="width: 255px; height: 255px" <?= $storesProduct->photo; ?> />
+
+                    <?php foreach ($imagesExtrasProduct as $image) : ?>
+                        <img style="width: 255px; height: 255px" <?= $image->photo; ?> />
+                    <?php endforeach; ?>
+                
+                </td>
             </tr>
             <tr>
                 <th scope="row"><?= __('Códgio do Produto') ?></th>
