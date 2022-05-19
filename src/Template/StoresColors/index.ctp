@@ -22,6 +22,7 @@
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('stores_products_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('product_flag_code') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -33,6 +34,7 @@
                 <td><?= h($storesColor->created) ?></td>
                 <td><?= h($storesColor->modified) ?></td>
                 <td><?= $storesColor->has('stores_product') ? $this->Html->link($storesColor->stores_product->product, ['controller' => 'StoresProducts', 'action' => 'view', $storesColor->stores_product->id]) : '' ?></td>
+                <td><?= h($storesColor->product_flag_code) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $storesColor->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $storesColor->id]) ?>

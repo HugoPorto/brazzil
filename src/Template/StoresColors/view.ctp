@@ -27,6 +27,10 @@
             <td><?= $storesColor->has('stores_product') ? $this->Html->link($storesColor->stores_product->product, ['controller' => 'StoresProducts', 'action' => 'view', $storesColor->stores_product->id]) : '' ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Product Flag Code') ?></th>
+            <td><?= h($storesColor->product_flag_code) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($storesColor->id) ?></td>
         </tr>

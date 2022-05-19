@@ -9,7 +9,6 @@ class StoresCartsController extends AppController
     public function initialize()
     {
         parent::initialize();
-        $this->Auth->allow(['add']);
     }
 
     public function index()

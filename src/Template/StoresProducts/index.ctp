@@ -80,6 +80,7 @@
                         <td class="actions">
                             <?= $this->Html->link(__('Ver'), ['action' => 'view', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                            <?= $this->Html->link(__('Adicionar de Outra Cor'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar Foto'), ['action' => 'editPhoto', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar Código de Barras'), ['action' => 'editBarcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar QrCode'), ['action' => 'editQrcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>

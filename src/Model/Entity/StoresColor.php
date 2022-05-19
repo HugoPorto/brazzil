@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  * @property int $stores_products_id
+ * @property string $product_flag_code
  *
  * @property \App\Model\Entity\StoresProduct $stores_product
  */
@@ -31,7 +32,8 @@ class StoresColor extends Entity
         'created' => true,
         'modified' => true,
         'stores_products_id' => true,
-        'stores_product' => true,
         'product_flag_code' => true,
+        'stores_product' => true,
+        'teste' => true
     ];
 }

@@ -67,6 +67,11 @@ class StoresColorsTable extends Table
             ->maxLength('product_flag_code', 255)
             ->allowEmpty('product_flag_code');
 
+        $validator
+            ->scalar('teste')
+            ->maxLength('teste', 255)
+            ->allowEmpty('teste');
+
         return $validator;
     }
 

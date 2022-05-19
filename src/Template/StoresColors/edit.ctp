@@ -25,6 +25,7 @@
         <?php
             echo $this->Form->control('color');
             echo $this->Form->control('stores_products_id', ['options' => $storesProducts, 'empty' => true]);
+            echo $this->Form->control('product_flag_code');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

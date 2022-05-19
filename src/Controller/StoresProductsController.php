@@ -151,6 +151,10 @@ class StoresProductsController extends AppController
         $this->set(compact('storesProduct', 'storesCategories'));
     }
 
+    public function addWithNewColor()
+    {
+    }
+
     private function processMainPhoto($request)
     {
         $this->hasPermission('storeAdmin');

@@ -52,6 +52,7 @@ class StoresColorsController extends AppController
     public function add()
     {
         $storesColor = $this->StoresColors->newEntity();
+
         if ($this->request->is('post')) {
             $storesColor = $this->StoresColors->patchEntity($storesColor, $this->request->getData());
             if ($this->StoresColors->save($storesColor)) {
