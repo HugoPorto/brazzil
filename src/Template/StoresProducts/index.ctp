@@ -10,6 +10,7 @@
             <thead class="table-dark">
                 <tr>
                     <th>Código</th>
+                    <th>Foto</th>
                     <th>Número Código de Barras</th>
                     <th>Código de Barras</th>
                     <th>Cor</th>
@@ -23,7 +24,6 @@
                     <th>Criado Em</th>
                     <th>Modificado Em</th>
                     <th>QrCode</th>
-                    <th>Foto</th>
                     <th>Peso</th>
                     <th>Formato</th>
                     <th>Comprimento</th>
@@ -37,12 +37,15 @@
                 <?php if ($storesProduct->active) : ?>
                     <tr>
                         <td><?= $storesProduct->id ?></td>
+                        <td>
+                            <img style="width: 90px; height: 90px; border: 1px solid #d7d7d7; padding: 10px" <?= $storesProduct->photo ?>/>
+                        </td>
                         <td><?= $storesProduct->has('barcode_code') ? $storesProduct->barcode_code : '' ?></td>
                         <td><?= $storesProduct->has('barcode') ? $storesProduct->barcode : '' ?></td>
                         <td>
-                            <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>"></span>
+                        <div style="background-color: <?= $storesProduct->stores_color->color ?>; 
+                            width: 70px; height: 70px; margin: 0 auto; display: flex; justify-content: center; align-items: center; border: 1px solid #d7d7d7"></div>
                         </td>
-
                         <td><?= h($storesProduct->product) ?></td>
                         <td><?= h($storesProduct->description) ?></td>
                         <td>R$<?= h($storesProduct->price) ?></td>
@@ -69,9 +72,6 @@
                         <td><?= $this->Tools->formatDate($storesProduct->created) ?></td>
                         <td><?= $this->Tools->formatDate($storesProduct->modified) ?></td>
                         <td><?= $storesProduct->has('qrcode') ? $storesProduct->qrcode : '' ?></td>
-                        <td>
-                            <img style="width: 255px; height: 255px; border: 1px solid #d7d7d7" <?= $storesProduct->photo ?>/>
-                        </td>
                         <td><?= $storesProduct->weight ?></td>
                         <td><?= $storesProduct->package_format ?></td>
                         <td><?= $storesProduct->package_lengths ?></td>
@@ -80,8 +80,8 @@
                         <td class="actions">
                             <?= $this->Html->link(__('Ver'), ['action' => 'view', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Adicionar de Outra Cor'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Editar Foto'), ['action' => 'editPhoto', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                            <?= $this->Html->link(__('Adicionar de Outra Cor'), ['action' => 'addNewProductColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                            <?= $this->Html->link(__('Editar Fotos'), ['action' => 'editPhoto', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar Código de Barras'), ['action' => 'editBarcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar QrCode'), ['action' => 'editQrcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Remover Produto'), ['action' => 'inactiveProduct', $storesProduct->id], ['class' => 'btn btn-danger']) ?>
@@ -93,6 +93,7 @@
             <tfoot>
                 <tr>
                     <th>Código</th>
+                    <th>Foto</th>
                     <th>Número Código de Barras</th>
                     <th>Código de Barras</th>
                     <th>Cor</th>
@@ -106,7 +107,6 @@
                     <th>Criado Em</th>
                     <th>Modificado Em</th>
                     <th>QrCode</th>
-                    <th>Foto</th>
                     <th>Peso</th>
                     <th>Formato</th>
                     <th>Comprimento</th>

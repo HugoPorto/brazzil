@@ -5,6 +5,7 @@ nbproject/private
 .vs/
 /tmp
 /vendor
+/logs
 /tests
 /webroots/AdminLTE-3.1.0
 composer.lock

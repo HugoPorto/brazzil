@@ -34,6 +34,5 @@ class StoresColor extends Entity
         'stores_products_id' => true,
         'product_flag_code' => true,
         'stores_product' => true,
-        'teste' => true
     ];
 }

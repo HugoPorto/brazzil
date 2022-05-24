@@ -3,7 +3,7 @@
 <div class="wrapper" id="<?= $myEnvironment ?>">
 
 <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="<?php echo $this->request->webroot . 'AdminLTE-3.1.0/dist/img/BrazzilLogo.png';?>" height="60" width="60">
+    <img class="animation__shake" src="<?= $this->request->webroot . 'img/galerys/13/' . $storesLogo; ?>" alt="Logomarca" height="60">
 </div>
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">

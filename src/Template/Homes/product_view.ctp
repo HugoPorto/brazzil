@@ -1,8 +1,8 @@
 <?php $this->layout = false; ?>
 
-<?php echo $this->element('store_head'); ?>
+<?php echo $this->element('store_head_product_view'); ?>
 
-<body id="body" class="">
+<body id="body" class="main">
 
 <?php echo $this->element('store_bottombar'); ?>
 

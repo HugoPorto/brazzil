@@ -17,8 +17,6 @@ class PagesController extends AppController
         $this->loadModel('Users');
         $this->loadModel('StoresSliders');
 
-        $loginMenu = $this->loginMenuLoad();
-
         $users = $this->Users->find();
         $users->innerJoinWith('Roles', function ($q) {
             return $q->where(['Roles.role' => 'store']);
@@ -26,7 +24,6 @@ class PagesController extends AppController
 
         $this->set(compact(
             [
-                'loginMenu',
                 'users'
             ]
         ));

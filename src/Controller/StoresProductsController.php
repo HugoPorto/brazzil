@@ -21,12 +21,27 @@ class StoresProductsController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $storesProducts = $this->StoresProducts->find(
-            'all',
-            [
-                'contain' => ['StoresCategories', 'StoresColors']
-            ]
-        );
+        $storesProducts = $this->StoresProducts->find('all', ['contain' => ['StoresCategories', 'StoresColors']]);
+
+
+        if (empty($storesProducts->toArray())) {
+            $storesProducts = $this->StoresProducts->find('all', ['contain' => ['StoresCategories']]);
+            foreach ($storesProducts as $key => $value) {
+                $storesProduct = $this->StoresProducts->get($value->id, [
+                    'contain' => []
+                ]);
+
+                $data = [];
+                $data['random_code'] = uniqid('product_', true);
+                $idColor = $this->saveColor($value->id, null, $data['random_code'], 'FFF');
+                $data['stores_colors_id'] = $idColor;
+                $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
+
+                $this->StoresProducts->save($storesProduct);
+            }
+        }
+
+        $storesProducts = $this->StoresProducts->find('all', ['contain' => ['StoresCategories', 'StoresColors']]);
 
         $this->set(compact(
             [
@@ -151,10 +166,6 @@ class StoresProductsController extends AppController
         $this->set(compact('storesProduct', 'storesCategories'));
     }
 
-    public function addWithNewColor()
-    {
-    }
-
     private function processMainPhoto($request)
     {
         $this->hasPermission('storeAdmin');
@@ -185,12 +196,10 @@ class StoresProductsController extends AppController
             $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
 
             if ($this->StoresProducts->save($storesProduct)) {
-                $this->Flash->success(__('The stores product has been saved.'));
+                $this->updateColor($storesProduct->stores_colors_id, $this->request->getData()['color']);
 
                 return $this->redirect(['action' => 'index']);
             }
-
-            $this->Flash->error(__('The stores product could not be saved. Please, try again.'));
         }
 
         $storesCategories = $this->StoresProducts->StoresCategories->find('list');
@@ -319,6 +328,23 @@ class StoresProductsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    private function verifyImagesProducts($storesProduct)
+    {
+        $this->loadModel('StoresImagesProducts');
+
+        $storesImagesProducts = $this->StoresImagesProducts->find('all', [
+            'conditions' => [
+                'StoresImagesProducts.stores_products_id =' => $storesProduct->id
+            ]
+        ]);
+
+        if (empty($storesImagesProducts->toArray())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function editPhoto($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -332,21 +358,31 @@ class StoresProductsController extends AppController
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $photo = $this->processMainPhoto($this->request->data);
+            $photo = $this->processMainPhoto($this->request->getData());
 
             $data = $this->request->getData();
 
             $data['photo'] = $photo;
 
+            $data['random_code'] = uniqid('product_', true);
+
+            if ($this->verifyImagesProducts($storesProduct)) {
+                $this->saveImagesExtras($this->request->getData(), $storesProduct);
+            } else {
+                $this->editImagesExtras($this->request->getData(), $storesProduct);
+            }
+
             $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
 
             if ($this->StoresProducts->save($storesProduct)) {
-                $this->Flash->success(__('The stores product has been saved.'));
+                $this->updateRandomCodeColorAndId(
+                    $storesProduct->stores_colors_id,
+                    $data['random_code'],
+                    $storesProduct->id
+                );
 
                 return $this->redirect(['action' => 'index']);
             }
-
-            $this->Flash->error(__('The stores product could not be saved. Please, try again.'));
         }
 
         $storesProduct->photo = '';
@@ -388,7 +424,7 @@ class StoresProductsController extends AppController
         $this->set(compact('storesProducts', 'loginMenu'));
     }
 
-    private function saveColor($idProduct = null, $idColor = null, $product_flag_code = null)
+    private function saveColor($idProduct = null, $idColor = null, $product_flag_code = null, $color = null)
     {
         $this->loadModel('StoresColors');
 
@@ -401,7 +437,13 @@ class StoresProductsController extends AppController
         }
 
         $data = [];
-        $data['color'] = $this->request->getData('color');
+
+        if ($color) {
+            $data['color'] = $color;
+        } else {
+            $data['color'] = $this->request->getData('color');
+        }
+
 
         if ($product_flag_code) {
             $data['product_flag_code'] = $product_flag_code;
@@ -436,5 +478,122 @@ class StoresProductsController extends AppController
 
             $this->StoresImagesProducts->save($storesImagesProduct);
         }
+    }
+
+    private function editImagesExtras($request, $storesProduct)
+    {
+        $this->loadModel('StoresImagesProducts');
+
+        $storesImagesProducts = $this->StoresImagesProducts->find('all', [
+            'conditions' => [
+                'StoresImagesProducts.stores_products_id =' => $storesProduct->id
+            ]
+        ]);
+
+        foreach ($storesImagesProducts as $key => $value) {
+            $storesImagesProduct = $this->StoresImagesProducts->get($value->id, [
+                'contain' => []
+            ]);
+
+            $data = $storesImagesProduct;
+
+            $data['photo'] = $this->Base64->convert($request['photo' . ($key + 2)]);
+
+            $storesImagesProduct = $this->StoresImagesProducts->patchEntity($storesImagesProduct, $data->toArray());
+
+            $this->StoresImagesProducts->save($storesImagesProduct);
+        }
+    }
+
+    public function addNewProductColor($id)
+    {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+
+
+        $storesProduct = $this->StoresProducts->get($id, [
+            'contain' => []
+        ]);
+
+        $data = [];
+
+        foreach ($storesProduct->toArray() as $key => $value) {
+            if ($key !== 'id' && $key !== 'modified' && $key !== 'created' && $key !== 'photo') {
+                $data[$key] = $value;
+            }
+        }
+
+        $storesProductNew = $this->StoresProducts->newEntity();
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $idColor = $this->saveColor();
+
+            $photo = $this->processMainPhoto($this->request->getData());
+
+            $data['product'] = $this->request->getData()['product'];
+
+            $data['description'] = $this->request->getData()['description'];
+
+            $data['photo'] = $photo;
+
+            $data['stores_colors_id'] = $idColor;
+
+            $storesProductNew = $this->StoresProducts->patchEntity($storesProductNew, $data);
+
+            if ($this->StoresProducts->save($storesProductNew)) {
+                $this->saveImagesExtras($this->request->getData(), $storesProductNew);
+                $this->saveColor($storesProductNew->id, $idColor, $data['random_code']);
+
+                return $this->redirect(['action' => 'index']);
+            }
+
+            $this->Flash->error(__('The stores product could not be saved. Please, try again.'));
+        }
+
+        $storesCategories = $this->StoresProducts->StoresCategories->find('list');
+
+        $this->set(compact('storesProduct', 'storesCategories'));
+    }
+
+    private function updateRandomCodeColorAndId($idColor = null, $product_flag_code = null, $idProduct = null)
+    {
+        $this->loadModel('StoresColors');
+
+        $storesColor = $this->StoresColors->get($idColor, [
+            'contain' => []
+        ]);
+
+        $data = [];
+
+        $data['product_flag_code'] = $product_flag_code;
+
+        $data['stores_products_id'] = $idProduct;
+
+        $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
+
+        $this->StoresColors->save($storesColor);
+
+        return $storesColor->id;
+    }
+
+    private function updateColor($idColor = null, $color = null)
+    {
+        $this->loadModel('StoresColors');
+
+        $storesColor = $this->StoresColors->get($idColor, [
+            'contain' => []
+        ]);
+
+        $data = [];
+
+        $data['color'] = $color;
+
+        $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
+
+        $this->StoresColors->save($storesColor);
+
+        return $storesColor->id;
     }
 }

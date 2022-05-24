@@ -157,24 +157,92 @@ class HomesController extends AppController
         ));
     }
 
-    public function productView($id = null)
+    public function productView($id = null, $colorId = null, $codeRandomProduct = null)
     {
         $this->loadModel('StoresProducts');
         $this->loadModel('StoresColors');
+        $this->loadModel('StoresImagesProducts');
 
-        $storesProduct = $this->StoresProducts->get(
-            $id,
-            [
-                'contain' => ['StoresCategories']
+        $imagesExtrasProduct = $this->StoresImagesProducts->find('all', [
+            'conditions' => [
+                'StoresImagesProducts.stores_products_id =' => $id
             ]
-        );
+        ]);
 
-        $idUser = $this->Auth->user()['id'];
+        if (!$colorId && !$codeRandomProduct) {
+            $storesProduct = $this->StoresProducts->get(
+                $id,
+                [
+                    'contain' => ['StoresCategories']
+                ]
+            );
+
+            $data = [];
+
+            if ($storesProduct->random_code == '1') {
+                $data['random_code'] = uniqid('product_', true);
+
+                $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
+                $this->StoresProducts->save($storesProduct);
+
+                $storesProduct = $this->StoresProducts->get(
+                    $id,
+                    [
+                        'contain' => ['StoresCategories']
+                    ]
+                );
+            }
+
+            if ($this->verifyColors($storesProduct)) {
+                $idColor = $this->saveColor($id, $storesProduct->random_code);
+
+                $data['stores_colors_id'] = $idColor;
+
+                $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
+                $this->StoresProducts->save($storesProduct);
+            }
+
+            $storesColors = $this->StoresColors->find(
+                'all',
+                [
+                    'conditions' => [
+                        'StoresColors.product_flag_code =' => $storesProduct->random_code
+                    ]
+                ]
+            );
+
+
+            $idUser = $this->Auth->user() ? $this->Auth->user()['id'] : null;
+        } else {
+            $storesProduct = $this->StoresProducts->get(
+                $id,
+                [
+                    'contain' => ['StoresCategories'],
+                    'coditions' => [
+                        'StoresProducts.stores_colors_id =' => $colorId,
+                        'StoresProducts.randon_code =' => $codeRandomProduct
+                    ]
+                ]
+            );
+
+            $storesColors = $this->StoresColors->find(
+                'all',
+                [
+                    'conditions' => [
+                        'StoresColors.product_flag_code =' => $storesProduct->random_code
+                    ]
+                ]
+            );
+
+            $idUser = $this->Auth->user() ? $this->Auth->user()['id'] : null;
+        }
 
         $this->set(compact(
             [
                 'storesProduct',
-                'idUser'
+                'idUser',
+                'storesColors',
+                'imagesExtrasProduct'
             ]
         ));
     }
@@ -437,5 +505,37 @@ class HomesController extends AppController
                 ->withStringBody(json_encode(['msg' => 'Erro!']));
             }
         }
+    }
+
+    private function saveColor($idProduct = null, $product_flag_code = null)
+    {
+        $this->loadModel('StoresColors');
+
+        $storesColor = $this->StoresColors->newEntity();
+
+        $data = [];
+        $data['color'] = '#FFF';
+        $data['product_flag_code'] = $product_flag_code;
+        $data['stores_products_id'] = $idProduct;
+        $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
+
+        $this->StoresColors->save($storesColor);
+
+        return $storesColor->id;
+    }
+
+    private function verifyColors($storesProduct)
+    {
+
+        $storesColors = $this->StoresColors->find(
+            'all',
+            [
+                'conditions' => [
+                    'StoresColors.stores_products_id =' => $storesProduct->id
+                ]
+            ]
+        );
+
+        return empty($storesColors->toArray()) ? true : false;
     }
 }

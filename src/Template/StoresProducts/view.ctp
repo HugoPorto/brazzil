@@ -35,10 +35,10 @@
             <tr>
                 <th scope="row"><?= __('Fotos Do Produto') ?></th>
                 <td>
-                    <img style="width: 255px; height: 255px" <?= $storesProduct->photo; ?> />
+                    <img style="width: 200px; height: 200px; border: 1px solid #d7d7d7" <?= $storesProduct->photo; ?> />
 
                     <?php foreach ($imagesExtrasProduct as $image) : ?>
-                        <img style="width: 255px; height: 255px" <?= $image->photo; ?> />
+                        <img style="width: 200px; height: 200px; border: 1px solid #d7d7d7" <?= $image->photo; ?> />
                     <?php endforeach; ?>
                 
                 </td>

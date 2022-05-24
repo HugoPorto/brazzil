@@ -42,7 +42,7 @@
 
     <link rel="stylesheet" href="<?php echo $this->request->webroot . 'AdminLTE-3.1.0/plugins/datatables-buttons/css/buttons.bootstrap4.min.css';?>">
 
-    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'img/favicon-32x32.png';?>">
+    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'img/favicon.png';?>">
 
     <link rel="stylesheet" href="<?php echo $this->request->webroot . 'AdminLTE-3.1.0/plugins/toastr/toastr.min.css';?>">
 

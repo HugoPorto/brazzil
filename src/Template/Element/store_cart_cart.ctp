@@ -1,4 +1,4 @@
-<div class="col-lg-6">
+<div class="col-lg-6 sidebar">
 
     <h3 class="bg-sand">Seu Carrinho | Total <span>R$<?= $total ?></span></h3>
 

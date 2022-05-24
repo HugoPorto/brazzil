@@ -110,7 +110,7 @@ class AppController extends Controller
             'username' => $this->Auth->user('username'),
             'name' => $this->Auth->user('name'),
             'role' => $roleDefined,
-            'idUser' => $this->Auth->user()['id'],
+            'idUser' => $this->Auth->user() ? $this->Auth->user()['id'] : null,
             'imageProfileFront' => $imageProfileFront,
             'myEnvironment' => $myEnvironment->environment,
             'indexSidebars' => $indexSidebars,
