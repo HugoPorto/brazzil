@@ -27,7 +27,7 @@
                         value="<?= $this->request->getParam('_csrfToken'); ?>"/>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default btn-primary btn-block mt-4">Log In</button>
+                <button type="submit" class="btn btn-default btn-info btn-block mt-4">Log In</button>
 
             </form>
         </div>
@@ -61,10 +61,10 @@
                     <input type="hidden" name="roles_id" value="11">
                     <div class="form-check col-md-12">
                         <input id="checkbox-3" class="checkbox-custom form-check-input" name="checkbox-3" type="checkbox">
-                        <label for="checkbox-3" class="checkbox-custom-label form-check-label ">Eu concordo com os <a href="" class="text-primary">termons e condições</a> </label>
+                        <label for="checkbox-3" class="checkbox-custom-label form-check-label ">Eu concordo com os <a href="" class="text-info">termons e condições</a> </label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default btn-primary btn-block mt-4">Cadastrar</button>
+                <button type="submit" class="btn btn-default btn-info btn-block mt-4">Cadastrar</button>
             </form>
         </div>
     </div>

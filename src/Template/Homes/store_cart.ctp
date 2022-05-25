@@ -7,14 +7,21 @@
 <?php echo $this->element('store_header'); ?>
 
 <div class="main-wrapper home_transparent-wrapper @@active  cart">
-
-<section class="single_item">
-    <div class="container">
-        <h3 style="color: red; text-align: center; margin-bottom: 20px"><?= $this->Flash->render() ?></h3>
-
+    <div class="bredcrumb bg-info text-center">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>About us </h2>
+                <ul class="">
+                    <li><a href="" class="bread_link">Home</a></li>
+                    <li>About us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<section class="single_item" style="padding-top: 50px !important;">
+    <div class="container">  
         <div class="row order-container">
             <div class="col-lg-6">
-
                 <h3 class="bg-sand">Selecionar Endereço e Calcular Frete</h3>
 
                 <div class="order-single" style="padding: 20px">
@@ -110,7 +117,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-default card-btn">Selecionar Endereço</button>
+                        <button type="submit" class="btn btn-info btn-default card-btn">Selecionar Endereço</button>
                     </form>
                 </div>
             </div>

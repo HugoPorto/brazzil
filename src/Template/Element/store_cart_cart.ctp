@@ -66,6 +66,6 @@
             <?php endif; ?>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-default card-btn">Calcular Frete</button>
+        <button type="submit" class="btn btn-info btn-default card-btn">Calcular Frete</button>
     </form>
 </div>

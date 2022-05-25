@@ -4,7 +4,6 @@ new Vue({
 
     },
     ready: function () {
-        console.log('Teste');
     },
     methods: {
     }

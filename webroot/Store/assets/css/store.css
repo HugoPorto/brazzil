@@ -1,29 +1,52 @@
+/* ====== index =====
+1. COMMON
+2. ELEMENTS
+    2.1 SLIDER
+    2.2 BUTTON
+3. HEADER
+    3.1 TOP COLOR BAR
+    3.2 TOP INFO BAR
+    3.3 HEADER TRANSPARENT
+    3.4 LIGHT HEADER
+4. FOOTER
+    4.1 FOOTER TOP
+    4.2 COPY RIGHT
+5. HOME
+    5.1 ABOUT SECTION
+    5.2 VARIETY SECTION
+    5.3 OFFEERS SECTION
+    5.4 PRODUCT SECTION
+    5.5 REVIEW SECTION
+    5.6 CALL TO ACTION SECTION
+    5.7 PRICING SECTION
+    5.8 CONTACT US SECTION
+    5.9 PARTNER LOGO SECTION
+    5.10 HOME GALLERY SECTION
+    5.11 EXPERT SECTION
+6. NOT FOUND
+7. COMING SOON
+8. BUSINESS
+    8.1 ORDER SECTION
+    8.2 CHECK OUT
+9. PRODUCTS
+    9.1 RELATED PRODUCT
+    9.2 SINGLE SERVICE
+    9.3 SINGLE PRODUCT
+    9.4 PRODUCT
+10. PROFILE
+11. BLOG
+    11.1 BLOG SINGLE
+
+
+===================== */
+/*=== MIXINS ===*/
+/*=== VARIABLES ===*/
+/*============ TEXT COLOR VARIATION =============*/
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Playfair+Display:400,700,700i");
 @import url("https://fonts.googleapis.com/css?family=Rochester");
 
 .text-primary {
     color: #eb6265 !important;
-}
-
-.admin-menu {
-    list-style-type: none;
-    margin-top: 8px;
-    margin-left: 5px;
-    font-size: 16px;
-}
-
-.barra {
-    background-color: #d33c44;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40px;
-    z-index: 999;
-}
-
-.admin-menu a {
-    color: white !important;
 }
 
 /* Background Colors */
@@ -51,7 +74,7 @@ html,
 
 /*============ GOOGLE FONTS =============*/
 body {
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     line-height: 21px;
     color: #848484;
@@ -93,7 +116,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Playfair Display", serif;
+    font-family: 'Playfair Display', serif;
     text-transform: capitalize;
     margin: 0;
     color: #222222;
@@ -287,7 +310,7 @@ a:focus {
 }
 
 .sectionTitle span {
-    font-family: "Playfair Display", serif;
+    font-family: 'Playfair Display', serif;
     color: #eb6265;
     text-transform: capitalize;
 }
@@ -358,10 +381,6 @@ a:focus {
 
 .bg-sand {
     background-color: #f5f5f5;
-}
-
-.bg-footer {
-    background-color: white;
 }
 
 .bg-primary {
@@ -464,7 +483,7 @@ a:focus {
 /*============== Hover Overlays ==============*/
 .hover-overlay {
     position: absolute;
-    content: "";
+    content: '';
     background-color: rgba(235, 98, 101, 0.8);
     top: 0;
     left: 0;
@@ -501,10 +520,10 @@ a:focus {
 }
 
 .highlighter {
-    background: #282c34;
+    background: #282C34;
     padding: 0px 10px;
     border-radius: 4px;
-    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
     display: inline-block;
 }
 
@@ -527,7 +546,7 @@ a:focus {
 
 .custom-nav-tabs .nav-item .nav-link:before {
     position: absolute;
-    content: "";
+    content: '';
     border: 1px solid #dedede;
     width: 18px;
     height: 18px;
@@ -544,13 +563,13 @@ a:focus {
 }
 
 .custom-nav-tabs .nav-item .nav-link.active:before {
-    background-color: #52b6ec;
-    border-color: #52b6ec;
+    background-color: #7bd1df;
+    border-color: #7bd1df;
 }
 
 .custom-nav-tabs .nav-item .nav-link.active:after {
     position: absolute;
-    content: "";
+    content: '';
     background-color: #fff;
     width: 8px;
     height: 8px;
@@ -659,7 +678,7 @@ a:focus {
 }
 
 .element_single .card.single-block .card-header h3 {
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 20px;
     max-width: 60%;
 }
@@ -704,7 +723,7 @@ a:focus {
 }
 
 .element_single .card.single-block .card-body .code_container h5 {
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     color: #848484;
     font-size: 18px;
     line-height: 60px;
@@ -753,12 +772,12 @@ a:focus {
 
 .element_single .card.single-block pre {
     margin: 10px 0px;
-    background-color: #282c34;
-    color: #abb2bf;
+    background-color: #282C34;
+    color: #ABB2BF;
 }
 
 .element_single .card.single-block pre code {
-    color: #abb2bf;
+    color: #ABB2BF;
     font-size: 14px;
 }
 
@@ -803,13 +822,13 @@ a:focus {
     margin-right: 0;
     margin-bottom: 0;
     margin-left: 0;
-    border-width: 0.2rem;
+    border-width: .2rem;
 }
 
 .element_single .scrollspy-example {
     position: relative;
     height: 200px;
-    margin-top: 0.5rem;
+    margin-top: .5rem;
     overflow: auto;
 }
 
@@ -1348,14 +1367,14 @@ hr.hr-inline {
 }
 
 .btn-group .btn-secondary:before {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     height: 100%;
 }
 
 .btn-group .btn-primary:before {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     height: 100%;
@@ -1363,7 +1382,7 @@ hr.hr-inline {
 }
 
 .btn-group .btn-success:before {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     height: 100%;
@@ -1371,7 +1390,7 @@ hr.hr-inline {
 }
 
 .btn-group .btn-info:before {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     height: 100%;
@@ -1379,7 +1398,7 @@ hr.hr-inline {
 }
 
 .btn-group .btn-warning:before {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     height: 100%;
@@ -1387,7 +1406,7 @@ hr.hr-inline {
 }
 
 .btn-group .btn-danger:before {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     height: 100%;
@@ -1395,7 +1414,7 @@ hr.hr-inline {
 }
 
 .btn-group .btn-inverse:before {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     height: 100%;
@@ -1455,7 +1474,7 @@ button:focus {
 
 .bredcrumb ul li:after {
     position: absolute;
-    content: "\f101";
+    content: '\f101';
     font-family: FontAwesome;
     top: 14px;
 }
@@ -1792,7 +1811,7 @@ button:focus {
 
 .bg-image.shadow:before {
     position: absolute;
-    content: "";
+    content: '';
     left: 0;
     right: 0;
     top: 0;
@@ -2076,8 +2095,8 @@ i.overlay-icon {
     margin-bottom: 0px;
 }
 
-.input-group .input-group-addon input[type="checkbox"],
-.input-group .input-group-addon input[type="radio"] {
+.input-group .input-group-addon input[type=checkbox],
+.input-group .input-group-addon input[type=radio] {
     margin-top: 6px;
 }
 
@@ -2115,7 +2134,7 @@ input.form-control {
 }
 
 /*==================================
-card
+card 
 ====================================*/
 #cards_element .card {
     margin-bottom: 30px;
@@ -2200,7 +2219,7 @@ card
 
 .card.card-inverse:before {
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     right: 0;
@@ -2239,12 +2258,12 @@ card
     border: 1px solid #eb6265;
 }
 
-.element_collapse .card-header a[data-toggle="collapse"]:after {
+.element_collapse .card-header a[data-toggle=collapse]:after {
     font-family: FontAwesome;
     font-style: normal;
     speak: none;
     display: inline-block;
-    content: "\f106";
+    content: '\f106';
     float: right;
     line-height: 1;
     width: 22px;
@@ -2261,12 +2280,12 @@ card
     border: 1px solid #e5e5e5;
 }
 
-.element_collapse .card-header a[data-toggle="collapse"].collapsed:after {
+.element_collapse .card-header a[data-toggle=collapse].collapsed:after {
     font-family: FontAwesome;
     font-style: normal;
     speak: none;
     display: inline-block;
-    content: "\f107";
+    content: '\f107';
 }
 
 .element_collapse .card-body {
@@ -2296,12 +2315,12 @@ card
     border: 1px solid #eb6265;
 }
 
-.icon-left .card-header a[data-toggle="collapse"]:after {
+.icon-left .card-header a[data-toggle=collapse]:after {
     font-family: FontAwesome;
     font-style: normal;
     speak: none;
     display: inline-block;
-    content: "\f106";
+    content: '\f106';
     float: left;
     line-height: 1;
     width: 22px;
@@ -2319,12 +2338,12 @@ card
     border: 1px solid #e5e5e5;
 }
 
-.icon-left .card-header a[data-toggle="collapse"].collapsed:after {
+.icon-left .card-header a[data-toggle=collapse].collapsed:after {
     font-family: FontAwesome;
     font-style: normal;
     speak: none;
     display: inline-block;
-    content: "\f107";
+    content: '\f107';
 }
 
 /* ================================================
@@ -2415,7 +2434,7 @@ card
 
 .count-down.bg-image.shadow:before {
     position: absolute;
-    content: "";
+    content: '';
     left: 0;
     right: 0;
     top: 0;
@@ -2692,7 +2711,7 @@ card
 }
 
 /*==============================================
-Carousel with Slick Styles
+Carousel with Slick Styles 
 ===============================================*/
 button.slick-arrow {
     border: 2px solid #fff;
@@ -2716,16 +2735,16 @@ button.slick-arrow {
 }
 
 .slick-prev:before {
-    content: "\f060";
+    content: '\f060';
 }
 
 .slick-next:before {
-    content: "\f061";
+    content: '\f061';
 }
 
 .slick-prev:before,
 .slick-next:before {
-    font-family: "FontAwesome";
+    font-family: 'FontAwesome';
     font-size: 14px;
     line-height: 1;
     opacity: 1;
@@ -3062,7 +3081,7 @@ select.form-control:active {
 
 .checkbox-custom+.checkbox-custom-label:before,
 .radio-custom+.radio-custom-label:before {
-    content: "";
+    content: '';
     background: #fff;
     border: 1px solid #dedede;
     display: inline-block;
@@ -3077,7 +3096,7 @@ select.form-control:active {
 
 .checkbox-custom:checked+.checkbox-custom-label:before {
     content: "\f00c";
-    font-family: "FontAwesome";
+    font-family: 'FontAwesome';
     color: #fff;
     background: #eb6265;
     border: 0px solid #eb6265;
@@ -3090,7 +3109,7 @@ select.form-control:active {
 .radio-custom:checked+.radio-custom-label:before {
     content: "\f111";
     font-size: 9px;
-    font-family: "FontAwesome";
+    font-family: 'FontAwesome';
     color: #fff;
     background: #eb6265;
     border: 0px solid #eb6265;
@@ -3157,7 +3176,7 @@ form.register span.or {
 }
 
 form.register span.or:before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     width: 47%;
@@ -3167,7 +3186,7 @@ form.register span.or:before {
 }
 
 form.register span.or:after {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     width: 47%;
@@ -3251,7 +3270,7 @@ p.form-footer {
     right: 25px;
     top: 20px;
     color: #888;
-    font-size: 0.81rem;
+    font-size: .81rem;
 }
 
 /* ================================================
@@ -3488,7 +3507,7 @@ p.form-footer {
 }
 
 .main-slider .common-inner .h1 {
-    font-family: "Playfair Display", serif;
+    font-family: 'Playfair Display', serif;
     color: #fff;
     font-style: italic;
     font-weight: 700;
@@ -3586,7 +3605,7 @@ p.form-footer {
 }
 
 /*============================================
- Event Carousel with Slick Styles
+ Event Carousel with Slick Styles 
  =============================================*/
 .event_carousel {
     background-position: center;
@@ -3605,7 +3624,7 @@ p.form-footer {
 
 .event_carousel:before {
     position: absolute;
-    content: "";
+    content: '';
     left: 0px;
     right: 0px;
     top: 0;
@@ -3919,7 +3938,7 @@ header {
 }
 
 .main-nav .nav-item a.nav-link:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     top: 40px;
@@ -4388,7 +4407,7 @@ form.search_form .btn-small {
 .icon-toggle::after {
     content: "\f00d";
     display: block;
-    font-family: "FontAwesome";
+    font-family: 'FontAwesome';
     margin-top: -40px;
     opacity: 0;
     transform: translateY(20px) scale(0.7);
@@ -4423,7 +4442,7 @@ form.search_form .btn-small {
 }
 
 .boxed .main-nav .nav-item a.nav-link:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     top: 40px;
@@ -4833,8 +4852,8 @@ button.close:focus {
     text-align: right;
     outline: 0;
     filter: alpha(Opacity=70);
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    opacity: .7;
+    transition: opacity .2s;
     background-size: 50%;
 }
 
@@ -5034,7 +5053,7 @@ button.close:focus {
 .pricing_image-card .card_img .overlay {
     color: #fff;
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     right: 0;
@@ -5159,7 +5178,7 @@ button.close:focus {
 
 .tooltip-inner:after {
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 50%;
     margin-left: -5px;
@@ -5249,7 +5268,7 @@ button.close:focus {
 }
 
 .icon_tabs .nav-item a.nav-link:before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -5343,7 +5362,7 @@ button.close:focus {
 
 .nav-tabs.bar-tabs .nav-link.active:before {
     position: absolute;
-    content: "";
+    content: '';
     bottom: 0;
     left: 0;
     border-bottom: 3px solid #eb6265;
@@ -5385,15 +5404,15 @@ button.close:focus {
 }
 
 .nav-unbordered.nav-tabs .nav-item .nav-link.active {
-    color: #52b6ec;
+    color: #7bd1df;
     background-color: transparent;
 }
 
 .nav-unbordered.nav-tabs .nav-item .nav-link.active:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
-    border-bottom: 2px solid #52b6ec;
+    border-bottom: 2px solid #7bd1df;
     bottom: -8px;
 }
 
@@ -5498,11 +5517,11 @@ button.close:focus {
     text-indent: -999em;
     cursor: pointer;
     z-index: 2;
-    transition: all 0.3s ease-out;
+    transition: all .3s ease-out;
 }
 
 .box-video .btn-play:after {
-    content: "";
+    content: '';
     position: absolute;
     left: 50%;
     top: 50%;
@@ -5512,7 +5531,7 @@ button.close:focus {
     border: solid transparent;
     border-left-color: #eb6265;
     border-width: 12px 20px;
-    transition: all 0.3s ease-out;
+    transition: all .3s ease-out;
 }
 
 .box-video:hover .btn-play {
@@ -5522,12 +5541,12 @@ button.close:focus {
 .box-video.open .bg-video {
     visibility: hidden;
     opacity: 0;
-    transition: all 0.6s 0.8s;
+    transition: all .6s .8s;
 }
 
 .box-video.open .video-container {
     opacity: 1;
-    transition: all 0.6s 0.8s;
+    transition: all .6s .8s;
 }
 
 .fluid-width-video-wrapper {
@@ -5710,7 +5729,7 @@ p.devider.devider_primary {
 }
 
 .bg-image:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -6147,7 +6166,7 @@ footer .copyRight_text {
 }
 
 .footer-dark .list-inline-item:not(:last-child) {
-    margin-right: 0.456rem;
+    margin-right: .456rem;
 }
 
 /*================= 5.1 ABOUT SECTION ==================*/
@@ -6164,7 +6183,7 @@ footer .copyRight_text {
 
 .seperator:before {
     position: absolute;
-    content: "";
+    content: '';
     top: 19px;
     left: -110px;
     width: 100px;
@@ -6173,7 +6192,7 @@ footer .copyRight_text {
 
 .seperator:after {
     position: absolute;
-    content: "";
+    content: '';
     top: 19px;
     right: -110px;
     width: 100px;
@@ -6252,7 +6271,7 @@ footer .copyRight_text {
 }
 
 .about_feature .about_feature-title span {
-    font-family: "Rochester", cursive;
+    font-family: 'Rochester', cursive;
     font-size: 24px;
     line-height: 26px;
     color: #fff;
@@ -7155,7 +7174,7 @@ footer .copyRight_text {
 
 .cta-beauty:before {
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     bottom: 0;
@@ -7249,7 +7268,7 @@ footer .copyRight_text {
 
 .card.blog-card .card-body span a.author:after {
     position: absolute;
-    content: "";
+    content: '';
     top: 4px;
     right: -15px;
     height: 14px;
@@ -7308,7 +7327,7 @@ footer .copyRight_text {
 }
 
 .newslatter-area:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -7397,7 +7416,7 @@ footer .copyRight_text {
     width: 100%;
     height: 100%;
     border: 1px solid #e5e5e5;
-    padding: 20px !important;
+    padding: 20px;
     overflow: hidden;
     position: relative;
     display: -ms-flexbox;
@@ -7513,7 +7532,7 @@ footer .copyRight_text {
 
 .error-content .logo-fill-1,
 .error-content .logo-fill-2 {
-    fill: #52b6ec;
+    fill: #7bd1df;
 }
 
 .error-content p {
@@ -8068,7 +8087,7 @@ footer .copyRight_text {
     color: #eb6265;
 }
 
-.single_item .single_item-details input[type="number"] {
+.single_item .single_item-details input[type=number] {
     font-size: 18px;
     font-weight: 500;
 }
@@ -9088,7 +9107,7 @@ footer .copyRight_text {
 }
 
 .footer-dark .list-inline-item:not(:last-child) {
-    margin-right: 0.456rem;
+    margin-right: .456rem;
 }
 
 body.default {
@@ -9155,7 +9174,7 @@ body.pattern-05 {
 }
 
 .coming-soon:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -9166,7 +9185,7 @@ body.pattern-05 {
 
 .coming-soon h1 {
     font-size: 2.1875rem;
-    font-family: "Playfair Display", serif;
+    font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: 700;
     text-transform: capitalize;
@@ -9224,7 +9243,7 @@ body.pattern-05 {
     border: 2px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
     color: #fff;
-    transition: all 0.3s;
+    transition: all .3s;
 }
 
 .coming-soon .form_search input.form-control:hover,
@@ -9248,12 +9267,12 @@ body.pattern-05 {
     right: 30px;
     color: #fff;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all .3s;
 }
 
 .coming-soon .copyright {
     font-size: 1rem;
-    transition: all 0.3s;
+    transition: all .3s;
 }
 
 @media (min-width: 768px) {
@@ -9264,7 +9283,7 @@ body.pattern-05 {
 
 .coming-soon .copyright a {
     color: white;
-    transition: all 0.3s;
+    transition: all .3s;
 }
 
 .coming-soon .copyright a:hover {
@@ -9408,10 +9427,10 @@ body.pattern-05 {
     right: -2px !important;
 }
 
-html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
+html:not([dir=rtl]) .noUi-horizontal .noUi-origin {
     right: 1px;
 }
 
-html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
+html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     right: -20px;
 }

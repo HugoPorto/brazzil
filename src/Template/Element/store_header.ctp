@@ -45,7 +45,7 @@
 
                             <input type="text" required="true" name="search" placeholder="Buscar..">
 
-                            <button class="btn btn-primary btn-small" type="submit">Buscar</button>
+                            <button class="btn btn-info btn-small" type="submit">Buscar</button>
                         </form>
 
                     </li>

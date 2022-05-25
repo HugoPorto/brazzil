@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="card-body">
                                         <a href="<?= $this->request->base ?>/homes/productView/<?= $storesProduct->id; ?>"><h4 class="card-title"><?= $storesProduct->product; ?></h4></a>
-                                        <span class="text-primary">R$<?= $storesProduct->price; ?></span>
+                                        <span class="text-info">R$<?= $storesProduct->price; ?></span>
                                     </div>
                                 </div>
                             </div>
