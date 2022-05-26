@@ -28,4 +28,13 @@ class PagesController extends AppController
             ]
         ));
     }
+
+    public function error($message)
+    {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $this->set('message', $message);
+    }
 }

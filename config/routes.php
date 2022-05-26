@@ -14,6 +14,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/admin', ['controller' => 'Users', 'action' => 'mainmenu']);
     $routes->connect('/stripe', ['controller' => 'Stripes', 'action' => 'stripe']);
     $routes->connect('/payment', ['controller' => 'Stripes', 'action' => 'payment']);
+    $routes->connect('/error', ['controller' => 'Pages', 'action' => 'error']);
 
     $routes->fallbacks(DashedRoute::class);
 });

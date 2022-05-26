@@ -120,7 +120,7 @@ class StoresProductsController extends AppController
         if ($this->request->is('post')) {
             $idColor = $this->saveColor();
 
-            $photo = $this->processMainPhoto($this->request->getData());
+            $photo = $this->Base64->processMainPhoto($this->request->getData());
 
             $qrCode = $this->getQrCode($this->request->getData());
 
@@ -164,17 +164,6 @@ class StoresProductsController extends AppController
         $storesCategories = $this->StoresProducts->StoresCategories->find('list', ['limit' => 1000]);
 
         $this->set(compact('storesProduct', 'storesCategories'));
-    }
-
-    private function processMainPhoto($request)
-    {
-        $this->hasPermission('storeAdmin');
-
-        if ($request['photo'][0]['tmp_name'] !== '') {
-            return $this->Base64->convert($request['photo']);
-        } else {
-            $this->Flash->error(__('Você precisa selecionar uma imagem.'));
-        }
     }
 
     public function edit($id = null)
@@ -358,7 +347,7 @@ class StoresProductsController extends AppController
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $photo = $this->processMainPhoto($this->request->getData());
+            $photo = $this->Base64->processMainPhoto($this->request->getData());
 
             $data = $this->request->getData();
 
@@ -530,7 +519,7 @@ class StoresProductsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $idColor = $this->saveColor();
 
-            $photo = $this->processMainPhoto($this->request->getData());
+            $photo = $this->Base64->processMainPhoto($this->request->getData());
 
             $data['product'] = $this->request->getData()['product'];
 

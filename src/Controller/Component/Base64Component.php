@@ -3,30 +3,23 @@
 namespace App\Controller\Component;
 
 use Cake\Controller\Component;
-use Cake\Controller\ComponentRegistry;
-use Cake\Network\Exception\InternalErrorException;
 use Cake\Utility\Text;
-use Cake\ORM\TableRegistry;
 
 class Base64Component extends Component
 {
-    public $max_files = 3;
-    public $max_size = 2097152;
+    private $max_files = 3;
+    private $max_size = 2097152;
 
     public function convert($data)
     {
         if (count($data) > $this->max_files) {
-            $this->_registry->getController()->Flash->error('Limit exceded');
-
-            return $this->_registry->getController()->redirect(['controller' => 'StoresProducts', 'action' => 'add']);
+            return $this->_registry->getController()->redirect(['controller' => 'Pages', 'action' => 'error', 'Limite excedido.']);
         }
 
         foreach ($data as $file) {
             if ($file['size'] > $this->max_size) {
-                $this->_registry->getController()->Flash->error('O tamanho máximo permitido é 2M.');
-                return $this->_registry->getController()->redirect(['controller' => 'StoresProducts', 'action' => 'add']);
+                return $this->_registry->getController()->redirect(['controller' => 'Pages', 'action' => 'error', 'O tamanho máximo permitido é 2M.']);
             }
-
 
             $filename = $file['name'];
 
@@ -34,14 +27,12 @@ class Base64Component extends Component
 
             $file_ext = substr(strchr($filename, '.'), 1);
 
-            $dir = WWW_ROOT . 'img';
-
             $type_allowed = array('png', 'jpg', 'jpeg', 'gif');
 
             if (!in_array($file_ext, $type_allowed)) {
-                $this->_registry->getController()->Flash->error('Tipo não permitido: "' . $file['type'] . '"');
-
-                return $this->_registry->getController()->redirect(['controller' => 'StoresProducts', 'action' => 'add']);
+                return $this->_registry->getController()->redirect(
+                    ['controller' => 'Pages', 'action' => 'error', 'Tipo não permitido: "' . $file['type'] . '"']
+                );
             } elseif (is_uploaded_file($file_tmp_name)) {
                 $filename = Text::uuid() . '.' . $file_ext;
 
@@ -49,16 +40,19 @@ class Base64Component extends Component
 
                 $data = file_get_contents($path);
 
-                return $base64 = 'src="data:' . $file_ext . ';base64,' . base64_encode($data) . '"';
-            } else {
-                $this->_registry->getController()->Flash->error(__('A imagem não pode ser salva.'));
+                $base64 = 'src="data:' . $file_ext . ';base64,' . base64_encode($data) . '"';
 
-                return $this->_registry->getController()->redirect(['controller' => 'StoresProducts', 'action' => 'add']);
+                return $base64;
+            } else {
+                return $this->_registry->getController()->redirect(['controller' => 'Pages', 'action' => 'error', 'A imagem não pode ser salva.']);
             }
         }
 
-        $this->_registry->getController()->Flash->success(__('Imagem salva com sucesso.'));
-
         return $this->_registry->getController()->redirect(['controller' => 'StoresProducts', 'action' => 'index']);
+    }
+
+    public function processMainPhoto($request)
+    {
+        return $request['photo'][0]['tmp_name'] !== '' ? $this->convert($request['photo']) : $this->_registry->getController()->redirect(['controller' => 'Pages', 'action' => 'error', 'Erro ao processar imagem.']);
     }
 }
