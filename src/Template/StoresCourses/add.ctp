@@ -62,6 +62,15 @@
                         'required' => true
                     ]
                 ) ?>
+
+
+            <?= $this->Form->control(
+                'users_id',
+                [
+                        'type' => 'hidden',
+                        'value' => $idUser
+                    ]
+            ) ?>
             </div>
 
             <?= $this->Form->button(__('Adicionar'), ['class' => 'btn btn-info']) ?>

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -8,22 +7,24 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * StoresCourses Model
+ * StoresSubcategories Model
  *
+ * @property \App\Model\Table\StoresCategoriesTable|\Cake\ORM\Association\BelongsTo $StoresCategories
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  *
- * @method \App\Model\Entity\StoresCourse get($primaryKey, $options = [])
- * @method \App\Model\Entity\StoresCourse newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\StoresCourse[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StoresCourse|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StoresCourse patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\StoresCourse[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\StoresCourse findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\StoresSubcategory get($primaryKey, $options = [])
+ * @method \App\Model\Entity\StoresSubcategory newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\StoresSubcategory[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\StoresSubcategory|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\StoresSubcategory patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\StoresSubcategory[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\StoresSubcategory findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class StoresCoursesTable extends Table
+class StoresSubcategoriesTable extends Table
 {
+
     /**
      * Initialize method
      *
@@ -34,12 +35,16 @@ class StoresCoursesTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('stores_courses');
+        $this->setTable('stores_subcategories');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
 
+        $this->belongsTo('StoresCategories', [
+            'foreignKey' => 'stores_categories_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Users', [
             'foreignKey' => 'users_id',
             'joinType' => 'INNER'
@@ -59,28 +64,10 @@ class StoresCoursesTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('course')
-            ->maxLength('course', 45)
-            ->requirePresence('course', 'create')
-            ->notEmpty('course');
-
-        $validator
-            ->scalar('autor')
-            ->maxLength('autor', 15)
-            ->requirePresence('autor', 'create')
-            ->notEmpty('autor');
-
-        $validator
-            ->scalar('theme')
-            ->maxLength('theme', 150)
-            ->requirePresence('theme', 'create')
-            ->notEmpty('theme');
-
-        $validator
-            ->scalar('photo')
-            ->maxLength('photo', 4294967295)
-            ->requirePresence('photo', 'create')
-            ->notEmpty('photo');
+            ->scalar('subcategory')
+            ->maxLength('subcategory', 150)
+            ->requirePresence('subcategory', 'create')
+            ->notEmpty('subcategory');
 
         return $validator;
     }
@@ -94,6 +81,7 @@ class StoresCoursesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->existsIn(['stores_categories_id'], 'StoresCategories'));
         $rules->add($rules->existsIn(['users_id'], 'Users'));
 
         return $rules;

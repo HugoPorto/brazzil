@@ -1,25 +1,24 @@
 <?php
-
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 
 /**
- * StoresCourse Entity
+ * StoresSubcategory Entity
  *
  * @property int $id
- * @property string $course
+ * @property string $subcategory
+ * @property int $stores_categories_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property string $autor
- * @property string $theme
  * @property int $users_id
- * @property string $photo
  *
+ * @property \App\Model\Entity\StoresCategory $stores_category
  * @property \App\Model\Entity\User $user
  */
-class StoresCourse extends Entity
+class StoresSubcategory extends Entity
 {
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -30,13 +29,12 @@ class StoresCourse extends Entity
      * @var array
      */
     protected $_accessible = [
-        'course' => true,
+        'subcategory' => true,
+        'stores_categories_id' => true,
         'created' => true,
         'modified' => true,
-        'autor' => true,
-        'theme' => true,
         'users_id' => true,
-        'photo' => true,
+        'stores_category' => true,
         'user' => true
     ];
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -23,7 +24,6 @@ use Cake\Validation\Validator;
  */
 class StoresAboutsTable extends Table
 {
-
     /**
      * Initialize method
      *
