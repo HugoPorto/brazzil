@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -24,7 +25,6 @@ use Cake\Validation\Validator;
  */
 class StoresSubcategoriesTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -36,7 +36,7 @@ class StoresSubcategoriesTable extends Table
         parent::initialize($config);
 
         $this->setTable('stores_subcategories');
-        $this->setDisplayField('id');
+        $this->setDisplayField('subcategory');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

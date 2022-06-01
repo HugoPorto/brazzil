@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
@@ -29,13 +28,18 @@ use Cake\ORM\Entity;
  * @property string $package_width
  * @property string $random_code
  * @property int $stores_colors_id
+ * @property int $stores_subcategories_id
+ * @property int $stores_finalcategories_id
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\StoresCategory $stores_category
  * @property \App\Model\Entity\StoresColor $stores_color
+ * @property \App\Model\Entity\StoresSubcategory $stores_subcategory
+ * @property \App\Model\Entity\StoresFinalcategory $stores_finalcategory
  */
 class StoresProduct extends Entity
 {
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -67,8 +71,12 @@ class StoresProduct extends Entity
         'package_width' => true,
         'random_code' => true,
         'stores_colors_id' => true,
+        'stores_subcategories_id' => true,
+        'stores_finalcategories_id' => true,
         'user' => true,
         'stores_category' => true,
-        'stores_color' => true
+        'stores_color' => true,
+        'stores_subcategory' => true,
+        'stores_finalcategory' => true
     ];
 }

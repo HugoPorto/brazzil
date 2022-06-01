@@ -21,6 +21,7 @@
             '/Store/assets/plugins/images-loaded/js/imagesloaded.pkgd.min.js',
             '/Store/assets/plugins/no-ui-slider/nouislider.min.js',
             '/Store/assets/js/store.js',
+            '/Store/assets/js/store2.js',
         ]
     );
 

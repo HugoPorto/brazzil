@@ -1,60 +1,49 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
-
 use Cake\Datasource\ConnectionManager;
 
 class StoresCardsController extends AppController
 {
     public function index()
     {
-        if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'root')
-        {
-
+        if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'root') {
             $this->paginate = [
                 'contain' => ['Users']
             ];
             $storesCards = $this->paginate($this->StoresCards);
 
             $this->set(compact('storesCards'));
-        }
-        else
-        {
+        } else {
             return $this->redirect(['controller' => 'homes', 'action' => 'signup']);
         }
     }
 
     public function view($id = null)
     {
-        if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'root')
-        {
+        if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'root') {
             $storesCard = $this->StoresCards->get($id, [
                 'contain' => ['Users']
             ]);
 
             $this->set('storesCard', $storesCard);
-        }
-        else
-        {
+        } else {
             return $this->redirect(['controller' => 'homes', 'action' => 'signup']);
         }
     }
 
     public function add()
     {
-        if($this->Auth->user() !== null)
-        {
-            if($this->Roles->get($this->Auth->user()['roles_id'])->role == 'store')
-            {
+        if ($this->Auth->user() !== null) {
+            if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'store') {
                 $storesCard = $this->StoresCards->newEntity();
 
-                if ($this->request->is('post'))
-                {
+                if ($this->request->is('post')) {
                     $storesCard = $this->StoresCards->patchEntity($storesCard, $this->request->getData());
 
-                    if ($this->StoresCards->save($storesCard))
-                    {
+                    if ($this->StoresCards->save($storesCard)) {
                         // Save Demand
                         $demandId = $this->saveDemand($storesCard->id);
 
@@ -69,14 +58,10 @@ class StoresCardsController extends AppController
 
                     return $this->redirect(['controller' => 'homes', 'action' => 'storeCheckout']);
                 }
-            }
-            else
-            {
+            } else {
                 return $this->redirect(['controller' => 'users', 'action' => 'signup']);
             }
-        }
-        else
-        {
+        } else {
             return $this->redirect(['controller' => 'users', 'action' => 'signup']);
         }
     }
@@ -86,13 +71,15 @@ class StoresCardsController extends AppController
         $this->loadModel('StoresCarts');
         $this->loadModel('StoresItemsDemands');
 
-        $storesCarts = $this->StoresCarts->find('all',
-        [
+        $storesCarts = $this->StoresCarts->find(
+            'all',
+            [
             'contain' => ['StoresProducts'],
             'conditions' => [
                 'StoresCarts.users_id =' => $this->Auth->user()['id']
             ]
-        ]);
+            ]
+        );
 
         $itensDemand = [];
 
@@ -108,7 +95,6 @@ class StoresCardsController extends AppController
             $storesItemsDemand = $this->StoresItemsDemands->patchEntity($storesItemsDemand, $itensDemand);
 
             $this->StoresItemsDemands->save($storesItemsDemand);
-
         }
     }
 
@@ -139,18 +125,15 @@ class StoresCardsController extends AppController
 
     public function edit($id = null)
     {
-        if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'root')
-        {
+        if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'root') {
             $storesCard = $this->StoresCards->get($id, [
                 'contain' => []
             ]);
 
-            if ($this->request->is(['patch', 'post', 'put']))
-            {
+            if ($this->request->is(['patch', 'post', 'put'])) {
                 $storesCard = $this->StoresCards->patchEntity($storesCard, $this->request->getData());
 
-                if ($this->StoresCards->save($storesCard))
-                {
+                if ($this->StoresCards->save($storesCard)) {
                     $this->Flash->success(__('The stores card has been saved.'));
 
                     return $this->redirect(['action' => 'index']);
@@ -162,34 +145,26 @@ class StoresCardsController extends AppController
             $users = $this->StoresCards->Users->find('list', ['limit' => 200]);
 
             $this->set(compact('storesCard', 'users'));
-        }
-        else
-        {
+        } else {
             return $this->redirect(['controller' => 'homes', 'action' => 'signup']);
         }
     }
 
     public function delete($id = null)
     {
-        if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'root')
-        {
+        if ($this->Roles->get($this->Auth->user()['roles_id'])->role == 'root') {
             $this->request->allowMethod(['post', 'delete']);
 
             $storesCard = $this->StoresCards->get($id);
 
-            if ($this->StoresCards->delete($storesCard))
-            {
+            if ($this->StoresCards->delete($storesCard)) {
                 $this->Flash->success(__('The stores card has been deleted.'));
-            }
-            else
-            {
+            } else {
                 $this->Flash->error(__('The stores card could not be deleted. Please, try again.'));
             }
 
             return $this->redirect(['action' => 'index']);
-        }
-        else
-        {
+        } else {
             return $this->redirect(['controller' => 'homes', 'action' => 'signup']);
         }
     }

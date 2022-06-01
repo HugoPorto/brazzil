@@ -73,6 +73,23 @@
         return false;
     }
 
+    function toastrDeleteSubcategory(idCategory) {
+        $.ajax({
+            method: "get",
+            url: "<?= $this->request->base ?>/stores-subcategories/delete/" + idCategory,
+            success: function (result) {
+                if(result === 'success'){
+                    window.location.replace("<?= $this->request->base ?>/stores-subcategories/");
+                    return false;
+                } else {
+                    toastr.error(result);
+                }
+            }
+        });
+
+        return false;
+    }
+
     <?php if ($this->request->controller === 'StoresDemands') : ?>
         function updateDemand(idDemand) {
             $.ajax({
@@ -267,6 +284,80 @@
             })
         }
         })
+    }
+
+    function verifySubcategory(){
+        let idCategory = document.getElementById("category").value;
+        const subcategoria = document.getElementById('subcategory');
+        const finalcategory = document.getElementById('finalcategory');
+
+        $.ajax({
+            method: "get",
+            url: "<?= $this->request->base ?>/stores-subcategories/loadSubcategoryByIdcategory/" + idCategory,
+            success: function (result) {
+
+                let options = '';
+
+                for (var count = 0; count < result.length; count++) {
+                    options = options + '<option value="' + result[count].id + '">' +  result[count].subcategory + '</option>'
+                }
+
+                const html = '<div class="form-group">'
+                                + '<label for="description">Subcategorias*</label>'
+                                + '<div class="input select">'
+                                + '<select name="stores_subcategories_id" class="form-control" onchange="verifyFinalCategory()" id="selectsubcategory">'
+                                + '<option selected>Selecione uma subcategoria</option>'
+                                + options
+                                + '</select>'
+                                + '</div>'
+                                + '</div>';
+
+                subcategoria.innerHTML = html;
+            },
+            error: function(result) {
+                toastr.info(result.responseJSON.msg);
+                subcategoria.innerHTML = '';
+                finalcategory.innerHTML = '';
+            }
+        });
+
+        return false;
+    }
+
+    function verifyFinalCategory(){
+        let idSubcategory = document.getElementById("selectsubcategory").value;
+        const finalcategory = document.getElementById('finalcategory');
+
+        $.ajax({
+            method: "get",
+            url: "<?= $this->request->base ?>/stores-finalcategories/loadFinalcategoryByIdSubcategory/" + idSubcategory,
+            success: function (result) {
+
+                    let options = '';
+
+                    for (var count = 0; count < result.length; count++) {
+                        options = options + '<option value="' + result[count].id + '">' +  result[count].category + '</option>'
+                    }
+
+                    const html = '<div class="form-group">'
+                                    + '<label for="description">Categoria Final*</label>'
+                                    + '<div class="input select">'
+                                    + '<select name="stores_finalcategories_id" class="form-control">'
+                                    + '<option selected>Selecione uma categoria final</option>'
+                                    + options
+                                    + '</select>'
+                                    + '</div>'
+                                    + '</div>';
+
+                    finalcategory.innerHTML = html;
+            },
+            error: function(result) {
+                toastr.info(result.responseJSON.msg);
+                finalcategory.innerHTML = '';
+            }
+        });
+
+        return false;
     }
 
 </script>

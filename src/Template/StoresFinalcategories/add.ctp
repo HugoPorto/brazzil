@@ -2,41 +2,40 @@
 
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\StoresSubcategory $storesSubcategory
+ * @var \App\Model\Entity\StoresFinalcategory $storesFinalcategory
  */
 ?>
 <div class="col-md-6" style="padding: 0px">
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Nova Subcategoria</h3>
+            <h3 class="card-title">Categoria Final</h3>
         </div>
 
         <div class="card-body">
-            <?= $this->Form->create($storesSubcategory) ?>
+            <?= $this->Form->create($storesFinalcategory) ?>
 
             <div class="form-group">
-                <label for="subcategory">Subcategoria*</label>
+                <label for="category">Categoria*</label>
                 <?= $this->Form->control(
-                    'subcategory',
+                    'category',
                     [
                         'label' => false,
                         'class' => 'form-control',
-                        'id' => 'subcategory',
+                        'id' => 'category',
                         'required' => true
                     ]
                 ) ?>
             </div>
 
             <div class="form-group">
-                <label for="stores_categories_id">Categoria*</label>
+                <label for="stores_subcategories_id">Subcategoria*</label>
                 <?= $this->Form->control(
-                    'stores_categories_id',
+                    'stores_subcategories_id',
                     [
                         'label' => false,
-                        'id' => 'stores_categories_id',
+                        'id' => 'stores_subcategories_id',
                         'required' => true,
-                        'options' => $storesCategories,
-                        'required' => true
+                        'options' => $storesSubcategories
                     ]
                 ) ?>
 

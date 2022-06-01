@@ -7,18 +7,31 @@
         <?= $this->Form->create($storesCategory) ?>
 
         <div class="card-body">
-            <p><?= $this->Flash->render() ?></p>
+            <div class="form-group">
+
+                <label for="category">Categoria</label>
+
+                <?php
+                    echo $this->Form->control('category', [
+                        'label' => false,
+                        'class' => 'form-control',
+                        'id' => 'category'
+                    ]);
+                    ?>
+
+            </div>
 
             <div class="form-group">
 
-            <label for="category">Categoria</label>
+                <label for="status_menu">Status Menu</label>
 
-            <?php
-                echo $this->Form->control('category', [
-                    'label' => false,
-                    'class' => 'form-control'
-                ]);
-                ?>
+                <?php
+                    echo $this->Form->control('status_menu', [
+                        'label' => false,
+                        'class' => 'form-control',
+                        'id' => 'status_menu'
+                    ]);
+                    ?>
 
             </div>
 

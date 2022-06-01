@@ -92,6 +92,42 @@
 
                         <div class="form-group">
 
+                            <label for="description">Subcategoria*</label>
+
+                            <?php
+                                echo $this->Form->control(
+                                    'stores_subcategories_id',
+                                    [
+                                    'options' => $storesSubcategories,
+                                    'label' => false,
+                                    'class' => 'form-control',
+                                    'required' => true
+                                    ]
+                                );
+                                ?>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="description">Categoria Final*</label>
+
+                            <?php
+                                echo $this->Form->control(
+                                    'stores_finalcategories_id',
+                                    [
+                                    'options' => $storesFinalcategories,
+                                    'label' => false,
+                                    'class' => 'form-control',
+                                    'required' => true
+                                    ]
+                                );
+                                ?>
+
+                        </div>
+
+                        <div class="form-group">
+
                             <label for="description">Online</label>
 
                             <?php

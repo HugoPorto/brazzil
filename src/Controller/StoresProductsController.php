@@ -193,7 +193,19 @@ class StoresProductsController extends AppController
 
         $storesCategories = $this->StoresProducts->StoresCategories->find('list');
 
-        $this->set(compact('storesProduct', 'storesCategories', 'loginMenu'));
+        $storesSubcategories = $this->StoresProducts->StoresSubcategories->find('list');
+
+        $storesFinalcategories = $this->StoresProducts->StoresFinalcategories->find('list');
+
+        $this->set(compact(
+            [
+                'storesProduct',
+                'storesCategories',
+                'loginMenu',
+                'storesSubcategories',
+                'storesFinalcategories'
+            ]
+        ));
     }
 
     public function editQrcode($id = null)

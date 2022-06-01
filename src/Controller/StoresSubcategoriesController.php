@@ -121,14 +121,45 @@ class StoresSubcategoriesController extends AppController
     {
         $this->hasPermission('storeAdmin');
 
-        $this->request->allowMethod(['post', 'delete']);
-        $storesSubcategory = $this->StoresSubcategories->get($id);
-        if ($this->StoresSubcategories->delete($storesSubcategory)) {
-            $this->Flash->success(__('The stores subcategory has been deleted.'));
-        } else {
-            $this->Flash->error(__('The stores subcategory could not be deleted. Please, try again.'));
-        }
+        $this->loadModel('StoresFinalCategories');
 
-        return $this->redirect(['action' => 'index']);
+        $finalCategories = $this->StoresFinalCategories->find('all', [
+            'conditions' => [
+                'StoresFinalCategories.stores_subcategories_id =' => $id
+            ]
+        ]);
+
+        if (!empty($finalCategories->toArray())) {
+            echo 'A subcategoria não pode ser apagada porque existe uma categoria final associada.';
+            exit();
+        } else {
+            $storesSubcategory = $this->StoresSubcategories->get($id);
+
+            if ($this->StoresSubcategories->delete($storesSubcategory)) {
+                echo 'success';
+                exit();
+            }
+        }
+    }
+
+    public function loadSubcategoryByIdcategory($idCategory)
+    {
+        $this->autoRender = false;
+
+        $this->hasPermission('storeAdmin');
+
+        $storesSubcategories = $this->StoresSubcategories->find('all', [
+            'conditions' => [
+                'StoresSubcategories.stores_categories_id =' => $idCategory
+            ]
+        ]);
+
+        if (empty($storesSubcategories->toArray())) {
+            return $this->response->withStatus(404)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'Não foram encontrados registros!']));
+        } else {
+            return $this->response->withStatus(200)->withType('application/json')
+                ->withStringBody(json_encode($storesSubcategories->toArray()));
+        }
     }
 }

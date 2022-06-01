@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
@@ -11,12 +12,12 @@ use Cake\ORM\Entity;
  * @property int $users_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ * @property int $status_menu
  *
  * @property \App\Model\Entity\User $user
  */
 class StoresCategory extends Entity
 {
-
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -31,6 +32,7 @@ class StoresCategory extends Entity
         'users_id' => true,
         'created' => true,
         'modified' => true,
+        'status_menu' => true,
         'user' => true
     ];
 }

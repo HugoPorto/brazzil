@@ -8,21 +8,22 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * StoresCategories Model
+ * StoresFinalcategories Model
  *
+ * @property \App\Model\Table\StoresSubcategoriesTable|\Cake\ORM\Association\BelongsTo $StoresSubcategories
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  *
- * @method \App\Model\Entity\StoresCategory get($primaryKey, $options = [])
- * @method \App\Model\Entity\StoresCategory newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\StoresCategory[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StoresCategory|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StoresCategory patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\StoresCategory[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\StoresCategory findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\StoresFinalcategory get($primaryKey, $options = [])
+ * @method \App\Model\Entity\StoresFinalcategory newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\StoresFinalcategory[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\StoresFinalcategory|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\StoresFinalcategory patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\StoresFinalcategory[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\StoresFinalcategory findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class StoresCategoriesTable extends Table
+class StoresFinalcategoriesTable extends Table
 {
     /**
      * Initialize method
@@ -34,12 +35,16 @@ class StoresCategoriesTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('stores_categories');
+        $this->setTable('stores_finalcategories');
         $this->setDisplayField('category');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
 
+        $this->belongsTo('StoresSubcategories', [
+            'foreignKey' => 'stores_subcategories_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Users', [
             'foreignKey' => 'users_id',
             'joinType' => 'INNER'
@@ -64,10 +69,6 @@ class StoresCategoriesTable extends Table
             ->requirePresence('category', 'create')
             ->notEmpty('category');
 
-        $validator
-            ->requirePresence('status_menu', 'create')
-            ->notEmpty('status_menu');
-
         return $validator;
     }
 
@@ -80,6 +81,7 @@ class StoresCategoriesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->existsIn(['stores_subcategories_id'], 'StoresSubcategories'));
         $rules->add($rules->existsIn(['users_id'], 'Users'));
 
         return $rules;

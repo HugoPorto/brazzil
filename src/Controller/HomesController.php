@@ -374,7 +374,7 @@ class HomesController extends AppController
         }
     }
 
-    public function search()
+    public function search($idCategory = null, $idSubCategory = null, $idFinalCategory = null)
     {
         $this->loadModel('StoresCategories');
         $this->loadModel('StoresProducts');
@@ -386,7 +386,8 @@ class HomesController extends AppController
             ]
         );
 
-        $this->paginate = [
+        if ($idCategory && $idSubCategory && $idFinalCategory) {
+            $this->paginate = [
                 'limit' => 6,
                 'order' => [
                     'StoresProducts.id' => 'DESC'
@@ -395,19 +396,43 @@ class HomesController extends AppController
                     'StoresProducts.quantity >' => 0,
                     'StoresProducts.online =' => 1,
                     'StoresProducts.active =' => 1,
-                    'StoresProducts.product LIKE' => $this->request->query['search'] . '%',
+                    'StoresProducts.stores_categories_id =' => $idCategory,
+                    'StoresProducts.stores_subcategories_id =' => $idSubCategory,
+                    'StoresProducts.stores_finalcategories_id =' => $idFinalCategory,
                 ]
-        ];
+            ];
 
+            $storesProducts = $this->paginate($this->StoresProducts);
 
-        $storesProducts = $this->paginate($this->StoresProducts);
+            $this->set(compact(
+                [
+                'storesCategories',
+                'storesProducts'
+                ]
+            ));
+        } else {
+            $this->paginate = [
+                'limit' => 6,
+                'order' => [
+                    'StoresProducts.id' => 'DESC'
+                ],
+                'conditions' => [
+                    'StoresProducts.quantity >' => 0,
+                    'StoresProducts.online =' => 1,
+                    'StoresProducts.active =' => 1,
+                    'StoresProducts.product LIKE' => $this->request->getQueryParams['search'] . '%',
+                ]
+            ];
 
-        $this->set(compact(
-            [
-            'storesCategories',
-            'storesProducts'
-            ]
-        ));
+            $storesProducts = $this->paginate($this->StoresProducts);
+
+            $this->set(compact(
+                [
+                'storesCategories',
+                'storesProducts'
+                ]
+            ));
+        }
     }
 
     public function storeContact($sended = null)

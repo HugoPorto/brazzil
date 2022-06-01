@@ -46,11 +46,12 @@
                             $storesSubcategory->id],
                             ['class' => 'btn btn-warning']
                         ) ?>
-                        <?= $this->Form->postLink(
-                            __('Apagar'),
-                            ['action' => 'delete', $storesSubcategory->id],
-                            ['confirm' => __('Tem certeza que deseja apagar esse item?', $storesSubcategory->id), 'class' => 'btn btn-danger']
-                        ) ?>
+
+                        <div class="btn-group">
+                            <button class="btn btn-danger" onclick="toastrDeleteSubcategory(<?= $storesSubcategory->id; ?>)">
+                                Deletar
+                            </button>
+                        </div>
                     </td>
                 </tr>
                 <?php endforeach; ?>

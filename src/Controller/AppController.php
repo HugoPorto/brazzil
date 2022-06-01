@@ -105,6 +105,14 @@ class AppController extends Controller
 
         $home = $this->Homes->find('all')->first();
 
+        $this->loadModel('StoresCategories');
+        $this->loadModel('StoresSubcategories');
+        $this->loadModel('StoresFinalcategories');
+
+        $storesCategories = $this->StoresCategories->find('all');
+        $storesSubcategories = $this->StoresSubcategories->find('all');
+        $storesFinalcategories = $this->StoresFinalcategories->find('all');
+
         $this->set(
             [
             'username' => $this->Auth->user('username'),
@@ -123,6 +131,9 @@ class AppController extends Controller
             'whatsapp_number' => $home->whatsapp_number,
             'facebook_link' => $home->facebook_link,
             'instagram_link' => $home->instagram_link,
+            'storesCategories' => $storesCategories,
+            'storesSubcategories' => $storesSubcategories,
+            'storesFinalcategories' => $storesFinalcategories,
             ]
         );
     }
