@@ -25,6 +25,7 @@ class StoresCategoriesController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
+
         $loginMenu = $this->loginMenuLoad();
 
         $storesCategory = $this->StoresCategories->get($id);
