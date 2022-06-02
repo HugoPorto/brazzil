@@ -61,11 +61,12 @@
             method: "get",
             url: "<?= $this->request->base ?>/stores-categories/delete/" + idCategory,
             success: function (result) {
-                if(result === 'success'){
+                console.log(result);
+                if(result.msg === 'success'){
                     window.location.replace("<?= $this->request->base ?>/stores-categories/");
                     return false;
                 } else {
-                    toastr.info(result);
+                    toastr.info(result.msg);
                 }
             }
         });

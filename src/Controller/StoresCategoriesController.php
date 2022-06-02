@@ -86,6 +86,8 @@ class StoresCategoriesController extends AppController
 
         $this->loadModel('StoresProducts');
 
+        $this->loadModel('StoresSubcategories');
+
         $products = $this->StoresProducts->find(
             'all',
             [
@@ -95,15 +97,27 @@ class StoresCategoriesController extends AppController
             ]
         );
 
+        $storesSubcategories = $this->StoresSubcategories->find(
+            'all',
+            [
+                'conditions' => [
+                    'StoresSubcategories.stores_categories_id =' => $id
+                ]
+            ]
+        );
+
         if (!empty($products->toArray())) {
-            echo 'A categoria não pode ser apagada porq que existem produtos que a utilizam.';
-            exit();
+            return $this->response->withStatus(200)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'A categoria não pode ser apagada porque que existem produtos que a utilizam.']));
+        } elseif (!empty($storesSubcategories->toArray())) {
+            return $this->response->withStatus(200)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'A categoria não pode ser apagada porque que exista em uso em subcategorias.']));
         } else {
             $storesCategory = $this->StoresCategories->get($id);
 
             if ($this->StoresCategories->delete($storesCategory)) {
-                echo 'success';
-                exit();
+                return $this->response->withStatus(200)->withType('application/json')
+                ->withStringBody(json_encode(['msg' => 'success']));
             }
         }
     }
