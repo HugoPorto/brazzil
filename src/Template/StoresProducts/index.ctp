@@ -54,21 +54,17 @@
                         <td>
                             <?php if ($storesProduct->active) :?>
                                 sim
-
                             <?php else :?>
-                                    não
-
+                                não
                             <?php endif;?>
-                                </td>
-                                <td>
-                                    <?php if ($storesProduct->online) :?>
-                                        sim
-
-                                    <?php else :?>
-                                            não
-
-                                    <?php endif;?>
-                                        </td>
+                        </td>
+                        <td>
+                            <?php if ($storesProduct->online) :?>
+                                sim
+                            <?php else :?>
+                                não
+                            <?php endif;?>
+                        </td>
                         <td><?= $this->Tools->formatDate($storesProduct->created) ?></td>
                         <td><?= $this->Tools->formatDate($storesProduct->modified) ?></td>
                         <td><?= $storesProduct->has('qrcode') ? $storesProduct->qrcode : '' ?></td>
@@ -84,6 +80,7 @@
                             <?= $this->Html->link(__('Editar Fotos'), ['action' => 'editPhoto', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar Código de Barras'), ['action' => 'editBarcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar QrCode'), ['action' => 'editQrcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                            <?= $this->Html->link(__('Editar Cor'), ['action' => 'editColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Remover Produto'), ['action' => 'inactiveProduct', $storesProduct->id], ['class' => 'btn btn-danger']) ?>
                         </td>
                     </tr>

@@ -31,6 +31,7 @@ class StoresImagesProduct extends Entity
         'stores_products_id' => true,
         'created' => true,
         'modified' => true,
-        'stores_product' => true
+        'stores_product' => true,
+        'reference' => true,
     ];
 }

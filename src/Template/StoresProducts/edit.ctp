@@ -59,22 +59,6 @@
 
                         <div class="form-group">
 
-                            <label for="description">Cor*</label>
-
-                            <?php
-                                echo $this->Form->control(
-                                    'color',
-                                    [
-                                    'label' => false,
-                                    'type' => 'color'
-                                    ]
-                                );
-                                ?>
-
-                        </div>
-
-                        <div class="form-group">
-
                             <label for="description">Categorias*</label>
 
                             <?php

@@ -11,14 +11,13 @@
 
                     <div class="form-group">
 
-                        <label for="description">Foto*</label>
+                        <label for="description">Foto</label>
 
                         <?php
                             echo $this->Form->control(
                                 'photo[]',
                                 [
                                 'label' => false,
-                                'required' => true,
                                 'type' => 'file',
                                 'multiple' => false
                                 ]
@@ -29,14 +28,13 @@
 
                     <div class="form-group">
 
-                        <label for="description">Foto 2*</label>
+                        <label for="description">Foto 2</label>
 
                         <?php
                             echo $this->Form->control(
                                 'photo2[]',
                                 [
                                 'label' => false,
-                                'required' => true,
                                 'type' => 'file',
                                 'multiple' => false
                                 ]
@@ -47,14 +45,13 @@
 
                     <div class="form-group">
 
-                        <label for="description">Foto 3*</label>
+                        <label for="description">Foto 3</label>
 
                         <?php
                             echo $this->Form->control(
                                 'photo3[]',
                                 [
                                 'label' => false,
-                                'required' => true,
                                 'type' => 'file',
                                 'multiple' => false
                                 ]
@@ -65,14 +62,13 @@
 
                     <div class="form-group">
 
-                        <label for="description">Foto 4*</label>
+                        <label for="description">Foto 4</label>
 
                         <?php
                             echo $this->Form->control(
                                 'photo4[]',
                                 [
                                 'label' => false,
-                                'required' => true,
                                 'type' => 'file',
                                 'multiple' => false
                                 ]
@@ -83,22 +79,19 @@
 
                     <div class="form-group">
 
-                        <label for="description">Foto 5*</label>
+                        <label for="description">Foto 5</label>
 
                         <?php
                             echo $this->Form->control(
                                 'photo5[]',
                                 [
                                 'label' => false,
-                                'required' => true,
                                 'type' => 'file',
                                 'multiple' => false
                                 ]
                             );
                             ?>
-
                     </div>
-
                 </fieldset>
             <?= $this->Form->button(__('Editar'), ['class' => 'btn btn-info']) ?>
             <?= $this->Form->end() ?>

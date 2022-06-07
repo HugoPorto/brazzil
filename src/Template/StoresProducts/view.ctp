@@ -1,7 +1,29 @@
 <div class="card">
     <div class="card-body">
         <div class="margin">
-            <table class="vertical-table table table-bordered" style="margin-top: 20px">
+            <div class="btn-group">
+                <?= $this->Html->link(__('Editar'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+            </div>
+            <div class="btn-group">
+                <?= $this->Html->link(__('Adicionar de Outra Cor'), ['action' => 'addNewProductColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+            </div>
+            <div class="btn-group">
+                <?= $this->Html->link(__('Editar Fotos'), ['action' => 'editPhoto', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+            </div>
+            <div class="btn-group">
+                <?= $this->Html->link(__('Editar Código de Barras'), ['action' => 'editBarcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+            </div>
+            <div class="btn-group">
+                <?= $this->Html->link(__('Editar QrCode'), ['action' => 'editQrcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+            </div>
+            <div class="btn-group">
+                <?= $this->Html->link(__('Editar Cor'), ['action' => 'editColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+            </div>
+            <div class="btn-group">
+                <?= $this->Html->link(__('Remover Produto'), ['action' => 'inactiveProduct', $storesProduct->id], ['class' => 'btn btn-danger']) ?>
+            </div>
+        </div>
+        <table class="vertical-table table table-bordered" style="margin-top: 20px">
             <tr>
                 <th scope="row"><?= __('Código de Barras') ?></th>
                 <td><?= $storesProduct->barcode ?></td>
@@ -67,7 +89,6 @@
                 <th scope="row"><?= __('Online') ?></th>
                 <td><?= $storesProduct->online ? __('Sim') : __('Não'); ?></td>
             </tr>
-            </table>
-        </div>
+        </table>
     </div>
 </div>

@@ -64,6 +64,12 @@ class StoresImagesProductsTable extends Table
             ->requirePresence('photo', 'create')
             ->notEmpty('photo');
 
+        $validator
+            ->scalar('reference')
+            ->maxLength('reference', 6)
+            ->requirePresence('reference', 'create')
+            ->notEmpty('reference');
+
         return $validator;
     }
 

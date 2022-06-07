@@ -185,9 +185,7 @@ class StoresProductsController extends AppController
             $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
 
             if ($this->StoresProducts->save($storesProduct)) {
-                $this->updateColor($storesProduct->stores_colors_id, $this->request->getData()['color']);
-
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $storesProduct->id]);
             }
         }
 
@@ -300,7 +298,7 @@ class StoresProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
             }
 
-            $this->Flash->error(__('The stores product could not be saved. Please, try again.'));
+            return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'Erro ao editar código de barras.']);
         }
 
         $users = $this->StoresProducts->Users->find('list');
@@ -352,18 +350,19 @@ class StoresProductsController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $loginMenu = $this->loginMenuLoad();
-
         $storesProduct = $this->StoresProducts->get($id, [
             'contain' => []
         ]);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $photo = $this->Base64->processMainPhoto($this->request->getData());
-
             $data = $this->request->getData();
 
-            $data['photo'] = $photo;
+            if ($this->request->getData()['photo'][0]['size'] != 0) {
+                $photo = $this->Base64->processMainPhoto($this->request->getData());
+                $data['photo'] = $photo;
+            } else {
+                $data['photo'] = $storesProduct->photo;
+            }
 
             $data['random_code'] = uniqid('product_', true);
 
@@ -382,13 +381,11 @@ class StoresProductsController extends AppController
                     $storesProduct->id
                 );
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'view', $id]);
             }
         }
 
-        $storesProduct->photo = '';
-
-        $this->set(compact('storesProduct', 'loginMenu'));
+        $this->set(compact('storesProduct'));
     }
 
     public function inactiveProduct($id = null)
@@ -467,12 +464,22 @@ class StoresProductsController extends AppController
 
         for ($i = 1; $i <= 4; $i++) {
             $count = $i + 1;
-            $photo = $this->Base64->convert($request['photo' . $count]);
+
+            $data = [];
+
+            if ($request['photo' . $count][0]['size'] != 0) {
+                $photo = $this->Base64->convert($request['photo' . $count]);
+
+
+                $data['photo'] = $photo;
+            } else {
+                $data['photo'] = 'Null';
+            }
 
             $storesImagesProduct = $this->StoresImagesProducts->newEntity();
 
-            $data = [];
-            $data['photo'] = $photo;
+            $data['reference'] = 'photo' . $count;
+
             $data['stores_products_id'] = $storesProduct->id;
 
             $storesImagesProduct = $this->StoresImagesProducts->patchEntity($storesImagesProduct, $data);
@@ -498,11 +505,13 @@ class StoresProductsController extends AppController
 
             $data = $storesImagesProduct;
 
-            $data['photo'] = $this->Base64->convert($request['photo' . ($key + 2)]);
+            if ($value->reference == 'photo' . ($key + 2) && $request['photo' . ($key + 2)][0]['size'] != 0) {
+                $data['photo'] = $this->Base64->convert($request['photo' . ($key + 2)]);
 
-            $storesImagesProduct = $this->StoresImagesProducts->patchEntity($storesImagesProduct, $data->toArray());
+                $storesImagesProduct = $this->StoresImagesProducts->patchEntity($storesImagesProduct, $data->toArray());
 
-            $this->StoresImagesProducts->save($storesImagesProduct);
+                $this->StoresImagesProducts->save($storesImagesProduct);
+            }
         }
     }
 
@@ -579,22 +588,30 @@ class StoresProductsController extends AppController
         return $storesColor->id;
     }
 
-    private function updateColor($idColor = null, $color = null)
+    public function editColor($id = null)
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
         $this->loadModel('StoresColors');
 
-        $storesColor = $this->StoresColors->get($idColor, [
-            'contain' => []
-        ]);
+        $storesProduct = $this->StoresProducts->get($id);
 
-        $data = [];
+        $storesColor = $this->StoresColors->get($storesProduct->stores_colors_id);
 
-        $data['color'] = $color;
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $data = [];
 
-        $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
+            $data['color'] = $this->request->getData('color');
 
-        $this->StoresColors->save($storesColor);
+            $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
 
-        return $storesColor->id;
+            if ($this->StoresColors->save($storesColor)) {
+                return $this->redirect(['action' => 'view', $id]);
+            }
+        }
+
+        $this->set(compact('storesProduct'));
     }
 }
