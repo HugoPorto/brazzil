@@ -1,7 +1,6 @@
 <div class="card">
     <div class="card-body">
         <div class="margin">
-            <p><?= $this->Flash->render() ?></p>
             <div class="btn-group">
                 <?php if (empty($storesStripeConfigs->toArray())) : ?>
                     <?= $this->Html->link(__('Adicionar Chaves'), ['action' => 'add'], ['class' => 'btn btn-info']) ?>

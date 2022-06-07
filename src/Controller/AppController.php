@@ -23,34 +23,36 @@ class AppController extends Controller
         $this->loadComponent(
             'Auth',
             [
-            'authenticate' => [
-                'Form' => [
-                    'fields' => [
-                        'username' => 'username',
-                        'password' => 'password'
+                'authenticate' => [
+                    'Form' => [
+                        'fields' => [
+                            'username' => 'username',
+                            'password' => 'password'
+                        ]
                     ]
-                ]
-            ],
-            'logoutRedirect' => [
-                'controller' => 'users', 'action' => 'login'
-            ]
-
+                ], 'logoutRedirect' => ['controller' => 'users', 'action' => 'login']
             ]
         );
     }
 
     public function beforeFilter(Event $event)
     {
-        if ($this->Auth->user('roles_id')) {
-            $this->loadModel('Roles');
+        $this->log('User', 'debug');
+        $this->log($this->Auth->user(), 'debug');
 
-            $this->loadModel('ImageProfiles');
+        $this->loadModel('Roles');
 
-            $imageProfileFront = $this->ImageProfiles->find('all')->where(['ImageProfiles.users_id =' => $this->Auth->user()['id']])->first();
+        $this->loadModel('ImageProfiles');
 
-            if ($imageProfileFront === null) {
-                $imageProfileFront = [];
-            }
+        if ($this->Auth->user()) {
+            $this->log('Role', 'debug');
+            $this->log($this->Roles->get($this->Auth->user('roles_id')), 'debug');
+
+            $imageProfileFront = $this->ImageProfiles->find('all')->where(
+                ['ImageProfiles.users_id =' => $this->Auth->user()['id']]
+            )->first();
+
+            $imageProfileFront = $imageProfileFront === null ? [] : $imageProfileFront;
 
             $role = $this->Roles->get($this->Auth->user('roles_id'));
 
@@ -60,11 +62,7 @@ class AppController extends Controller
             $imageProfileFront = [];
         }
 
-        $this->loadModel('MyEnvironments');
-
         $this->loadModel('IndexSidebars');
-
-        $myEnvironment = $this->MyEnvironments->find('all')->first();
 
         $indexSidebars = $this->IndexSidebars->find(
             'all',
@@ -79,39 +77,51 @@ class AppController extends Controller
 
         $this->loadModel('StoresFooters');
 
-        $storesFooters = $this->StoresFooters->find('all')->first();
-
         $this->loadModel('StoresAbouts');
-
-        $storesAbouts = $this->StoresAbouts->find('all')->first();
 
         $this->loadModel('StoresHours');
 
-        $storesHours = $this->StoresHours->find('all')->first();
-
         $this->loadModel('StoresContacts');
-
-        $storesContacts = $this->StoresContacts->find('all')->first();
 
         $this->loadModel('StoresStripeConfigs');
 
-        $stripeSecret = $this->StoresStripeConfigs->find('all')->first();
-
         $this->loadModel('StoresLogos');
 
-        $storesLogo = $this->StoresLogos->find('all')->first();
+        $this->loadModel('StoresTitles');
 
         $this->loadModel('Homes');
 
-        $home = $this->Homes->find('all')->first();
-
         $this->loadModel('StoresCategories');
+
         $this->loadModel('StoresSubcategories');
+
         $this->loadModel('StoresFinalcategories');
 
+        $this->loadModel('StoresPages');
+
+        $storesFooters = $this->StoresFooters->find('all')->first();
+
+        $storesAbouts = $this->StoresAbouts->find('all')->first();
+
+        $storesHours = $this->StoresHours->find('all')->first();
+
+        $storesContacts = $this->StoresContacts->find('all')->first();
+
+        $stripeSecret = $this->StoresStripeConfigs->find('all')->first();
+
+        $storesLogo = $this->StoresLogos->find('all')->first();
+
+        $home = $this->Homes->find('all')->first();
+
         $storesCategories = $this->StoresCategories->find('all');
+
         $storesSubcategories = $this->StoresSubcategories->find('all');
+
         $storesFinalcategories = $this->StoresFinalcategories->find('all');
+
+        $storesTitles = $this->StoresTitles->find('all')->first();
+
+        $storesPages = $this->StoresPages->find('all')->first();
 
         $this->set(
             [
@@ -120,8 +130,7 @@ class AppController extends Controller
             'role' => $roleDefined,
             'idUser' => $this->Auth->user() ? $this->Auth->user()['id'] : null,
             'imageProfileFront' => $imageProfileFront,
-            'myEnvironment' => $myEnvironment->environment,
-            'indexSidebars' => $indexSidebars,
+            'indexSidebars' => $this->Auth->user() ? $indexSidebars : null,
             'storesFooters' => $storesFooters,
             'storesAbouts' => $storesAbouts,
             'storesHours' => $storesHours,
@@ -134,6 +143,8 @@ class AppController extends Controller
             'storesCategories' => $storesCategories,
             'storesSubcategories' => $storesSubcategories,
             'storesFinalcategories' => $storesFinalcategories,
+            'storesPagesTitles' => $storesTitles,
+            'storesPages' => $storesPages,
             ]
         );
     }

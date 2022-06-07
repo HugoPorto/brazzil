@@ -1,6 +1,6 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed" id="main">
 
-<div class="wrapper" id="<?= $myEnvironment ?>">
+<div class="wrapper">
 
 <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="<?= $this->request->webroot . 'img/galerys/13/' . $storesLogo; ?>" alt="Logomarca" height="60">

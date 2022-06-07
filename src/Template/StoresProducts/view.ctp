@@ -20,6 +20,9 @@
                 <?= $this->Html->link(__('Editar Cor'), ['action' => 'editColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
             </div>
             <div class="btn-group">
+                <?= $this->Html->link(__('Editar Quantidade'), ['action' => 'editQuantity', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+            </div>
+            <div class="btn-group">
                 <?= $this->Html->link(__('Remover Produto'), ['action' => 'inactiveProduct', $storesProduct->id], ['class' => 'btn btn-danger']) ?>
             </div>
         </div>

@@ -81,6 +81,7 @@
                             <?= $this->Html->link(__('Editar Código de Barras'), ['action' => 'editBarcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar QrCode'), ['action' => 'editQrcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Editar Cor'), ['action' => 'editColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                            <?= $this->Html->link(__('Editar Quantidade'), ['action' => 'editQuantity', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                             <?= $this->Html->link(__('Remover Produto'), ['action' => 'inactiveProduct', $storesProduct->id], ['class' => 'btn btn-danger']) ?>
                         </td>
                     </tr>

@@ -614,4 +614,22 @@ class StoresProductsController extends AppController
 
         $this->set(compact('storesProduct'));
     }
+    public function editQuantity($id = null)
+    {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $storesProduct = $this->StoresProducts->get($id);
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $this->request->getData());
+
+            if ($this->StoresProducts->save($storesProduct)) {
+                return $this->redirect(['action' => 'view', $id]);
+            }
+        }
+
+        $this->set(compact('storesProduct'));
+    }
 }

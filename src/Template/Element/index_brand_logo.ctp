@@ -4,5 +4,5 @@
         class="brand-image img-circle elevation-3"
         style="opacity: .8">
 
-    <span class="brand-text font-weight-light">Brazzil Commerce</span>
+    <span class="brand-text font-weight-light"><?= $storesPages->logo ?> </span>
 </a>
