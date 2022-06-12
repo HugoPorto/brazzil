@@ -165,9 +165,14 @@ class HomesController extends AppController
 
         $imagesExtrasProduct = $this->StoresImagesProducts->find('all', [
             'conditions' => [
-                'StoresImagesProducts.stores_products_id =' => $id
+                'StoresImagesProducts.stores_products_id =' => $id,
+                'StoresImagesProducts.photo !=' => 'Null',
             ]
         ]);
+
+        // debug(sizeOf($imagesExtrasProduct->toArray()));
+
+        // exit();
 
         if (!$colorId && !$codeRandomProduct) {
             $storesProduct = $this->StoresProducts->get(

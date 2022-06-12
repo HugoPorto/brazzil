@@ -5,6 +5,9 @@ namespace App\Controller;
 use App\Controller\AppController;
 use CodeItNow\BarcodeBundle\Utils\QrCode;
 use CodeItNow\BarcodeBundle\Utils\BarcodeGenerator;
+use CakePdf;
+use Cake\Filesystem\Folder;
+use Cake\Filesystem\File;
 
 class StoresProductsController extends AppController
 {
@@ -22,7 +25,6 @@ class StoresProductsController extends AppController
         $this->viewBuilder()->setLayout('brazzil');
 
         $storesProducts = $this->StoresProducts->find('all', ['contain' => ['StoresCategories', 'StoresColors']]);
-
 
         if (empty($storesProducts->toArray())) {
             $storesProducts = $this->StoresProducts->find('all', ['contain' => ['StoresCategories']]);
@@ -118,6 +120,9 @@ class StoresProductsController extends AppController
         $storesProduct = $this->StoresProducts->newEntity();
 
         if ($this->request->is('post')) {
+            // debug($this->request->getData());
+            // exit();
+
             $idColor = $this->saveColor();
 
             $photo = $this->Base64->processMainPhoto($this->request->getData());
@@ -439,7 +444,13 @@ class StoresProductsController extends AppController
         if ($color) {
             $data['color'] = $color;
         } else {
-            $data['color'] = $this->request->getData('color');
+            if ($this->request->getData('color2') && $this->request->getData('color3')) {
+                $data['color'] = $this->request->getData('color');
+                $data['color2'] = $this->request->getData('color2');
+                $data['color3'] = $this->request->getData('color3');
+            } else {
+                $data['color'] = $this->request->getData('color');
+            }
         }
 
 
@@ -603,7 +614,13 @@ class StoresProductsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $data = [];
 
-            $data['color'] = $this->request->getData('color');
+            if ($this->request->getData('color2') && $this->request->getData('color3')) {
+                $data['color'] = $this->request->getData('color');
+                $data['color2'] = $this->request->getData('color2');
+                $data['color3'] = $this->request->getData('color3');
+            } else {
+                $data['color'] = $this->request->getData('color');
+            }
 
             $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
 
@@ -614,6 +631,7 @@ class StoresProductsController extends AppController
 
         $this->set(compact('storesProduct'));
     }
+
     public function editQuantity($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -631,5 +649,47 @@ class StoresProductsController extends AppController
         }
 
         $this->set(compact('storesProduct'));
+    }
+
+    public function printQrcode($idProduct)
+    {
+        $this->autoRender = false;
+
+        $storesProduct = $this->StoresProducts->get($idProduct);
+
+        $CakePdf = new \CakePdf\Pdf\CakePdf();
+
+        $CakePdf->template('qrcode', 'clean');
+
+        $CakePdf->viewVars(['qrcode' => $storesProduct->qrcode]);
+
+        $CakePdf->output();
+
+        $CakePdf->write(WWW_ROOT . 'files' . DS . 'qrcode.pdf');
+
+        $this->redirect('/files' . DS . 'qrcode.pdf');
+    }
+
+    public function printQrcodeImage($idProduct)
+    {
+        $this->autoRender = false;
+
+        $storesProduct = $this->StoresProducts->get($idProduct);
+
+        $splited = explode(',', substr($storesProduct->qrcode, 5), 2);
+
+        $data = $splited[1];
+
+        $data = str_replace('" />', "", $data);
+
+        $dir = WWW_ROOT . 'img' . DS . 'qrcode.jpg';
+
+        $file = new File($dir);
+
+        $file->write(base64_decode($data));
+
+        $file->close();
+
+        $this->redirect('/img' . DS . 'qrcode.jpg');
     }
 }

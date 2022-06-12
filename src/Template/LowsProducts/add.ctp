@@ -8,17 +8,14 @@
             <?= $this->Form->create($lowsProduct) ?>
 
                 <div class="form-group">
-                    <label>Produto*</label>
-                    <?php
-                        echo $this->Form->control(
-                            'stores_products_id',
-                            [
-                                    'options' => $storesProducts,
-                                    'label' => false,
-                                    'class' => 'form-control'
-                                ]
-                        );
-                        ?>
+                    <label for="stores-products-id">Produto*</label>
+                    <select name="stores_products_id" class="form-control select2bs4" id="stores-products-id">
+                        <?php foreach ($storesProducts as $storesProduct) : ?>
+                            <option value="<?= $storesProduct->id ?>">
+                                <?= 'Nome: ' . $storesProduct->product . ' - Código de Barras: ' . $storesProduct->barcode_code?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
 
                 <div class="form-group">

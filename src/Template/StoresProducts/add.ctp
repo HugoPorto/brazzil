@@ -320,6 +320,27 @@
 
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1">Aplicar Gradiente Vertical</label>
+                            </div>
+                        </div>
+                        <div class="form-group" id="color_select">
+                            <label for="color">Cor*</label>
+
+                            <?php
+                                echo $this->Form->control(
+                                    'color',
+                                    [
+                                    'label' => false,
+                                    'type' => 'color',
+                                    ]
+                                );
+                                ?>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -333,23 +354,6 @@
                                     'online',
                                     [
                                     'label' => false,
-                                    ]
-                                );
-                                ?>
-
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-
-                            <label for="description">Cor*</label>
-
-                            <?php
-                                echo $this->Form->control(
-                                    'color',
-                                    [
-                                    'label' => false,
-                                    'type' => 'color'
                                     ]
                                 );
                                 ?>

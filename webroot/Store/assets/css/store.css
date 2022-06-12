@@ -9434,3 +9434,24 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-origin {
 html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     right: -20px;
 }
+
+.admin-menu {
+    list-style-type: none;
+    margin-top: 8px;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.barra {
+    background-color: #d33c44;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 999;
+}
+
+.admin-menu a {
+    color: white !important;
+}

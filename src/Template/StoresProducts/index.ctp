@@ -43,9 +43,17 @@
                         <td><?= $storesProduct->has('barcode_code') ? $storesProduct->barcode_code : '' ?></td>
                         <td><?= $storesProduct->has('barcode') ? $storesProduct->barcode : '' ?></td>
                         <td>
-                        <div style="background-color: <?= $storesProduct->stores_color->color ?>; 
-                            width: 70px; height: 70px; margin: 0 auto; display: flex; justify-content: center; align-items: center; border: 1px solid #d7d7d7"></div>
-                        </td>
+                        <?php if ($storesProduct->stores_color->color2 && $storesProduct->stores_color->color3) : ?>
+                            <div style="background-color: <?= $storesProduct->stores_color->color ?>; 
+                                background-image: linear-gradient(<?= $storesProduct->stores_color->color ?>, <?= $storesProduct->stores_color->color2 ?>, <?= $storesProduct->stores_color->color3 ?>);
+                                width: 70px; height: 70px; margin: 0 auto; display: flex; 
+                                justify-content: center; align-items: center; border: 1px solid #d7d7d7"></div>
+                            </td>
+                        <?php else : ?>
+                            <div style="background-color: <?= $storesProduct->stores_color->color ?>; 
+                                width: 70px; height: 70px; margin: 0 auto; display: flex; justify-content: center; align-items: center; border: 1px solid #d7d7d7"></div>
+                            </td>
+                        <?php endif; ?>
                         <td><?= h($storesProduct->product) ?></td>
                         <td><?= h($storesProduct->description) ?></td>
                         <td>R$<?= h($storesProduct->price) ?></td>
@@ -74,15 +82,65 @@
                         <td><?= $storesProduct->package_height ?></td>
                         <td><?= $storesProduct->package_width ?></td>
                         <td class="actions">
-                            <?= $this->Html->link(__('Ver'), ['action' => 'view', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Editar'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Adicionar de Outra Cor'), ['action' => 'addNewProductColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Editar Fotos'), ['action' => 'editPhoto', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Editar Código de Barras'), ['action' => 'editBarcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Editar QrCode'), ['action' => 'editQrcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Editar Cor'), ['action' => 'editColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Editar Quantidade'), ['action' => 'editQuantity', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-                            <?= $this->Html->link(__('Remover Produto'), ['action' => 'inactiveProduct', $storesProduct->id], ['class' => 'btn btn-danger']) ?>
+                            <div class="form-group">
+                                <?= $this->Html->link(
+                                    __('Ver'),
+                                    ['action' => 'view', $storesProduct->id],
+                                    ['class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Editar'),
+                                    ['action' => 'edit', $storesProduct->id],
+                                    ['class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Adicionar de Outra Cor'),
+                                    ['action' => 'addNewProductColor', $storesProduct->id],
+                                    ['class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Editar Fotos'),
+                                    ['action' => 'editPhoto', $storesProduct->id],
+                                    ['class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Editar Código de Barras'),
+                                    ['action' => 'editBarcode', $storesProduct->id],
+                                    ['class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Editar QrCode'),
+                                    ['action' => 'editQrcode', $storesProduct->id],
+                                    ['class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Editar Cor'),
+                                    ['action' => 'editColor', $storesProduct->id],
+                                    ['class' => 'btn btn-info']
+                                ) ?>
+                            </div>
+                            <div class="form-group">
+                                <?= $this->Html->link(
+                                    __('Editar Quantidade'),
+                                    ['action' => 'editQuantity', $storesProduct->id],
+                                    ['class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Imprimir QrCode'),
+                                    ['action' => 'printQrcode', $storesProduct->id],
+                                    ['target' => '_blank', 'class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Imprimir QrCode como Imagem'),
+                                    ['action' => 'printQrcodeImage', $storesProduct->id],
+                                    ['target' => '_blank', 'class' => 'btn btn-info']
+                                ) ?>
+                                <?= $this->Html->link(
+                                    __('Remover Produto'),
+                                    ['action' => 'inactiveProduct', $storesProduct->id],
+                                    ['class' => 'btn btn-danger']
+                                ) ?>
+                            </div>
                         </td>
                     </tr>
                 <?php endif; ?>

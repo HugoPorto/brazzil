@@ -14,7 +14,7 @@
 
             </button>
 
-            <a class="navbar-brand" href="<?php echo $this->request->base; ?>">
+            <a class="navbar-brand" href="<?= $this->request->base . '/site' ?> ">
                 <img src="<?= $this->request->webroot . 'img/galerys/13/' . $storesLogo; ?>" alt="Logomarca"></a>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

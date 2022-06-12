@@ -10,10 +10,13 @@
         "cakephp/migrations": "^1.0",
         "cakephp/plugin-installer": "^1.0",
         "codeitnowin/barcode": "^3.0",
+        "dompdf/dompdf": "^1.2",
         "friendsofcake/cakepdf": "3.2.*",
         "josegonzalez/dotenv": "2.*",
         "mobiledetect/mobiledetectlib": "2.*",
-        "stripe/stripe-php": "^7.116"
+        "mpdf/mpdf": "^8.1",
+        "stripe/stripe-php": "^7.116",
+        "tecnickcom/tcpdf": "^6.4"
     },
     "require-dev": {
         "cakephp/bake": "~1.0",
@@ -51,6 +54,9 @@
     },
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "cakephp/plugin-installer": true
+        }
     }
 }

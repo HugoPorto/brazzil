@@ -12,11 +12,9 @@ class LowsProductsController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $loginMenu = $this->loginMenuLoad();
-
         $lowsProducts = $this->LowsProducts->find('all', ['contain' => ['StoresProducts', 'Users']]);
 
-        $this->set(compact('lowsProducts', 'loginMenu'));
+        $this->set(compact('lowsProducts'));
     }
 
     public function view($id = null)
@@ -25,13 +23,11 @@ class LowsProductsController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $loginMenu = $this->loginMenuLoad();
-
         $lowsProduct = $this->LowsProducts->get($id, [
             'contain' => ['StoresProducts', 'Users']
         ]);
 
-        $this->set(compact('lowsProduct', 'loginMenu'));
+        $this->set(compact('lowsProduct'));
     }
 
     public function add()
@@ -39,8 +35,6 @@ class LowsProductsController extends AppController
         $this->hasPermission('storeAdmin');
 
         $this->viewBuilder()->setLayout('brazzil');
-
-        $loginMenu = $this->loginMenuLoad();
 
         $lowsProduct = $this->LowsProducts->newEntity();
 
@@ -112,10 +106,8 @@ class LowsProductsController extends AppController
             $this->Flash->error(__('The lows product could not be saved. Please, try again.'));
         }
 
-        $storesProducts = $this->LowsProducts->StoresProducts->find('list');
+        $storesProducts = $this->LowsProducts->StoresProducts->find('all');
 
-        $users = $this->LowsProducts->Users->find('list');
-
-        $this->set(compact('lowsProduct', 'storesProducts', 'users', 'loginMenu'));
+        $this->set(compact('lowsProduct', 'storesProducts'));
     }
 }

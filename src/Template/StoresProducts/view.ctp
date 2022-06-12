@@ -1,29 +1,39 @@
 <div class="card">
     <div class="card-body">
         <div class="margin">
-            <div class="btn-group">
-                <?= $this->Html->link(__('Editar'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+            <div class="form-group">
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Adicionar de Outra Cor'), ['action' => 'addNewProductColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Editar Fotos'), ['action' => 'editPhoto', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Editar Código de Barras'), ['action' => 'editBarcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Editar QrCode'), ['action' => 'editQrcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Editar Cor'), ['action' => 'editColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                </div>
             </div>
-            <div class="btn-group">
-                <?= $this->Html->link(__('Adicionar de Outra Cor'), ['action' => 'addNewProductColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-            </div>
-            <div class="btn-group">
-                <?= $this->Html->link(__('Editar Fotos'), ['action' => 'editPhoto', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-            </div>
-            <div class="btn-group">
-                <?= $this->Html->link(__('Editar Código de Barras'), ['action' => 'editBarcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-            </div>
-            <div class="btn-group">
-                <?= $this->Html->link(__('Editar QrCode'), ['action' => 'editQrcode', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-            </div>
-            <div class="btn-group">
-                <?= $this->Html->link(__('Editar Cor'), ['action' => 'editColor', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-            </div>
-            <div class="btn-group">
-                <?= $this->Html->link(__('Editar Quantidade'), ['action' => 'editQuantity', $storesProduct->id], ['class' => 'btn btn-info']) ?>
-            </div>
-            <div class="btn-group">
-                <?= $this->Html->link(__('Remover Produto'), ['action' => 'inactiveProduct', $storesProduct->id], ['class' => 'btn btn-danger']) ?>
+            <div class="form-group">
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Editar Quantidade'), ['action' => 'editQuantity', $storesProduct->id], ['class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Imprimir QrCode'), ['action' => 'printQrcode', $storesProduct->id], ['target' => '_blank', 'class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Imprimir QrCode como Imagem'), ['action' => 'printQrcodeImage', $storesProduct->id], ['target' => '_blank', 'class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
+                    <?= $this->Html->link(__('Remover Produto'), ['action' => 'inactiveProduct', $storesProduct->id], ['class' => 'btn btn-danger']) ?>
+                </div>
             </div>
         </div>
         <table class="vertical-table table table-bordered" style="margin-top: 20px">
@@ -42,7 +52,13 @@
             <tr>
                 <th scope="row"><?= __('Cor') ?></th>
                 <td>
-                    <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>"></span>
+                    <?php if ($storesProduct->stores_color->color2 && $storesProduct->stores_color->color3) : ?>
+                        <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>;
+                        background-image: linear-gradient(<?= $storesProduct->stores_color->color ?>, <?= $storesProduct->stores_color->color2 ?>, <?= $storesProduct->stores_color->color3 ?>);
+                        "></span>
+                    <?php else : ?>
+                        <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>"></span>
+                    <?php endif; ?>
                 </td>
             </tr>
             <tr>

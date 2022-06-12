@@ -1,23 +1,23 @@
 <?php
-
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 
 /**
- * StoresColor Entity
+ * StoresPartner Entity
  *
  * @property int $id
- * @property string $color
+ * @property string $partner
+ * @property string $logo
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property int $stores_products_id
- * @property string $product_flag_code
+ * @property int $users_id
  *
- * @property \App\Model\Entity\StoresProduct $stores_product
+ * @property \App\Model\Entity\User $user
  */
-class StoresColor extends Entity
+class StoresPartner extends Entity
 {
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -28,13 +28,11 @@ class StoresColor extends Entity
      * @var array
      */
     protected $_accessible = [
-        'color' => true,
+        'partner' => true,
+        'logo' => true,
         'created' => true,
         'modified' => true,
-        'stores_products_id' => true,
-        'product_flag_code' => true,
-        'stores_product' => true,
-        'color2' => true,
-        'color3' => true,
+        'users_id' => true,
+        'user' => true
     ];
 }

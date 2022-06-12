@@ -63,6 +63,16 @@ class StoresColorsTable extends Table
             ->allowEmpty('color');
 
         $validator
+            ->scalar('color2')
+            ->maxLength('color2', 255)
+            ->allowEmpty('color2');
+
+        $validator
+            ->scalar('color3')
+            ->maxLength('color3', 255)
+            ->allowEmpty('color3');
+
+        $validator
             ->scalar('product_flag_code')
             ->maxLength('product_flag_code', 255)
             ->allowEmpty('product_flag_code');
