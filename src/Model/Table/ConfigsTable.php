@@ -8,21 +8,21 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * StoresPartners Model
+ * Configs Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  *
- * @method \App\Model\Entity\StoresPartner get($primaryKey, $options = [])
- * @method \App\Model\Entity\StoresPartner newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\StoresPartner[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StoresPartner|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StoresPartner patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\StoresPartner[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\StoresPartner findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Config get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Config newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Config[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Config|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Config patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Config[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Config findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class StoresPartnersTable extends Table
+class ConfigsTable extends Table
 {
     /**
      * Initialize method
@@ -34,7 +34,7 @@ class StoresPartnersTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('stores_partners');
+        $this->setTable('configs');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
@@ -59,16 +59,9 @@ class StoresPartnersTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('partner')
-            ->maxLength('partner', 150)
-            ->requirePresence('partner', 'create')
-            ->notEmpty('partner');
-
-        $validator
-            ->scalar('photo')
-            ->maxLength('photo', 4294967295)
-            ->requirePresence('photo', 'create')
-            ->notEmpty('photo');
+            ->boolean('status_banner_main')
+            ->requirePresence('status_banner_main', 'create')
+            ->notEmpty('status_banner_main');
 
         return $validator;
     }
@@ -82,6 +75,7 @@ class StoresPartnersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->isUnique(['users_id']));
         $rules->add($rules->existsIn(['users_id'], 'Users'));
 
         return $rules;

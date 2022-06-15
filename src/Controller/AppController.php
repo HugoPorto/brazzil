@@ -99,6 +99,8 @@ class AppController extends Controller
 
         $this->loadModel('StoresPages');
 
+        $this->loadModel('Configs');
+
         $storesFooters = $this->StoresFooters->find('all')->first();
 
         $storesAbouts = $this->StoresAbouts->find('all')->first();
@@ -123,6 +125,8 @@ class AppController extends Controller
 
         $storesPages = $this->StoresPages->find('all')->first();
 
+        $configs = $this->Configs->find('all')->first();
+
         $this->set(
             [
             'username' => $this->Auth->user('username'),
@@ -140,11 +144,13 @@ class AppController extends Controller
             'whatsapp_number' => $home->whatsapp_number,
             'facebook_link' => $home->facebook_link,
             'instagram_link' => $home->instagram_link,
+            'banner' => $home->banner,
             'storesCategories' => $storesCategories,
             'storesSubcategories' => $storesSubcategories,
             'storesFinalcategories' => $storesFinalcategories,
             'storesPagesTitles' => $storesTitles,
             'storesPages' => $storesPages,
+            'configs' => $configs,
             ]
         );
     }

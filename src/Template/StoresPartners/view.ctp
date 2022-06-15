@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\StoresPartner $storesPartner
@@ -40,7 +41,7 @@
         </tr>
     </table>
     <div class="row">
-        <h4><?= __('Logo') ?></h4>
-        <?= $this->Text->autoParagraph(h($storesPartner->logo)); ?>
+        <h4><?= __('Photo') ?></h4>
+        <?= $this->Text->autoParagraph(h($storesPartner->photo)); ?>
     </div>
 </div>

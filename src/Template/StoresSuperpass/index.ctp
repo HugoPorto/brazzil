@@ -1,8 +1,6 @@
 <div class="card">
     <div class="card-body">
         <div class="margin">
-        <p><?= $this->Flash->render() ?></p>
-
             <?php if (empty($storesSuperpass->toArray())) : ?>
                 <div class="btn-group">
                     <?= $this->Html->link(__('Adicionar Superpass'), ['action' => 'add'], ['class' => 'btn btn-info']) ?>

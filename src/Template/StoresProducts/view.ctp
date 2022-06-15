@@ -54,7 +54,14 @@
                 <td>
                     <?php if ($storesProduct->stores_color->color2 && $storesProduct->stores_color->color3) : ?>
                         <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>;
-                        background-image: linear-gradient(<?= $storesProduct->stores_color->color ?>, <?= $storesProduct->stores_color->color2 ?>, <?= $storesProduct->stores_color->color3 ?>);
+                        background-image: linear-gradient(<?= $storesProduct->stores_color->color ?>, 
+                        <?= $storesProduct->stores_color->color2 ?>, 
+                        <?= $storesProduct->stores_color->color3 ?>);
+                        "></span>
+                    <?php elseif ($storesProduct->stores_color->color && $storesProduct->stores_color->color2) : ?>
+                        <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>;
+                        background-image: linear-gradient(<?= $storesProduct->stores_color->color ?>, 
+                        <?= $storesProduct->stores_color->color2 ?>);
                         "></span>
                     <?php else : ?>
                         <span class="dot" style="background-color: <?= $storesProduct->stores_color->color ?>"></span>
@@ -81,7 +88,6 @@
                     <?php foreach ($imagesExtrasProduct as $image) : ?>
                         <img style="width: 200px; height: 200px; border: 1px solid #d7d7d7" <?= $image->photo; ?> />
                     <?php endforeach; ?>
-                
                 </td>
             </tr>
             <tr>

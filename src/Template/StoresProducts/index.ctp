@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-    <div class="margin">
+        <div class="margin">
             <div class="btn-group">
                 <?= $this->Html->link(__('Adicionar'), ['action' => 'add'], ['class' => 'btn btn-info']) ?>
             </div>
@@ -45,7 +45,16 @@
                         <td>
                         <?php if ($storesProduct->stores_color->color2 && $storesProduct->stores_color->color3) : ?>
                             <div style="background-color: <?= $storesProduct->stores_color->color ?>; 
-                                background-image: linear-gradient(<?= $storesProduct->stores_color->color ?>, <?= $storesProduct->stores_color->color2 ?>, <?= $storesProduct->stores_color->color3 ?>);
+                                background-image: linear-gradient(<?= $storesProduct->stores_color->color ?>, 
+                                <?= $storesProduct->stores_color->color2 ?>, 
+                                <?= $storesProduct->stores_color->color3 ?>);
+                                width: 70px; height: 70px; margin: 0 auto; display: flex; 
+                                justify-content: center; align-items: center; border: 1px solid #d7d7d7"></div>
+                            </td>
+                        <?php elseif ($storesProduct->stores_color->color && $storesProduct->stores_color->color2) : ?>
+                            <div style="background-color: <?= $storesProduct->stores_color->color ?>; 
+                                background-image: linear-gradient(<?= $storesProduct->stores_color->color ?>, 
+                                <?= $storesProduct->stores_color->color2 ?>);
                                 width: 70px; height: 70px; margin: 0 auto; display: flex; 
                                 justify-content: center; align-items: center; border: 1px solid #d7d7d7"></div>
                             </td>

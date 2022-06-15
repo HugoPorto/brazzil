@@ -41,18 +41,18 @@ class StoresPartnersController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
-        $this->hasPermission('storeAdmin');
+    // public function view($id = null)
+    // {
+    //     $this->hasPermission('storeAdmin');
 
-        $this->viewBuilder()->setLayout('brazzil');
+    //     $this->viewBuilder()->setLayout('brazzil');
 
-        $storesPartner = $this->StoresPartners->get($id, [
-            'contain' => ['Users']
-        ]);
+    //     $storesPartner = $this->StoresPartners->get($id, [
+    //         'contain' => ['Users']
+    //     ]);
 
-        $this->set('storesPartner', $storesPartner);
-    }
+    //     $this->set('storesPartner', $storesPartner);
+    // }
 
     /**
      * Add method
@@ -68,22 +68,23 @@ class StoresPartnersController extends AppController
         $storesPartner = $this->StoresPartners->newEntity();
 
         if ($this->request->is('post')) {
-            $photo = $this->Base64->processMainPhoto($this->request->getData()['logo'][0]['tmp_name']);
+            $photo = $this->Base64->processMainPhoto($this->request->getData());
 
             $data = [];
 
             $data = $this->request->getData();
 
-            $data['logo'] = $photo;
+            $data['photo'] = $photo;
 
             $storesPartner = $this->StoresPartners->patchEntity($storesPartner, $data);
 
             if ($this->StoresPartners->save($storesPartner)) {
-                return $this->redirect(['action' => 'view', $storesPartner->id]);
+                return $this->redirect(['action' => 'index']);
             }
 
             return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'Erro ao adicionar parceiro.']);
         }
+
         $this->set(compact('storesPartner'));
     }
 
@@ -103,17 +104,24 @@ class StoresPartnersController extends AppController
         $storesPartner = $this->StoresPartners->get($id, [
             'contain' => []
         ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $storesPartner = $this->StoresPartners->patchEntity($storesPartner, $this->request->getData());
-            if ($this->StoresPartners->save($storesPartner)) {
-                $this->Flash->success(__('The stores partner has been saved.'));
 
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $photo = $this->Base64->processMainPhoto($this->request->getData());
+
+            $data = [];
+
+            $data = $this->request->getData();
+
+            $data['photo'] = $photo;
+
+            $storesPartner = $this->StoresPartners->patchEntity($storesPartner, $data);
+
+            if ($this->StoresPartners->save($storesPartner)) {
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The stores partner could not be saved. Please, try again.'));
         }
-        $users = $this->StoresPartners->Users->find('list', ['limit' => 200]);
-        $this->set(compact('storesPartner', 'users'));
+
+        $this->set(compact('storesPartner'));
     }
 
     /**
@@ -130,12 +138,10 @@ class StoresPartnersController extends AppController
         $this->viewBuilder()->setLayout('brazzil');
 
         $this->request->allowMethod(['post', 'delete']);
+
         $storesPartner = $this->StoresPartners->get($id);
-        if ($this->StoresPartners->delete($storesPartner)) {
-            $this->Flash->success(__('The stores partner has been deleted.'));
-        } else {
-            $this->Flash->error(__('The stores partner could not be deleted. Please, try again.'));
-        }
+
+        $this->StoresPartners->delete($storesPartner);
 
         return $this->redirect(['action' => 'index']);
     }

@@ -26,5 +26,6 @@ class Home extends Entity
         'whatsapp_number' => true,
         'facebook_link' => true,
         'instagram_link' => true,
+        'banner' => true,
     ];
 }

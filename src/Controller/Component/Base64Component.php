@@ -53,9 +53,11 @@ class Base64Component extends Component
 
     public function processMainPhoto($request)
     {
-        // debug($request);
-        // exit();
-
         return $request['photo'][0]['tmp_name'] !== '' ? $this->convert($request['photo']) : $this->_registry->getController()->redirect(['controller' => 'Pages', 'action' => 'error', 'Erro ao processar imagem.']);
+    }
+
+    public function processBannerPromotion($request)
+    {
+        return $request['banner'][0]['tmp_name'] !== '' ? $this->convert($request['banner']) : $this->_registry->getController()->redirect(['controller' => 'Pages', 'action' => 'error', 'Erro ao processar imagem.']);
     }
 }

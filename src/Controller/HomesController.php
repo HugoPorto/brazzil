@@ -25,6 +25,7 @@ class HomesController extends AppController
     {
         $this->loadModel('StoresProducts');
         $this->loadModel('StoresSliders');
+        $this->loadModel('StoresPartners');
 
         $storesSliders = $this->StoresSliders->find('all');
 
@@ -41,12 +42,15 @@ class HomesController extends AppController
                 ]
         ];
 
+        $storesPartners = $this->StoresPartners->find('all');
+
         $storesProducts = $this->paginate($this->StoresProducts);
 
         $this->set(compact(
             [
             'storesProducts',
-            'storesSliders'
+            'storesSliders',
+            'storesPartners',
             ]
         ));
     }
@@ -160,7 +164,9 @@ class HomesController extends AppController
     public function productView($id = null, $colorId = null, $codeRandomProduct = null)
     {
         $this->loadModel('StoresProducts');
+
         $this->loadModel('StoresColors');
+
         $this->loadModel('StoresImagesProducts');
 
         $imagesExtrasProduct = $this->StoresImagesProducts->find('all', [
@@ -170,9 +176,7 @@ class HomesController extends AppController
             ]
         ]);
 
-        // debug(sizeOf($imagesExtrasProduct->toArray()));
-
-        // exit();
+        $relationshipProducts = null;
 
         if (!$colorId && !$codeRandomProduct) {
             $storesProduct = $this->StoresProducts->get(
@@ -181,6 +185,8 @@ class HomesController extends AppController
                     'contain' => ['StoresCategories']
                 ]
             );
+
+            $relationshipProducts = $this->getRelationshipProducts($storesProduct);
 
             $data = [];
 
@@ -230,6 +236,8 @@ class HomesController extends AppController
                 ]
             );
 
+            $relationshipProducts = $this->getRelationshipProducts($storesProduct);
+
             $storesColors = $this->StoresColors->find(
                 'all',
                 [
@@ -247,9 +255,19 @@ class HomesController extends AppController
                 'storesProduct',
                 'idUser',
                 'storesColors',
-                'imagesExtrasProduct'
+                'imagesExtrasProduct',
+                'relationshipProducts',
             ]
         ));
+    }
+
+    private function getRelationshipProducts($storesProduct)
+    {
+        return $this->StoresProducts->find('all', [
+            'conditions' => [
+                'StoresProducts.stores_categories_id =' => $storesProduct->stores_categories_id,
+            ]
+        ])->limit(7);
     }
 
     public function storeCart($shippingValue = null, $cep = null, $prazoEntrega = null)

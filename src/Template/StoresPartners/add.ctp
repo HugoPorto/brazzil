@@ -24,10 +24,10 @@
             </div>
 
             <div class="form-group">
-                <label for="logo">Logo</label>
-                <?php echo $this->Form->control('logo[]', [
+                <label for="photo">Photo</label>
+                <?php echo $this->Form->control('photo[]', [
                     'label' => false,
-                    'id' => 'logo',
+                    'id' => 'photo',
                     'type' => 'file',
                     'multiple' => false
                     ]); ?>

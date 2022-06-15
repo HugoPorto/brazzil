@@ -17,6 +17,8 @@
             <a class="navbar-brand" href="<?= $this->request->base . '/site' ?> ">
                 <img src="<?= $this->request->webroot . 'img/galerys/13/' . $storesLogo; ?>" alt="Logomarca"></a>
 
+            <p>Site em Construção</p>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">

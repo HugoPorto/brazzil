@@ -4,30 +4,40 @@
  * @var \App\Model\Entity\StoresPartner $storesPartner
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $storesPartner->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $storesPartner->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Stores Partners'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="storesPartners form large-9 medium-8 columns content">
-    <?= $this->Form->create($storesPartner) ?>
-    <fieldset>
-        <legend><?= __('Edit Stores Partner') ?></legend>
-        <?php
-            echo $this->Form->control('partner');
-            echo $this->Form->control('logo');
-            echo $this->Form->control('users_id', ['options' => $users]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<div class="col-md-6" style="padding: 0px">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Editar Parceiro</h3>
+        </div>
+
+        <?= $this->Form->create($storesPartner, ['type' => 'file']) ?>
+
+        <div class="card-body">
+
+            <div class="form-group">
+                <label for="partner">Parceiro</label>
+                <?php echo $this->Form->control('partner', [
+                        'class' => 'form-control',
+                        'label' => false,
+                        'id' => 'partner'
+                    ]); ?>
+            </div>
+
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <?php echo $this->Form->control('photo[]', [
+                    'label' => false,
+                    'id' => 'photo',
+                    'type' => 'file',
+                    'multiple' => false
+                    ]); ?>
+            </div>
+
+
+            <?= $this->Form->button(__('Editar'), ['class' => 'btn btn-info']) ?>
+
+            <?= $this->Form->end() ?>
+
+        </div>
+    </div>
 </div>

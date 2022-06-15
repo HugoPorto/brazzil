@@ -246,8 +246,16 @@
         document.getElementById("instagram").style.cursor = "pointer";
     }
 
+    function mouseOverUpdateBannerPromotion(){
+        document.getElementById("promotion").style.cursor = "pointer";
+    }
+
     function mouseInstagramClick(){
         this.updateInstagramLink();
+    }
+
+    function redirectPromotionBanner(){
+        window.location.href = "<?= $this->request->base ?>/pages/editPromotionBanner";
     }
 
     function updateInstagramLink() {
@@ -379,7 +387,26 @@
                     + '<div class="input color"><input type="color" name="color3" id="color3"></div>'
 
                 color_select.innerHTML = html;
-            }else{        
+            }else{   
+                const html = '<label for="description">Cor 1*</label>'
+                    + '<div class="input color"><input type="color" name="color" id="color"></div>'
+
+                color_select.innerHTML = html;
+            }
+        });
+
+        $("#customSwitch2").click(function(){
+            const color_select = document.getElementById('color_select');
+
+            if($(this).is(':checked')){
+                const html = '<label for="color">Cor 1*</label>'
+                    + '<div class="input color"><input type="color" name="color" id="color"></div>'
+                    + '<br>'
+                    + '<label for="description">Cor 2*</label>'
+                    + '<div class="input color"><input type="color" name="color2" id="color2"></div>'
+
+                color_select.innerHTML = html;
+            }else{
                 const html = '<label for="description">Cor 1*</label>'
                     + '<div class="input color"><input type="color" name="color" id="color"></div>'
 

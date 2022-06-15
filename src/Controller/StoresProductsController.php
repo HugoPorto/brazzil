@@ -120,9 +120,6 @@ class StoresProductsController extends AppController
         $storesProduct = $this->StoresProducts->newEntity();
 
         if ($this->request->is('post')) {
-            // debug($this->request->getData());
-            // exit();
-
             $idColor = $this->saveColor();
 
             $photo = $this->Base64->processMainPhoto($this->request->getData());
@@ -448,6 +445,10 @@ class StoresProductsController extends AppController
                 $data['color'] = $this->request->getData('color');
                 $data['color2'] = $this->request->getData('color2');
                 $data['color3'] = $this->request->getData('color3');
+            } elseif ($this->request->getData('color') && $this->request->getData('color2')) {
+                $data['color'] = $this->request->getData('color');
+                $data['color2'] = $this->request->getData('color2');
+                $data['color3'] = '';
             } else {
                 $data['color'] = $this->request->getData('color');
             }
@@ -504,14 +505,14 @@ class StoresProductsController extends AppController
         $this->loadModel('StoresImagesProducts');
 
         $storesImagesProducts = $this->StoresImagesProducts->find('all', [
-            'conditions' => [
-                'StoresImagesProducts.stores_products_id =' => $storesProduct->id
-            ]
+        'conditions' => [
+            'StoresImagesProducts.stores_products_id =' => $storesProduct->id
+        ]
         ]);
 
         foreach ($storesImagesProducts as $key => $value) {
             $storesImagesProduct = $this->StoresImagesProducts->get($value->id, [
-                'contain' => []
+            'contain' => []
             ]);
 
             $data = $storesImagesProduct;
@@ -535,7 +536,7 @@ class StoresProductsController extends AppController
 
 
         $storesProduct = $this->StoresProducts->get($id, [
-            'contain' => []
+        'contain' => []
         ]);
 
         $data = [];
@@ -583,7 +584,7 @@ class StoresProductsController extends AppController
         $this->loadModel('StoresColors');
 
         $storesColor = $this->StoresColors->get($idColor, [
-            'contain' => []
+        'contain' => []
         ]);
 
         $data = [];
@@ -618,6 +619,10 @@ class StoresProductsController extends AppController
                 $data['color'] = $this->request->getData('color');
                 $data['color2'] = $this->request->getData('color2');
                 $data['color3'] = $this->request->getData('color3');
+            } elseif ($this->request->getData('color') && $this->request->getData('color2')) {
+                $data['color'] = $this->request->getData('color');
+                $data['color2'] = $this->request->getData('color2');
+                $data['color3'] = '';
             } else {
                 $data['color'] = $this->request->getData('color');
             }
