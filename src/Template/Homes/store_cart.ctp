@@ -10,10 +10,10 @@
     <div class="bredcrumb bg-info text-center">
         <div class="row">
             <div class="col-sm-12">
-                <h2>About us </h2>
+                <h2>Carrinho</h2>
                 <ul class="">
-                    <li><a href="" class="bread_link">Home</a></li>
-                    <li>About us</li>
+                    <li><a href="<?= $this->request->base ?>" class="bread_link">Home</a></li>
+                    <li>Carrinho</li>
                 </ul>
             </div>
         </div>

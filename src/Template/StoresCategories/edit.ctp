@@ -28,7 +28,6 @@
                 <?php
                     echo $this->Form->control('status_menu', [
                         'label' => false,
-                        'class' => 'form-control',
                         'id' => 'status_menu'
                     ]);
                     ?>

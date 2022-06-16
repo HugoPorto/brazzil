@@ -533,8 +533,6 @@ class StoresProductsController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-
-
         $storesProduct = $this->StoresProducts->get($id, [
         'contain' => []
         ]);

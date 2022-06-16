@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -12,7 +13,6 @@ use App\Controller\AppController;
  */
 class StoresVideosController extends AppController
 {
-
     /**
      * Index method
      *
@@ -20,10 +20,11 @@ class StoresVideosController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['StoresCourses', 'Users']
-        ];
-        $storesVideos = $this->paginate($this->StoresVideos);
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $storesVideos = $this->StoresVideos->find('all');
 
         $this->set(compact('storesVideos'));
     }

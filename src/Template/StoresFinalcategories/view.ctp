@@ -14,12 +14,12 @@
                 <td><?= $this->Number->format($storesFinalcategory->id) ?></td>
             </tr>
             <tr>
-                <th scope="row"><?= __('Categoria') ?></th>
+                <th scope="row"><?= __('Título') ?></th>
                 <td><?= h($storesFinalcategory->category) ?></td>
             </tr>
             <tr>
                 <th scope="row"><?= __('Subcategoria') ?></th>
-                <td><?= $storesFinalcategory->has('stores_subcategory') ? $this->Html->link($storesFinalcategory->stores_subcategory->id, ['controller' => 'StoresSubcategories', 'action' => 'view', $storesFinalcategory->stores_subcategory->id]) : '' ?></td>
+                <td><?= $storesFinalcategory->has('stores_subcategory') ? $this->Html->link($storesFinalcategory->stores_subcategory->subcategory, ['controller' => 'StoresSubcategories', 'action' => 'view', $storesFinalcategory->stores_subcategory->id]) : '' ?></td>
             </tr>
             <tr>
                 <th scope="row"><?= __('Criado Em') ?></th>
