@@ -400,9 +400,9 @@ class StoresProductsController extends AppController
         $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $storesProduct->toArray());
 
         if ($this->StoresProducts->save($storesProduct)) {
-            $this->Flash->success(__('The stores product has been saved.'));
-
             return $this->redirect(['action' => 'index']);
+        } else {
+            return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'Erro ao remover produto.']);
         }
     }
 

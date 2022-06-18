@@ -443,7 +443,7 @@ class HomesController extends AppController
                     'StoresProducts.quantity >' => 0,
                     'StoresProducts.online =' => 1,
                     'StoresProducts.active =' => 1,
-                    'StoresProducts.product LIKE' => $this->request->getQueryParams['search'] . '%',
+                    'StoresProducts.product LIKE' => $this->request->getQuery('search') . '%',
                 ]
             ];
 
