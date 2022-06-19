@@ -13,6 +13,13 @@ use App\Controller\AppController;
  */
 class StoresVideosController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+
+        $this->loadComponent('Base64');
+    }
+
     /**
      * Index method
      *
@@ -24,7 +31,9 @@ class StoresVideosController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $storesVideos = $this->StoresVideos->find('all');
+        $storesVideos = $this->StoresVideos->find('all', [
+            'contain' => ['StoresCourses']
+        ]);
 
         $this->set(compact('storesVideos'));
     }
@@ -38,6 +47,10 @@ class StoresVideosController extends AppController
      */
     public function view($id = null)
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
         $storesVideo = $this->StoresVideos->get($id, [
             'contain' => ['StoresCourses', 'Users']
         ]);
@@ -52,15 +65,33 @@ class StoresVideosController extends AppController
      */
     public function add()
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
         $storesVideo = $this->StoresVideos->newEntity();
         if ($this->request->is('post')) {
-            $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $this->request->getData());
-            if ($this->StoresVideos->save($storesVideo)) {
-                $this->Flash->success(__('The stores video has been saved.'));
+            $data = [];
 
+            $data = $this->request->getData();
+
+            $photo = $this->Base64->processMainPhoto($this->request->getData());
+
+            $data['photo'] = $photo;
+
+            $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $data);
+
+
+            if ($this->StoresVideos->save($storesVideo)) {
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The stores video could not be saved. Please, try again.'));
+
+            return $this->redirect(
+                [
+                    'controller' => 'Pages',
+                    'action' => 'error', 'O video não poder ser salvo.'
+                ]
+            );
         }
         $storesCourses = $this->StoresVideos->StoresCourses->find('list', ['limit' => 200]);
         $users = $this->StoresVideos->Users->find('list', ['limit' => 200]);
@@ -76,20 +107,72 @@ class StoresVideosController extends AppController
      */
     public function edit($id = null)
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
         $storesVideo = $this->StoresVideos->get($id, [
             'contain' => []
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $this->request->getData());
             if ($this->StoresVideos->save($storesVideo)) {
-                $this->Flash->success(__('The stores video has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The stores video could not be saved. Please, try again.'));
+
+            return $this->redirect(
+                [
+                    'controller' => 'Pages',
+                    'action' => 'error', 'O video não poder ser salvo.'
+                ]
+            );
         }
+
         $storesCourses = $this->StoresVideos->StoresCourses->find('list', ['limit' => 200]);
+
         $users = $this->StoresVideos->Users->find('list', ['limit' => 200]);
+
+        $this->set(compact('storesVideo', 'storesCourses', 'users'));
+    }
+
+    public function editPhoto($id = null)
+    {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $storesVideo = $this->StoresVideos->get($id, [
+            'contain' => []
+        ]);
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $data = [];
+
+            $data = $this->request->getData();
+
+            $photo = $this->Base64->processMainPhoto($this->request->getData());
+
+            $data['photo'] = $photo;
+
+            $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $data);
+
+            if ($this->StoresVideos->save($storesVideo)) {
+                return $this->redirect(['action' => 'index']);
+            }
+
+            return $this->redirect(
+                [
+                    'controller' => 'Pages',
+                    'action' => 'error', 'O video não poder ser salvo.'
+                ]
+            );
+        }
+
+        $storesCourses = $this->StoresVideos->StoresCourses->find('list', ['limit' => 200]);
+
+        $users = $this->StoresVideos->Users->find('list', ['limit' => 200]);
+
         $this->set(compact('storesVideo', 'storesCourses', 'users'));
     }
 

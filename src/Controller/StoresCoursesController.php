@@ -104,6 +104,28 @@ class StoresCoursesController extends AppController
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
+            $storesCourse = $this->StoresCourses->patchEntity($storesCourse, $this->request->getData());
+
+            if ($this->StoresCourses->save($storesCourse)) {
+                return $this->redirect(['action' => 'index']);
+            }
+
+            return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'O curso não poder ser salvo.']);
+        }
+        $users = $this->StoresCourses->Users->find('list', ['limit' => 200]);
+        $this->set(compact('storesCourse', 'users'));
+    }
+
+    public function editPhoto($id = null)
+    {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $storesCourse = $this->StoresCourses->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['patch', 'post', 'put'])) {
             $data = [];
             $data = $this->request->getData();
 

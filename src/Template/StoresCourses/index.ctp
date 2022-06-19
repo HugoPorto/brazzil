@@ -44,6 +44,11 @@
                             ['action' => 'edit', $storesCourse->id],
                             [ 'class' => 'btn btn-warning']
                         ) ?>
+                        <?= $this->Html->link(
+                            __('Editar Foto'),
+                            ['action' => 'editPhoto', $storesCourse->id],
+                            [ 'class' => 'btn btn-warning']
+                        ) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

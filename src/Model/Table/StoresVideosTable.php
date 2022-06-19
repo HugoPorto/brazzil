@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -24,7 +25,6 @@ use Cake\Validation\Validator;
  */
 class StoresVideosTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -65,7 +65,7 @@ class StoresVideosTable extends Table
 
         $validator
             ->scalar('video')
-            ->maxLength('video', 255)
+            ->maxLength('video', 4294967295)
             ->requirePresence('video', 'create')
             ->notEmpty('video');
 

@@ -35,7 +35,7 @@ class StoresCoursesTable extends Table
         parent::initialize($config);
 
         $this->setTable('stores_courses');
-        $this->setDisplayField('id');
+        $this->setDisplayField('course');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
