@@ -63,6 +63,11 @@ class ConfigsTable extends Table
             ->requirePresence('status_banner_main', 'create')
             ->notEmpty('status_banner_main');
 
+        $validator
+            ->integer('show_type_products')
+            ->requirePresence('show_type_products', 'create')
+            ->notEmpty('show_type_products');
+
         return $validator;
     }
 
@@ -75,7 +80,6 @@ class ConfigsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['users_id']));
         $rules->add($rules->existsIn(['users_id'], 'Users'));
 
         return $rules;

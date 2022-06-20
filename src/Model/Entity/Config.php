@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  * @property int $users_id
+ * @property int $show_type_products
  *
  * @property \App\Model\Entity\User $user
  */
@@ -31,6 +32,7 @@ class Config extends Entity
         'created' => true,
         'modified' => true,
         'users_id' => true,
+        'show_type_products' => true,
         'user' => true
     ];
 }

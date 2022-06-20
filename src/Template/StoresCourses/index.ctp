@@ -17,6 +17,7 @@
                 <tr>
                     <th>Código</th>
                     <th>Curso</th>
+                    <th>Foto</th>
                     <th>Autor</th>
                     <th>Tema</th>
                     <th>Criado Em</th>
@@ -29,6 +30,9 @@
                 <tr>
                     <td><?= $this->Number->format($storesCourse->id) ?></td>
                     <td><?= h($storesCourse->course) ?></td>
+                    <td>
+                        <img style="width: 200px; border: 1px solid #d7d7d7; padding: 10px" <?= $storesCourse->photo ?>/>
+                    </td>
                     <td><?= h($storesCourse->autor) ?></td>
                     <td><?= h($storesCourse->theme) ?></td>
                     <td><?= h($storesCourse->created) ?></td>
@@ -57,6 +61,7 @@
                 <tr>
                     <th>Código</th>
                     <th>Curso</th>
+                    <th>Foto</th>
                     <th>Autor</th>
                     <th>Tema</th>
                     <th>Criado Em</th>

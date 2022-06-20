@@ -82,6 +82,12 @@ class StoresCoursesTable extends Table
             ->requirePresence('photo', 'create')
             ->notEmpty('photo');
 
+        $validator
+            ->scalar('price')
+            ->maxLength('price', 11)
+            ->requirePresence('price', 'create')
+            ->notEmpty('price');
+
         return $validator;
     }
 

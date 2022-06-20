@@ -50,18 +50,41 @@ class StoresCartsController extends AppController
 
         $storesCart = $this->StoresCarts->newEntity();
 
-        if ($this->request->is('post')) {
-            $storesCart = $this->StoresCarts->patchEntity($storesCart, $this->request->getData());
+        $this->loadModel('Configs');
 
-            if ($this->validateQuantity($this->request->getData())) {
+        $configs = $this->Configs->find('all')->first();
+
+        if ($this->request->is('post')) {
+            if ($configs->show_type_products === 1) {
+                $storesCart = $this->StoresCarts->patchEntity($storesCart, $this->request->getData());
+
+                if ($this->validateQuantity($this->request->getData())) {
+                    if ($this->StoresCarts->save($storesCart)) {
+                        return $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
+                    }
+
+                    $this->Flash->error(__('Erro ao adicionar item ao carrinho.'));
+                    $this->redirectReferer();
+                } else {
+                    $this->redirectReferer();
+                }
+            } elseif ($configs->show_type_products === 2) {
+                // debug($storesCart);
+                // debug($this->request->getData());
+                // exit();
+
+                $storesCart = $this->StoresCarts->patchEntity($storesCart, $this->request->getData());
+
                 if ($this->StoresCarts->save($storesCart)) {
                     return $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
                 }
 
-                $this->Flash->error(__('Erro ao adicionar item ao carrinho.'));
-                $this->redirectReferer();
-            } else {
-                $this->redirectReferer();
+                return $this->redirect(
+                    [
+                        'controller' => 'Pages',
+                        'action' => 'error', 'Erro ao adicionar item ao carrinho.'
+                    ]
+                );
             }
         }
 

@@ -12,9 +12,11 @@ use Cake\ORM\Entity;
  * @property int $users_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ * @property int $stores_courses_id
  *
  * @property \App\Model\Entity\StoresProduct $stores_product
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\StoresCourse $stores_course
  */
 class StoresCart extends Entity
 {
@@ -34,7 +36,9 @@ class StoresCart extends Entity
         'users_id' => true,
         'created' => true,
         'modified' => true,
+        'stores_courses_id' => true,
         'stores_product' => true,
-        'user' => true
+        'user' => true,
+        'stores_course' => true
     ];
 }

@@ -23,36 +23,65 @@ class HomesController extends AppController
 
     public function site()
     {
-        $this->loadModel('StoresProducts');
         $this->loadModel('StoresSliders');
+
         $this->loadModel('StoresPartners');
+
+        $this->loadModel('Configs');
 
         $storesSliders = $this->StoresSliders->find('all');
 
-        $this->paginate = [
-                'limit' => 16,
-                'order' => [
-                    'StoresProducts.id' => 'DESC'
-                ],
-                'conditions' => [
-                    'StoresProducts.quantity >' => 0,
-                    'StoresProducts.online =' => 1,
-                    'StoresProducts.active =' => 1,
-                    'StoresProducts.photo !=' => 'Indefinida'
-                ]
-        ];
-
         $storesPartners = $this->StoresPartners->find('all');
 
-        $storesProducts = $this->paginate($this->StoresProducts);
+        $configs = $this->Configs->find('all');
 
-        $this->set(compact(
-            [
-            'storesProducts',
-            'storesSliders',
-            'storesPartners',
-            ]
-        ));
+        $configs = $configs->toArray();
+
+        if ($configs[0]['show_type_products'] === 1) {
+            $this->loadModel('StoresProducts');
+
+            $this->paginate = [
+                    'limit' => 16,
+                    'order' => [
+                        'StoresProducts.id' => 'DESC'
+                    ],
+                    'conditions' => [
+                        'StoresProducts.quantity >' => 0,
+                        'StoresProducts.online =' => 1,
+                        'StoresProducts.active =' => 1,
+                        'StoresProducts.photo !=' => 'Indefinida'
+                    ]
+            ];
+
+            $storesProducts = $this->paginate($this->StoresProducts);
+
+            $this->set(compact(
+                [
+                'storesProducts',
+                'storesSliders',
+                'storesPartners',
+                ]
+            ));
+        } elseif ($configs[0]['show_type_products'] === 2) {
+            $this->loadModel('StoresCourses');
+
+            $this->paginate = [
+                'limit' => 16,
+                'order' => [
+                    'StoresCourses.id' => 'DESC'
+                    ]
+                ];
+
+            $StoresCourses = $this->paginate($this->StoresCourses);
+
+            $this->set(compact(
+                [
+                'StoresCourses',
+                'storesSliders',
+                'storesPartners',
+                ]
+            ));
+        }
     }
 
     public function store($idCategory = null)
@@ -257,6 +286,22 @@ class HomesController extends AppController
                 'storesColors',
                 'imagesExtrasProduct',
                 'relationshipProducts',
+            ]
+        ));
+    }
+
+    public function courseView($id = null)
+    {
+        $this->loadModel('StoresCourses');
+
+        $storesCourse = $this->StoresCourses->get($id);
+
+        $idUser = $this->Auth->user() ? $this->Auth->user()['id'] : null;
+
+        $this->set(compact(
+            [
+                'storesCourse',
+                'idUser'
             ]
         ));
     }

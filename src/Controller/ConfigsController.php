@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Seld\JsonLint\Undefined;
 
 /**
  * Configs Controller
@@ -87,7 +88,27 @@ class ConfigsController extends AppController
         $config = $this->Configs->get($id);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $config = $this->Configs->patchEntity($config, $this->request->getData());
+            $data = [];
+
+            $data = $this->request->getData();
+
+            if (!array_key_exists("status_banner_main", $data)) {
+                $data['status_banner_main'] = '0';
+            } else {
+                $data['status_banner_main'] = '1';
+            }
+
+            if (array_key_exists("fisic", $data) && array_key_exists("digital", $data)) {
+                $data['show_type_products'] = '3';
+            } elseif (array_key_exists("fisic", $data) && !array_key_exists("digital", $data)) {
+                $data['show_type_products'] = '1';
+            } elseif (!array_key_exists("fisic", $data) && !array_key_exists("digital", $data)) {
+                $data['show_type_products'] = '1';
+            } elseif (!array_key_exists("fisic", $data) && array_key_exists("digital", $data)) {
+                $data['show_type_products'] = '2';
+            }
+
+            $config = $this->Configs->patchEntity($config, $data);
 
             if ($this->Configs->save($config)) {
                 return $this->redirect(['action' => 'view']);

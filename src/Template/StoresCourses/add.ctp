@@ -51,6 +51,18 @@
             </div>
 
             <div class="form-group">
+                <label for="price">Preço*</label>
+                <?= $this->Form->control(
+                    'price',
+                    [
+                        'label' => false,
+                        'class' => 'form-control',
+                        'id' => 'price'
+                    ]
+                ) ?>
+            </div>
+
+            <div class="form-group">
                 <label for="photo">Foto*</label>
                 <?= $this->Form->control(
                     'photo[]',

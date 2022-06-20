@@ -28,7 +28,15 @@
                 <tr>
                     <td><?= $this->Number->format($storesVideo->id) ?></td>
                     <td><?= h($storesVideo->title) ?></td>
-                    <td><?= h($storesVideo->video) ?></td>
+                    <td>
+                        <div class=row>
+                            <div class=col-md-8 style="width: 600px">
+                                <div class="video-container" style="margin-top: 5px;">
+                                    <?= $storesVideo->video;?>
+                                </div>      
+                            </div>      
+                        </div>  
+                    </td>
                     <td>
                         <img style="width: 200px; border: 1px solid #d7d7d7; padding: 10px" <?= $storesVideo->photo ?>/>
                     </td>

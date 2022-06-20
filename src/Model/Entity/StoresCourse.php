@@ -37,6 +37,7 @@ class StoresCourse extends Entity
         'theme' => true,
         'users_id' => true,
         'photo' => true,
-        'user' => true
+        'user' => true,
+        'price' => true
     ];
 }

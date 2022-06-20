@@ -51,15 +51,13 @@
             </div>
 
             <div class="form-group">
-                <label for="photo">Foto*</label>
+                <label for="price">Preço*</label>
                 <?= $this->Form->control(
-                    'photo[]',
+                    'price',
                     [
                         'label' => false,
-                        'id' => 'photo',
-                        'type' => 'file',
-                        'multiple' => false,
-                        'required' => true
+                        'class' => 'form-control',
+                        'id' => 'price'
                     ]
                 ) ?>
             </div>

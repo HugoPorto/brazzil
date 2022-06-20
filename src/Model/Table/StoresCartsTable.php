@@ -11,6 +11,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\StoresProductsTable|\Cake\ORM\Association\BelongsTo $StoresProducts
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property \App\Model\Table\StoresCoursesTable|\Cake\ORM\Association\BelongsTo $StoresCourses
  *
  * @method \App\Model\Entity\StoresCart get($primaryKey, $options = [])
  * @method \App\Model\Entity\StoresCart newEntity($data = null, array $options = [])
@@ -42,12 +43,14 @@ class StoresCartsTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->belongsTo('StoresProducts', [
-            'foreignKey' => 'stores_products_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'stores_products_id'
         ]);
         $this->belongsTo('Users', [
             'foreignKey' => 'users_id',
             'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('StoresCourses', [
+            'foreignKey' => 'stores_courses_id'
         ]);
     }
 
@@ -83,6 +86,7 @@ class StoresCartsTable extends Table
     {
         $rules->add($rules->existsIn(['stores_products_id'], 'StoresProducts'));
         $rules->add($rules->existsIn(['users_id'], 'Users'));
+        $rules->add($rules->existsIn(['stores_courses_id'], 'StoresCourses'));
 
         return $rules;
     }

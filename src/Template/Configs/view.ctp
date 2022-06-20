@@ -22,6 +22,24 @@
                     <th scope="row"><?= __('Status Banner Promocional') ?></th>
                     <td><?= $config->status_banner_main ? __('Ativo') : __('Inativo'); ?></td>
                 </tr>
+                <tr>
+                    <th scope="row"><?= __('Status Banner Promocional') ?></th>
+                    <td>
+                        <?php
+                        switch ($config->show_type_products) {
+                            case 1:
+                                echo "Exibindo apenas produtos físicos";
+                                break;
+                            case 2:
+                                echo "Exibindo apenas produtos digitais.";
+                                break;
+                            case 3:
+                                echo "Exibindo produtos físicos e digitais.";
+                                break;
+                        }
+                        ?>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>

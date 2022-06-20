@@ -17,11 +17,11 @@
                     <th scope="row"><?= __('Video') ?></th>
                     <td>
                         <div class=row>
-                        <div class=col-md-8>
-                            <div class="video-container" style="margin-top: 5px">
-                                <?= $storesVideo->video;?>
+                            <div class=col-md-8>
+                                <div class="video-container" style="margin-top: 5px">
+                                    <?= $storesVideo->video;?>
+                                </div>      
                             </div>      
-                        </div>      
                         </div>      
                     </td>
                 </tr>
