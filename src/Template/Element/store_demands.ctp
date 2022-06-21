@@ -2,7 +2,11 @@
     <div class="container">
         <div class="row">
 
+        <?php if ($configs->show_type_products === 1) :?>
             <div class="col-md-8 col-lg-9 col-xs-12">
+        <?php elseif ($configs->show_type_products === 2) :?>
+            <div class="col-md-8 col-lg-12 col-xs-12">
+        <?php endif;?>
                 <div class="row">
                     <table class="table">
                         <thead>
@@ -37,8 +41,7 @@
                         'nextActive' => '<li class="page-item"><a class="page-link" href="{{url}}">&gt;</a></li>',
 
                         ]
-                    );
-?>
+                    );?>
 
                 <nav class="paginator" aria-label="Page navigation example">
 
@@ -65,6 +68,8 @@
 
                 </div>
             </div>
+
+            <?php if ($configs->show_type_products === 1) :?>
             <div class="col-md-4 col-lg-3 col-xs-12 sidebar">
 
                 <h4><?= __('Categorias') ?></h4>
@@ -80,6 +85,7 @@
 
                 </ul>
             </div>
+            <?php endif;?>
         </div>
     </div>
 </section>

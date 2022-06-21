@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Mailer\MailerAwareTrait;
+use Cake\Datasource\ConnectionManager;
 
 class HomesController extends AppController
 {
@@ -184,6 +185,23 @@ class HomesController extends AppController
         $this->hasPermission('store');
         $this->loadModel('StoresCategories');
         $this->loadModel('StoresDemands');
+
+        $this->loadModel('Configs');
+
+        $configs = $this->Configs->find('all')->first();
+
+        if ($configs->show_type_products === 2) {
+            $connection = ConnectionManager::get('default');
+
+            $sql = 'select md.id as id_pedido, u.name as usuario, c.id as id_curso, c.course as curso
+                    from stores_courses c 
+                    inner join stores_demands md 
+                    inner join users u on md.users_id = u.id
+                    inner join stores_items_demands d on c.id = d.stores_courses_id and md.id = d.stores_demands_id
+                    where u.id =' . $this->Auth->user()['id'];
+
+            $courses_user = $connection->execute($sql)->fetchAll();
+        }
 
         $storesCategories = $this->StoresCategories->find(
             'all',

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -11,6 +12,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\StoresDemandsTable|\Cake\ORM\Association\BelongsTo $StoresDemands
  * @property \App\Model\Table\StoresProductsTable|\Cake\ORM\Association\BelongsTo $StoresProducts
+ * @property \App\Model\Table\StoresCoursesTable|\Cake\ORM\Association\BelongsTo $StoresCourses
  *
  * @method \App\Model\Entity\StoresItemsDemand get($primaryKey, $options = [])
  * @method \App\Model\Entity\StoresItemsDemand newEntity($data = null, array $options = [])
@@ -24,7 +26,6 @@ use Cake\Validation\Validator;
  */
 class StoresItemsDemandsTable extends Table
 {
-
     /**
      * Initialize method
      *
@@ -46,8 +47,10 @@ class StoresItemsDemandsTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('StoresProducts', [
-            'foreignKey' => 'stores_products_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'stores_products_id'
+        ]);
+        $this->belongsTo('StoresCourses', [
+            'foreignKey' => 'stores_courses_id'
         ]);
     }
 
@@ -83,6 +86,7 @@ class StoresItemsDemandsTable extends Table
     {
         $rules->add($rules->existsIn(['stores_demands_id'], 'StoresDemands'));
         $rules->add($rules->existsIn(['stores_products_id'], 'StoresProducts'));
+        $rules->add($rules->existsIn(['stores_courses_id'], 'StoresCourses'));
 
         return $rules;
     }

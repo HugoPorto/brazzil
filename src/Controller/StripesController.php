@@ -66,32 +66,6 @@ class StripesController extends AppController
         return $total;
     }
 
-    private function totalCalculateDigital()
-    {
-        $this->hasPermission('store');
-
-        $this->loadModel('StoresCarts');
-
-        $storesCarts = $this->StoresCarts->find(
-            'all',
-            [
-            'contain' => ['StoresCourses'],
-            'conditions' => [
-                'StoresCarts.users_id =' => $this->Auth->user()['id'],
-                'StoresCarts.type_product =' => 2,
-            ]
-            ]
-        );
-
-        $total = 0;
-
-        foreach ($storesCarts as $storesCart) {
-            $total = $total + ($storesCart->stores_course->price * $storesCart->quantity);
-        }
-
-        return $total;
-    }
-
     public function payment()
     {
         $this->hasPermission('store');
@@ -104,7 +78,15 @@ class StripesController extends AppController
 
         Stripe\Stripe::setApiKey($stripe_secret->stripe_secret);
 
-        $total = $this->totalCalculate();
+        $this->loadModel('Configs');
+
+        $configs = $this->Configs->find('all')->first();
+
+        if ($configs->show_type_products === 2) {
+            $total = $this->totalCalculateDigital();
+        } else {
+            $total = $this->totalCalculate();
+        }
 
         if ($total > 0) {
             $stripe = Stripe\Charge::create([
@@ -118,9 +100,12 @@ class StripesController extends AppController
         if ($stripe->status === 'succeeded') {
             $demandId = $this->saveDemand();
 
-            $this->saveAddress($demandId);
-
-            $this->saveItensDemands($demandId);
+            if ($configs->show_type_products === 2) {
+                $this->saveItensDemandsDigital($demandId);
+            } else {
+                $this->saveAddress($demandId);
+                $this->saveItensDemands($demandId);
+            }
 
             $this->cleanCart();
 
@@ -169,9 +154,11 @@ class StripesController extends AppController
             'all',
             [
             'contain' => ['StoresProducts'],
-            'conditions' => [
-                'StoresCarts.users_id =' => $this->Auth->user()['id']
-            ]
+            'conditions' =>
+                [
+                    'StoresCarts.users_id =' => $this->Auth->user()['id'],
+                    'StoresCarts.type_product =' => 1,
+                ]
             ]
         );
 
@@ -192,14 +179,62 @@ class StripesController extends AppController
         }
     }
 
+    private function saveItensDemandsDigital($demandId = null)
+    {
+        $this->hasPermission('store');
+
+        $this->loadModel('StoresCarts');
+
+        $this->loadModel('StoresItemsDemands');
+
+        $storesCarts = $this->StoresCarts->find(
+            'all',
+            [
+            'contain' => ['StoresProducts'],
+            'conditions' =>
+                [
+                    'StoresCarts.users_id =' => $this->Auth->user()['id'],
+                    'StoresCarts.type_product =' => 2,
+                ]
+            ]
+        );
+
+        $itensDemand = [];
+
+        foreach ($storesCarts as $storesCart) {
+            $itensDemand = [
+                'stores_demands_id' => $demandId,
+                'stores_courses_id' => $storesCart->stores_courses_id,
+                'quantity' => $storesCart->quantity
+            ];
+
+            $storesItemsDemand = $this->StoresItemsDemands->newEntity();
+
+            $storesItemsDemand = $this->StoresItemsDemands->patchEntity($storesItemsDemand, $itensDemand);
+
+            $this->StoresItemsDemands->save($storesItemsDemand);
+        }
+    }
+
     private function saveDemand()
     {
         $this->hasPermission('store');
 
-        $demand = [
-            'users_id' => $this->Auth->user()['id'],
-            'status' => 0
-        ];
+        $this->loadModel('Configs');
+
+        $configs = $this->Configs->find('all')->first();
+
+        if ($configs->show_type_products === 2) {
+            $demand = [
+                'users_id' => $this->Auth->user()['id'],
+                'status' => 1
+            ];
+        } else {
+            $demand = [
+                'users_id' => $this->Auth->user()['id'],
+                'status' => 0
+            ];
+        }
 
         $this->loadModel('StoresDemands');
 
@@ -224,5 +259,31 @@ class StripesController extends AppController
     private function sendEmail($demandId)
     {
         $this->getMailer('User')->send('demand', [$this->Auth->user()['email'], $demandId]);
+    }
+
+    private function totalCalculateDigital()
+    {
+        $this->hasPermission('store');
+
+        $this->loadModel('StoresCarts');
+
+        $storesCarts = $this->StoresCarts->find(
+            'all',
+            [
+            'contain' => ['StoresCourses'],
+            'conditions' => [
+                'StoresCarts.users_id =' => $this->Auth->user()['id'],
+                'StoresCarts.type_product =' => 2,
+            ]
+            ]
+        );
+
+        $total = 0;
+
+        foreach ($storesCarts as $storesCart) {
+            $total = $total + ($storesCart->stores_course->price * $storesCart->quantity);
+        }
+
+        return $total;
     }
 }
