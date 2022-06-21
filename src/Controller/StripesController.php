@@ -13,7 +13,15 @@ class StripesController extends AppController
     {
         $this->hasPermission('store');
 
-        $total = $this->totalCalculate();
+        $this->loadModel('Configs');
+
+        $configs = $this->Configs->find('all')->first();
+
+        if ($configs->show_type_products === 2) {
+            $total = $this->totalCalculateDigital();
+        } else {
+            $total = $this->totalCalculate();
+        }
 
         if ($total <= 0) {
             return $this->redirect(['controller' => 'homes', 'action' => 'store']);
@@ -33,7 +41,8 @@ class StripesController extends AppController
             [
             'contain' => ['StoresProducts'],
             'conditions' => [
-                'StoresCarts.users_id =' => $this->Auth->user()['id']
+                'StoresCarts.users_id =' => $this->Auth->user()['id'],
+                'StoresCarts.type_product =' => 1,
             ]
             ]
         );
@@ -52,6 +61,32 @@ class StripesController extends AppController
             $total = $total + (float) $shippingValue;
         } else {
             $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
+        }
+
+        return $total;
+    }
+
+    private function totalCalculateDigital()
+    {
+        $this->hasPermission('store');
+
+        $this->loadModel('StoresCarts');
+
+        $storesCarts = $this->StoresCarts->find(
+            'all',
+            [
+            'contain' => ['StoresCourses'],
+            'conditions' => [
+                'StoresCarts.users_id =' => $this->Auth->user()['id'],
+                'StoresCarts.type_product =' => 2,
+            ]
+            ]
+        );
+
+        $total = 0;
+
+        foreach ($storesCarts as $storesCart) {
+            $total = $total + ($storesCart->stores_course->price * $storesCart->quantity);
         }
 
         return $total;

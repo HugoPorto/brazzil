@@ -48,9 +48,9 @@ class StoresCartsController extends AppController
     {
         $this->hasPermission('store');
 
-        $storesCart = $this->StoresCarts->newEntity();
-
         $this->loadModel('Configs');
+
+        $storesCart = $this->StoresCarts->newEntity();
 
         $configs = $this->Configs->find('all')->first();
 
@@ -63,26 +63,28 @@ class StoresCartsController extends AppController
                         return $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
                     }
 
-                    $this->Flash->error(__('Erro ao adicionar item ao carrinho.'));
-                    $this->redirectReferer();
+                    return $this->redirect(
+                        [
+                            'controller' => 'homes',
+                            'action' => 'error',
+                            'Erro ao adicionar no carrinho.'
+                        ]
+                    );
                 } else {
                     $this->redirectReferer();
                 }
             } elseif ($configs->show_type_products === 2) {
-                // debug($storesCart);
-                // debug($this->request->getData());
-                // exit();
-
                 $storesCart = $this->StoresCarts->patchEntity($storesCart, $this->request->getData());
 
                 if ($this->StoresCarts->save($storesCart)) {
-                    return $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
+                    return $this->redirect(['controller' => 'homes', 'action' => 'storeCartDigital']);
                 }
 
                 return $this->redirect(
                     [
-                        'controller' => 'Pages',
-                        'action' => 'error', 'Erro ao adicionar item ao carrinho.'
+                        'controller' => 'homes',
+                        'action' => 'error',
+                        'Erro ao adicionar no carrinho.'
                     ]
                 );
             }

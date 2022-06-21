@@ -22,9 +22,11 @@
 
                     <form action="<?= $this->request->base; ?>/stores-carts/add" method="post">
 
-                        <input type="number" name="quantity" value="1">
+                        <input type="hidden" name="quantity" value="1"/>
 
                         <input type="hidden" name="stores_courses_id" value="<?= $storesCourse->id ?>">
+
+                        <input type="hidden" name="type_product" value="2">
 
                         <input type="hidden" name="users_id" value="<?= $idUser ?>"/>
 

@@ -72,6 +72,11 @@ class StoresCartsTable extends Table
             ->requirePresence('quantity', 'create')
             ->notEmpty('quantity');
 
+        $validator
+            ->integer('type_product')
+            ->requirePresence('type_product', 'create')
+            ->notEmpty('type_product');
+
         return $validator;
     }
 

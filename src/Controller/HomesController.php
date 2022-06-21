@@ -123,6 +123,9 @@ class HomesController extends AppController
         } else {
             $this->loadModel('StoresCategories');
             $this->loadModel('StoresProducts');
+            $this->loadModel('Configs');
+
+            $configs = $this->Configs->find('all')->first();
 
             $storesCategories = $this->StoresCategories->find(
                 'all',
@@ -147,12 +150,32 @@ class HomesController extends AppController
 
             $storesProducts = $this->paginate($this->StoresProducts);
 
-            $this->set(compact(
-                [
-                'storesCategories',
-                'storesProducts'
-                ]
-            ));
+            if ($configs->show_type_products === 1) {
+                $this->set(compact(
+                    [
+                    'storesCategories',
+                    'storesProducts'
+                    ]
+                ));
+            } elseif ($configs->show_type_products === 2) {
+                $this->loadModel('StoresCourses');
+
+                $this->paginate = [
+                    'limit' => 6,
+                    'order' => [
+                        'StoresCourses.id' => 'DESC'
+                    ]
+                ];
+
+
+                $storesCourses = $this->paginate($this->StoresCourses);
+
+                $this->set(compact(
+                    [
+                    'storesCourses',
+                    ]
+                ));
+            }
         }
     }
 
@@ -319,6 +342,14 @@ class HomesController extends AppController
     {
         $this->hasPermission('store');
 
+        $this->loadModel('Configs');
+
+        $configs = $this->Configs->find('all')->first();
+
+        if ($configs->show_type_products === 2) {
+            return $this->redirect(['action' => 'storeCartDigital']);
+        }
+
         $session = $this->request->getSession();
 
         $session->delete('address_demand');
@@ -343,6 +374,60 @@ class HomesController extends AppController
 
         foreach ($storesCarts as $storesCart) {
             $total =  $total + (str_replace(",", ".", $storesCart->stores_product->price) * (float) $storesCart->quantity);
+        }
+
+        $shippingValue = str_replace(",", ".", $shippingValue);
+
+        if ($shippingValue) {
+            $total = (float) $total + (float) $shippingValue;
+        }
+
+        if ($cep) {
+            $this->set(compact(
+                [
+                    'storesCarts',
+                    'total',
+                    'cep',
+                    'prazoEntrega'
+                ]
+            ));
+        } else {
+            $this->set(compact(
+                [
+                    'storesCarts',
+                    'total',
+                    'cep',
+                    'prazoEntrega',
+                ]
+            ));
+        }
+    }
+
+    public function storeCartDigital($shippingValue = null, $cep = null, $prazoEntrega = null)
+    {
+        $this->hasPermission('store');
+
+        $this->loadModel('StoresCarts');
+
+        $storesCarts = $this->StoresCarts->find(
+            'all',
+            [
+                'contain' => ['StoresCourses'],
+                'conditions' => [
+                    'StoresCarts.users_id =' => $this->Auth->user()['id'],
+                    'StoresCarts.stores_courses_id !=' => 'null',
+                ]
+            ]
+        );
+
+        if (empty($storesCarts->toArray())) {
+            return $this->redirect(['action' => 'store']);
+        }
+
+        $total = 0;
+
+        foreach ($storesCarts as $storesCart) {
+            $total =  $total + (str_replace(",", ".", $storesCart->stores_course->price) * (float) $storesCart->quantity);
         }
 
         $shippingValue = str_replace(",", ".", $shippingValue);
@@ -630,5 +715,12 @@ class HomesController extends AppController
         );
 
         return empty($storesColors->toArray()) ? true : false;
+    }
+
+    public function error($message)
+    {
+        $this->hasPermission('store');
+
+        $this->set('message', $message);
     }
 }

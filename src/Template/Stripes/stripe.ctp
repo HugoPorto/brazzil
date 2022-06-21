@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OHNIK - Pagamento</title>
+    <title><?= $storesPagesTitles->title ?></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <style type="text/css">
@@ -23,12 +23,13 @@
             width: 61%;
         }
     </style>
+
+    <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'img/favicon.png';?>">
 </head>
 <body>
 
 <div class="container">
     <h3 style="text-align: center;">Pagamento</h3><br/>
-    <?= $this->Flash->render() ?>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default credit-card-box">

@@ -99,6 +99,8 @@
 
                         <input type="hidden" name="stores_products_id" value="<?= $storesProduct->id ?>">
 
+                        <input type="hidden" name="type_product" value="1">
+
                         <input type="hidden" name="users_id" value="<?= $idUser ?>"/>
 
                         <input

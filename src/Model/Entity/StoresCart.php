@@ -13,6 +13,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  * @property int $stores_courses_id
+ * @property int $type_product
  *
  * @property \App\Model\Entity\StoresProduct $stores_product
  * @property \App\Model\Entity\User $user
@@ -37,6 +38,7 @@ class StoresCart extends Entity
         'created' => true,
         'modified' => true,
         'stores_courses_id' => true,
+        'type_product' => true,
         'stores_product' => true,
         'user' => true,
         'stores_course' => true
