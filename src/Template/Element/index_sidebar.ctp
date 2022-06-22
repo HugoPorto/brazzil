@@ -1,11 +1,12 @@
 <div class="sidebar">
 
-    <?= $this->element('index_user_panel') ?>
+    <?php if ($configs->show_type_products !== 2) :?>
+        <?= $this->element('index_user_panel') ?>
+    <?php endif;?>
 
     <?php if ($username) :?>
         <?php if ($role == 'storeAdmin') :?>
             <nav class="mt-2">
-
                 <ul class="nav nav-pills nav-sidebar flex-column"
                     data-widget="treeview"
                     role="menu"
@@ -119,6 +120,40 @@
                     </li>
                 </ul>
             </nav>
+        <?php elseif ($role == 'store') :?>
+            <?php if ($configs->show_type_products === 2) :?>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column"
+                        data-widget="treeview"
+                        role="menu"
+                        data-accordion="false">
+
+                        <li class="nav-item menu-is-opening menu-open">
+                            <a href="#" class="nav-link active">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview" style="display: block;">
+                                <li class="nav-item">
+                                    <a href="<?= $this->request->base . '/stores-courses/courses'?>" class="nav-link active">
+                                        <i class="nav-icon fas fa-link text-info"></i>
+                                        <p>Cursos</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= $this->request->base . '/stores-courses/certificates'?>" class="nav-link">
+                                        <i class="nav-icon fas fa-link text-info"></i>
+                                        <p>Certificados</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            <?php endif; ?>
         <?php endif; ?>
     <?php endif; ?>
 </div>

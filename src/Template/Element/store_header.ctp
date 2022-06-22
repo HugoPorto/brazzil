@@ -95,6 +95,9 @@
                                         <li>
                                             <?php echo $this->Html->link(__('Meus Pedidos'), ['controller' => 'homes', 'action' => 'demands'], ['class' => '']);?>
                                         </li>
+                                        <?php if ($configs->show_type_products === 2) :?>
+                                            <?php echo $this->Html->link(__('Área do Aluno'), ['controller' => 'storesCourses', 'action' => 'courses'], ['class' => '']);?>
+                                        <?php endif;?>
                                     <?php endif;?>
                                     <li>
                                         <?php echo $this->Html->link(__('Sair'), ['controller' => 'users', 'action' => 'logout'], ['class' => '']);?>

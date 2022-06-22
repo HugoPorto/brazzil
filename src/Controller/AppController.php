@@ -288,6 +288,10 @@ class AppController extends Controller
         if ($this->request->controller === 'Homes' && $this->Roles->get($this->Auth->user()['roles_id'])->role !== $permission) {
             return $this->redirect(['controller' => 'Homes', 'action' => 'site']);
         }
+
+        if ($this->Roles->get($this->Auth->user()['roles_id'])->role !== $permission) {
+            return $this->redirect(['controller' => 'Homes', 'action' => 'site']);
+        }
     }
 
     protected function clearSession()

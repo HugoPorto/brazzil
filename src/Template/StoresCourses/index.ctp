@@ -6,7 +6,7 @@
 ?>
 <div class="card">
     <div class="card-body">
-    <div class="margin">
+        <div class="margin">
             <div class="btn-group">
                 <?= $this->Html->link(__('Adicionar'), ['action' => 'add'], ['class' => 'btn btn-info']) ?>
             </div>

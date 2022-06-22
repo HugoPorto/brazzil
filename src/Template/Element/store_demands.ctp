@@ -7,7 +7,11 @@
         <?php elseif ($configs->show_type_products === 2) :?>
             <div class="col-md-8 col-lg-12 col-xs-12">
         <?php endif;?>
+
                 <div class="row">
+                    <h3>Meus Pedidos</h3>
+                    <br>
+                    <br>
                     <table class="table">
                         <thead>
                             <tr>

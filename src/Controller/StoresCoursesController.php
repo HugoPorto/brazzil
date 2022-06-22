@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Datasource\ConnectionManager;
 
 /**
  * StoresCourses Controller
@@ -164,5 +165,65 @@ class StoresCoursesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function courses()
+    {
+        $this->hasPermission('store');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $connection = ConnectionManager::get('default');
+
+        $sql = 'select c.id, c.course as curso
+                from stores_courses c 
+                inner join stores_demands md 
+                inner join users u on md.users_id = u.id
+                inner join stores_items_demands d on c.id = d.stores_courses_id and md.id = d.stores_demands_id
+                where u.id =' . $this->Auth->user()['id'];
+
+        $courses_user = $connection->execute($sql)->fetchAll();
+
+        $this->set(compact('courses_user'));
+    }
+
+    public function courseView($id = null)
+    {
+        $this->hasPermission('store');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $storesCourse = $this->StoresCourses->get($id, [
+            'contain' => ['Users']
+        ]);
+
+        $this->set('storesCourse', $storesCourse);
+    }
+
+    public function videos($id = null)
+    {
+        $this->hasPermission('store');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $this->loadModel('StoresVideos');
+
+        $storesVideos = $this->StoresVideos->find('all', [
+            'conditions' =>
+                [
+                    'StoresVideos.stores_courses_id =' => $id,
+                ]
+        ]);
+
+        $this->set('storesVideos', $storesVideos);
+    }
+
+    public function certificates($id = null)
+    {
+        $this->hasPermission('store');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        return $this->redirect(['action' => 'courses']);
     }
 }
