@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -12,7 +13,11 @@ use App\Controller\AppController;
  */
 class StoresCommentsController extends AppController
 {
-
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['add']);
+    }
     /**
      * Index method
      *
@@ -20,10 +25,11 @@ class StoresCommentsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['StoresProducts', 'Users']
-        ];
-        $storesComments = $this->paginate($this->StoresComments);
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $storesComments = $this->StoresComments->find('all', ['contain' => ['StoresProducts', 'Users']]);
 
         $this->set(compact('storesComments'));
     }
@@ -37,6 +43,10 @@ class StoresCommentsController extends AppController
      */
     public function view($id = null)
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
         $storesComment = $this->StoresComments->get($id, [
             'contain' => ['StoresProducts', 'Users']
         ]);
@@ -49,7 +59,7 @@ class StoresCommentsController extends AppController
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
+    public function add($idProduct = null)
     {
         $storesComment = $this->StoresComments->newEntity();
         if ($this->request->is('post')) {
@@ -57,9 +67,8 @@ class StoresCommentsController extends AppController
             if ($this->StoresComments->save($storesComment)) {
                 $this->Flash->success(__('The stores comment has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller' => 'homes', 'action' => 'productView', $idProduct]);
             }
-            $this->Flash->error(__('The stores comment could not be saved. Please, try again.'));
         }
         $storesProducts = $this->StoresComments->StoresProducts->find('list', ['limit' => 200]);
         $users = $this->StoresComments->Users->find('list', ['limit' => 200]);

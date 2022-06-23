@@ -17,17 +17,17 @@
                 <?php if (isset($sended)) : ?>
                     <h3>Mensagem enviando com sucesso.</h3>
                 <?php endif; ?>
-                <form method="post" action="<?= $this->request->base ?>/homes/addMessage">
-                    <h2>Mensagem</h2>
+                <form method="post" action="<?= $this->request->base ?>/storesBudgets/add">
+                    <h2>Orçamento</h2>
                     <div class="row">
                         <div class="form-group col-lg-6">
                           <input type="text" class="form-control" name="name" id="exampleInputName" placeholder="Nome*" required>
                         </div>
                         <div class="form-group col-lg-6">
-                          <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="E'mail*" required>
+                          <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="E-mail*" required>
                         </div>
                         <div class="form-group col-md-12">
-                           <textarea class="form-control" id="exampleTextarea" name="message" rows="5" placeholder="Mensagem*" required></textarea>
+                           <textarea class="form-control" id="exampleTextarea" name="budget" rows="5" placeholder="Orçamento*" required></textarea>
                         </div>
                         <input
                             type="hidden"

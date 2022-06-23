@@ -222,6 +222,8 @@ class HomesController extends AppController
 
         $this->loadModel('StoresImagesProducts');
 
+        $this->loadModel('StoresComments');
+
         $imagesExtrasProduct = $this->StoresImagesProducts->find('all', [
             'conditions' => [
                 'StoresImagesProducts.stores_products_id =' => $id,
@@ -303,6 +305,8 @@ class HomesController extends AppController
             $idUser = $this->Auth->user() ? $this->Auth->user()['id'] : null;
         }
 
+        $storesComments = $this->StoresComments->find('all')->limit(7);
+
         $this->set(compact(
             [
                 'storesProduct',
@@ -310,6 +314,7 @@ class HomesController extends AppController
                 'storesColors',
                 'imagesExtrasProduct',
                 'relationshipProducts',
+                'storesComments',
             ]
         ));
     }

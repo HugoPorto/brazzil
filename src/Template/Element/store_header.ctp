@@ -1,6 +1,6 @@
 <header id="pageTop" class="header">
     <nav class="navbar navbar-expand-md main-nav">
-        <div class=" container">
+        <div class=" container-fluid">
             <button
                 class="navbar-toggler  navbar-toggler-right"
                 type="button"
@@ -25,8 +25,9 @@
                         <a class="nav-link" href="<?php echo $this->request->base; ?>/homes/store">Todos os Produtos</a>
                     </li>
 
-                    <?php foreach ($storesCategories as $key => $category) : ?>
-                        <?php if ($category->status_menu) :?>
+                    <?php if ($configs->show_type_products !== 2) :?>
+                        <?php foreach ($storesCategories as $key => $category) : ?>
+                            <?php if ($category->status_menu) :?>
                             <li class=" dropdown megaDropMenu nav-item ">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
                                 aria-haspopup="true" aria-expanded="false" 
@@ -59,13 +60,17 @@
                                 <?php endforeach; ?>
                                 </ul>
                             </li>
-                        <?php endif;?>
-                    <?php endforeach; ?>
+                            <?php endif;?>
+                        <?php endforeach; ?>
+                    <?php endif;?>
                 </ul>
 
                 <ul class="navbar-nav">
                     <li class="nav-item ">
                         <a class="nav-link" href="<?php echo $this->request->base; ?>/homes/storeContact">Contato</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="<?php echo $this->request->base; ?>/storesBudgets/add">Orçamento</a>
                     </li>
 
                     <li class="nav-item">

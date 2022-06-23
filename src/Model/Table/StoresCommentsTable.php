@@ -46,8 +46,7 @@ class StoresCommentsTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Users', [
-            'foreignKey' => 'users_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'users_id'
         ]);
     }
 
@@ -68,6 +67,11 @@ class StoresCommentsTable extends Table
             ->maxLength('comment', 4294967295)
             ->requirePresence('comment', 'create')
             ->notEmpty('comment');
+
+        $validator
+            ->scalar('name_user')
+            ->maxLength('name_user', 45)
+            ->allowEmpty('name_user');
 
         return $validator;
     }

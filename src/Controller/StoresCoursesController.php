@@ -218,7 +218,7 @@ class StoresCoursesController extends AppController
         $this->set('storesVideos', $storesVideos);
     }
 
-    public function certificates($id = null)
+    public function certificates($idUser = null)
     {
         $this->hasPermission('store');
 

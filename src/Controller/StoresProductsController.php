@@ -393,6 +393,7 @@ class StoresProductsController extends AppController
     public function inactiveProduct($id = null)
     {
         $this->hasPermission('storeAdmin');
+
         $storesProduct = $this->StoresProducts->get($id);
 
         $storesProduct->active = false;

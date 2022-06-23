@@ -4,20 +4,16 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * StoresComment Entity
+ * StoresBudget Entity
  *
  * @property int $id
- * @property string $comment
- * @property int $stores_products_id
- * @property int $users_id
+ * @property string $name
+ * @property string $email
+ * @property string $budget
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property string $name_user
- *
- * @property \App\Model\Entity\StoresProduct $stores_product
- * @property \App\Model\Entity\User $user
  */
-class StoresComment extends Entity
+class StoresBudget extends Entity
 {
 
     /**
@@ -30,13 +26,10 @@ class StoresComment extends Entity
      * @var array
      */
     protected $_accessible = [
-        'comment' => true,
-        'stores_products_id' => true,
-        'users_id' => true,
+        'name' => true,
+        'email' => true,
+        'budget' => true,
         'created' => true,
-        'modified' => true,
-        'name_user' => true,
-        'stores_product' => true,
-        'user' => true
+        'modified' => true
     ];
 }
