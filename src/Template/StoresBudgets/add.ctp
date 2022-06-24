@@ -14,9 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-lg-7 mb-4 mb-md-0">
-                <?php if (isset($sended)) : ?>
-                    <h3>Mensagem enviando com sucesso.</h3>
-                <?php endif; ?>
+                <h3><?= $this->Flash->render() ?> </h3>
                 <form method="post" action="<?= $this->request->base ?>/storesBudgets/add">
                     <h2>Orçamento</h2>
                     <div class="row">
@@ -35,7 +33,7 @@
                             name="_csrfToken"
                             value="<?= $this->request->getParam('_csrfToken'); ?>"/>
                     </div>
-                  <button type="submit" class="btn btn-default btn-primary">Enviar</button>
+                    <button type="submit" class="btn btn-default btn-primary">Enviar</button>
                 </form>
             </div>
         </div>

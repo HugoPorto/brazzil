@@ -65,8 +65,6 @@ class StoresCommentsController extends AppController
         if ($this->request->is('post')) {
             $storesComment = $this->StoresComments->patchEntity($storesComment, $this->request->getData());
             if ($this->StoresComments->save($storesComment)) {
-                $this->Flash->success(__('The stores comment has been saved.'));
-
                 return $this->redirect(['controller' => 'homes', 'action' => 'productView', $idProduct]);
             }
         }

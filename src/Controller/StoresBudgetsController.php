@@ -66,7 +66,7 @@ class StoresBudgetsController extends AppController
         if ($this->request->is('post')) {
             $storesBudget = $this->StoresBudgets->patchEntity($storesBudget, $this->request->getData());
             if ($this->StoresBudgets->save($storesBudget)) {
-                $this->Flash->success(__('The stores budget has been saved.'));
+                $this->Flash->success(__('Solicitação de orçamento recebido..'));
 
                 return $this->redirect(['action' => 'add']);
             }
