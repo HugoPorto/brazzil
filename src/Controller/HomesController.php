@@ -24,6 +24,8 @@ class HomesController extends AppController
 
     public function site()
     {
+        $this->viewBuilder()->setLayout('site');
+
         $this->loadModel('StoresSliders');
 
         $this->loadModel('StoresPartners');
@@ -87,6 +89,8 @@ class HomesController extends AppController
 
     public function store($idCategory = null)
     {
+        $this->viewBuilder()->setLayout('site');
+
         if ($idCategory) {
             $this->loadModel('StoresCategories');
             $this->loadModel('StoresProducts');
@@ -216,6 +220,8 @@ class HomesController extends AppController
 
     public function productView($id = null, $colorId = null, $codeRandomProduct = null)
     {
+        $this->viewBuilder()->setLayout('site');
+
         $this->loadModel('StoresProducts');
 
         $this->loadModel('StoresColors');
@@ -535,6 +541,8 @@ class HomesController extends AppController
 
     public function search($idCategory = null, $idSubCategory = null, $idFinalCategory = null)
     {
+        $this->viewBuilder()->setLayout('site');
+
         $this->loadModel('StoresCategories');
         $this->loadModel('StoresProducts');
 

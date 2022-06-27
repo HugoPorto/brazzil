@@ -3,6 +3,9 @@
         <div class="margin">
             <div class="form-group">
                 <div class="btn-group">
+                    <?= $this->Html->link(__('Ver Todos os Produtos'), ['action' => 'index'], ['class' => 'btn btn-info']) ?>
+                </div>
+                <div class="btn-group">
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $storesProduct->id], ['class' => 'btn btn-info']) ?>
                 </div>
                 <div class="btn-group">
@@ -36,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <table class="vertical-table table table-bordered" style="margin-top: 20px">
+        <table class="vertical-table table table-striped" style="margin-top: 20px">
             <tr>
                 <th scope="row"><?= __('Código de Barras') ?></th>
                 <td><?= $storesProduct->barcode ?></td>

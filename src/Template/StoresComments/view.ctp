@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <div class="margin">
-            <table class="vertical-table table table-bordered" style="margin-top: 20px">
+            <table class="vertical-table table table-striped" style="margin-top: 20px">
                 <tr>
                     <th scope="row"><?= __('Produto') ?></th>
                 <td><?= $storesComment->has('stores_product') ? $this->Html->link($storesComment->stores_product->product, ['controller' => 'StoresProducts', 'action' => 'view', $storesComment->stores_product->id]) : '' ?></td>

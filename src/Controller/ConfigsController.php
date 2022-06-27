@@ -99,7 +99,8 @@ class ConfigsController extends AppController
             }
 
             if (array_key_exists("fisic", $data) && array_key_exists("digital", $data)) {
-                $data['show_type_products'] = '3';
+                // $data['show_type_products'] = '3';
+                return $this->redirect(['controller' => 'Pages', 'action' => 'error', base64_encode('Essa configuração ainda não está disponível.')]);
             } elseif (array_key_exists("fisic", $data) && !array_key_exists("digital", $data)) {
                 $data['show_type_products'] = '1';
             } elseif (!array_key_exists("fisic", $data) && !array_key_exists("digital", $data)) {
@@ -114,7 +115,7 @@ class ConfigsController extends AppController
                 return $this->redirect(['action' => 'view']);
             }
 
-            return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'Erro ao editar configuração.']);
+            return $this->redirect(['controller' => 'Pages', 'action' => 'error', base64_encode('Erro ao editar configuração.')]);
         }
 
         $this->set(compact('config', 'users'));

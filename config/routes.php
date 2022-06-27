@@ -15,6 +15,8 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/stripe', ['controller' => 'Stripes', 'action' => 'stripe']);
     $routes->connect('/payment', ['controller' => 'Stripes', 'action' => 'payment']);
     $routes->connect('/error', ['controller' => 'Pages', 'action' => 'error']);
+    $routes->connect('/configs', ['controller' => 'Configs', 'action' => 'view']);
+    $routes->connect('/configs/add', ['controller' => 'Configs', 'action' => 'view']);
 
     $routes->fallbacks(DashedRoute::class);
 });

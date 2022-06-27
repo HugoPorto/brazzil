@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="margin">
-            <table class="vertical-table table table-bordered" style="margin-top: 20px">
+            <table class="vertical-table table table-striped" style="margin-top: 20px">
                 <tr>
                     <th scope="row"><?= __('Código') ?></th>
                     <td><?= $this->Number->format($storesCourse->id) ?></td>

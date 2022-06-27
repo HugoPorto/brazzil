@@ -1,5 +1,3 @@
-<section class="product_section bg-sand">
-    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-8 offset-sm-2 col-xs-12 text-center">
                 <div class="sectionTitle">
@@ -54,5 +52,4 @@
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
-    </div>
-</section>
+

@@ -1,5 +1,16 @@
 <?php // echo $this->element('store_charts'); ?>
 
+<?php if (!empty($storesDemands->toArray())) :?>
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-ban"></i> Atenção!</h5>
+            Você possui pedidos que precisam ser processados. Clique <a href="<?= $this->request->base . '/stores-demands'?>">aqui</a> para verificar!
+        </div>
+    </div>
+</div>
+<?php endif;?>
 <div class="row">
     <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box mb-3 bg-success" 

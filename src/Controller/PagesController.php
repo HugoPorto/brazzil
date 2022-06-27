@@ -22,15 +22,24 @@ class PagesController extends AppController
 
         $this->loadModel('Users');
         $this->loadModel('StoresSliders');
+        $this->loadModel('StoresDemands');
 
         $users = $this->Users->find();
+
         $users->innerJoinWith('Roles', function ($q) {
             return $q->where(['Roles.role' => 'store']);
         });
 
+        $storesDemands = $this->StoresDemands->find('all', [
+            'conditions' => [
+                'StoresDemands.status =' => false
+            ]
+            ]);
+
         $this->set(compact(
             [
-                'users'
+                'users',
+                'storesDemands'
             ]
         ));
     }
@@ -41,7 +50,7 @@ class PagesController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $this->set('message', $message);
+        $this->set('message', base64_decode($message));
     }
 
     public function editPromotionBanner()

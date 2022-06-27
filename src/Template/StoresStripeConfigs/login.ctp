@@ -9,7 +9,7 @@
             <fieldset style="margin-bottom: 10px;">
                 <legend><?= __('Login Super Usuário') ?></legend>
                 <label>Superpass*</label>
-                <?php echo $this->Form->control('superpass', ['label' => false, 'required' => true , 'class' => 'form-control']);?>
+                <?php echo $this->Form->control('superpass', ['type' => 'password', 'label' => false, 'required' => true , 'class' => 'form-control']);?>
                 <?php echo $this->Form->control('users_id', ['type' => 'hidden', 'value' => $idUser, 'class' => 'form-control']); ?>
             </fieldset>
             <?= $this->Form->button(__('Logar'), ['class' => 'btn btn-info']) ?>

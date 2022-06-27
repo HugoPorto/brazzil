@@ -10,17 +10,20 @@
         <div class="margin">
             <div class="form-group">
                 <div class="btn-group">
-                    <?= $this->Html->link(__('Editar'), ['action' => 'edit', $config->id], ['class' => 'btn btn-info']) ?>
+                    <?= $this->Html->link(__('Editar Todas as Configurações'), ['action' => 'edit', $config->id], ['class' => 'btn btn-info']) ?>
                 </div>
             </div>
-            <table class="vertical-table table table-bordered" style="margin-top: 20px">
-                <tr>
-                    <th scope="row"><?= __('Código') ?></th>
-                    <td><?= $this->Number->format($config->id) ?></td>
-                </tr>
+            <table class="vertical-table table table-striped" style="margin-top: 20px">
                 <tr>
                     <th scope="row"><?= __('Status Banner Promocional') ?></th>
-                    <td><?= $config->status_banner_main ? __('Ativo') : __('Inativo'); ?></td>
+                    <td>
+                        <?= $config->status_banner_main ? __('Ativo') : __('Inativo'); ?>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                        <?= $this->Html->link(__('Alterar'), ['action' => 'index'], ['class' => 'btn btn-info']) ?>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row"><?= __('Status Banner Promocional') ?></th>
@@ -38,6 +41,11 @@
                                 break;
                         }
                         ?>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <?= $this->Html->link(__('Alterar'), ['action' => 'index'], ['class' => 'btn btn-info']) ?>
+                        </div>
                     </td>
                 </tr>
             </table>

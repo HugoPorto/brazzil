@@ -163,7 +163,6 @@
         <div class="row">
             <div class="col-sm-8 offset-sm-2 col-xs-12 text-center">
                 <div class="sectionTitle">
-                    <!-- <span class="h4">Veja Também</span> -->
                     <h2>Comentários de Clientes</h2>
                 </div>
                 <div class="seperator">
@@ -198,7 +197,6 @@
         <div class="row">
             <div class="col-sm-8 offset-sm-2 col-xs-12 text-center">
                 <div class="sectionTitle">
-                    <!-- <span class="h4">Veja Também</span> -->
                     <h2>Comentários Recentes</h2>
                 </div>
                 <div class="seperator">
