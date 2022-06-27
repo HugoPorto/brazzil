@@ -86,7 +86,3 @@ define('CORE_PATH', CAKE_CORE_INCLUDE_PATH . DS);
 define('CAKE', CORE_PATH . 'src' . DS);
 
 defined("VENDOR_PATH") || define('VENDOR_PATH', ROOT . DS . 'vendor');
-defined("STRIPE_KEY") || define('STRIPE_KEY', "pk_test_51KYDUrICdJVfMfop4CdJJDIkjOx3Phw1lB8Q4HZGXqT6RkWwSZalDdCtzCX6tL9agSxsmhpRwYH8AWndI5SyW9dF00y8o9e2nG");
-// defined("STRIPE_KEY") || define('STRIPE_KEY', "pk_test_51Km55fKfQMrqSpCtv8G7oVOCc1wctZdHyz7VWDA7uy55iDICdmkcDgIrdOBXtfyTmH5VLaZLJS5LV6pVKkanGltD00Cpa14bxR");
-defined("STRIPE_SECRET") || define('STRIPE_SECRET', "sk_test_51KYDUrICdJVfMfop6edyeeKv2a6yAfMhOIoQ75I1alUluEsjor5mzZbpnz9yJ0s6d6oqlooanlunY7uni2jrCxyx007AA6Ns1P");
-// defined("STRIPE_SECRET") || define('STRIPE_SECRET', "sk_test_51Km55fKfQMrqSpCt89wGQgBfSwiSs5wimKnO0aMK0dWqn4VvfanLo62GA2a8XW6aE1ElN5URmFS3QMzxshhrue0h00qEKPaVEe");

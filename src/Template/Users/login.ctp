@@ -1,13 +1,3 @@
-<?php $this->layout = false; ?>
-
-<?php echo $this->element('store_head'); ?>
-
-<body id="body" class="">
-
-<?php echo $this->element('store_header'); ?>
-
-<div class="main-wrapper home_transparent-wrapper @@active  signup">
-
 <div class="container ">
     <div class="row register-form">
         <div class="col-md-6 mb-5 mb-md-0">
@@ -61,14 +51,20 @@
                     <input type="hidden" name="roles_id" value="11">
                     <div class="form-check col-md-12">
                         <input id="checkbox-3" class="checkbox-custom form-check-input" name="checkbox-3" type="checkbox">
-                        <label for="checkbox-3" class="checkbox-custom-label form-check-label ">Eu concordo com os <a href="" class="text-info">termons e condições</a> </label>
+                        <label for="checkbox-3" class="checkbox-custom-label form-check-label ">Eu concordo com os <a class="text-info" data-toggle="modal" data-target="#exampleModalLong2">termons e condições</a> </label>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-default btn-info btn-block mt-4">Cadastrar</button>
             </form>
         </div>
     </div>
+
+
+    <?php echo $this->element('store_modal_terms'); ?>
+
 </div>
+
+
 
 <style media="screen">
     .register-form {
@@ -82,7 +78,3 @@
         }
     }
 </style>
-
-<?php echo $this->element('store_contact'); ?>
-
-<?php echo $this->element('store_footer'); ?>
