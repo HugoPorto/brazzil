@@ -67,7 +67,7 @@ class StoresCartsController extends AppController
                         [
                             'controller' => 'homes',
                             'action' => 'error',
-                            'Erro ao adicionar no carrinho.'
+                            base64_encode('Erro ao adicionar no carrinho.')
                         ]
                     );
                 } else {
@@ -84,7 +84,7 @@ class StoresCartsController extends AppController
                     [
                         'controller' => 'homes',
                         'action' => 'error',
-                        'Erro ao adicionar no carrinho.'
+                        base64_encode('Erro ao adicionar no carrinho.')
                     ]
                 );
             }

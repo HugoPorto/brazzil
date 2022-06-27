@@ -35,6 +35,24 @@
             "url": "<?= $this->request->base ?>/datatables/Portuguese-Brasil.json"
         },
     });
+    $("#users").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false, "order": [[ 0, "desc" ]],
+      "language": {
+            "url": "<?= $this->request->base ?>/datatables/Portuguese-Brasil.json"
+        },
+    });
+    $("#users_root").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false, "order": [[ 0, "desc" ]],
+      "language": {
+            "url": "<?= $this->request->base ?>/datatables/Portuguese-Brasil.json"
+        },
+    });
+    $("#users_admin").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false, "order": [[ 0, "desc" ]],
+      "language": {
+            "url": "<?= $this->request->base ?>/datatables/Portuguese-Brasil.json"
+        },
+    });
   });
 </script>
 

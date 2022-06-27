@@ -735,6 +735,6 @@ class HomesController extends AppController
     {
         $this->hasPermission('store');
 
-        $this->set('message', $message);
+        $this->set('message', base64_decode($message));
     }
 }

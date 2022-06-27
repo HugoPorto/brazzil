@@ -116,6 +116,11 @@ class UsersController extends AppController
     public function login()
     {
         $this->viewBuilder()->setLayout('site');
+
+        $this->loadModel('StoresTerms');
+
+        $storesTerms = $this->StoresTerms->find('all')->first();
+
         if (!$this->Auth->user() && $this->request->is('post')) {
                 $user = $this->Auth->identify();
 
@@ -130,11 +135,11 @@ class UsersController extends AppController
 
                 return $this->redirect(['controller' => 'users', 'action' => 'mainmenu']);
             } else {
-                return $this->redirect(['controller' => 'users', 'action' => 'login']);
+                $this->Flash->error(__('Nome de usuário ou password inválido!'));
             }
-
-                $this->Flash->error(__('Nome de usuário ou password inválido...'));
         }
+
+        $this->set(compact('storesTerms'));
     }
 
     public function mainmenu()
@@ -165,18 +170,22 @@ class UsersController extends AppController
             $user = $this->Users->newEntity();
 
             if ($this->request->is('post')) {
-                $user = $this->Users->patchEntity($user, $this->request->getData());
+                if (!isset($this->request->getData()['terms'])) {
+                    $this->Flash->error(__('Você não aceitou os termos de uso. Você precisa aceitar para prosseguir!'));
+                } else {
+                    $user = $this->Users->patchEntity($user, $this->request->getData());
 
-                if ($this->Users->save($user)) {
-                    $this->getMailer('User')->send('welcome', [$user]);
+                    if ($this->Users->save($user)) {
+                        $this->getMailer('User')->send('welcome', [$user]);
 
-                    $role = $this->Users->Roles->get($this->request->data['roles_id']);
+                        $role = $this->Users->Roles->get($this->request->getData()['roles_id']);
 
-                    if ($role->role === 'store') {
-                        return $this->redirect(['controller' => 'users', 'action' => 'login']);
+                        if ($role->role === 'store') {
+                            $this->Flash->success(__('Usuário cadastrado com sucesso!'));
+                        } else {
+                            return $this->redirect(['action' => 'index']);
+                        }
                     }
-
-                    return $this->redirect(['action' => 'index']);
                 }
             }
 

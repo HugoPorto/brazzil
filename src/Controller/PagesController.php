@@ -30,6 +30,18 @@ class PagesController extends AppController
             return $q->where(['Roles.role' => 'store']);
         });
 
+        $usersRoot = $this->Users->find();
+
+        $usersRoot->innerJoinWith('Roles', function ($q) {
+            return $q->where(['Roles.role' => 'root']);
+        });
+
+        $usersAdmin = $this->Users->find();
+
+        $usersAdmin->innerJoinWith('Roles', function ($q) {
+            return $q->where(['Roles.role' => 'storeAdmin']);
+        });
+
         $storesDemands = $this->StoresDemands->find('all', [
             'conditions' => [
                 'StoresDemands.status =' => false
@@ -39,6 +51,8 @@ class PagesController extends AppController
         $this->set(compact(
             [
                 'users',
+                'usersRoot',
+                'usersAdmin',
                 'storesDemands'
             ]
         ));

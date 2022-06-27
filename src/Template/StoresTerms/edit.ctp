@@ -4,29 +4,36 @@
  * @var \App\Model\Entity\StoresTerm $storesTerm
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $storesTerm->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $storesTerm->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Stores Terms'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="storesTerms form large-9 medium-8 columns content">
-    <?= $this->Form->create($storesTerm) ?>
-    <fieldset>
-        <legend><?= __('Edit Stores Term') ?></legend>
-        <?php
-            echo $this->Form->control('terms');
-            echo $this->Form->control('users_id', ['options' => $users]);
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
+<div class="col-md-12" style="padding: 0px">
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Editar Termos</h3>
+        </div>
+
+        <?= $this->Form->create($storesTerm) ?>
+
+        <div class="card-body">
+
+            <div class="form-group">
+
+                <label for="terms">Termos</label>
+
+                <?php
+                    echo $this->Form->control('terms', [
+                        'label' => false,
+                        'class' => 'form-control',
+                        'id' => 'terms'
+                    ]);
+
+                    ?>
+
+            </div>
+
+
+        <?= $this->Form->button(__('Editar'), ['class' => 'btn btn-info']) ?>
+
+        <?= $this->Form->end() ?>
+
+        </div>
+    </div>
 </div>
