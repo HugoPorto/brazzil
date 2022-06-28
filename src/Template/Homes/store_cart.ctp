@@ -19,7 +19,8 @@
         </div>
     </div>
 <section class="single_item" style="padding-top: 50px !important;">
-    <div class="container">  
+    <div class="container">
+        <h3 style="color: red; text-align: center; margin-bottom: 20px"><?= $this->Flash->render() ?></h3>
         <div class="row order-container">
             <div class="col-lg-6">
                 <h3 class="bg-sand">Selecionar Endereço e Calcular Frete</h3>

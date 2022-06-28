@@ -534,7 +534,7 @@ class HomesController extends AppController
         $calculateShipping = $this->calculateShippingMain($cep);
 
         if ($calculateShipping === 'Error') {
-            $this->Flash->error(__('Erro ao calcular frete.'));
+            $this->Flash->error("Erro ao calcular frete.");
             $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
         }
     }

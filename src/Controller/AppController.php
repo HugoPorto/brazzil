@@ -8,6 +8,8 @@ use Cake\I18n\I18n;
 
 class AppController extends Controller
 {
+    private $urlPostOffice = 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?';
+
     public function initialize()
     {
         I18n::locale('pt_BR');
@@ -177,15 +179,7 @@ class AppController extends Controller
 
         $this->loadModel('StoresCarts');
 
-        $storesCarts = $this->StoresCarts->find(
-            'all',
-            [
-            'contain' => ['StoresProducts'],
-            'conditions' => [
-                'StoresCarts.users_id =' => $this->Auth->user()['id']
-            ]
-            ]
-        );
+        $storesCarts = $this->getCart();
 
         $portage = 0;
         $prazoEntrega = 0;
@@ -225,7 +219,7 @@ class AppController extends Controller
 
             $query = http_build_query($parametros);
 
-            $url_api = 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?' . $query;
+            $url_api = $this->urlPostOffice . $query;
 
             $curl = curl_init();
 
@@ -247,11 +241,13 @@ class AppController extends Controller
 
             if (!$result) {
                 $calculateShippingError = 'Error';
+                $this->log('Erro ao calcular frete.', 'debug');
                 return $calculateShippingError;
             }
 
             if (strlen($result->MsgErro)) {
                 $calculateShippingError = 'Error';
+                $this->log($result->MsgErro, 'debug');
                 return $calculateShippingError;
             }
 
@@ -297,5 +293,20 @@ class AppController extends Controller
     protected function clearSession()
     {
         $_SESSION['superpass'] = false;
+    }
+
+    private function getCart()
+    {
+        $this->loadModel('StoresCarts');
+
+        return $this->StoresCarts->find(
+            'all',
+            [
+            'contain' => ['StoresProducts'],
+            'conditions' => [
+                'StoresCarts.users_id =' => $this->Auth->user()['id']
+            ]
+            ]
+        );
     }
 }
