@@ -67,7 +67,6 @@
                 <?php foreach ($storesPartners as $storesPartner) : ?>
                     <div class="brand_single">
                         <div class="brand_img">
-                            <img src="assets/img/home/brands/brand1.png" alt="">
                             <img style="width: 174px;" <?= $storesPartner->photo ?>/>
                         </div>
                     </div>

@@ -21,7 +21,7 @@
             '/Store/assets/plugins/images-loaded/js/imagesloaded.pkgd.min.js',
             '/Store/assets/plugins/no-ui-slider/nouislider.min.js',
             '/Store/assets/js/store.js',
-            '/Store/assets/js/store2.js',
+            '/Store/assets/js/preloader.js',
         ]
     );
 
@@ -30,5 +30,4 @@
     }
 
     ?>
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU79W1lu5f6PIiuMqNfT1C6M0e_lq1ECY"></script>
