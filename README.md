@@ -7,7 +7,7 @@ Com o mínimo de configuração possível, e já trazendo integração com um me
 With as little configuration as possible, and already bringing integration with a pre-configured and functional means of payment.
 
 ## Versão estável (stable release)
-### Download da [última versão](https://brazzilcommerce.com/downloads/brazzil_commerce.zip) (last version).
+### Download da [última versão](https://brazzilcommerce.com/downloads/brazzil.zip) (last version).
 
 ## Browsers suporte (browsers support)
 
