@@ -632,7 +632,7 @@ class HomesController extends AppController
 
     public function editWhatsapp($number = null)
     {
-        $this->hasPermission('store');
+        $this->hasPermission('storeAdmin');
 
         $home = $this->Homes->find('all')->first();
 
@@ -655,7 +655,7 @@ class HomesController extends AppController
 
     public function editFacebook($link = null)
     {
-        $this->hasPermission('store');
+        $this->hasPermission('storeAdmin');
 
         $home = $this->Homes->find('all')->first();
 
@@ -678,7 +678,7 @@ class HomesController extends AppController
 
     public function editInstagram($link = null)
     {
-        $this->hasPermission('store');
+        $this->hasPermission('storeAdmin');
 
         $home = $this->Homes->find('all')->first();
 
