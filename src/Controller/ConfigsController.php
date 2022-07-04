@@ -3,22 +3,9 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-use Seld\JsonLint\Undefined;
 
-/**
- * Configs Controller
- *
- * @property \App\Model\Table\ConfigsTable $Configs
- *
- * @method \App\Model\Entity\Config[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
 class ConfigsController extends AppController
 {
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|void
-     */
     public function index()
     {
         $this->paginate = [
@@ -29,13 +16,6 @@ class ConfigsController extends AppController
         $this->set(compact('configs'));
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Config id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function view($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -51,11 +31,6 @@ class ConfigsController extends AppController
         $this->set('config', $config->toArray()[0]);
     }
 
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
     public function add()
     {
         $config = $this->Configs->newEntity();
@@ -72,13 +47,6 @@ class ConfigsController extends AppController
         $this->set(compact('config', 'users'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Config id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
     public function edit($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -119,5 +87,51 @@ class ConfigsController extends AppController
         }
 
         $this->set(compact('config', 'users'));
+    }
+
+    public function updateStatusBannerPromocional($id = null, $status_banner = null)
+    {
+        $this->hasPermission('storeAdmin');
+
+        $id = base64_decode($id);
+        $status_banner = base64_decode($status_banner);
+        $config = $this->Configs->get($id);
+
+        if ($this->request->is(['get'])) {
+            $data = [];
+
+            $data['status_banner_main'] = $status_banner === '1' ? '0' : '1';
+
+            $config = $this->Configs->patchEntity($config, $data);
+
+            if ($this->Configs->save($config)) {
+                return $this->redirect(['action' => 'view']);
+            }
+
+            return $this->redirect(['controller' => 'Pages', 'action' => 'error', base64_encode('Erro ao editar configuração.')]);
+        }
+    }
+
+    public function updateShowProducts($id = null, $show_type_products = null)
+    {
+        $this->hasPermission('storeAdmin');
+
+        $id = base64_decode($id);
+        $show_type_products = base64_decode($show_type_products);
+        $config = $this->Configs->get($id);
+
+        if ($this->request->is(['get'])) {
+            $data = [];
+
+            $data['show_type_products'] = $show_type_products === '1' ? '2' : '1';
+
+            $config = $this->Configs->patchEntity($config, $data);
+
+            if ($this->Configs->save($config)) {
+                return $this->redirect(['action' => 'view']);
+            }
+
+            return $this->redirect(['controller' => 'Pages', 'action' => 'error', base64_encode('Erro ao editar configuração.')]);
+        }
     }
 }

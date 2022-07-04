@@ -4,6 +4,9 @@
             <div class="btn-group">
                 <?= $this->Html->link(__('Adicionar'), ['action' => 'add'], ['class' => 'btn btn-info']) ?>
             </div>
+            <div class="btn-group">
+                <?= $this->Html->link(__('Analisar Produtos'), ['action' => 'verifyProducts'], ['class' => 'btn btn-success']) ?>
+            </div>
         </div>
         <br>
         <table id="general" class="table table-bordered" style="font-size: 13px">

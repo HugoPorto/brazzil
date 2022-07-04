@@ -1,10 +1,3 @@
-<?php
-
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Config $config
- */
-?>
 <div class="card">
     <div class="card-body">
         <div class="margin">
@@ -13,7 +6,7 @@
                     <?= $this->Html->link(__('Editar Todas as Configurações'), ['action' => 'edit', $config->id], ['class' => 'btn btn-info']) ?>
                 </div>
             </div>
-            <table class="vertical-table table table-striped" style="margin-top: 20px">
+            <table class="vertical-table table table-striped table_view">
                 <tr>
                     <th scope="row"><?= __('Status Banner Promocional') ?></th>
                     <td>
@@ -21,12 +14,16 @@
                     </td>
                     <td>
                         <div class="btn-group">
-                        <?= $this->Html->link(__('Alterar'), ['action' => 'index'], ['class' => 'btn btn-info']) ?>
+                        <?= $this->Html->link(
+                            __('Alterar'),
+                            ['action' => 'updateStatusBannerPromocional', base64_encode($config->id), base64_encode($config->status_banner_main)],
+                            ['class' => 'btn btn-warning']
+                        ) ?>
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><?= __('Status Banner Promocional') ?></th>
+                    <th scope="row"><?= __('Exibição de Produtos') ?></th>
                     <td>
                         <?php
                         switch ($config->show_type_products) {
@@ -44,7 +41,11 @@
                     </td>
                     <td>
                         <div class="btn-group">
-                            <?= $this->Html->link(__('Alterar'), ['action' => 'index'], ['class' => 'btn btn-info']) ?>
+                            <?= $this->Html->link(
+                                __('Alterar'),
+                                ['action' => 'updateShowProducts', base64_encode($config->id), base64_encode($config->show_type_products)],
+                                ['class' => 'btn btn-warning']
+                            ) ?>
                         </div>
                     </td>
                 </tr>
