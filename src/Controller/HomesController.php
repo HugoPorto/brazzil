@@ -14,6 +14,7 @@ class HomesController extends AppController
     {
         parent::initialize();
         $this->Auth->allow(['site']);
+        $this->Auth->allow(['profile']);
         $this->Auth->allow(['store']);
         $this->Auth->allow(['productView']);
         $this->Auth->allow(['storeCart']);
@@ -736,5 +737,14 @@ class HomesController extends AppController
         $this->hasPermission('store');
 
         $this->set('message', base64_decode($message));
+    }
+
+    public function profile()
+    {
+        $this->viewBuilder()->setLayout('site');
+
+        $this->hasPermission('store');
+
+        $this->loadModel('Users');
     }
 }

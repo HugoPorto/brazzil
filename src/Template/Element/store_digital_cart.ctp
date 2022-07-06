@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="cart_img">
-                        <img width="114px" height="114px" <?= $storesCart->stores_course->photo ?> alt="cart">
+                        <img width="114px" <?= $storesCart->stores_course->photo ?> alt="cart">
                     </div>
                     <div class="cart_product-title">
                         <a href="store-single-product.html"><h5><?= $storesCart->stores_course->course ?></h5></a>

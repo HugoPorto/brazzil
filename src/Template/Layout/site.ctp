@@ -7,10 +7,8 @@
 <?php echo $this->element('store_header'); ?>
 
 <div class="main-wrapper home_transparent-wrapper @@active  home-beauty">
-    <!-- início do preloader -->
  <div id="preloader">
     <div class="inner">
-       <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
        <div class="bolas">
           <div></div>
           <div></div>
