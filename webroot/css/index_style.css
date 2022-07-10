@@ -44,5 +44,13 @@ select {
 }
 
 .table_view {
-    margin-top: 20px
+    margin-top: 20px;
+}
+
+.form-add-window {
+    padding: 0px;
+}
+
+.form-fieldset-window {
+    margin-bottom: 10px;
 }

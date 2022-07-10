@@ -5,7 +5,7 @@
  * @var \App\Model\Entity\StoresCourse $storesCourse
  */
 ?>
-<div class="col-md-6" style="padding: 0px">
+<div class="col-md-6 form-add-window">
     <div class="card card-info">
         <div class="card-header">
             <h3 class="card-title">Novo Curso</h3>

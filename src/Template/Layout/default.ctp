@@ -20,7 +20,7 @@
     <nav class="top-bar expanded" data-topbar role="navigation" style="background-color: black">
         <ul class="title-area large-3 medium-4 columns" style="background-color: black">
             <li class="name">
-                <h1 style="color: white">OHNIK</h1>
+                <h1 style="color: white">Brazzil Commerce</h1>
             </li>
         </ul>
         <div class="top-bar-section">

@@ -15,7 +15,7 @@ class StoresItemsDemandsController extends AppController
         $loginMenu = $this->loginMenuLoad();
 
         $this->paginate = [
-        'contain' => ['StoresDemands', 'StoresProducts']
+        'contain' => ['StoresDemands', 'StoresProducts', 'StoresCourses']
         ];
         $storesItemsDemands = $this->paginate($this->StoresItemsDemands);
 
@@ -61,6 +61,9 @@ class StoresItemsDemandsController extends AppController
         ])->contain([
         'StoresProducts' => function ($q) {
             return $q->select(['id', 'product']);
+        },
+        'StoresCourses' => function ($q) {
+            return $q->select(['id', 'course']);
         },
         'StoresDemands' => function ($q) {
             return $q->select(['id']);

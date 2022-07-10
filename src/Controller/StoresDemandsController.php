@@ -52,25 +52,6 @@ class StoresDemandsController extends AppController
         $this->set(compact('storesDemand', 'users'));
     }
 
-    // public function edit($id = null)
-    // {
-    //     $storesDemand = $this->StoresDemands->get($id, [
-    //         'contain' => []
-    //     ]);
-
-    //     if ($this->request->is(['patch', 'post', 'put'])) {
-    //         $storesDemand = $this->StoresDemands->patchEntity($storesDemand, $this->request->getData());
-    //         if ($this->StoresDemands->save($storesDemand)) {
-    //             $this->Flash->success(__('The stores demand has been saved.'));
-
-    //             return $this->redirect(['action' => 'index']);
-    //         }
-    //         $this->Flash->error(__('The stores demand could not be saved. Please, try again.'));
-    //     }
-    //     $users = $this->StoresDemands->Users->find('list', ['limit' => 200]);
-    //     $this->set(compact('storesDemand', 'users'));
-    // }
-
     public function updateStatusDemand($id)
     {
         $this->autoRender = false;

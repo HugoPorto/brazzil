@@ -11,8 +11,10 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  * @property bool $status
+ * @property int $companys_id
  *
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\Company $company
  */
 class StoresDemand extends Entity
 {
@@ -31,6 +33,8 @@ class StoresDemand extends Entity
         'created' => true,
         'modified' => true,
         'status' => true,
-        'user' => true
+        'companys_id' => true,
+        'user' => true,
+        'company' => true
     ];
 }

@@ -1,7 +1,7 @@
 <div class="storesProducts form large-10 medium-8 columns content">
     <div class="col-md-6">
         <?= $this->Form->create($storesProduct) ?>
-            <fieldset style="margin-bottom: 10px;">
+            <fieldset class="form-fieldset-window">
                 <legend><?= __('Editar QrCode') ?></legend>
 
                 <label for="product">QrCode</label>

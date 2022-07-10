@@ -23,6 +23,7 @@ class PagesController extends AppController
         $this->loadModel('Users');
         $this->loadModel('StoresSliders');
         $this->loadModel('StoresDemands');
+        $this->loadModel('Companys');
 
         $users = $this->Users->find();
 
@@ -48,14 +49,21 @@ class PagesController extends AppController
             ]
             ]);
 
-        $this->set(compact(
-            [
-                'users',
-                'usersRoot',
-                'usersAdmin',
-                'storesDemands'
+        $companys = $this->Companys->find('all', [
+            'conditions' => [
+                'Companys.active =' => true
             ]
-        ));
+        ])->first();
+
+        $this->set(
+            [
+                'users' => $users,
+                'usersRoot' => $usersRoot,
+                'usersAdmin' => $usersAdmin,
+                'storesDemands' => $storesDemands,
+                'company' => $companys != null && $companys == true ? true : false
+            ]
+        );
     }
 
     public function error($message)

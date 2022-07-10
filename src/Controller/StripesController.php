@@ -222,17 +222,30 @@ class StripesController extends AppController
 
         $this->loadModel('Configs');
 
+        $this->loadModel('Companys');
+
+        $company = $this->Companys->find(
+            'all',
+            [
+            'conditions' => [
+                'Companys.active =' => true
+                ]
+            ]
+        )->first();
+
         $configs = $this->Configs->find('all')->first();
 
         if ($configs->show_type_products === 2) {
             $demand = [
                 'users_id' => $this->Auth->user()['id'],
-                'status' => 1
+                'status' => 1,
+                'companys_id' => $company->id
             ];
         } else {
             $demand = [
                 'users_id' => $this->Auth->user()['id'],
-                'status' => 0
+                'status' => 0,
+                'companys_id' => $company->id
             ];
         }
 

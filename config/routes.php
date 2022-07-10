@@ -18,6 +18,28 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/configs', ['controller' => 'Configs', 'action' => 'view']);
     $routes->connect('/configs/add', ['controller' => 'Configs', 'action' => 'view']);
 
+    /**
+     * Citys <<
+     */
+    $routes->connect('/citys', ['controller' => 'Pages', 'action' => 'index']);
+    $routes->connect('/citys/add', ['controller' => 'Pages', 'action' => 'index']);
+    $routes->connect('/citys/edit', ['controller' => 'Pages', 'action' => 'index']);
+    $routes->connect('/citys/delete', ['controller' => 'Pages', 'action' => 'index']);
+    /**
+     * Citys >>
+     */
+
+    /**
+     * Estados <<
+     */
+    $routes->connect('/states', ['controller' => 'Pages', 'action' => 'index']);
+    $routes->connect('/states/add', ['controller' => 'Pages', 'action' => 'index']);
+    $routes->connect('/states/edit', ['controller' => 'Pages', 'action' => 'index']);
+    $routes->connect('/states/delete', ['controller' => 'Pages', 'action' => 'index']);
+    /**
+     * Estados >>
+     */
+
     $routes->fallbacks(DashedRoute::class);
 });
 

@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * StoresDemands Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property \App\Model\Table\CompanysTable|\Cake\ORM\Association\BelongsTo $Companys
  *
  * @method \App\Model\Entity\StoresDemand get($primaryKey, $options = [])
  * @method \App\Model\Entity\StoresDemand newEntity($data = null, array $options = [])
@@ -44,6 +45,9 @@ class StoresDemandsTable extends Table
             'foreignKey' => 'users_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Companys', [
+            'foreignKey' => 'companys_id'
+        ]);
     }
 
     /**
@@ -76,6 +80,7 @@ class StoresDemandsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['users_id'], 'Users'));
+        $rules->add($rules->existsIn(['companys_id'], 'Companys'));
 
         return $rules;
     }

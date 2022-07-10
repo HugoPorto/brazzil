@@ -5,10 +5,11 @@
                 <tr>
                     <th>Código</th>
                     <th>Pedido</th>
-                    <th>Produto</th>
+                    <th>Produto Físico</th>
+                    <th>Produto Digital</th>
                     <th>Quantidade</th>
-                    <th>Criado</th>
-                    <th>Modificado</th>
+                    <th>Criado Em</th>
+                    <th>Última Modificação</th>
                 </tr>
             </thead>
             <tbody style="font-weight: bold">
@@ -17,6 +18,7 @@
                 <td><?= $this->Number->format($storesItemsDemand->id) ?></td>
                 <td><?= $storesItemsDemand->has('stores_demand') ? $this->Html->link($storesItemsDemand->stores_demand->id, ['controller' => 'StoresDemands', 'action' => 'view', $storesItemsDemand->stores_demand->id]) : '' ?></td>
                 <td><?= $storesItemsDemand->has('stores_product') ? $this->Html->link($storesItemsDemand->stores_product->product, ['controller' => 'StoresProducts', 'action' => 'view', $storesItemsDemand->stores_product->id]) : '' ?></td>
+                    <td><?= $storesItemsDemand->has('stores_course') ? $this->Html->link($storesItemsDemand->stores_course->course, ['controller' => 'StoresCourses', 'action' => 'view', $storesItemsDemand->stores_course->id]) : '' ?></td>
                 <td><?= h($storesItemsDemand->quantity) ?></td>
                 <td><?= h($storesItemsDemand->created) ?></td>
                 <td><?= h($storesItemsDemand->modified) ?></td>
@@ -27,10 +29,11 @@
                 <tr>
                     <th>Código</th>
                     <th>Pedido</th>
-                    <th>Produto</th>
+                    <th>Produto Físico</th>
+                    <th>Produto Digital</th>
                     <th>Quantidade</th>
-                    <th>Criado</th>
-                    <th>Modificado</th>
+                    <th>Criado Em</th>
+                    <th>Última Modificação</th>
                 </tr>
             </tfoot>
         </table>

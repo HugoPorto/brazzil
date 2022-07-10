@@ -387,6 +387,29 @@
         return false;
     }
 
+    function verifyState(){
+        let idCity = document.getElementById("stores-products-id").value;
+        let state = document.getElementById("state");
+    
+        
+        $.ajax({
+            method: "get",
+            url: "<?= $this->request->base ?>/companys/loadState/" + idCity,
+            success: function (result) {
+                const html = '<label for="states_id">Estado*</label><p> ' + result.name + '</p><input type="hidden" name="states_id" value="' + result.id + '"/>';
+
+                state.innerHTML = html;
+            },
+            error: function(result) {
+                toastr.info(result.responseJSON.msg);
+                subcategoria.innerHTML = '';
+                finalcategory.innerHTML = '';
+            }
+        });
+
+        return false;
+    }
+
 </script>
 
 <?php if ($this->request->controller === 'StoresProducts') :?>

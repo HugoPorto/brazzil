@@ -1,4 +1,4 @@
-<div class="col-md-6" style="padding: 0px">
+<div class="col-md-6 form-add-window">
     <div class="card card-info">
         <div class="card-header">
             <h3 class="card-title">Editar Banner</h3>
@@ -6,7 +6,7 @@
 
             <div class="card-body">
             <?= $this->Form->create($storesStripeConfig) ?>
-            <fieldset style="margin-bottom: 10px;">
+            <fieldset class="form-fieldset-window">
 
                 <label>Chave Pública*</label>
                 <?php echo $this->Form->control('stripe_key', ['label' => false, 'class' => 'form-control']); ?>

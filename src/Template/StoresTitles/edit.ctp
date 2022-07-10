@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\StoresTitle $storesTitle
  */
 ?>
-<div class="col-md-6" style="padding: 0px">
+<div class="col-md-6 form-add-window">
     <div class="card card-info">
         <div class="card-header">
             <h3 class="card-title">Editar Título</h3>
@@ -12,7 +12,7 @@
 
             <div class="card-body">
             <?= $this->Form->create($storesTitle) ?>
-            <fieldset style="margin-bottom: 10px;">
+            <fieldset class="form-fieldset-window">
 
                 <label><b>Título*</b></label>
                 <?php
