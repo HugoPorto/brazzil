@@ -15,7 +15,11 @@
     </li>
 
     <li class="nav-item d-none d-sm-inline-block">
-        <a href="<?= $this->request->base ?>/pages" class="nav-link">Home</a>
+        <?php if ($role === 'store') :?>
+            <a href="<?= $this->request->base ?>/stores-courses/courses" class="nav-link">Home</a>
+        <?php else :?> 
+            <a href="<?= $this->request->base ?>/pages" class="nav-link">Home</a>
+        <?php endif; ?>
     </li>
 
     <li class="nav-item d-none d-sm-inline-block">
@@ -25,7 +29,7 @@
     <li class="nav-item d-none d-sm-inline-block">
 
         <?php if ($username) :?>
-            <?php if ($role === 'common' || $role === 'storeAdmin') :?>
+            <?php if ($role === 'store' || $role === 'storeAdmin') :?>
                 <?php echo $this->Html->link(__('Logout'), ['controller' => 'users', 'action' => 'logout'], ['class' => 'nav-link']);?>
             <?php endif; ?>
         <?php endif; ?>

@@ -98,7 +98,7 @@ class StripesController extends AppController
         }
 
         if ($stripe->status === 'succeeded') {
-            $demandId = $this->saveDemand();
+            $demandId = $this->saveDemand($total);
 
             if ($configs->show_type_products === 2) {
                 $this->saveItensDemandsDigital($demandId);
@@ -216,7 +216,7 @@ class StripesController extends AppController
         }
     }
 
-    private function saveDemand()
+    private function saveDemand($total)
     {
         $this->hasPermission('store');
 
@@ -239,13 +239,15 @@ class StripesController extends AppController
             $demand = [
                 'users_id' => $this->Auth->user()['id'],
                 'status' => 1,
-                'companys_id' => $company->id
+                'companys_id' => $company->id,
+                'value' => $total
             ];
         } else {
             $demand = [
                 'users_id' => $this->Auth->user()['id'],
                 'status' => 0,
-                'companys_id' => $company->id
+                'companys_id' => $company->id,
+                'value' => $total
             ];
         }
 

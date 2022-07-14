@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $modified
  * @property bool $status
  * @property int $companys_id
+ * @property string $value
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Company $company
@@ -34,6 +35,7 @@ class StoresDemand extends Entity
         'modified' => true,
         'status' => true,
         'companys_id' => true,
+        'value' => true,
         'user' => true,
         'company' => true
     ];

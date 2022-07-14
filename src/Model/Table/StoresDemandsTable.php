@@ -67,6 +67,12 @@ class StoresDemandsTable extends Table
             ->requirePresence('status', 'create')
             ->notEmpty('status');
 
+        $validator
+            ->scalar('value')
+            ->maxLength('value', 255)
+            ->requirePresence('value', 'create')
+            ->notEmpty('value');
+
         return $validator;
     }
 

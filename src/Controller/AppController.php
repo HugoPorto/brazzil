@@ -39,83 +39,23 @@ class AppController extends Controller
 
     public function beforeFilter(Event $event)
     {
-        $this->log('User', 'debug');
-        $this->log($this->Auth->user(), 'debug');
-
-        $this->loadModel('Roles');
-
-        $this->loadModel('ImageProfiles');
-
-        if ($this->Auth->user()) {
-            $this->log('Role', 'debug');
-            $this->log($this->Roles->get($this->Auth->user('roles_id')), 'debug');
-
-            $imageProfileFront = $this->ImageProfiles->find('all')->where(
-                ['ImageProfiles.users_id =' => $this->Auth->user()['id']]
-            )->first();
-
-            $imageProfileFront = $imageProfileFront === null ? [] : $imageProfileFront;
-
-            $role = $this->Roles->get($this->Auth->user('roles_id'));
-
-            $roleDefined = $role->role;
-        } else {
-            $roleDefined = 'common';
-            $imageProfileFront = [];
-        }
-
-        $this->loadModel('IndexSidebars');
-
-        $indexSidebars = $this->IndexSidebars->find(
-            'all',
-            [
-                'contain' =>
-                    [
-                        'Roles',
-                        'CategorySidebars'
-                    ]
-            ]
-        );
-
-        $this->loadModel('StoresFooters');
-
-        $this->loadModel('StoresAbouts');
-
-        $this->loadModel('StoresHours');
-
-        $this->loadModel('StoresContacts');
-
-        $this->loadModel('StoresStripeConfigs');
-
-        $this->loadModel('StoresLogos');
-
-        $this->loadModel('StoresTitles');
-
-        $this->loadModel('Homes');
-
-        $this->loadModel('StoresCategories');
-
-        $this->loadModel('StoresSubcategories');
-
-        $this->loadModel('StoresFinalcategories');
-
-        $this->loadModel('StoresPages');
-
-        $this->loadModel('Configs');
+        $this->loadModels();
 
         $storesFooters = $this->StoresFooters->find('all')->first();
+
+        $stripeSecret = $this->StoresStripeConfigs->find('all')->first();
+
+        $configs = $this->Configs->find('all')->first();
+
+        $home = $this->Homes->find('all')->first();
+
+        $storesLogo = $this->StoresLogos->find('all')->first();
 
         $storesAbouts = $this->StoresAbouts->find('all')->first();
 
         $storesHours = $this->StoresHours->find('all')->first();
 
         $storesContacts = $this->StoresContacts->find('all')->first();
-
-        $stripeSecret = $this->StoresStripeConfigs->find('all')->first();
-
-        $storesLogo = $this->StoresLogos->find('all')->first();
-
-        $home = $this->Homes->find('all')->first();
 
         $storesCategories = $this->StoresCategories->find('all');
 
@@ -127,7 +67,30 @@ class AppController extends Controller
 
         $storesPages = $this->StoresPages->find('all')->first();
 
-        $configs = $this->Configs->find('all')->first();
+        if ($this->Auth->user()) {
+            $imageProfileFront = $this->ImageProfiles->find('all')->where(['ImageProfiles.users_id =' => $this->Auth->user()['id']])->first();
+
+            $imageProfileFront = $imageProfileFront === null ? [] : $imageProfileFront;
+
+            $role = $this->Roles->get($this->Auth->user('roles_id'));
+
+            $roleDefined = $role->role;
+
+            $indexSidebars = $this->IndexSidebars->find(
+                'all',
+                [
+                    'contain' =>
+                        [
+                            'Roles',
+                            'CategorySidebars'
+                        ]
+                ]
+            );
+        } else {
+            $roleDefined = 'common';
+
+            $imageProfileFront = [];
+        }
 
         $this->set(
             [
@@ -152,7 +115,7 @@ class AppController extends Controller
             'storesFinalcategories' => $storesFinalcategories,
             'storesPagesTitles' => $storesTitles,
             'storesPages' => $storesPages,
-            'configs' => $configs,
+            'configs' => $configs
             ]
         );
     }
@@ -182,38 +145,65 @@ class AppController extends Controller
         $storesCarts = $this->getCart();
 
         $portage = 0;
+
         $prazoEntrega = 0;
+
         $quantidade = 0;
 
         foreach ($storesCarts as $key => $storesCart) {
             $codigoEmpresa = '';
+
             $senhaEmpresa = '';
+
             $codigoServico = '04014';
+
             $cepOrigem = '66923090';
+
             $cepDestino = $cepCode;
+
             $peso = $storesCart->stores_product->weight;
+
             $formato = $storesCart->stores_product->package_format;
+
             $comprimento = $storesCart->stores_product->package_lengths;
+
             $altura = $storesCart->stores_product->package_height;
+
             $largura = $storesCart->stores_product->package_width;
+
             $diametro = 0;
+
             $maoPropria = false;
+
             $valorDeclarado = 0;
+
             $avisoRecebimento = false;
 
             $parametros = [
                 'nCdServico' => $codigoServico,
+
                 'sCepOrigem' => $cepOrigem,
+
                 'sCepDestino' => $cepDestino,
+
                 'nVlPeso' => $peso,
+
                 'nCdFormato' => $formato,
+
                 'nVlComprimento' => $comprimento,
+
                 'nVlAltura' => $altura,
+
                 'nVlLargura' => $largura,
+
                 'nVlDiametro' => $diametro,
+
                 'sCdMaoPropria' => $maoPropria ? 'S' : 'N',
+
                 'nVlValorDeclarado' => $valorDeclarado,
+
                 'sCdAvisoRecebimento' => $avisoRecebimento ? 'S' : 'N',
+
                 'StrRetorno' => 'xml'
             ];
 
@@ -225,7 +215,9 @@ class AppController extends Controller
 
             curl_setopt_array($curl, [
                 CURLOPT_URL => $url_api,
+
                 CURLOPT_RETURNTRANSFER => true,
+
                 CURLOPT_CUSTOMREQUEST => 'GET',
             ]);
 
@@ -241,13 +233,17 @@ class AppController extends Controller
 
             if (!$result) {
                 $calculateShippingError = 'Error';
+
                 $this->log('Erro ao calcular frete.', 'debug');
+
                 return $calculateShippingError;
             }
 
             if (strlen($result->MsgErro)) {
                 $calculateShippingError = 'Error';
+
                 $this->log($result->MsgErro, 'debug');
+
                 return $calculateShippingError;
             }
 
@@ -303,10 +299,47 @@ class AppController extends Controller
             'all',
             [
             'contain' => ['StoresProducts'],
-            'conditions' => [
-                'StoresCarts.users_id =' => $this->Auth->user()['id']
-            ]
+
+            'conditions' =>
+                [
+                    'StoresCarts.users_id =' => $this->Auth->user()['id']
+                ]
             ]
         );
+    }
+
+    private function loadModels()
+    {
+        $this->loadModel('Roles');
+
+        $this->loadModel('ImageProfiles');
+
+        $this->loadModel('IndexSidebars');
+
+        $this->loadModel('StoresFooters');
+
+        $this->loadModel('StoresAbouts');
+
+        $this->loadModel('StoresHours');
+
+        $this->loadModel('StoresContacts');
+
+        $this->loadModel('StoresStripeConfigs');
+
+        $this->loadModel('StoresLogos');
+
+        $this->loadModel('StoresTitles');
+
+        $this->loadModel('Homes');
+
+        $this->loadModel('StoresCategories');
+
+        $this->loadModel('StoresSubcategories');
+
+        $this->loadModel('StoresFinalcategories');
+
+        $this->loadModel('StoresPages');
+
+        $this->loadModel('Configs');
     }
 }
