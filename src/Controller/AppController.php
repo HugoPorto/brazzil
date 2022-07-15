@@ -68,7 +68,7 @@ class AppController extends Controller
         $storesPages = $this->StoresPages->find('all')->first();
 
         if ($this->Auth->user()) {
-            if ($this->Roles->get($this->Auth->user()['roles_id'])->role === 'storeAdmin') {
+            if ($this->Roles->get($this->Auth->user()['roles_id'])->role === 'storeAdmin' || $this->Roles->get($this->Auth->user()['roles_id'])->role === 'store') {
                 $imageProfileFront = $this->ImageProfiles->find('all')->where(['ImageProfiles.users_id =' => $this->Auth->user()['id']])->first();
 
                 $imageProfileFront = $imageProfileFront === null ? [] : $imageProfileFront;
@@ -92,7 +92,7 @@ class AppController extends Controller
 
                 $usersCount = $this->Users->find('all')->count();
 
-                $companys = $this->Companys->find('all')->count();
+                $companysCount = $this->Companys->find('all')->count();
 
                 $productsCount = $this->StoresProducts->find('all')->count();
             }
@@ -128,7 +128,7 @@ class AppController extends Controller
             'configs' => $configs,
             'boxValue' => isset($boxValue) ? $boxValue : null,
             'usersCount' => isset($usersCount) ? $usersCount : null,
-            'companys' => isset($companys) ? $companys : null,
+            'companysCount' => isset($companysCount) ? $companysCount : null,
             'productsCount' => isset($productsCount) ? $productsCount : null
             ]
         );
