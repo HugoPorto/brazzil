@@ -1,0 +1,1 @@
+// $Details = $this->Details->find()->select(['sum' => 'SUM(Details.total_downtime)'])->where(['Details.site_id' => $id])->toArray();

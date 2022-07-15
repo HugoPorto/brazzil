@@ -68,24 +68,34 @@ class AppController extends Controller
         $storesPages = $this->StoresPages->find('all')->first();
 
         if ($this->Auth->user()) {
-            $imageProfileFront = $this->ImageProfiles->find('all')->where(['ImageProfiles.users_id =' => $this->Auth->user()['id']])->first();
+            if ($this->Roles->get($this->Auth->user()['roles_id'])->role === 'storeAdmin') {
+                $imageProfileFront = $this->ImageProfiles->find('all')->where(['ImageProfiles.users_id =' => $this->Auth->user()['id']])->first();
 
-            $imageProfileFront = $imageProfileFront === null ? [] : $imageProfileFront;
+                $imageProfileFront = $imageProfileFront === null ? [] : $imageProfileFront;
 
-            $role = $this->Roles->get($this->Auth->user('roles_id'));
+                $role = $this->Roles->get($this->Auth->user('roles_id'));
 
-            $roleDefined = $role->role;
+                $roleDefined = $role->role;
 
-            $indexSidebars = $this->IndexSidebars->find(
-                'all',
-                [
+                $indexSidebars = $this->IndexSidebars->find(
+                    'all',
+                    [
                     'contain' =>
                         [
                             'Roles',
                             'CategorySidebars'
                         ]
-                ]
-            );
+                    ]
+                );
+
+                $boxValue = $this->StoresDemands->find()->select(['sum' => 'SUM(StoresDemands.value)'])->toArray();
+
+                $usersCount = $this->Users->find('all')->count();
+
+                $companys = $this->Companys->find('all')->count();
+
+                $productsCount = $this->StoresProducts->find('all')->count();
+            }
         } else {
             $roleDefined = 'common';
 
@@ -115,7 +125,11 @@ class AppController extends Controller
             'storesFinalcategories' => $storesFinalcategories,
             'storesPagesTitles' => $storesTitles,
             'storesPages' => $storesPages,
-            'configs' => $configs
+            'configs' => $configs,
+            'boxValue' => isset($boxValue) ? $boxValue : null,
+            'usersCount' => isset($usersCount) ? $usersCount : null,
+            'companys' => isset($companys) ? $companys : null,
+            'productsCount' => isset($productsCount) ? $productsCount : null
             ]
         );
     }
@@ -341,5 +355,13 @@ class AppController extends Controller
         $this->loadModel('StoresPages');
 
         $this->loadModel('Configs');
+
+        $this->loadModel('StoresDemands');
+
+        $this->loadModel('Users');
+
+        $this->loadModel('Companys');
+
+        $this->loadModel('StoresProducts');
     }
 }
