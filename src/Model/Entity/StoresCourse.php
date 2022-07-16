@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
@@ -15,11 +14,13 @@ use Cake\ORM\Entity;
  * @property string $theme
  * @property int $users_id
  * @property string $photo
+ * @property string $price
  *
  * @property \App\Model\Entity\User $user
  */
 class StoresCourse extends Entity
 {
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -37,7 +38,7 @@ class StoresCourse extends Entity
         'theme' => true,
         'users_id' => true,
         'photo' => true,
-        'user' => true,
-        'price' => true
+        'price' => true,
+        'user' => true
     ];
 }

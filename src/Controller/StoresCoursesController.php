@@ -71,6 +71,7 @@ class StoresCoursesController extends AppController
 
         if ($this->request->is('post')) {
             $data = [];
+
             $data = $this->request->getData();
 
             $photo = $this->Base64->processMainPhoto($this->request->getData());
@@ -78,6 +79,7 @@ class StoresCoursesController extends AppController
             $data['photo'] = $photo;
 
             $storesCourse = $this->StoresCourses->patchEntity($storesCourse, $data);
+
             if ($this->StoresCourses->save($storesCourse)) {
                 return $this->redirect(['action' => 'index']);
             }
@@ -104,6 +106,7 @@ class StoresCoursesController extends AppController
         $storesCourse = $this->StoresCourses->get($id, [
             'contain' => []
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $storesCourse = $this->StoresCourses->patchEntity($storesCourse, $this->request->getData());
 
@@ -113,8 +116,8 @@ class StoresCoursesController extends AppController
 
             return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'O curso não poder ser salvo.']);
         }
-        $users = $this->StoresCourses->Users->find('list', ['limit' => 200]);
-        $this->set(compact('storesCourse', 'users'));
+
+        $this->set(compact('storesCourse'));
     }
 
     public function editPhoto($id = null)
@@ -126,8 +129,10 @@ class StoresCoursesController extends AppController
         $storesCourse = $this->StoresCourses->get($id, [
             'contain' => []
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $data = [];
+
             $data = $this->request->getData();
 
             $photo = $this->Base64->processMainPhoto($this->request->getData());
@@ -135,6 +140,7 @@ class StoresCoursesController extends AppController
             $data['photo'] = $photo;
 
             $storesCourse = $this->StoresCourses->patchEntity($storesCourse, $data);
+
             if ($this->StoresCourses->save($storesCourse)) {
                 return $this->redirect(['action' => 'index']);
             }
@@ -227,5 +233,28 @@ class StoresCoursesController extends AppController
         $this->viewBuilder()->setLayout('brazzil');
 
         return $this->redirect(['action' => 'courses']);
+    }
+
+    public function updateViewdVideo($id = null)
+    {
+        $this->autoRender = false;
+
+        $this->hasPermission('store');
+
+        $this->loadModel('StoresVideos');
+
+        $storesVideo = $this->StoresVideos->get($id, [
+            'contain' => []
+        ]);
+
+        $data = [];
+
+        $data['viewed'] = true;
+
+        $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $data);
+
+        $this->StoresVideos->save($storesVideo);
+
+        $this->redirect($this->referer());
     }
 }

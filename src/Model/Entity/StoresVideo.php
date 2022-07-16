@@ -15,6 +15,7 @@ use Cake\ORM\Entity;
  * @property int $stores_courses_id
  * @property int $users_id
  * @property string $photo
+ * @property bool $viewed
  *
  * @property \App\Model\Entity\StoresCourse $stores_course
  * @property \App\Model\Entity\User $user
@@ -40,6 +41,7 @@ class StoresVideo extends Entity
         'stores_courses_id' => true,
         'users_id' => true,
         'photo' => true,
+        'viewed' => true,
         'stores_course' => true,
         'user' => true
     ];
