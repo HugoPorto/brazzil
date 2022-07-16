@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-<section class="single_item" style="padding-top: 50px !important;">
+<section class="single_item single-item-cart">
     <div class="container">
         <h3 style="color: red; text-align: center; margin-bottom: 20px"><?= $this->Flash->render() ?></h3>
         <div class="row order-container">

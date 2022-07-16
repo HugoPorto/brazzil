@@ -141,8 +141,8 @@ class StoresCoursesController extends AppController
 
             return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'O curso não poder ser salvo.']);
         }
-        $users = $this->StoresCourses->Users->find('list', ['limit' => 200]);
-        $this->set(compact('storesCourse', 'users'));
+
+        $this->set(compact('storesCourse'));
     }
 
     /**
@@ -159,7 +159,9 @@ class StoresCoursesController extends AppController
         $this->viewBuilder()->setLayout('brazzil');
 
         $this->request->allowMethod(['post', 'delete']);
+
         $storesCourse = $this->StoresCourses->get($id);
+
         if (!$this->StoresCourses->delete($storesCourse)) {
             return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'O curso não poder ser apagado.']);
         }
@@ -175,7 +177,7 @@ class StoresCoursesController extends AppController
 
         $connection = ConnectionManager::get('default');
 
-        $sql = 'select c.id, c.course as curso
+        $sql = 'select c.id, c.course as curso, c.photo
                 from stores_courses c 
                 inner join stores_demands md 
                 inner join users u on md.users_id = u.id

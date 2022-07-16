@@ -14,7 +14,13 @@ class StoresDemandsController extends AppController
 
         $loginMenu = $this->loginMenuLoad();
 
-        $storesDemands = $this->StoresDemands->find('all', ['contain' => 'Users']);
+        $storesDemands = $this->StoresDemands->find('all', [
+            'contain' =>
+                [
+                    'Users',
+                    'Companys'
+                ]
+        ]);
 
         $this->set(compact('storesDemands', 'loginMenu'));
     }

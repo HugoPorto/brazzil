@@ -305,6 +305,13 @@ class AppController extends Controller
         $_SESSION['superpass'] = false;
     }
 
+    protected function removePessoalDataSession()
+    {
+        $session = $this->request->getSession();
+
+        $session->delete('cpf');
+    }
+
     private function getCart()
     {
         $this->loadModel('StoresCarts');

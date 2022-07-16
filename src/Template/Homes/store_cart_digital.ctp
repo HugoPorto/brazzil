@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <section class="single_item" style="padding-top: 50px !important;">
+    <section class="single_item single-item-cart">
         <div class="container">  
             <div class="row order-container">
 

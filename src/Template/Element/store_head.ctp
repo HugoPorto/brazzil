@@ -31,9 +31,4 @@
 
     <link rel="shortcut icon" href="<?php echo $this->request->webroot . 'img/favicon.png';?>">
 
-    <style type="text/css">
-        
-
-</style>
-
 </head>

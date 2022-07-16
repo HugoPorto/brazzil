@@ -4,21 +4,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * StoresDemand Entity
+ * Cpf Entity
  *
  * @property int $id
+ * @property string $cpf
  * @property int $users_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property bool $status
- * @property int $companys_id
- * @property string $value
- * @property string $cpf
  *
  * @property \App\Model\Entity\User $user
- * @property \App\Model\Entity\Company $company
  */
-class StoresDemand extends Entity
+class Cpf extends Entity
 {
 
     /**
@@ -31,14 +27,10 @@ class StoresDemand extends Entity
      * @var array
      */
     protected $_accessible = [
+        'cpf' => true,
         'users_id' => true,
         'created' => true,
         'modified' => true,
-        'status' => true,
-        'companys_id' => true,
-        'value' => true,
-        'cpf' => true,
-        'user' => true,
-        'company' => true
+        'user' => true
     ];
 }

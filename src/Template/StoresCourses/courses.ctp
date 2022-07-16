@@ -10,6 +10,7 @@
             <thead class="table-dark">
                 <tr>
                     <th>Curso</th>
+                    <th>Capa</th>
                     <th><?= __('Ações') ?></th>
                 </tr>
             </thead>
@@ -17,6 +18,9 @@
                 <?php foreach ($courses_user as $courses) : ?>
                 <tr>
                     <td><?= h($courses[1]) ?></td>
+                    <td>
+                        <img style="width: 200px; border: 1px solid #d7d7d7; padding: 10px" <?= $courses[2] ?>/>
+                    </td>
                     <td class="actions">
                         <?= $this->Html->link(
                             __('Ver'),
@@ -30,6 +34,7 @@
             <tfoot>
                 <tr>
                     <th>Curso</th>
+                    <th>Capa</th>
                     <th><?= __('Ações') ?></th>
                 </tr>
             </tfoot>

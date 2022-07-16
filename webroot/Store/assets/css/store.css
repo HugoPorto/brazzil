@@ -9528,3 +9528,8 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 /* end: Preloader */
+
+
+.single-item-cart {
+    padding-top: 50px !important;
+}

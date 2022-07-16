@@ -7,15 +7,8 @@
 <?php echo $this->element('store_header'); ?>
 
 <div class="main-wrapper home_transparent-wrapper @@active  home-beauty">
- <div id="preloader">
-    <div class="inner">
-       <div class="bolas">
-          <div></div>
-          <div></div>
-          <div></div>                    
-       </div>
-    </div>
-</div>
+
+<?php echo $this->element('store_preloader'); ?>
 
 <?php if ($this->request->controller === 'Homes' && $this->request->action === 'site') : ?>
     <?php echo $this->element('store_banner_promocional'); ?>

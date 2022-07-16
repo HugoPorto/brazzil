@@ -5,6 +5,9 @@
                 <tr>
                     <th>Código</th>
                     <th>Usuário</th>
+                    <th>CPF</th>
+                    <th>Empresa</th>
+                    <th>Valor</th>
                     <th>Criado Em</th>
                     <th>Modificado Em</th>
                     <th>Status</th>
@@ -16,6 +19,9 @@
                 <tr>
                     <td><?= $this->Number->format($storesDemand->id) ?></td>
                     <td><?= $storesDemand->user->name ?></td>
+                    <td><?= $storesDemand->cpf ?></td>
+                    <td><?= $storesDemand->company->company ?></td>
+                    <td>R$ <?= number_format((float) $storesDemand->value, 2) ?></td>
                     <td><?= h($storesDemand->created) ?></td>
                     <td><?= h($storesDemand->modified) ?></td>
                     <td>
@@ -40,11 +46,11 @@
                             <div class="btn-group">
 
                                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="showAddress(<?= $storesDemand->id; ?>)">
-                                    Ver Endereço de Entrega
+                                    Endereço
                                 </button>
                             </div>
                             <div class="btn-group">
-                                <?= $this->Html->link(__('Ver Itens do Pedido'), ['controller' => 'StoresItemsDemands', 'action' => 'getItemByDemandId', $storesDemand->id], ['class' => 'btn btn-info']) ?>
+                                <?= $this->Html->link(__('Itens Pedido'), ['controller' => 'StoresItemsDemands', 'action' => 'getItemByDemandId', $storesDemand->id], ['class' => 'btn btn-info']) ?>
                             </div>
                         </div>
                     </td>
@@ -55,6 +61,9 @@
                 <tr>
                     <th>Código</th>
                     <th>Usuário</th>
+                    <th>CPF</th>
+                    <th>Empresa</th>
+                    <th>Valor</th>
                     <th>Criado Em</th>
                     <th>Modificado Em</th>
                     <th>Status</th>

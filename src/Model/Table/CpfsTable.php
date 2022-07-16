@@ -7,22 +7,21 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * StoresDemands Model
+ * Cpfs Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
- * @property \App\Model\Table\CompanysTable|\Cake\ORM\Association\BelongsTo $Companys
  *
- * @method \App\Model\Entity\StoresDemand get($primaryKey, $options = [])
- * @method \App\Model\Entity\StoresDemand newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\StoresDemand[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StoresDemand|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StoresDemand patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\StoresDemand[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\StoresDemand findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Cpf get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Cpf newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Cpf[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Cpf|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Cpf patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Cpf[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Cpf findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class StoresDemandsTable extends Table
+class CpfsTable extends Table
 {
 
     /**
@@ -35,7 +34,7 @@ class StoresDemandsTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('stores_demands');
+        $this->setTable('cpfs');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
@@ -44,9 +43,6 @@ class StoresDemandsTable extends Table
         $this->belongsTo('Users', [
             'foreignKey' => 'users_id',
             'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Companys', [
-            'foreignKey' => 'companys_id'
         ]);
     }
 
@@ -61,17 +57,6 @@ class StoresDemandsTable extends Table
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');
-
-        $validator
-            ->boolean('status')
-            ->requirePresence('status', 'create')
-            ->notEmpty('status');
-
-        $validator
-            ->scalar('value')
-            ->maxLength('value', 255)
-            ->requirePresence('value', 'create')
-            ->notEmpty('value');
 
         $validator
             ->scalar('cpf')
@@ -92,7 +77,6 @@ class StoresDemandsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['users_id'], 'Users'));
-        $rules->add($rules->existsIn(['companys_id'], 'Companys'));
 
         return $rules;
     }

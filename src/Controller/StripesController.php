@@ -240,14 +240,16 @@ class StripesController extends AppController
                 'users_id' => $this->Auth->user()['id'],
                 'status' => 1,
                 'companys_id' => $company->id,
-                'value' => $total
+                'value' => $total,
+                'cpf' => $this->request->getSession()->read('cpf')
             ];
         } else {
             $demand = [
                 'users_id' => $this->Auth->user()['id'],
                 'status' => 0,
                 'companys_id' => $company->id,
-                'value' => $total
+                'value' => $total,
+                'cpf' => $this->request->getSession()->read('cpf')
             ];
         }
 
@@ -258,6 +260,10 @@ class StripesController extends AppController
         $storesDemand = $this->StoresDemands->patchEntity($storesDemand, $demand);
 
         $this->StoresDemands->save($storesDemand);
+
+        $this->saveCpf();
+
+        $this->removePessoalDataSession();
 
         return $storesDemand->id;
     }
@@ -300,5 +306,30 @@ class StripesController extends AppController
         }
 
         return $total;
+    }
+
+    private function saveCpf()
+    {
+        $this->loadModel('Cpfs');
+
+        $myRegister = $this->Cpfs->find('all', [
+            'conditions' => [
+                'Cpfs.users_id =' => $this->Auth->user()['id']
+            ]
+        ]);
+
+        if (empty($myRegister->toArray())) {
+            $cpf = $this->Cpfs->newEntity();
+
+            $data = [];
+
+            $data['users_id'] = $this->Auth->user()['id'];
+
+            $data['cpf'] = $this->request->getSession()->read('cpf');
+
+            $cpf = $this->Cpfs->patchEntity($cpf, $data);
+
+            $this->Cpfs->save($cpf);
+        }
     }
 }

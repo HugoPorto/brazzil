@@ -747,4 +747,15 @@ class HomesController extends AppController
 
         $this->loadModel('Users');
     }
+
+    public function setCpf()
+    {
+        $this->autoRender = false;
+
+        $session = $this->request->getSession();
+
+        $session->write('cpf', $this->request->getData()['cpf']);
+
+        $this->redirect($this->referer());
+    }
 }
