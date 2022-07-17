@@ -21,24 +21,24 @@
                     <td><?= $this->Number->format($storesVideo->id) ?></td>
                     <td><?= h($storesVideo->title) ?></td>
                     <td>
-                        <div class=row>
-                            <div class=col-md-8 style="width: 600px">
-                                <div class="video-container" style="margin-top: 5px;">
-                                    <?= $storesVideo->video;?>
-                                </div>      
-                            </div>      
-                        </div>  
+                        <div class="btn-group">
+                            <?= $this->Html->link(
+                                __('Assistir'),
+                                ['controller' => 'StoresVideos', 'action' => 'video', $storesVideo->id],
+                                ['class' => 'btn btn-info']
+                            ) ?>
+                        </div>
                     </td>
                     <td class="actions">
                         <div class="margin">
                             <?php if (!$storesVideo->viewed) :?>
-                            <div class="btn-group">
-                                <?= $this->Html->link(
-                                    __('Marcar Como Visto'),
-                                    ['controller' => 'StoresCourses', 'action' => 'updateViewdVideo', $storesVideo->id],
-                                    ['class' => 'btn btn-warning']
-                                ) ?>
-                            </div>
+                                <div class="btn-group">
+                                    <?= $this->Html->link(
+                                        __('Marcar Como Visto'),
+                                        ['controller' => 'StoresCourses', 'action' => 'updateViewdVideo', $storesVideo->id],
+                                        ['class' => 'btn btn-warning']
+                                    ) ?>
+                                </div>
                             <?php endif;?>
                         </div>
                     </td>

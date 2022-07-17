@@ -58,6 +58,19 @@ class StoresVideosController extends AppController
         $this->set('storesVideo', $storesVideo);
     }
 
+    public function video($id = null)
+    {
+        $this->hasPermission('store');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $storesVideo = $this->StoresVideos->get($id, [
+            'contain' => ['StoresCourses', 'Users']
+        ]);
+
+        $this->set('storesVideo', $storesVideo);
+    }
+
     /**
      * Add method
      *
@@ -70,6 +83,7 @@ class StoresVideosController extends AppController
         $this->viewBuilder()->setLayout('brazzil');
 
         $storesVideo = $this->StoresVideos->newEntity();
+
         if ($this->request->is('post')) {
             $data = [];
 
@@ -79,8 +93,9 @@ class StoresVideosController extends AppController
 
             $data['photo'] = $photo;
 
-            $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $data);
+            $data['viewed'] = false;
 
+            $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $data);
 
             if ($this->StoresVideos->save($storesVideo)) {
                 return $this->redirect(['action' => 'index']);
