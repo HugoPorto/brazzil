@@ -4,22 +4,20 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * StoresVideo Entity
+ * VideosViewed Entity
  *
  * @property int $id
- * @property string $video
- * @property string $title
- * @property string $description
+ * @property int $users_id
+ * @property int $stores_courses_id
+ * @property int $stores_videos_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property int $stores_courses_id
- * @property int $users_id
- * @property string $photo
  *
- * @property \App\Model\Entity\StoresCourse $stores_course
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\StoresCourse $stores_course
+ * @property \App\Model\Entity\StoresVideo $stores_video
  */
-class StoresVideo extends Entity
+class VideosViewed extends Entity
 {
 
     /**
@@ -32,15 +30,13 @@ class StoresVideo extends Entity
      * @var array
      */
     protected $_accessible = [
-        'video' => true,
-        'title' => true,
-        'description' => true,
+        'users_id' => true,
+        'stores_courses_id' => true,
+        'stores_videos_id' => true,
         'created' => true,
         'modified' => true,
-        'stores_courses_id' => true,
-        'users_id' => true,
-        'photo' => true,
+        'user' => true,
         'stores_course' => true,
-        'user' => true
+        'stores_video' => true
     ];
 }

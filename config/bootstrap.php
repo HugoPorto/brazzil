@@ -215,10 +215,22 @@ Type::build('timestamp')
  */
 Plugin::load('CakePdf');
 
-Configure::write('CakePdf', array(
-    'engine' => 'CakePdf.DomPdf',
-    'download' => false
-));
+Configure::write('CakePdf', [
+    'engine' => [
+        'className' => 'CakePdf.DomPdf',
+        'options' => [
+            'isRemoteEnabled' => true
+        ]
+    ],
+    'margin' => [
+        'bottom' => 10,
+        'left' => 10,
+        'right' => 10,
+        'top' => 10
+    ],
+    'orientation' => 'portrait',
+    'download' => true
+]);
 
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);

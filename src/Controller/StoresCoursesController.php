@@ -4,14 +4,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Datasource\ConnectionManager;
+use CakePdf;
 
-/**
- * StoresCourses Controller
- *
- * @property \App\Model\Table\StoresCoursesTable $StoresCourses
- *
- * @method \App\Model\Entity\StoresCourse[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
 class StoresCoursesController extends AppController
 {
     public function initialize()
@@ -20,11 +14,7 @@ class StoresCoursesController extends AppController
 
         $this->loadComponent('Base64');
     }
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|void
-     */
+
     public function index()
     {
         $this->hasPermission('storeAdmin');
@@ -36,13 +26,6 @@ class StoresCoursesController extends AppController
         $this->set(compact('storesCourses'));
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Stores Course id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function view($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -56,11 +39,6 @@ class StoresCoursesController extends AppController
         $this->set('storesCourse', $storesCourse);
     }
 
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
     public function add()
     {
         $this->hasPermission('storeAdmin');
@@ -90,13 +68,6 @@ class StoresCoursesController extends AppController
         $this->set(compact('storesCourse'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Stores Course id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
     public function edit($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -151,13 +122,6 @@ class StoresCoursesController extends AppController
         $this->set(compact('storesCourse'));
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Stores Course id.
-     * @return \Cake\Http\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function delete($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -226,16 +190,36 @@ class StoresCoursesController extends AppController
         $this->set('storesVideos', $storesVideos);
     }
 
-    public function certificates($idUser = null)
+    public function updateViewdVideo($idVideo = null, $idCourse = null)
     {
+        $this->autoRender = false;
+
         $this->hasPermission('store');
 
-        $this->viewBuilder()->setLayout('brazzil');
+        $this->loadModel('VideosVieweds');
 
-        return $this->redirect(['action' => 'courses']);
+        $userId = $this->Auth->user()['id'];
+
+        $videosViewed = $this->VideosVieweds->newEntity();
+
+        $data = [];
+
+        $data['users_id'] = $userId;
+
+        $data['stores_courses_id'] = $idCourse;
+
+        $data['stores_videos_id'] = $idVideo;
+
+        $videosViewed = $this->VideosVieweds->newEntity();
+
+        $videosViewed = $this->VideosVieweds->patchEntity($videosViewed, $data);
+
+        $this->VideosVieweds->save($videosViewed);
+
+        $this->redirect($this->referer());
     }
 
-    public function updateViewdVideo($id = null)
+    public function generateCertificate($idCourse = null, $nameCourse = null)
     {
         $this->autoRender = false;
 
@@ -243,18 +227,97 @@ class StoresCoursesController extends AppController
 
         $this->loadModel('StoresVideos');
 
-        $storesVideo = $this->StoresVideos->get($id, [
-            'contain' => []
-        ]);
+        $this->loadModel('VideosVieweds');
 
-        $data = [];
+        $this->loadModel('StoresLogos');
 
-        $data['viewed'] = true;
+        $this->loadModel('Cpfs');
 
-        $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $data);
+        $storesLogo = $this->StoresLogos->find('all')->first();
 
-        $this->StoresVideos->save($storesVideo);
+        $cpf = $this->Cpfs->find(
+            'all',
+            [
+                'conditions' => [
+                    'Cpfs.users_id =' => $this->Auth->user()['id']
+                ]
+            ]
+        )->first();
 
-        $this->redirect($this->referer());
+        $videosCourseCount = $this->StoresVideos->find(
+            'all',
+            [
+            'conditions' =>
+                [
+                    'StoresVideos.stores_courses_id =' => $idCourse
+                ]
+            ]
+        )->count();
+
+        $videosViewedsCount = $this->VideosVieweds->find(
+            'all',
+            [
+            'conditions' =>
+                [
+                    'VideosVieweds.stores_courses_id =' => $idCourse,
+                    'VideosVieweds.users_id =' => $this->Auth->user()['id']
+                ]
+            ]
+        )->count();
+
+        if ($videosCourseCount === $videosViewedsCount) {
+            $this->loadModel('Certificates');
+
+            $certificate = $this->Certificates->find(
+                'all',
+                [
+                    'conditions' => [
+                        'Certificates.users_id =' => $this->Auth->user()['id'],
+                        'Certificates.stores_courses_id =' => $idCourse
+                    ]
+                ]
+            )->first();
+
+            if ($certificate) {
+            } else {
+                $CakePdf = new \CakePdf\Pdf\CakePdf();
+
+                $CakePdf->template('certificate', 'certificate');
+
+                $CakePdf->orientation('landscape');
+
+                $CakePdf->marginLeft(10);
+
+                $CakePdf->marginBottom(10);
+
+                $CakePdf->marginTop(10);
+
+                $CakePdf->marginBottom(10);
+
+                setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+
+                date_default_timezone_set('America/Sao_Paulo');
+
+                $date = strftime('%A, %d de %B de %Y', strtotime('today'));
+
+                $CakePdf->viewVars(
+                    [
+                    'logo' => '',
+                    'name' => $this->Auth->user()['name'],
+                    'lastname' => $this->Auth->user()['lastname'],
+                    'cpf' => $cpf->cpf,
+                    'course' => $nameCourse,
+                    'date' => $date
+                    ]
+                );
+
+                $CakePdf->output();
+
+                $CakePdf->write(WWW_ROOT . 'files' . DS . 'certificate.pdf');
+
+                $this->redirect('/files' . DS . 'certificate.pdf');
+            }
+        } else {
+        }
     }
 }

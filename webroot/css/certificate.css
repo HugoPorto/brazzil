@@ -1,0 +1,17 @@
+.box h1 {
+    text-align: center;
+}
+
+.box h3 {
+    text-align: center;
+}
+
+.box h2 {
+    text-align: center;
+}
+
+.box {
+    background-color: #d7d7d7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

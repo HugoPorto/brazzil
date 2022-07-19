@@ -171,7 +171,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?= $this->request->base . '/stores-courses/certificates'?>" class="nav-link">
+                                    <a href="<?= $this->request->base . '/certificates'?>" class="nav-link">
                                         <i class="nav-icon fas fa-link text-info"></i>
                                         <p>Certificados</p>
                                     </a>

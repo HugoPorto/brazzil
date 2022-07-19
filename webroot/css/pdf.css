@@ -1,0 +1,1031 @@
+.term .h1,
+.term .h2,
+.term .h3,
+.term .h4 {
+    font-weight: 700;
+    padding-top: 2px;
+    padding-bottom: 2px
+}
+
+.term .h1 {
+    padding-top: 10px;
+    font-size: 14px
+}
+
+.term .h2 {
+    font-size: 12px
+}
+
+.term .h3 {
+    font-size: 11px
+}
+
+.term .h4 {
+    font-size: 10px
+}
+
+.term img {
+    width: 80px
+}
+
+.term .text-center {
+    text-align: center
+}
+
+.term .text-justify {
+    text-align: justify
+}
+
+.term .text-left {
+    text-align: left
+}
+
+.term .tab-2 {
+    text-indent: 100px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    position: relative
+}
+
+.term .tab-2 .count {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    display: block
+}
+
+.term .tab-4 {
+    text-indent: 200px;
+    margin-top: 18px
+}
+
+.doc-calling {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 200px 80px 80px 80px;
+    position: relative;
+    font-size: 14px;
+    page-break-after: always
+}
+
+.doc-calling p {
+    font-size: 15px;
+    font-weight: 400
+}
+
+.doc-calling ol li {
+    list-style-type: decimal !important
+}
+
+.doc-calling .doc-calling__date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    width: 100%
+}
+
+.doc-calling .doc-calling__signatures {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: block
+}
+
+.doc-calling .doc-calling__signature {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 70px;
+    margin-bottom: 40px
+}
+
+.doc-calling .doc-calling__signature strong {
+    margin-left: 10px
+}
+
+.doc-calling .doc-calling__signature p {
+    text-transform: normal
+}
+
+.doc-calling .doc-calling__denounced .doc-calling__denounced__professional,
+.doc-calling .doc-calling__denounced .doc-calling__denounced__address {
+    text-transform: uppercase
+}
+
+.doc-convocation {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 200px 80px 80px 80px;
+    position: relative;
+    font-size: 14px;
+    page-break-after: always
+}
+
+.doc-convocation .doc-convocation__title .h1 {
+    font-size: 18px
+}
+
+.doc-convocation p,
+.doc-convocation li {
+    font-size: 15px;
+    font-weight: 400
+}
+
+.doc-convocation .doc-convocation__rt {
+    margin-right: 10px
+}
+
+.doc-convocation .doc-convocation__date {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 70px
+}
+
+.doc-convocation .doc-convocation__signatures {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    display: block
+}
+
+.doc-convocation .doc-convocation__signature {
+    margin-top: 40px;
+    font-size: 16px;
+    text-transform: uppercase
+}
+
+.doc-convocation .doc-convocation__signature strong {
+    margin-left: 10px
+}
+
+.doc-convocation .doc-convocation__signature p {
+    text-transform: normal
+}
+
+.doc-term {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 80px 80px;
+    position: relative
+}
+
+.doc-term table {
+    width: 500px;
+    margin: 0 auto;
+    font-weight: 700
+}
+
+.doc-term table td {
+    font-size: 11px;
+    padding: 2px;
+    vertical-align: top
+}
+
+.doc-term table .doc-term__table__title {
+    width: 100px;
+    text-align: right;
+    font-size: 10px
+}
+
+.doc-term table .doc-term__table__address {
+    text-transform: uppercase
+}
+
+.doc-term p {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.doc-term label {
+    margin-top: 10px;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.doc-term ul {
+    list-style-type: none;
+    padding-left: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.doc-term ul li {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.doc-term ul ul li {
+    margin-bottom: 0
+}
+
+.doc-term .doc-term__deadline {
+    width: 55px !important;
+    text-align: center
+}
+
+.doc-term .doc-term__obs {
+    margin-top: 40px;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.doc-term .doc-term__obs p {
+    font-weight: 700
+}
+
+.doc-term .doc-term__signatures {
+    display: block;
+    position: relative;
+    height: 115px;
+    position: absolute;
+    top: 30px;
+    page-break-before: avoid
+}
+
+.doc-term .doc-term__signature {
+    font-size: 11px;
+    width: 250px;
+    height: 115px;
+    text-align: center;
+    text-transform: uppercase;
+    page-break-before: avoid
+}
+
+.doc-term .doc-term__signature .doc-term__signature__img {
+    padding-bottom: 1px;
+    border-bottom: 1px solid #000;
+    height: 69px;
+    page-break-before: avoid
+}
+
+.doc-term .doc-term__signature .doc-term__signature__img img {
+    width: 120px
+}
+
+.doc-term .doc-term__signature .doc-term__signature__txt {
+    height: 44px;
+    page-break-before: avoid
+}
+
+.doc-term .doc-term__signature .doc-term__signature__txt * {
+    page-break-before: avoid
+}
+
+.doc-term .doc-term__signature span {
+    display: block;
+    page-break-before: avoid;
+    position: absolute;
+    top: 15px
+}
+
+.doc-term .doc-term__signature.doc-term__signature--left {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.doc-term .doc-term__signature.doc-term__signature--right {
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.doc-initial-opinion {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 80px 80px;
+    position: relative
+}
+
+.doc-initial-opinion .doc-initial-opinion__title {
+    margin-top: 30px
+}
+
+.doc-initial-opinion table {
+    width: 500px;
+    margin: 0 auto;
+    font-weight: 700
+}
+
+.doc-initial-opinion table td {
+    font-size: 12px;
+    padding: 2px;
+    vertical-align: top
+}
+
+.doc-initial-opinion table .doc-initial-opinion__table__title {
+    width: 200px;
+    text-align: right;
+    font-size: 10px
+}
+
+.doc-initial-opinion table .doc-initial-opinion__table__value {
+    width: 300px
+}
+
+.doc-initial-opinion table .doc-initial-opinion__table__address {
+    text-transform: uppercase
+}
+
+.doc-initial-opinion p {
+    font-size: 12px;
+    font-weight: 400
+}
+
+.doc-initial-opinion label {
+    margin-top: 10px;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.doc-initial-opinion ul {
+    list-style-type: none;
+    padding-left: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.doc-initial-opinion ul li {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.doc-initial-opinion ul ul li {
+    margin-bottom: 0
+}
+
+.doc-initial-opinion .text-center {
+    text-align: center
+}
+
+.doc-initial-opinion .text-left {
+    text-align: left
+}
+
+.doc-initial-opinion .tab-2 {
+    text-indent: 100px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+
+.doc-initial-opinion .tab-4 {
+    text-indent: 200px;
+    margin-top: 18px
+}
+
+.doc-initial-opinion .doc-initial-opinion__articles {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 100px
+}
+
+.doc-initial-opinion .doc-initial-opinion__date {
+    text-align: center;
+    margin: 50px 0
+}
+
+.doc-initial-opinion .doc-initial-opinion__signatures {
+    position: relative
+}
+
+.doc-initial-opinion .doc-initial-opinion__signature {
+    font-size: 11px;
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.doc-initial-opinion .doc-initial-opinion__signature p {
+    text-transform: normal
+}
+
+.doc-initial-opinion .doc-initial-opinion__signature.doc-initial-opinion__signature--center {
+    margin: 70px auto
+}
+
+.doc-initial-opinion .doc-initial-opinion__signature.doc-initial-opinion__signature--right {
+    position: absolute;
+    right: 0;
+    top: 113px
+}
+
+.doc-office {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 80px 80px;
+    position: relative
+}
+
+.doc-office .doc-office__title {
+    margin-top: 30px
+}
+
+.doc-office p {
+    font-size: 11px;
+    font-weight: 400;
+    text-align: justify
+}
+
+.doc-quote {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 200px 80px 80px 80px;
+    position: relative;
+    font-size: 14px;
+    page-break-after: always
+}
+
+.doc-quote .doc-quote__title .h1 {
+    font-size: 18px
+}
+
+.doc-quote p {
+    font-size: 15px;
+    font-weight: 400
+}
+
+.doc-quote .doc-quote__date {
+    text-align: center;
+    margin: 50px 0
+}
+
+.doc-quote .doc-quote__signatures {
+    position: relative
+}
+
+.doc-quote .doc-quote__signature {
+    font-size: 16px;
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.doc-quote .doc-quote__signature p {
+    text-transform: normal
+}
+
+.doc-quote .doc-quote__signature.doc-quote__signature--center {
+    margin: 70px auto
+}
+
+.doc-audience {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 20px 80px;
+    position: relative
+}
+
+.doc-audience p {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.doc-audience table {
+    width: 600px;
+    margin: 0 auto;
+    font-weight: 700
+}
+
+.doc-audience table td {
+    font-size: 11px;
+    padding: 2px;
+    vertical-align: top
+}
+
+.doc-audience table .doc-audience__table__title {
+    width: 280px;
+    text-align: right;
+    font-size: 10px;
+    padding-right: 10px
+}
+
+.doc-audience table .doc-audience__table__address {
+    text-transform: uppercase
+}
+
+.doc-audience .doc-audience__signatures {
+    position: relative;
+    margin-top: 70px
+}
+
+.doc-audience .doc-audience__signatures td {
+    padding-right: 10px;
+    padding-left: 10px
+}
+
+.doc-audience .doc-audience__signature {
+    font-size: 11px;
+    width: 250px;
+    text-align: center;
+    text-transform: uppercase;
+    border-top: 1px solid #000;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    vertical-align: top
+}
+
+.doc-audience .doc-audience__signature p {
+    text-transform: normal
+}
+
+.doc-final-opinion {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 80px 80px;
+    position: relative
+}
+
+.doc-final-opinion .doc-final-opinion__title {
+    margin-top: 30px
+}
+
+.doc-final-opinion table {
+    width: 500px;
+    margin: 0 auto;
+    font-weight: 700
+}
+
+.doc-final-opinion table td {
+    font-size: 11px;
+    padding: 2px;
+    vertical-align: top
+}
+
+.doc-final-opinion table .doc-final-opinion__table__title {
+    width: 200px;
+    text-align: right;
+    font-size: 10px
+}
+
+.doc-final-opinion table .doc-final-opinion__table__value {
+    width: 300px
+}
+
+.doc-final-opinion table .doc-final-opinion__table__address {
+    text-transform: uppercase
+}
+
+.doc-final-opinion p {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.doc-final-opinion label {
+    margin-top: 10px;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.doc-final-opinion ul {
+    list-style-type: none;
+    padding-left: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.doc-final-opinion ul li {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.doc-final-opinion ul ul li {
+    margin-bottom: 0
+}
+
+.doc-final-opinion .text-center {
+    text-align: center
+}
+
+.doc-final-opinion .text-left {
+    text-align: left
+}
+
+.doc-final-opinion .tab-2 {
+    text-indent: 100px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+
+.doc-final-opinion .tab-4 {
+    text-indent: 200px;
+    margin-top: 18px
+}
+
+.doc-final-opinion .doc-final-opinion__articles {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 100px
+}
+
+.doc-final-opinion .doc-final-opinion__date {
+    text-align: center;
+    margin: 50px 0
+}
+
+.doc-final-opinion .doc-final-opinion__signatures {
+    position: relative
+}
+
+.doc-final-opinion .doc-final-opinion__signature {
+    font-size: 11px;
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.doc-final-opinion .doc-final-opinion__signature p {
+    text-transform: normal
+}
+
+.doc-final-opinion .doc-final-opinion__signature.doc-final-opinion__signature--center {
+    margin: 70px auto
+}
+
+.doc-final-opinion .doc-final-opinion__signature.doc-final-opinion__signature--right {
+    position: absolute;
+    right: 0;
+    top: 113px
+}
+
+.doc-notification {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 80px 80px;
+    position: relative
+}
+
+.doc-notification p {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.doc-notification .doc-notification__date {
+    text-align: center;
+    margin: 50px 0
+}
+
+.doc-notification .doc-notification__signatures {
+    position: relative
+}
+
+.doc-notification .doc-notification__signature {
+    font-size: 11px;
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.doc-notification .doc-notification__signature p {
+    text-transform: normal
+}
+
+.doc-notification .doc-notification__signature.doc-notification__signature--center {
+    margin: 70px auto
+}
+
+.doc-conclusive-report {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 80px 80px;
+    position: relative
+}
+
+.doc-conclusive-report .doc-conclusive-report__title {
+    margin-top: 30px
+}
+
+.doc-conclusive-report table {
+    width: 500px;
+    margin: 0 auto;
+    font-weight: 700
+}
+
+.doc-conclusive-report table td {
+    font-size: 11px;
+    padding: 2px;
+    vertical-align: top
+}
+
+.doc-conclusive-report table .doc-conclusive-report__table__title {
+    width: 200px;
+    text-align: right;
+    font-size: 10px
+}
+
+.doc-conclusive-report table .doc-conclusive-report__table__value {
+    width: 300px
+}
+
+.doc-conclusive-report p {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.doc-conclusive-report label {
+    margin-top: 10px;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.doc-conclusive-report ul {
+    list-style-type: none;
+    padding-left: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.doc-conclusive-report ul li {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.doc-conclusive-report ul ul li {
+    margin-bottom: 0
+}
+
+.doc-conclusive-report .text-center {
+    text-align: center
+}
+
+.doc-conclusive-report .text-left {
+    text-align: left
+}
+
+.doc-conclusive-report .tab-2 {
+    text-indent: 100px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+
+.doc-conclusive-report .tab-4 {
+    text-indent: 200px;
+    margin-top: 18px
+}
+
+.doc-conclusive-report .doc-conclusive-report__articles {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 100px
+}
+
+.doc-conclusive-report .doc-conclusive-report__date {
+    text-align: center;
+    margin: 50px 0
+}
+
+.doc-conclusive-report .doc-conclusive-report__signatures {
+    position: relative
+}
+
+.doc-conclusive-report .doc-conclusive-report__signature {
+    font-size: 11px;
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase
+}
+
+.doc-conclusive-report .doc-conclusive-report__signature p {
+    text-transform: normal
+}
+
+.doc-conclusive-report .doc-conclusive-report__signature.doc-conclusive-report__signature--center {
+    margin: 70px auto
+}
+
+.doc-acordao {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 80px 80px;
+    position: relative
+}
+
+.doc-acordao .doc-acordao__title {
+    margin-top: 30px
+}
+
+.doc-acordao table {
+    width: 500px;
+    margin: 0 auto;
+    font-weight: 700
+}
+
+.doc-acordao table td {
+    font-size: 11px;
+    padding: 2px;
+    vertical-align: top
+}
+
+.doc-acordao table .doc-acordao__table__title {
+    width: 200px;
+    text-align: right;
+    font-size: 10px
+}
+
+.doc-acordao table .doc-acordao__table__value {
+    width: 300px
+}
+
+.doc-acordao p {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.doc-acordao label {
+    margin-top: 10px;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.doc-acordao ul {
+    list-style-type: none;
+    padding-left: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.doc-acordao ul li {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.doc-acordao ul ul li {
+    margin-bottom: 0
+}
+
+.doc-acordao .text-center {
+    text-align: center
+}
+
+.doc-acordao .text-left {
+    text-align: left
+}
+
+.doc-acordao .tab-2 {
+    text-indent: 100px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+
+.doc-acordao .tab-4 {
+    text-indent: 200px;
+    margin-top: 18px
+}
+
+.doc-acordao .doc-acordao__articles {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 100px
+}
+
+.doc-acordao .doc-acordao__date {
+    text-align: center;
+    margin: 50px 0
+}
+
+.doc-acordao .doc-acordao__signatures {
+    position: relative
+}
+
+.doc-acordao .doc-acordao__signatures {
+    position: relative
+}
+
+.doc-acordao .doc-acordao__signatures td {
+    padding-right: 10px;
+    padding-left: 10px
+}
+
+.doc-acordao .doc-acordao__signature {
+    font-size: 11px;
+    width: 250px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    vertical-align: top
+}
+
+.doc-acordao .doc-acordao__signature p {
+    text-transform: normal
+}
+
+.doc-report {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 240px 80px 80px 80px;
+    position: relative
+}
+
+.doc-report .doc-report__title {
+    margin-top: 30px
+}
+
+.doc-report table {
+    width: 500px;
+    margin: 0 auto;
+    font-weight: 700
+}
+
+.doc-report table td {
+    font-size: 11px;
+    padding: 2px;
+    vertical-align: top
+}
+
+.doc-report table .doc-report__table__title {
+    width: 100px;
+    text-align: right;
+    font-size: 10px
+}
+
+.doc-report p {
+    font-size: 11px;
+    font-weight: 400
+}
+
+.doc-report label {
+    margin-top: 10px;
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.doc-report ul {
+    list-style-type: none;
+    padding-left: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+.doc-report ul li {
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 700
+}
+
+.doc-report ul ul li {
+    margin-bottom: 0
+}
+
+.doc-report .text-center {
+    text-align: center
+}
+
+.doc-report .text-left {
+    text-align: left
+}
+
+.doc-report .tab-2 {
+    text-indent: 100px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+
+.doc-report .tab-4 {
+    text-indent: 200px;
+    margin-top: 18px
+}
+
+.doc-report .doc-report__articles {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0 100px
+}
+
+.doc-report .doc-report__date {
+    text-align: center;
+    margin: 50px 0
+}
+
+.doc-report .doc-report__signatures {
+    position: relative
+}
+
+.doc-report .doc-report__signatures {
+    position: relative
+}
+
+.doc-report .doc-report__signatures td {
+    padding-right: 10px;
+    padding-left: 10px
+}
+
+.doc-report .doc-report__signature {
+    font-size: 11px;
+    width: 250px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 0px;
+    padding-bottom: 40px;
+    vertical-align: top
+}
+
+.doc-report .doc-report__signature p {
+    text-transform: normal
+}

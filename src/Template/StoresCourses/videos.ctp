@@ -12,7 +12,6 @@
                     <th>Código</th>
                     <th>Título</th>
                     <th>Video</th>
-                    <th>Leitura</th>
                 </tr>
             </thead>
             <tbody style="font-weight: bold">
@@ -29,19 +28,6 @@
                             ) ?>
                         </div>
                     </td>
-                    <td class="actions">
-                        <div class="margin">
-                            <?php if (!$storesVideo->viewed) :?>
-                                <div class="btn-group">
-                                    <?= $this->Html->link(
-                                        __('Marcar Como Visto'),
-                                        ['controller' => 'StoresCourses', 'action' => 'updateViewdVideo', $storesVideo->id],
-                                        ['class' => 'btn btn-warning']
-                                    ) ?>
-                                </div>
-                            <?php endif;?>
-                        </div>
-                    </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -50,7 +36,6 @@
                     <th>Código</th>
                     <th>Título</th>
                     <th>Video</th>
-                    <th>Leitura</th>
                 </tr>
             </tfoot>
         </table>

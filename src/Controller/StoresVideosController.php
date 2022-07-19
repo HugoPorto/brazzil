@@ -4,13 +4,6 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
-/**
- * StoresVideos Controller
- *
- * @property \App\Model\Table\StoresVideosTable $StoresVideos
- *
- * @method \App\Model\Entity\StoresVideo[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
 class StoresVideosController extends AppController
 {
     public function initialize()
@@ -20,11 +13,6 @@ class StoresVideosController extends AppController
         $this->loadComponent('Base64');
     }
 
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|void
-     */
     public function index()
     {
         $this->hasPermission('storeAdmin');
@@ -38,13 +26,6 @@ class StoresVideosController extends AppController
         $this->set(compact('storesVideos'));
     }
 
-    /**
-     * View method
-     *
-     * @param string|null $id Stores Video id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function view($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -64,18 +45,26 @@ class StoresVideosController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
+        $this->loadModel('VideosVieweds');
+
         $storesVideo = $this->StoresVideos->get($id, [
             'contain' => ['StoresCourses', 'Users']
         ]);
 
-        $this->set('storesVideo', $storesVideo);
+
+        $viewed = $this->VideosVieweds->find(
+            'all',
+            [
+                'conditions' => [
+                    'VideosVieweds.stores_courses_id =' => $storesVideo->stores_courses_id,
+                    'VideosVieweds.stores_videos_id =' => $storesVideo->id,
+                ]
+            ]
+        );
+
+        $this->set(compact('storesVideo', 'viewed'));
     }
 
-    /**
-     * Add method
-     *
-     * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
-     */
     public function add()
     {
         $this->hasPermission('storeAdmin');
@@ -92,8 +81,6 @@ class StoresVideosController extends AppController
             $photo = $this->Base64->processMainPhoto($this->request->getData());
 
             $data['photo'] = $photo;
-
-            $data['viewed'] = false;
 
             $storesVideo = $this->StoresVideos->patchEntity($storesVideo, $data);
 
@@ -113,13 +100,6 @@ class StoresVideosController extends AppController
         $this->set(compact('storesVideo', 'storesCourses', 'users'));
     }
 
-    /**
-     * Edit method
-     *
-     * @param string|null $id Stores Video id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Network\Exception\NotFoundException When record not found.
-     */
     public function edit($id = null)
     {
         $this->hasPermission('storeAdmin');
@@ -191,13 +171,6 @@ class StoresVideosController extends AppController
         $this->set(compact('storesVideo', 'storesCourses', 'users'));
     }
 
-    /**
-     * Delete method
-     *
-     * @param string|null $id Stores Video id.
-     * @return \Cake\Http\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);

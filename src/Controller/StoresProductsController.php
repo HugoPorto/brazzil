@@ -46,22 +46,28 @@ class StoresProductsController extends AppController
     public function view($id = null)
     {
         $this->hasPermission('storeAdmin');
+
         $this->viewBuilder()->setLayout('brazzil');
+
         $this->loadModel('StoresImagesProducts');
+
         $imagesExtrasProduct = $this->StoresImagesProducts->find('all', [
             'conditions' => [
                 'StoresImagesProducts.stores_products_id =' => $id
             ]
         ]);
+
         $storesProduct = $this->StoresProducts->get($id, [
             'contain' => ['Users', 'StoresCategories', 'StoresColors']
         ]);
+
         $this->set(compact('storesProduct', 'imagesExtrasProduct'));
     }
 
     private function getQrCode($data)
     {
         $qrCode = new QrCode();
+
         $qrCode
             ->setText($data['qrcode'])
             ->setSize(300)
@@ -73,18 +79,26 @@ class StoresProductsController extends AppController
             ->setLabelFontSize(16)
             ->setImageType(QrCode::IMAGE_TYPE_PNG)
         ;
+
         return $qrCode;
     }
 
     private function getBarCode($data)
     {
         $barcode = new BarcodeGenerator();
+
         $barcode->setText($data['barcode']);
+
         $barcode->setType(BarcodeGenerator::Code128);
+
         $barcode->setScale(2);
+
         $barcode->setThickness(25);
+
         $barcode->setFontSize(10);
+
         $code = $barcode->generate();
+
         return $code;
     }
 
@@ -500,12 +514,19 @@ class StoresProductsController extends AppController
     public function printQrcode($idProduct)
     {
         $this->autoRender = false;
+
         $storesProduct = $this->StoresProducts->get($idProduct);
+
         $CakePdf = new \CakePdf\Pdf\CakePdf();
+
         $CakePdf->template('qrcode', 'clean');
+
         $CakePdf->viewVars(['qrcode' => $storesProduct->qrcode]);
+
         $CakePdf->output();
+
         $CakePdf->write(WWW_ROOT . 'files' . DS . 'qrcode.pdf');
+
         $this->redirect('/files' . DS . 'qrcode.pdf');
     }
 
