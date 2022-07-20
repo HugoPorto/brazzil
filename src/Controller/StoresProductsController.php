@@ -233,7 +233,7 @@ class StoresProductsController extends AppController
                 return $this->redirect(['action' => 'index']);
             }
 
-            return $this->redirect(['controller' => 'Pages', 'action' => 'error', 'Erro ao editar código de barras.']);
+            return $this->redirect(['controller' => 'Pages', 'action' => 'error', base64_encode('Erro ao editar código de barras.')]);
         }
 
         $users = $this->StoresProducts->Users->find('list');

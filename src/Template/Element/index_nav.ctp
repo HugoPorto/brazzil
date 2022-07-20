@@ -3,7 +3,7 @@
 <div class="wrapper">
 
 <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="<?= $this->request->webroot . 'img/galerys/13/' . $storesLogo; ?>" alt="Logomarca" height="60">
+    <img class="animation__shake" <?= $storesLogo ?> alt="Logomarca" height="60">
 </div>
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">

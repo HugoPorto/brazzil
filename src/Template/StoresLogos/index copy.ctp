@@ -15,7 +15,7 @@
                 <tr>
                     <td><?= $this->Number->format($storesLogo->id) ?></td>
                     <td>
-                        <img style="width: 200px; border: 1px solid #d7d7d7; padding: 10px" <?= $storesLogo->logo ?>/>
+                        <?php echo $this->Html->image('galerys/13/' . $storesLogo->logo, ['class' => 'img-fluid']); ?>
                     </td>
                     <td><?= h($storesLogo->created) ?></td>
                     <td><?= h($storesLogo->modified) ?></td>

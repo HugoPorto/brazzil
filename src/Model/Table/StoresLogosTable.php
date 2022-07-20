@@ -53,7 +53,7 @@ class StoresLogosTable extends Table
 
         $validator
             ->scalar('logo')
-            ->maxLength('logo', 255)
+            ->maxLength('logo', 4294967295)
             ->requirePresence('logo', 'create')
             ->notEmpty('logo');
 

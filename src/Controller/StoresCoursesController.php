@@ -278,26 +278,42 @@ class StoresCoursesController extends AppController
                 ]
             )->first();
 
+            $CakePdf = new \CakePdf\Pdf\CakePdf();
+
+            $CakePdf->template('certificate', 'certificate');
+
+            $CakePdf->orientation('landscape');
+
+            $CakePdf->marginLeft(10);
+
+            $CakePdf->marginBottom(10);
+
+            $CakePdf->marginTop(10);
+
+            $CakePdf->marginBottom(10);
+
+            setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+
+            date_default_timezone_set('America/Sao_Paulo');
+
             if ($certificate) {
+                $CakePdf->viewVars(
+                    [
+                    'logo' => '',
+                    'name' => $this->Auth->user()['name'],
+                    'lastname' => $this->Auth->user()['lastname'],
+                    'cpf' => $cpf->cpf,
+                    'course' => $nameCourse,
+                    'date' => $certificate->finished_course
+                    ]
+                );
+
+                $CakePdf->output();
+
+                $CakePdf->write(WWW_ROOT . 'files' . DS . 'certificate.pdf');
+
+                $this->redirect('/files' . DS . 'certificate.pdf');
             } else {
-                $CakePdf = new \CakePdf\Pdf\CakePdf();
-
-                $CakePdf->template('certificate', 'certificate');
-
-                $CakePdf->orientation('landscape');
-
-                $CakePdf->marginLeft(10);
-
-                $CakePdf->marginBottom(10);
-
-                $CakePdf->marginTop(10);
-
-                $CakePdf->marginBottom(10);
-
-                setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
-
-                date_default_timezone_set('America/Sao_Paulo');
-
                 $date = strftime('%A, %d de %B de %Y', strtotime('today'));
 
                 $CakePdf->viewVars(
@@ -311,6 +327,8 @@ class StoresCoursesController extends AppController
                     ]
                 );
 
+                $this->addCertificate($idCourse, $date);
+
                 $CakePdf->output();
 
                 $CakePdf->write(WWW_ROOT . 'files' . DS . 'certificate.pdf');
@@ -318,6 +336,25 @@ class StoresCoursesController extends AppController
                 $this->redirect('/files' . DS . 'certificate.pdf');
             }
         } else {
+            $this->Flash->error(__('Você ainda não concluiu o curso.'));
+            $this->redirect($this->referer());
         }
+    }
+
+    private function addCertificate($idCourse = null, $date = null)
+    {
+        $certificate = $this->Certificates->newEntity();
+
+        $data = [];
+
+        $data['users_id'] = $this->Auth->user()['id'];
+
+        $data['stores_courses_id'] = $idCourse;
+
+        $data['finished_course'] = $date;
+
+        $certificate = $this->Certificates->patchEntity($certificate, $data);
+
+        $this->Certificates->save($certificate);
     }
 }
