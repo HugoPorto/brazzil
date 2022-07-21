@@ -47,6 +47,8 @@ class StoresVideosController extends AppController
 
         $this->loadModel('VideosVieweds');
 
+        $this->loadModel('CoursesDownloads');
+
         $storesVideo = $this->StoresVideos->get($id, [
             'contain' => ['StoresCourses', 'Users']
         ]);
@@ -62,7 +64,17 @@ class StoresVideosController extends AppController
             ]
         );
 
-        $this->set(compact('storesVideo', 'viewed'));
+        $downloads = $this->CoursesDownloads->find(
+            'all',
+            [
+                'conditions' => [
+                    'CoursesDownloads.stores_courses_id =' => $storesVideo->stores_courses_id,
+                    'CoursesDownloads.stores_videos_id =' => $storesVideo->id,
+                ]
+            ]
+        );
+
+        $this->set(compact('storesVideo', 'viewed', 'downloads'));
     }
 
     public function add()

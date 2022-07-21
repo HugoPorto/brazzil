@@ -94,6 +94,13 @@ class AppController extends Controller
 
                 $companysCount = $this->Companys->find('all')->count();
 
+                $idCompany = $this->Companys->find('all', [
+                    'conditions' => [
+                        'Companys.active =' => true,
+                        'Companys.users_id =' => $this->Auth->user()['id']
+                    ]
+                ])->first();
+
                 $productsCount = $this->StoresProducts->find('all')->count();
             }
         } else {
@@ -106,10 +113,10 @@ class AppController extends Controller
             [
             'username' => $this->Auth->user('username'),
             'name' => $this->Auth->user('name'),
-            'role' => $roleDefined,
+            'role' => isset($roleDefined) ? $roleDefined : null,
             'idUser' => $this->Auth->user() ? $this->Auth->user()['id'] : null,
-            'imageProfileFront' => $imageProfileFront,
-            'indexSidebars' => $this->Auth->user() ? $indexSidebars : null,
+            'imageProfileFront' => isset($imageProfileFront) ? $imageProfileFront : null,
+            'indexSidebars' => $this->Auth->user() ? (isset($indexSidebars) ? $indexSidebars : null) : null,
             'storesFooters' => $storesFooters,
             'storesAbouts' => $storesAbouts,
             'storesHours' => $storesHours,
@@ -129,7 +136,8 @@ class AppController extends Controller
             'boxValue' => isset($boxValue) ? $boxValue : null,
             'usersCount' => isset($usersCount) ? $usersCount : null,
             'companysCount' => isset($companysCount) ? $companysCount : null,
-            'productsCount' => isset($productsCount) ? $productsCount : null
+            'productsCount' => isset($productsCount) ? $productsCount : null,
+            'idCompany' => isset($idCompany) ? $idCompany->id : null
             ]
         );
     }

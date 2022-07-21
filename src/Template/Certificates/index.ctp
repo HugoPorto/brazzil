@@ -18,7 +18,7 @@
                 <tr>
                     <td><?= $this->Number->format($certificate->id) ?></td>
                     <td>
-                        <?= $certificate->has('stores_course') ? $this->Html->link($certificate->stores_course->course, ['controller' => 'StoresCourses', 'action' => 'view', $certificate->stores_course->id]) : '' ?>
+                        <?= $certificate->has('stores_course') ? $certificate->stores_course->course : '' ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>

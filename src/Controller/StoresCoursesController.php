@@ -165,11 +165,46 @@ class StoresCoursesController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $storesCourse = $this->StoresCourses->get($id, [
-            'contain' => ['Users']
-        ]);
+        $this->loadModel('StoresVideos');
 
-        $this->set('storesCourse', $storesCourse);
+        $this->loadModel('VideosVieweds');
+
+        $this->loadModel('Certificates');
+
+        $storesCourse = $this->StoresCourses->get($id);
+
+        $videosCourseCount = $this->StoresVideos->find(
+            'all',
+            [
+            'conditions' =>
+                [
+                    'StoresVideos.stores_courses_id =' => $id
+                ]
+            ]
+        )->count();
+
+        $videosViewedsCount = $this->VideosVieweds->find(
+            'all',
+            [
+            'conditions' =>
+                [
+                    'VideosVieweds.stores_courses_id =' => $id,
+                    'VideosVieweds.users_id =' => $this->Auth->user()['id']
+                ]
+            ]
+        )->count();
+
+        if ($videosViewedsCount > 0 && $videosCourseCount > 0) {
+            $percentVieweds = ($videosViewedsCount * 100) / $videosCourseCount;
+        } else {
+            $percentVieweds = 0;
+
+            $videosViewedsCount = 0;
+
+            $videosCourseCount = 0;
+        }
+
+        $this->set(compact('storesCourse', 'videosCourseCount', 'percentVieweds', 'videosViewedsCount'));
     }
 
     public function videos($id = null)
@@ -299,7 +334,7 @@ class StoresCoursesController extends AppController
             if ($certificate) {
                 $CakePdf->viewVars(
                     [
-                    'logo' => '',
+                    'logo' => $storesLogo->logo,
                     'name' => $this->Auth->user()['name'],
                     'lastname' => $this->Auth->user()['lastname'],
                     'cpf' => $cpf->cpf,
@@ -318,7 +353,7 @@ class StoresCoursesController extends AppController
 
                 $CakePdf->viewVars(
                     [
-                    'logo' => '',
+                    'logo' => $storesLogo->logo,
                     'name' => $this->Auth->user()['name'],
                     'lastname' => $this->Auth->user()['lastname'],
                     'cpf' => $cpf->cpf,
@@ -336,8 +371,7 @@ class StoresCoursesController extends AppController
                 $this->redirect('/files' . DS . 'certificate.pdf');
             }
         } else {
-            $this->Flash->error(__('Você ainda não concluiu o curso.'));
-            $this->redirect($this->referer());
+            return $this->redirect(['controller' => 'Homes', 'action' => 'errorGeneral', base64_encode('Você ainda não concluiu o curso.')]);
         }
     }
 

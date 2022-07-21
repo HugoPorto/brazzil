@@ -739,6 +739,13 @@ class HomesController extends AppController
         $this->set('message', base64_decode($message));
     }
 
+    public function errorGeneral($message)
+    {
+        $this->hasPermission('store');
+
+        $this->set('message', base64_decode($message));
+    }
+
     public function profile()
     {
         $this->viewBuilder()->setLayout('site');

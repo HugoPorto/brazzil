@@ -18,6 +18,9 @@
                     ) ?>
                 </div>
             <?php endif;?>
+            <?php foreach ($downloads as $download) : ?>
+                <a href="<?= $download->link ?>" class="btn btn-info" target="_blank">Download</a>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

@@ -1,5 +1,4 @@
 <div class="card">
-    
     <div class="card-body">
         <p><?= $this->Flash->render() ?></p>
         <table id="general" class="table table-bordered" style="font-size: 13px">

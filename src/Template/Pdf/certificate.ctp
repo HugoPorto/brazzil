@@ -10,5 +10,5 @@
     <h2>12 HORAS</h2>
     <h3>realizado em</h3>
     <h2><?= $date ?></h2>
-    <img style="margin-left: 35%;" src="">
+    <img style="margin-left: 35%;" <?= $logo ?>>
 </div>

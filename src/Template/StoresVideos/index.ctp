@@ -53,6 +53,12 @@
                             [ 'class' => 'btn btn-warning']
                         ) ?>
                         <?= $this->Html->link(
+                            __('Adicionar Item Para Download'),
+                            ['controller' => 'CoursesDownloads',
+                            'action' => 'addFast', $storesVideo->id, $storesVideo->stores_courses_id],
+                            [ 'class' => 'btn btn-info']
+                        ) ?>
+                        <?= $this->Html->link(
                             __('Editar Foto'),
                             ['action' => 'editPhoto', $storesVideo->id],
                             [ 'class' => 'btn btn-warning']
