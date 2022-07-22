@@ -3,7 +3,11 @@
         <div class="row">
             <div class="col-sm-8 offset-sm-2 col-xs-12 text-center">
                 <div class="sectionTitle">
-                    <h2>Alguns de Nossos Produtos</h2>
+                    <?php if ($configs->show_type_products !== 2) :?>
+                        <h2>Alguns de Nossos Produtos</h2>
+                    <?php else :?>
+                        <h2>Alguns de Nossos Cursos</h2>
+                    <?php endif;?>
                 </div>
             </div>
         </div>
@@ -58,20 +62,3 @@
         </div>
     </div>
 </section>
-
-
-<?php if (sizeof($storesPartners->toArray())) :?>
-    <section class="brand_carousel bg-primary">
-        <div class="container">
-            <div class="slick_brands">
-                <?php foreach ($storesPartners as $storesPartner) : ?>
-                    <div class="brand_single">
-                        <div class="brand_img">
-                            <img style="width: 174px;" <?= $storesPartner->photo ?>/>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-<?php endif;?>

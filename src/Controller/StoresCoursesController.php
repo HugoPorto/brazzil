@@ -331,6 +331,8 @@ class StoresCoursesController extends AppController
 
             date_default_timezone_set('America/Sao_Paulo');
 
+            $codeCertificate = uniqid('certificate_', true);
+
             if ($certificate) {
                 $CakePdf->viewVars(
                     [
@@ -339,7 +341,8 @@ class StoresCoursesController extends AppController
                     'lastname' => $this->Auth->user()['lastname'],
                     'cpf' => $cpf->cpf,
                     'course' => $nameCourse,
-                    'date' => $certificate->finished_course
+                    'date' => $certificate->finished_course,
+                    'code' => $certificate->code
                     ]
                 );
 
@@ -358,11 +361,12 @@ class StoresCoursesController extends AppController
                     'lastname' => $this->Auth->user()['lastname'],
                     'cpf' => $cpf->cpf,
                     'course' => $nameCourse,
-                    'date' => $date
+                    'date' => $date,
+                    'code' => $codeCertificate,
                     ]
                 );
 
-                $this->addCertificate($idCourse, $date);
+                $this->addCertificate($idCourse, $date, $codeCertificate);
 
                 $CakePdf->output();
 
@@ -375,7 +379,7 @@ class StoresCoursesController extends AppController
         }
     }
 
-    private function addCertificate($idCourse = null, $date = null)
+    private function addCertificate($idCourse = null, $date = null, $code = null)
     {
         $certificate = $this->Certificates->newEntity();
 
@@ -386,6 +390,8 @@ class StoresCoursesController extends AppController
         $data['stores_courses_id'] = $idCourse;
 
         $data['finished_course'] = $date;
+
+        $data['code'] = $code;
 
         $certificate = $this->Certificates->patchEntity($certificate, $data);
 

@@ -11,7 +11,8 @@
 }
 
 .box {
-    background-color: #d7d7d7;
+    background-color: #F2F5F7;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-style: double;
 }

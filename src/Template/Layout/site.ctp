@@ -1,14 +1,14 @@
-<?php echo $this->element('store_head'); ?>
+<?= $this->element('store_head') ?>
 
 <body id="body" class="">
 
-<?php echo $this->element('store_bottombar'); ?>
+<?= $this->element('store_bottombar') ?>
 
-<?php echo $this->element('store_header'); ?>
+<?= $this->element('store_header') ?>
 
 <div class="main-wrapper home_transparent-wrapper @@active  home-beauty">
 
-<?php echo $this->element('store_preloader'); ?>
+<?= $this->element('store_preloader') ?>
 
 <?php if ($this->request->controller === 'Homes' && $this->request->action === 'site') : ?>
     <?php echo $this->element('store_banner_promocional'); ?>
@@ -17,6 +17,14 @@
 
 <?= $this->fetch('content') ?>
 
-<?php echo $this->element('store_contact'); ?>
+<?php if ($configs->show_type_products !== 2) :?>
+    <?= $this->element('store_partners') ?>
+<?php endif;?>
 
-<?php echo $this->element('store_footer'); ?>
+<?= $this->element('store_information') ?>
+
+<?php if ($configs->show_type_products !== 2) :?>
+    <?= $this->element('store_contact') ?>
+<?php endif;?>
+
+<?= $this->element('store_footer'); ?>

@@ -330,6 +330,8 @@ class HomesController extends AppController
     {
         $this->loadModel('StoresCourses');
 
+        $this->viewBuilder()->setLayout('site');
+
         $storesCourse = $this->StoresCourses->get($id);
 
         $idUser = $this->Auth->user() ? $this->Auth->user()['id'] : null;
@@ -545,6 +547,7 @@ class HomesController extends AppController
         $this->viewBuilder()->setLayout('site');
 
         $this->loadModel('StoresCategories');
+
         $this->loadModel('StoresProducts');
 
         $storesCategories = $this->StoresCategories->find(

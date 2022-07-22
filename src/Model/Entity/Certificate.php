@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  * @property string $finished_course
+ * @property string $code
  *
  * @property \App\Model\Entity\StoresCourse $stores_course
  * @property \App\Model\Entity\User $user
@@ -34,6 +35,7 @@ class Certificate extends Entity
         'created' => true,
         'modified' => true,
         'finished_course' => true,
+        'code' => true,
         'stores_course' => true,
         'user' => true
     ];

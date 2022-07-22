@@ -4,20 +4,14 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 
-/**
- * Certificates Controller
- *
- * @property \App\Model\Table\CertificatesTable $Certificates
- *
- * @method \App\Model\Entity\Certificate[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
- */
 class CertificatesController extends AppController
 {
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|void
-     */
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['verify']);
+    }
+
     public function index()
     {
         $this->hasPermission('store');
@@ -39,5 +33,28 @@ class CertificatesController extends AppController
         );
 
         $this->set(compact('certificates'));
+    }
+
+    public function verify()
+    {
+        $certificate = $this->Certificates->find(
+            'all',
+            [
+            'conditions' =>
+                [
+                    'Certificates.code =' => $this->request->getData()['certificate']
+                ]
+            ]
+        );
+
+        $text = '';
+
+        if (empty($certificate->toArray())) {
+            $text = 'Código do Certificado Não Encontrado..';
+        } else {
+            $text = 'Código do Certificado Encontrado..';
+        }
+
+        $this->set(compact('text'));
     }
 }

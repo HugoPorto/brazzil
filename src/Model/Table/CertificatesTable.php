@@ -69,6 +69,12 @@ class CertificatesTable extends Table
             ->requirePresence('finished_course', 'create')
             ->notEmpty('finished_course');
 
+        $validator
+            ->scalar('code')
+            ->maxLength('code', 45)
+            ->requirePresence('code', 'create')
+            ->notEmpty('code');
+
         return $validator;
     }
 
