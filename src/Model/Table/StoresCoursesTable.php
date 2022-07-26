@@ -60,7 +60,7 @@ class StoresCoursesTable extends Table
 
         $validator
             ->scalar('course')
-            ->maxLength('course', 45)
+            ->maxLength('course', 255)
             ->requirePresence('course', 'create')
             ->notEmpty('course');
 
@@ -87,6 +87,12 @@ class StoresCoursesTable extends Table
             ->maxLength('price', 11)
             ->requirePresence('price', 'create')
             ->notEmpty('price');
+
+        $validator
+            ->scalar('description')
+            ->maxLength('description', 4294967295)
+            ->requirePresence('description', 'create')
+            ->notEmpty('description');
 
         return $validator;
     }

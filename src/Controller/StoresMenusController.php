@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -12,7 +13,6 @@ use App\Controller\AppController;
  */
 class StoresMenusController extends AppController
 {
-
     /**
      * Index method
      *
@@ -20,28 +20,19 @@ class StoresMenusController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['StoresCourses', 'Users', 'Companys']
-        ];
-        $storesMenus = $this->paginate($this->StoresMenus);
+        $this->hasPermission('storeAdmin');
 
-        $this->set(compact('storesMenus'));
-    }
+        $this->viewBuilder()->setLayout('brazzil');
 
-    /**
-     * View method
-     *
-     * @param string|null $id Stores Menu id.
-     * @return \Cake\Http\Response|void
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function view($id = null)
-    {
-        $storesMenu = $this->StoresMenus->get($id, [
-            'contain' => ['StoresCourses', 'Users', 'Companys']
+        $storesMenus = $this->StoresMenus->find('all', [
+            'contain' => [
+                'Users',
+                'StoresCourses',
+                'Companys'
+            ]
         ]);
 
-        $this->set('storesMenu', $storesMenu);
+        $this->set(compact('storesMenus'));
     }
 
     /**
@@ -51,20 +42,27 @@ class StoresMenusController extends AppController
      */
     public function add()
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
         $storesMenu = $this->StoresMenus->newEntity();
+
         if ($this->request->is('post')) {
             $storesMenu = $this->StoresMenus->patchEntity($storesMenu, $this->request->getData());
+
             if ($this->StoresMenus->save($storesMenu)) {
-                $this->Flash->success(__('The stores menu has been saved.'));
+                $this->Flash->success(__('Ementa salva com sucesso.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The stores menu could not be saved. Please, try again.'));
+
+            $this->Flash->error(__('Sua ementa não pode ser salva. Por favor, tente novamente.'));
         }
+
         $storesCourses = $this->StoresMenus->StoresCourses->find('list', ['limit' => 200]);
-        $users = $this->StoresMenus->Users->find('list', ['limit' => 200]);
-        $companys = $this->StoresMenus->Companys->find('list', ['limit' => 200]);
-        $this->set(compact('storesMenu', 'storesCourses', 'users', 'companys'));
+
+        $this->set(compact('storesMenu', 'storesCourses'));
     }
 
     /**
@@ -76,21 +74,28 @@ class StoresMenusController extends AppController
      */
     public function edit($id = null)
     {
+        $this->hasPermission('storeAdmin');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
         $storesMenu = $this->StoresMenus->get($id, [
             'contain' => []
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $storesMenu = $this->StoresMenus->patchEntity($storesMenu, $this->request->getData());
+
             if ($this->StoresMenus->save($storesMenu)) {
                 $this->Flash->success(__('The stores menu has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
+
             $this->Flash->error(__('The stores menu could not be saved. Please, try again.'));
         }
-        $storesCourses = $this->StoresMenus->StoresCourses->find('list', ['limit' => 200]);
-        $users = $this->StoresMenus->Users->find('list', ['limit' => 200]);
-        $companys = $this->StoresMenus->Companys->find('list', ['limit' => 200]);
+
+        $storesCourses = $this->StoresMenus->StoresCourses->find('list');
+
         $this->set(compact('storesMenu', 'storesCourses', 'users', 'companys'));
     }
 
@@ -103,12 +108,16 @@ class StoresMenusController extends AppController
      */
     public function delete($id = null)
     {
+        $this->hasPermission('storeAdmin');
+
         $this->request->allowMethod(['post', 'delete']);
+
         $storesMenu = $this->StoresMenus->get($id);
+
         if ($this->StoresMenus->delete($storesMenu)) {
-            $this->Flash->success(__('The stores menu has been deleted.'));
+            $this->Flash->success(__('A item foi deletado da emenat com sucesso com sucesso.'));
         } else {
-            $this->Flash->error(__('The stores menu could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Não foi possível deletar o item da ementa. Por favor, tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);

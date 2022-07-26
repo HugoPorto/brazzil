@@ -8,8 +8,6 @@
 
     <title><?= $storesPagesTitles->title ?></title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    
     <?= $this->Html->css(
         [
             '/AdminLTE-3.1.0/plugins/fontawesome-free/css/all.min.css',

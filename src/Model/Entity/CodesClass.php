@@ -4,22 +4,23 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * StoresCourse Entity
+ * CodesClass Entity
  *
  * @property int $id
- * @property string $course
+ * @property string $code
+ * @property int $stores_courses_id
+ * @property int $companys_id
+ * @property int $users_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property string $autor
- * @property string $theme
- * @property int $users_id
- * @property string $photo
- * @property string $price
- * @property string $description
+ * @property int $stores_menus_id
  *
+ * @property \App\Model\Entity\StoresCourse $stores_course
+ * @property \App\Model\Entity\Company $company
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\StoresMenu $stores_menu
  */
-class StoresCourse extends Entity
+class CodesClass extends Entity
 {
 
     /**
@@ -32,15 +33,16 @@ class StoresCourse extends Entity
      * @var array
      */
     protected $_accessible = [
-        'course' => true,
+        'code' => true,
+        'stores_courses_id' => true,
+        'companys_id' => true,
+        'users_id' => true,
         'created' => true,
         'modified' => true,
-        'autor' => true,
-        'theme' => true,
-        'users_id' => true,
-        'photo' => true,
-        'price' => true,
-        'description' => true,
-        'user' => true
+        'stores_menus_id' => true,
+        'stores_course' => true,
+        'company' => true,
+        'user' => true,
+        'stores_menu' => true
     ];
 }

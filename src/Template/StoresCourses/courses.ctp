@@ -1,10 +1,10 @@
 <div class="card">
     <div class="card-body">
         <p><?= $this->Flash->render() ?></p>
-        <table id="general" class="table table-bordered" style="font-size: 13px">
-            <thead class="table-dark">
+        <table id="general" class="table table-borderless" style="font-size: 13px">
+            <thead>
                 <tr>
-                    <th>Curso</th>
+                    <th>Meus Cursos</th>
                     <th><?= __('Ações') ?></th>
                 </tr>
             </thead>
@@ -12,10 +12,10 @@
                 <?php foreach ($courses_user as $courses) : ?>
                 <tr>
                     <td>
-                        <b><?= h($courses[1]) ?></b>
+                        <h4><?= h($courses[1]) ?></h4>
                     <br>
                     <br>
-                        <img style="width: 450px; border: 0px; padding: 10px" <?= $courses[2] ?>/>
+                        <a href="<?= $this->request->base . '/stores-courses/courseView/' .  $courses[0] ?>"><img class="image-table-course" <?= $courses[2] ?>/></a>
                     </td>
                     <td class="actions">
                         <?= $this->Html->link(
@@ -34,7 +34,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Curso</th>
+                    <th>Meus Cursos</th>
                     <th><?= __('Ações') ?></th>
                 </tr>
             </tfoot>

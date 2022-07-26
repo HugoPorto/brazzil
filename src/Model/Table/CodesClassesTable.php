@@ -8,23 +8,24 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * StoresMenus Model
+ * CodesClasses Model
  *
  * @property \App\Model\Table\StoresCoursesTable|\Cake\ORM\Association\BelongsTo $StoresCourses
- * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\CompanysTable|\Cake\ORM\Association\BelongsTo $Companys
+ * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property |\Cake\ORM\Association\BelongsTo $StoresMenus
  *
- * @method \App\Model\Entity\StoresMenu get($primaryKey, $options = [])
- * @method \App\Model\Entity\StoresMenu newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\StoresMenu[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StoresMenu|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StoresMenu patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\StoresMenu[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\StoresMenu findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\CodesClass get($primaryKey, $options = [])
+ * @method \App\Model\Entity\CodesClass newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\CodesClass[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\CodesClass|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\CodesClass patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\CodesClass[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\CodesClass findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class StoresMenusTable extends Table
+class CodesClassesTable extends Table
 {
     /**
      * Initialize method
@@ -36,7 +37,7 @@ class StoresMenusTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('stores_menus');
+        $this->setTable('codes_classes');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
@@ -46,12 +47,16 @@ class StoresMenusTable extends Table
             'foreignKey' => 'stores_courses_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Companys', [
+            'foreignKey' => 'companys_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Users', [
             'foreignKey' => 'users_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('Companys', [
-            'foreignKey' => 'companys_id',
+        $this->belongsTo('StoresMenus', [
+            'foreignKey' => 'stores_menus_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -69,10 +74,10 @@ class StoresMenusTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('menu')
-            ->maxLength('menu', 255)
-            ->requirePresence('menu', 'create')
-            ->notEmpty('menu');
+            ->scalar('code')
+            ->maxLength('code', 4294967295)
+            ->requirePresence('code', 'create')
+            ->notEmpty('code');
 
         return $validator;
     }
@@ -87,8 +92,9 @@ class StoresMenusTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['stores_courses_id'], 'StoresCourses'));
-        $rules->add($rules->existsIn(['users_id'], 'Users'));
         $rules->add($rules->existsIn(['companys_id'], 'Companys'));
+        $rules->add($rules->existsIn(['users_id'], 'Users'));
+        $rules->add($rules->existsIn(['stores_menus_id'], 'StoresMenus'));
 
         return $rules;
     }

@@ -25,6 +25,17 @@
                     ]
                 ) ?>
             </div>
+            
+            <div class="form-group">
+                <label for="course">Descrição*</label>
+                <?= $this->Form->control(
+                    'description',
+                    [
+                        'label' => false,
+                        'class' => 'form-control',
+                    ]
+                ) ?>
+            </div>
 
             <div class="form-group">
                 <label for="autor">Autor*</label>

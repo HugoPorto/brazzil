@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-6 offset-md-3">
                     <div class="copyRight_text text-center">
-                        <p><?= $storesFooters->footer; ?></p>
+                        <p><?= $footer->footer; ?></p>
                     </div>
                 </div>
             </div>

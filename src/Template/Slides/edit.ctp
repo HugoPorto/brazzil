@@ -1,26 +1,27 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\StoresMenu $storesMenu
+ * @var \App\Model\Entity\Slide $slide
  */
 ?>
 <div class="col-md-6 form-add-window">
     <div class="card card-info">
         <div class="card-header">
-            <h3 class="card-title">Adicionar Ementa</h3>
+            <h3 class="card-title">Editar Slide</h3>
         </div>
      
         <div class="card-body">
 
-            <?= $this->Form->create($storesMenu) ?>
+            <?= $this->Form->create($slide) ?>
                
                 <div class="form-group">
 
+                    <label for="stores_courses_id">Código do Slide*</label>
+
                     <?php
-                        echo $this->Form->control('menu', [
+                        echo $this->Form->control('slide', [
                             'label' => false,
                             'class' => 'form-control',
-                            'placeholder' => 'Ementa*'
                         ]);
                         ?>
 
@@ -44,11 +45,7 @@
 
                 </div>
 
-                <?= $this->Form->control('users_id', ['type' => 'hidden', 'value' => $idUser ]);?>
-
-                <?= $this->Form->control('companys_id', ['type' => 'hidden','value' => $idCompany]) ?>
-
-            <?= $this->Form->button(__('Adicionar'), ['class' => 'btn btn-info']) ?>
+            <?= $this->Form->button(__('Editar'), ['class' => 'btn btn-info']) ?>
     
             <?= $this->Form->end() ?>            
 

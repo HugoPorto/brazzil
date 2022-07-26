@@ -330,16 +330,25 @@ class HomesController extends AppController
     {
         $this->loadModel('StoresCourses');
 
+        $this->loadModel('StoresMenus');
+
         $this->viewBuilder()->setLayout('site');
 
         $storesCourse = $this->StoresCourses->get($id);
 
         $idUser = $this->Auth->user() ? $this->Auth->user()['id'] : null;
 
+        $menus = $this->StoresMenus->find('all', [
+            'conditions' => [
+                'StoresMenus.stores_courses_id =' => $id
+            ]
+        ]);
+
         $this->set(compact(
             [
                 'storesCourse',
-                'idUser'
+                'idUser',
+                'menus'
             ]
         ));
     }

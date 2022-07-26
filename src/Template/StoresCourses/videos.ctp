@@ -6,8 +6,8 @@
 ?>
 <div class="card">
     <div class="card-body">
-        <table id="general" class="table table-bordered" style="font-size: 13px">
-            <thead class="table-dark">
+        <table id="general" class="table table-borderless" style="font-size: 13px">
+            <thead>
                 <tr>
                     <th>Código</th>
                     <th>Título</th>

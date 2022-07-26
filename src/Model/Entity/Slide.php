@@ -4,22 +4,21 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * StoresCourse Entity
+ * Slide Entity
  *
  * @property int $id
- * @property string $course
+ * @property string $slide
+ * @property int $stores_courses_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property string $autor
- * @property string $theme
  * @property int $users_id
- * @property string $photo
- * @property string $price
- * @property string $description
+ * @property int $companys_id
  *
+ * @property \App\Model\Entity\StoresCourse $stores_course
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\Company $company
  */
-class StoresCourse extends Entity
+class Slide extends Entity
 {
 
     /**
@@ -32,15 +31,14 @@ class StoresCourse extends Entity
      * @var array
      */
     protected $_accessible = [
-        'course' => true,
+        'slide' => true,
+        'stores_courses_id' => true,
         'created' => true,
         'modified' => true,
-        'autor' => true,
-        'theme' => true,
         'users_id' => true,
-        'photo' => true,
-        'price' => true,
-        'description' => true,
-        'user' => true
+        'companys_id' => true,
+        'stores_course' => true,
+        'user' => true,
+        'company' => true
     ];
 }

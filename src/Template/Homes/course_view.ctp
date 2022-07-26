@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="single_item-img">
-                    <img style="max-width: 500px; min-width: 250px; max-height: 500px; min-height: 250px;" <?= $storesCourse->photo; ?> />
+                    <img style="max-width: 5120px; min-width: 250px; max-height: 5120px; min-height: 250px;" <?= $storesCourse->photo; ?> />
                 </div>
             </div>
             <div class="col-md-6">
@@ -18,6 +18,10 @@
 
                     <p style="padding-top: 10px;">
                         <?= $storesCourse->course ?>
+                    </p>
+
+                    <p style="padding-top: 10px;">
+                        <?= $storesCourse->description ?>
                     </p>
 
                     <form action="<?= $this->request->base; ?>/stores-carts/add" method="post">
@@ -42,6 +46,18 @@
 
                     </form>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <h2>Ementa</h2>
+                <br>
+                <ul class="list-group no-border">
+                    <?php foreach ($menus as $menu) : ?>
+                        <li class="list-group-item"><?= $menu->menu ?></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         </div>
     </div>

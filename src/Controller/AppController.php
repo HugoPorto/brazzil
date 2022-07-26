@@ -117,7 +117,7 @@ class AppController extends Controller
             'idUser' => $this->Auth->user() ? $this->Auth->user()['id'] : null,
             'imageProfileFront' => isset($imageProfileFront) ? $imageProfileFront : null,
             'indexSidebars' => $this->Auth->user() ? (isset($indexSidebars) ? $indexSidebars : null) : null,
-            'storesFooters' => $storesFooters,
+            'footer' => $storesFooters,
             'storesAbouts' => $storesAbouts,
             'storesHours' => $storesHours,
             'storesContacts' => $storesContacts,

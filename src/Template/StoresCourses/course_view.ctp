@@ -47,40 +47,51 @@
             <div class="btn-group">
                 <?= $this->Html->link(__('Aulas'), ['action' => 'videos', $storesCourse->id], ['class' => 'btn btn-info']) ?>
             </div>
+            <div class="btn-group">
+                <?= $this->Html->link(__('Slides'), ['action' => 'slide', $storesCourse->id], ['class' => 'btn btn-info']) ?>
+            </div>
         </div>
         <div class="margin">
-            <table class="vertical-table table table-striped table_view">
-                <tr>
-                    <th scope="row"><?= __('Código') ?></th>
-                    <td><?= $this->Number->format($storesCourse->id) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Curso') ?></th>
-                    <td><?= h($storesCourse->course) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Autor') ?></th>
-                    <td><?= h($storesCourse->autor) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Tema') ?></th>
-                    <td><?= h($storesCourse->theme) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Foto') ?></th>
-                    <td>
-                        <img style="width: 500px; border: 1px solid #d7d7d7" <?= $storesCourse->photo ?> />
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Criado Em') ?></th>
-                    <td><?= h($storesCourse->created) ?></td>
-                </tr>
-                <tr>
-                    <th scope="row"><?= __('Última Modificação') ?></th>
-                    <td><?= h($storesCourse->modified) ?></td>
-                </tr>
-            </table>
+          <div class="row">
+            <div class="col-md-6">
+              <table class="vertical-table table table-borderless table_view">
+                  <tr>
+                      <th scope="row" style="background-color: #F2F5F7;"><?= __('Curso') ?></th>
+                      <td><?= h($storesCourse->course) ?></td>
+                  </tr>
+                  <tr>
+                      <th scope="row" style="background-color: #F2F5F7;"><?= __('Autor') ?></th>
+                      <td><?= h($storesCourse->autor) ?></td>
+                  </tr>
+                  <tr>
+                      <th scope="row" style="background-color: #F2F5F7;"><?= __('Tema') ?></th>
+                      <td><?= h($storesCourse->theme) ?></td>
+                  </tr>
+                  <tr>
+                      <th scope="row" style="background-color: #F2F5F7;"><?= __('Foto') ?></th>
+                      <td>
+                          <img class="image-table-course" <?= $storesCourse->photo ?> />
+                      </td>
+                  </tr>
+                  <tr>
+                      <th scope="row" style="background-color: #F2F5F7;"><?= __('Criado Em') ?></th>
+                      <td><?= h($storesCourse->created) ?></td>
+                  </tr>
+                  <tr>
+                      <th scope="row" style="background-color: #F2F5F7;"><?= __('Última Modificação') ?></th>
+                      <td><?= h($storesCourse->modified) ?></td>
+                  </tr>
+              </table>
+            </div>
+            <div class="col-md-6">
+              <h3>Ementa</h3>
+              <ul class="list-group list-group-flush">
+                <?php foreach ($menus as $menu) : ?>
+                  <li class="list-group-item"><?= $menu->menu ?></li>
+                <?php endforeach; ?>
+              </ul>
+            </div>
+          </div>
         </div>
     </div>
 </div>

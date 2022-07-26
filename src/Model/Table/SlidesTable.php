@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -8,24 +7,25 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * StoresMenus Model
+ * Slides Model
  *
  * @property \App\Model\Table\StoresCoursesTable|\Cake\ORM\Association\BelongsTo $StoresCourses
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\CompanysTable|\Cake\ORM\Association\BelongsTo $Companys
  *
- * @method \App\Model\Entity\StoresMenu get($primaryKey, $options = [])
- * @method \App\Model\Entity\StoresMenu newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\StoresMenu[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StoresMenu|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StoresMenu patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\StoresMenu[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\StoresMenu findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Slide get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Slide newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Slide[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Slide|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Slide patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Slide[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Slide findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class StoresMenusTable extends Table
+class SlidesTable extends Table
 {
+
     /**
      * Initialize method
      *
@@ -36,7 +36,7 @@ class StoresMenusTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('stores_menus');
+        $this->setTable('slides');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
@@ -69,10 +69,10 @@ class StoresMenusTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('menu')
-            ->maxLength('menu', 255)
-            ->requirePresence('menu', 'create')
-            ->notEmpty('menu');
+            ->scalar('slide')
+            ->maxLength('slide', 4294967295)
+            ->requirePresence('slide', 'create')
+            ->notEmpty('slide');
 
         return $validator;
     }

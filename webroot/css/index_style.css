@@ -54,3 +54,21 @@ select {
 .form-fieldset-window {
     margin-bottom: 10px;
 }
+
+.image-table-course {
+    width: 450px;
+    border: 0px;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 5px 10px #888888;
+}
+
+.card-custom {
+    border: 1px solid #D7D7D7;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
+}
+
+.font-table {
+    font-size: 13px;
+}

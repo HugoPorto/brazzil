@@ -23,8 +23,11 @@ class PagesController extends AppController
         $this->removePessoalDataSession();
 
         $this->loadModel('Users');
+
         $this->loadModel('StoresSliders');
+
         $this->loadModel('StoresDemands');
+
         $this->loadModel('Companys');
 
         $users = $this->Users->find();

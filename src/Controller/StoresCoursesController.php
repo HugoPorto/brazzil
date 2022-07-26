@@ -171,6 +171,8 @@ class StoresCoursesController extends AppController
 
         $this->loadModel('Certificates');
 
+        $this->loadModel('StoresMenus');
+
         $storesCourse = $this->StoresCourses->get($id);
 
         $videosCourseCount = $this->StoresVideos->find(
@@ -194,6 +196,16 @@ class StoresCoursesController extends AppController
             ]
         )->count();
 
+        $menus = $this->StoresMenus->find(
+            'all',
+            [
+            'conditions' =>
+                [
+                    'StoresMenus.stores_courses_id =' => $id
+                ]
+            ]
+        );
+
         if ($videosViewedsCount > 0 && $videosCourseCount > 0) {
             $percentVieweds = ($videosViewedsCount * 100) / $videosCourseCount;
         } else {
@@ -204,7 +216,40 @@ class StoresCoursesController extends AppController
             $videosCourseCount = 0;
         }
 
-        $this->set(compact('storesCourse', 'videosCourseCount', 'percentVieweds', 'videosViewedsCount'));
+        $this->set(compact(
+            [
+                'storesCourse',
+                'videosCourseCount',
+                'percentVieweds',
+                'videosViewedsCount',
+                'slide',
+                'menus'
+            ]
+        ));
+    }
+
+    public function slide($idCourse = null)
+    {
+        $this->hasPermission('store');
+
+        $this->viewBuilder()->setLayout('brazzil');
+
+        $this->loadModel('Slides');
+
+        $slide = $this->Slides->find(
+            'all',
+            [ 'conditions' =>
+                [
+                    'Slides.stores_courses_id =' => $idCourse
+                ],
+            'contain' =>
+                [
+                    'StoresCourses'
+                ]
+            ]
+        )->first();
+
+        $this->set(compact('slide'));
     }
 
     public function videos($id = null)
