@@ -8,7 +8,7 @@
             <form  class="register" method="post" action="<?=$this->request->base?>/users/login">
                 <div class="row">
                     <div class="form-group col-md-12 email">
-                      <input type="text" name="username" class="form-control" aria-describedby="emailHelp" placeholder="Username">
+                      <input type="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Username">
                     </div>
                     <div class="form-group col-md-12 password">
                       <input type="password" name="password" class="form-control" placeholder="Password">
