@@ -17,11 +17,15 @@
 
 <?= $this->fetch('content') ?>
 
-<?php if ($configs->show_type_products !== 2) :?>
-    <?= $this->element('store_partners') ?>
+<?php if ($this->request->controller === 'Homes' && $this->request->action === 'site') : ?>
+    <?php if ($configs->show_type_products !== 2) :?>
+        <?= $this->element('store_partners') ?>
+    <?php endif;?>
 <?php endif;?>
 
-<?= $this->element('store_information') ?>
+<?php if ($configs->show_type_products === 2) :?>
+    <?= $this->element('store_information') ?>
+<?php endif;?>
 
 <?php if ($configs->show_type_products !== 2) :?>
     <?= $this->element('store_contact') ?>
