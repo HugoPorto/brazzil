@@ -437,4 +437,22 @@ class UsersController extends AppController
             return $this->redirect(['controller' => 'pages', 'action' => 'index']);
         }
     }
+
+    public function cpf()
+    {
+        $this->hasPermission('store');
+
+        $this->viewBuilder()->setLayout('site');
+    }
+
+    public function setCpfNoDigital()
+    {
+        $this->autoRender = false;
+
+        $session = $this->request->getSession();
+
+        $session->write('cpf', $this->request->getData()['cpf']);
+
+        $this->redirect(['controller' => 'stripes', 'action' => 'stripe']);
+    }
 }

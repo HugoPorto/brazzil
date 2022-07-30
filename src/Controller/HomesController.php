@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Mailer\MailerAwareTrait;
-use Cake\Datasource\ConnectionManager;
 
 class HomesController extends AppController
 {
@@ -13,13 +12,21 @@ class HomesController extends AppController
     public function initialize()
     {
         parent::initialize();
+
         $this->Auth->allow(['site']);
+
         $this->Auth->allow(['profile']);
+
         $this->Auth->allow(['store']);
+
         $this->Auth->allow(['productView']);
+
         $this->Auth->allow(['storeCart']);
+
         $this->Auth->allow(['storeContact']);
+
         $this->Auth->allow(['addMessage']);
+
         $this->Auth->allow(['search']);
     }
 
@@ -37,54 +44,12 @@ class HomesController extends AppController
 
         $storesPartners = $this->StoresPartners->find('all');
 
-        $configs = $this->Configs->find('all');
-
-        $configs = $configs->toArray();
+        $configs = $this->Configs->find('all')->toArray();
 
         if ($configs[0]['show_type_products'] === 1) {
-            $this->loadModel('StoresProducts');
-
-            $this->paginate = [
-                    'limit' => 16,
-                    'order' => [
-                        'StoresProducts.id' => 'DESC'
-                    ],
-                    'conditions' => [
-                        'StoresProducts.quantity >' => 0,
-                        'StoresProducts.online =' => 1,
-                        'StoresProducts.active =' => 1,
-                        'StoresProducts.photo !=' => 'Indefinida'
-                    ]
-            ];
-
-            $storesProducts = $this->paginate($this->StoresProducts);
-
-            $this->set(compact(
-                [
-                'storesProducts',
-                'storesSliders',
-                'storesPartners',
-                ]
-            ));
+            $this->loadFrontNoDigital($storesSliders, $storesPartners);
         } elseif ($configs[0]['show_type_products'] === 2) {
-            $this->loadModel('StoresCourses');
-
-            $this->paginate = [
-                'limit' => 16,
-                'order' => [
-                    'StoresCourses.id' => 'DESC'
-                    ]
-                ];
-
-            $StoresCourses = $this->paginate($this->StoresCourses);
-
-            $this->set(compact(
-                [
-                'StoresCourses',
-                'storesSliders',
-                'storesPartners',
-                ]
-            ));
+            $this->loadFrontDigital($storesSliders, $storesPartners);
         }
     }
 
@@ -94,6 +59,7 @@ class HomesController extends AppController
 
         if ($idCategory) {
             $this->loadModel('StoresCategories');
+
             $this->loadModel('StoresProducts');
 
             $storesCategories = $this->StoresCategories->find(
@@ -128,7 +94,9 @@ class HomesController extends AppController
             ));
         } else {
             $this->loadModel('StoresCategories');
+
             $this->loadModel('StoresProducts');
+
             $this->loadModel('Configs');
 
             $configs = $this->Configs->find('all')->first();
@@ -188,7 +156,9 @@ class HomesController extends AppController
     public function demands()
     {
         $this->hasPermission('store');
+
         $this->loadModel('StoresCategories');
+
         $this->loadModel('StoresDemands');
 
         $storesCategories = $this->StoresCategories->find(
@@ -256,6 +226,7 @@ class HomesController extends AppController
                 $data['random_code'] = uniqid('product_', true);
 
                 $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
+
                 $this->StoresProducts->save($storesProduct);
 
                 $storesProduct = $this->StoresProducts->get(
@@ -272,6 +243,7 @@ class HomesController extends AppController
                 $data['stores_colors_id'] = $idColor;
 
                 $storesProduct = $this->StoresProducts->patchEntity($storesProduct, $data);
+
                 $this->StoresProducts->save($storesProduct);
             }
 
@@ -283,7 +255,6 @@ class HomesController extends AppController
                     ]
                 ]
             );
-
 
             $idUser = $this->Auth->user() ? $this->Auth->user()['id'] : null;
         } else {
@@ -522,11 +493,9 @@ class HomesController extends AppController
 
         $total = 0;
 
-
         foreach ($storesCarts as $storesCart) {
             $total = $total + ($storesCart->stores_product->price * $storesCart->quantity);
         }
-
 
         $this->set(compact('storesCarts', 'total'));
     }
@@ -543,10 +512,12 @@ class HomesController extends AppController
         $this->hasPermission('store');
 
         $cep = $this->request->getData()['cep'];
+
         $calculateShipping = $this->calculateShippingMain($cep);
 
         if ($calculateShipping === 'Error') {
             $this->Flash->error("Erro ao calcular frete.");
+
             $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
         }
     }
@@ -617,7 +588,6 @@ class HomesController extends AppController
 
     public function storeContact($sended = null)
     {
-
         if ($sended) {
             $this->set(compact(
                 [
@@ -635,6 +605,7 @@ class HomesController extends AppController
 
         if ($this->request->is('post')) {
             $storesMessage = $this->StoresMessages->patchEntity($storesMessage, $this->request->getData());
+
             if ($this->StoresMessages->save($storesMessage)) {
                 $sended = true;
 
@@ -719,9 +690,13 @@ class HomesController extends AppController
         $storesColor = $this->StoresColors->newEntity();
 
         $data = [];
+
         $data['color'] = '#FFF';
+
         $data['product_flag_code'] = $product_flag_code;
+
         $data['stores_products_id'] = $idProduct;
+
         $storesColor = $this->StoresColors->patchEntity($storesColor, $data);
 
         $this->StoresColors->save($storesColor);
@@ -731,7 +706,6 @@ class HomesController extends AppController
 
     private function verifyColors($storesProduct)
     {
-
         $storesColors = $this->StoresColors->find(
             'all',
             [
@@ -776,5 +750,55 @@ class HomesController extends AppController
         $session->write('cpf', $this->request->getData()['cpf']);
 
         $this->redirect($this->referer());
+    }
+
+    private function loadFrontDigital($storesSliders = null, $storesPartners = null)
+    {
+        $this->loadModel('StoresCourses');
+
+        $this->paginate = [
+            'limit' => 16,
+            'order' => [
+                'StoresCourses.id' => 'DESC'
+                ]
+            ];
+
+        $StoresCourses = $this->paginate($this->StoresCourses);
+
+        $this->set(compact(
+            [
+            'StoresCourses',
+            'storesSliders',
+            'storesPartners',
+            ]
+        ));
+    }
+
+    private function loadFrontNoDigital($storesSliders = null, $storesPartners = null)
+    {
+        $this->loadModel('StoresProducts');
+
+        $this->paginate = [
+                'limit' => 16,
+                'order' => [
+                    'StoresProducts.id' => 'DESC'
+                ],
+                'conditions' => [
+                    'StoresProducts.quantity >' => 0,
+                    'StoresProducts.online =' => 1,
+                    'StoresProducts.active =' => 1,
+                    'StoresProducts.photo !=' => 'Indefinida'
+                ]
+        ];
+
+        $storesProducts = $this->paginate($this->StoresProducts);
+
+        $this->set(compact(
+            [
+            'storesProducts',
+            'storesSliders',
+            'storesPartners',
+            ]
+        ));
     }
 }

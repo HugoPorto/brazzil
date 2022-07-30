@@ -12,13 +12,11 @@ class StoresAddressController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $loginMenu = $this->loginMenuLoad();
-
         $storesAddress = $this->StoresAddress->find('all', [
             'contain' => ['StoresDemands', 'Users']
         ]);
 
-        $this->set(compact('storesAddress', 'loginMenu'));
+        $this->set(compact('storesAddress'));
     }
 
     public function view($id = null)
@@ -27,13 +25,11 @@ class StoresAddressController extends AppController
 
         $this->viewBuilder()->setLayout('brazzil');
 
-        $loginMenu = $this->loginMenuLoad();
-
         $storesAddres = $this->StoresAddress->get($id, [
             'contain' => ['StoresDemands', 'Users']
         ]);
 
-        $this->set(compact('storesAddres', 'loginMenu'));
+        $this->set(compact('storesAddres'));
     }
 
     public function getAddress($id = null)
@@ -57,17 +53,23 @@ class StoresAddressController extends AppController
         $this->hasPermission('storeAdmin');
 
         $storesAddres = $this->StoresAddress->newEntity();
+
         if ($this->request->is('post')) {
             $storesAddres = $this->StoresAddress->patchEntity($storesAddres, $this->request->getData());
+
             if ($this->StoresAddress->save($storesAddres)) {
                 $this->Flash->success(__('The stores addres has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
+
             $this->Flash->error(__('The stores addres could not be saved. Please, try again.'));
         }
+
         $storesDemands = $this->StoresAddress->StoresDemands->find('list', ['limit' => 200]);
+
         $users = $this->StoresAddress->Users->find('list', ['limit' => 200]);
+
         $this->set(compact('storesAddres', 'storesDemands', 'users'));
     }
 
@@ -77,6 +79,10 @@ class StoresAddressController extends AppController
 
         $session->write('address_demand', $this->request->getData());
 
-        return $this->redirect(['controller' => 'stripes', 'action' => 'stripe']);
+        if ($this->request->getSession()->read('cpf')) {
+            return $this->redirect(['controller' => 'stripes', 'action' => 'stripe']);
+        } else {
+            return $this->redirect(['controller' => 'Users', 'action' => 'cpf']);
+        }
     }
 }

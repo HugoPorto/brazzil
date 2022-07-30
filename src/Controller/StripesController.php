@@ -57,7 +57,9 @@ class StripesController extends AppController
 
         if ($session->read('address_demand')) {
             $totalShipping = $this->calculateShippingMain($session->read('address_demand')['cep']);
+
             $shippingValue = str_replace(",", ".", $totalShipping);
+
             $total = $total + (float) $shippingValue;
         } else {
             $this->redirect(['controller' => 'homes', 'action' => 'storeCart']);
@@ -104,6 +106,7 @@ class StripesController extends AppController
                 $this->saveItensDemandsDigital($demandId);
             } else {
                 $this->saveAddress($demandId);
+
                 $this->saveItensDemands($demandId);
             }
 

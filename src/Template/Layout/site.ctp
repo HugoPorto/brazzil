@@ -11,8 +11,8 @@
 <?= $this->element('store_preloader') ?>
 
 <?php if ($this->request->controller === 'Homes' && $this->request->action === 'site') : ?>
-    <?php echo $this->element('store_banner_promocional'); ?>
-    <?php echo $this->element('store_slider'); ?>
+    <?= $this->element('store_banner_promocional'); ?>
+    <?= $this->element('store_slider'); ?>
 <?php endif;?>
 
 <?= $this->fetch('content') ?>
